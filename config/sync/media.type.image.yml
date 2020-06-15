@@ -1,0 +1,23 @@
+uuid: 5607d170-5eab-48c5-902e-a680e117a54c
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image
+_core:
+  default_config_hash: 3xobH6ggQTAOK9F2oyo1G7xAoWC0rs4ELImzXUNrm2I
+id: image
+label: Image
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image
+field_map:
+  name: name
+  mimetype: field_media_image
+  filesize: field_media_image

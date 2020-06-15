@@ -1,0 +1,4 @@
+default: yale_infosec
+admin: thunder_admin
+_core:
+  default_config_hash: 7w1DAXjFe_UP44aq3eb_20EEy1_aAFXbisXzjdJD7_U
