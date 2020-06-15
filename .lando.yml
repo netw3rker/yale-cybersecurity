@@ -1,0 +1,10 @@
+name: cybersecurity
+recipe: drupal8
+config:
+  webroot: web
+  drush: 9
+  php: '7.2'
+tooling:
+  drush:
+    service: appserver
+    cmd: "drush --root=/app/web --uri=https://cybersecurity.lndo.site"
