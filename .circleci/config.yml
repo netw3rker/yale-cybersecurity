@@ -2,7 +2,7 @@
 defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:6.x
-  working_directory: ~/example_drops_8_composer
+  working_directory: ~/project-build
   environment:
     #=========================================================================
     # In addition to the environment variables defined in this file, also
@@ -129,6 +129,16 @@ jobs:
       - attach_workspace:
           at: /tmp
 
+      # Build theme.
+      - run:
+          name: Build Theme.
+          command: ./.ci/build/theme
+
+      # Move Storybook instance
+      - run:
+          name: Move Storybook.
+          command: mv ./web/themes/custom/yale_infosec/.out ./web/storybook
+
       - run:
           # Set TERMINUS_ENV and related environment variables.
           # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
@@ -144,75 +154,6 @@ jobs:
       - run:
           name: deploy to Pantheon
           command: ./.ci/deploy/pantheon/dev-multidev
-
-  behat_test:
-    <<: *defaults
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - composer-cache-{{ checksum "composer.lock" }}
-            - composer-cache-
-
-      - run:
-          # Set TERMINUS_ENV and related environment variables.
-          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
-          name: setup-environment-vars
-          command: /build-tools-ci/scripts/set-environment
-
-      - run:
-          # Uncomment line 26 in .ci/test/behat/initialize to create a backup
-          # prior to running Behat tests. This is useful to reset the multidev
-          # environment to the previous state after Behat tests have run.
-          name: prepare for Behat testing
-          command: ./.ci/test/behat/initialize
-
-      - run:
-          name: run acceptance tests with Behat
-          command: ./.ci/test/behat/run
-
-      - run:
-          # Uncomment line 13 in .ci/test/behat/cleanup to restore a backup
-          # after running Behat tests. This is useful to reset the multidev
-          # environment to the previous state after Behat tests have run.
-          name: clean up after Behat
-          command: ./.ci/test/behat/cleanup
-          when: always
-
-      - save_cache:
-          key: composer-cache-{{ checksum "composer.lock" }}
-          paths:
-            - $HOME/.composer/cache
-
-      - store_artifacts:
-          path: /tmp/artifacts
-          destination: artifacts
-
-  visual_regression_test:
-    <<: *defaults
-    docker:
-      - image: backstopjs/backstopjs:4.1.9
-    steps:
-      - checkout
-
-      - attach_workspace:
-          at: /tmp/workspace
-
-      - run: cp /tmp/workspace/bash_env.txt $BASH_ENV
-      - run: echo "export CI_BUILD_URL='${CIRCLE_BUILD_URL}'" >> $BASH_ENV
-      - run: echo "export CI_NODE_INDEX='${CIRCLE_NODE_INDEX}'" >> $BASH_ENV
-      - run: echo "export CI_REPOSITORY_URL='${CIRCLE_REPOSITORY_URL}'" >> $BASH_ENV
-      - run: echo "export ARTIFACTS_DIR_URL='${CIRCLE_BUILD_URL}/artifacts/${CIRCLE_NODE_INDEX}/artifacts'" >> $BASH_ENV
-      - run: source $BASH_ENV
-
-      - run:
-          name: visual regression test
-          command: ./.ci/test/visual-regression/run
-
-      - store_artifacts:
-          path: /tmp/artifacts
-          destination: artifacts
 
   composer_lock_updater:
     <<: *defaults
@@ -244,18 +185,6 @@ workflows:
           requires:
             - static_tests
             - build_php
-      - visual_regression_test:
-          requires:
-            - configure_env_vars
-            - deploy_to_pantheon
-          filters:
-            branches:
-              ignore:
-                - master
-      - behat_test:
-          requires:
-            - deploy_to_pantheon
-            - visual_regression_test
 
   scheduled_update_check:
     triggers:

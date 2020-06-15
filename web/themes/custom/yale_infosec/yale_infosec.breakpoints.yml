@@ -1,0 +1,16 @@
+# Breakpoints - change based on site need
+yale_infosec.small:
+  label: small
+  mediaQuery: 'all and (min-width: 25em)'
+yale_infosec.small-med:
+  label: small-med
+  mediaQuery: 'all and (min-width: 26em)'
+yale_infosec.small-large:
+  label: small-large
+  mediaQuery: 'all and (min-width: 41em)'
+yale_infosec.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 48em)'
+yale_infosec.large:
+  label: large
+  mediaQuery: 'all and (min-width: 61.25em)'
