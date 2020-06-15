@@ -68,11 +68,11 @@ module:
   pathauto: 1
   views: 10
   paragraphs: 11
+  sous: 1000
 theme:
   stable: 0
   classy: 0
   seven: 0
-  sous_admin: 0
   thunder_admin: 0
   yale_infosec: 0
 profile: sous
