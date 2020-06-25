@@ -788,11 +788,6 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 // $settings['skip_permissions_hardening'] = TRUE;
 
 /**
- * Configuration directories.
- */
-$settings['config_sync_directory'] = DRUPAL_ROOT . "/../config/sync";
-
-/**
  * Include the Pantheon-specific settings file.
  *
  * n.b. The settings.pantheon.php file makes some changes
@@ -804,6 +799,11 @@ $settings['config_sync_directory'] = DRUPAL_ROOT . "/../config/sync";
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   include __DIR__ . "/settings.pantheon.php";
 }
+
+/**
+ * Configuration directories.
+ */
+$settings['config_sync_directory'] = DRUPAL_ROOT . "/../config/sync";
 
 /**
  * If there is a local settings file, then include it.
