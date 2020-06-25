@@ -1,6 +1,6 @@
 #!/bin/bash
 
 composer install
-yarn import-data
+yarn import-local-db
 yarn confim
 lando drush uli
