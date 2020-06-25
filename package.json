@@ -4,8 +4,14 @@
   "scripts": {
     "confim": "./scripts/sous/confim.sh",
     "confex": "./scripts/sous/confex.sh",
-    "import-data": "./scripts/sous/import-data.sh",
+    "import-local-db": "./scripts/sous/import-data.sh",
+    "build": "./scripts/sous/build.sh",
     "rebuild": "./scripts/sous/rebuild.sh",
-    "local-data-bak": "./scripts/sous/local-data-bak.sh"
+    "export-db": "./scripts/sous/export-db.sh",
+    "get-db": "./scripts/sous/get-db.sh",
+    "get-files": "./scripts/sous/get-files.sh",
+    "get-assets": "./scripts/sous/get-files.sh",
+    "theme": "./scripts/sous/theme.sh",
+    "build-theme": "./scripts/sous/build-theme.sh"
   }
 }

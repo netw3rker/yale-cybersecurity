@@ -1,9 +1,12 @@
-name: cybersecurity
-recipe: drupal8
+name: cybersecurity-yale-edu
+recipe: pantheon
 config:
   webroot: web
   drush: 9
   php: '7.2'
+  framework: drupal8
+  site: cybersecurity-yale-edu
+  id: 3878688f-3b52-4746-804c-3e2eb786824b
 tooling:
   drush:
     service: appserver
