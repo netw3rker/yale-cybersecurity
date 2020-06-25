@@ -4,9 +4,9 @@
  * Database connection to local Lando instance.
  */
 $databases['default']['default'] = array (
-  'database' => 'drupal8',
-  'username' => 'drupal8',
-  'password' => 'drupal8',
+  'database' => 'pantheon',
+  'username' => 'pantheon',
+  'password' => 'pantheon',
   'prefix' => '',
   'host' => 'database',
   'port' => '3306',
