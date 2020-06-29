@@ -3,18 +3,43 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.grid_type.field_color_style
     - field.field.paragraph.grid_type.field_content
+    - field.field.paragraph.grid_type.field_grid_style
     - paragraphs.paragraphs_type.grid_type
   module:
+    - field_group
     - paragraphs
+third_party_settings:
+  field_group:
+    group_section_settings:
+      children:
+        - field_color_style
+        - field_grid_style
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      region: content
+      format_settings:
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Section settings'
 id: paragraph.grid_type.default
 targetEntityType: paragraph
 bundle: grid_type
 mode: default
 content:
+  field_color_style:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_content:
-    type: entity_reference_paragraphs
-    weight: 0
+    type: paragraphs
+    weight: 3
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -22,7 +47,19 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: _none
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
+    region: content
+  field_grid_style:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
 hidden:
   created: true
