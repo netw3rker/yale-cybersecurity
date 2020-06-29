@@ -122,13 +122,14 @@ content:
       autocollapse: none
       closed_mode_threshold: 0
       features:
-        duplicate: duplicate
         collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_metadata:
     weight: 26
-    settings: {  }
+    settings:
+      sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
     region: content
@@ -155,9 +156,9 @@ content:
         view_mode: default
       field_widget_edit: true
       field_widget_remove: true
+      open: true
       selection_mode: selection_append
       field_widget_replace: false
-      open: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content

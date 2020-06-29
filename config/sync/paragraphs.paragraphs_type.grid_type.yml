@@ -1,0 +1,10 @@
+uuid: 33a0f560-55ee-4d9b-89fd-a29571c93bbe
+langcode: en
+status: true
+dependencies: {  }
+id: grid_type
+label: 'Grid type'
+icon_uuid: null
+icon_default: null
+description: 'A wrapper for setting a grid type for the content.'
+behavior_plugins: {  }
