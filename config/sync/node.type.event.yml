@@ -1,0 +1,17 @@
+uuid: cb1cac48-8d62-416e-855a-8844a5b3d50d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Event
+type: event
+description: 'Content type for Events.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

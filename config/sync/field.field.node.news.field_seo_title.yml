@@ -1,0 +1,19 @@
+uuid: 5742dc39-4da2-4412-80f4-fec23e20d289
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seo_title
+    - node.type.news
+id: node.news.field_seo_title
+field_name: field_seo_title
+entity_type: node
+bundle: news
+label: 'SEO Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
