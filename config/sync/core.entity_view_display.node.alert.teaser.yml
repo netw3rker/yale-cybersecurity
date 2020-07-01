@@ -1,0 +1,32 @@
+uuid: ecdaecc0-6fa6-4c98-b536-0ae32fd8f3c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.alert.field_content_body
+    - field.field.node.alert.field_metadata
+    - field.field.node.alert.field_seo_title
+    - field.field.node.alert.field_tags
+    - field.field.node.alert.field_teaser_media
+    - field.field.node.alert.field_teaser_text
+    - node.type.alert
+  module:
+    - user
+id: node.alert.teaser
+targetEntityType: node
+bundle: alert
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content_body: true
+  field_metadata: true
+  field_seo_title: true
+  field_tags: true
+  field_teaser_media: true
+  field_teaser_text: true

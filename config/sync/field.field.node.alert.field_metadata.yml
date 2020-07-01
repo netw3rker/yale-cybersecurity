@@ -1,0 +1,21 @@
+uuid: c78c8a3f-fe9d-4f22-86b8-7d32193cb005
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metadata
+    - node.type.alert
+  module:
+    - metatag
+id: node.alert.field_metadata
+field_name: field_metadata
+entity_type: node
+bundle: alert
+label: Metadata
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag
