@@ -1,4 +1,4 @@
-uuid: 80f50070-6725-48f0-be89-2848d8cb4321
+uuid: 82480629-6fa0-4731-a607-2c3e763dfc73
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Alert
-type: alert
-description: 'Create alerts with multiple levels of warning.'
+name: Guide
+type: guide
+description: 'Content type for creating guides.'
 help: ''
 new_revision: true
 preview_mode: 1

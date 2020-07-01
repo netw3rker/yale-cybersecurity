@@ -1,0 +1,32 @@
+uuid: 0e019054-3ec2-4de4-80f4-c3f40bf0f558
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.guide.field_content_body
+    - field.field.node.guide.field_metadata
+    - field.field.node.guide.field_seo_title
+    - field.field.node.guide.field_tags
+    - field.field.node.guide.field_teaser_media
+    - field.field.node.guide.field_teaser_text
+    - node.type.guide
+  module:
+    - user
+id: node.guide.teaser
+targetEntityType: node
+bundle: guide
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content_body: true
+  field_metadata: true
+  field_seo_title: true
+  field_tags: true
+  field_teaser_media: true
+  field_teaser_text: true
