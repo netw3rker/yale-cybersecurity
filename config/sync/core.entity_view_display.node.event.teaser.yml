@@ -1,0 +1,32 @@
+uuid: 234c7ca1-a3fd-4c3b-aec2-f5526aced8e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.field_content_body
+    - field.field.node.event.field_metadata
+    - field.field.node.event.field_seo_title
+    - field.field.node.event.field_tags
+    - field.field.node.event.field_teaser_media
+    - field.field.node.event.field_teaser_text
+    - node.type.event
+  module:
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content_body: true
+  field_metadata: true
+  field_seo_title: true
+  field_tags: true
+  field_teaser_media: true
+  field_teaser_text: true

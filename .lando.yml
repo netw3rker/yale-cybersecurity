@@ -1,4 +1,4 @@
-name: cybersecurity-yale-edu
+name: cybersecurity
 recipe: pantheon
 config:
   webroot: web

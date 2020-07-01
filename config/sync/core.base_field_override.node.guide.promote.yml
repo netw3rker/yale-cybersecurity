@@ -1,0 +1,22 @@
+uuid: 38258de1-b48d-4056-bb4e-98c3a3d8c406
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.guide
+id: node.guide.promote
+field_name: promote
+entity_type: node
+bundle: guide
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
