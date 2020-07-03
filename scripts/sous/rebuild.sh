@@ -1,6 +1,6 @@
 #!/bin/bash
 
 composer install
-yarn import-local-db
-yarn confim
+npm run import-local-db
+npm run confim
 lando drush uli
