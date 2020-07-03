@@ -1,4 +1,4 @@
 #!/bin/bash
 
 lando start
-yarn rebuild
+npm run rebuild

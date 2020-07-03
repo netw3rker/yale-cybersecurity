@@ -5,10 +5,7 @@ This documentation outlines the current deployment process for this project.
 
 ## Deployment workflow
 
-CircleCI takes care of automated deployment for the following branches:
-
-- develop
-- master
+CircleCI takes care of automated deployment to the `master` branch.
 
 An automated deployment process is kicked off for the branches mentioned
 above any time you push. You can monitor the progress of the build and deployment 
@@ -27,8 +24,7 @@ This is the only valid method of commiting code to the project. Once a pull requ
 
 - master
 
-Dev is the name of the environment on the Pantheon server and should always be set
-to use the **develop** branch.
+Dev is the name of the environment on the Pantheon server and should always be set to use the **develop** branch.
 
 #### Test
 

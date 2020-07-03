@@ -2,7 +2,7 @@
 - Description of PR
 
 ### Ticket(s)
-[YALE-XX: Title](https://fourkitchens.atlassian.net/browse/YALE-XX)
+[YI-XX: Title](https://fourkitchens.atlassian.net/browse/YI-XX)
 
 ### Pull Request Deployment:
 See linked environment in comments.
