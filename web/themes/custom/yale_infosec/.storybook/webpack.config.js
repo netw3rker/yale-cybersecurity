@@ -84,6 +84,15 @@ module.exports = async ({ config }) => {
     }),
   );
 
+  // // Files
+  // config.module.rules.push({
+  //   test: /\.(woff|woff2|ttf|eot|otf|svg)$/i,
+  //   loader: 'file-loader',
+  //   include: [
+  //     path.resolve(__dirname, '../', 'node_modules/@yalesites-org/yale-scss/fonts'),
+  //   ]
+  // });
+
   // YAML
   config.module.rules.push({
     test: /\.ya?ml$/,
