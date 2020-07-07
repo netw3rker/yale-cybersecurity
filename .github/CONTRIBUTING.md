@@ -10,15 +10,14 @@ https://cybersecurity.yale.edu
 
 ## Git workflow
 
-- Create work off of the ‘develop’ branch which is the default branch.
+- Create work off of the `master` branch which is the default branch.
 - Keep your branches as lightweight as possible, restricting your pull requests to only the feature requirements necessary for the ticket you are working on.
 
 ### Branch naming conventions
 
-- `master` The master branch is for code ready to be released to the production environment.
-- `develop` This branch is merged into master when a production release is ready to be deployed. It only contains code that has gone through peer review and is ready to be released. At the time of each release, the `develop` branch should be merged into `master` and a tag should be created with the current date and time (example: `YS-2020-01-31`).
-- `YS-XX--short-description` `##` represents the Jira ticket number. Feature branches should branch from and merge back into the `develop` branch. They contain code that is currently in development. When a story/feature is complete, a pull request should be created merging the feature branch into the `develop` branch.
-- `hotfix/short-description` Create a hotfix branch for quick fixes that need to bypass the `develop` branch and get merged directly into `master`. Hotfixes should only be when needed. Be sure your hotfixes are branched off of `master` and your PRs are set to merge back into `master`.
+- `master` The master branch is for code ready to be released to pantheon dev environment. Code should progress through the pantheon workflow from there.
+- `YI-XX--short-description` `##` represents the Jira ticket number. Feature branches should branch from and merge back into the `master` branch. They contain code that is currently in development. When a story/feature is complete, a pull request should be created merging the feature branch into the `master` branch.
+- `hotfix/short-description` Create a hotfix branch for quick fixes that need to bypass the `master` branch and get merged directly into `master`.
 
 ### Pull requests
 
@@ -32,7 +31,7 @@ https://cybersecurity.yale.edu
 
 Pull requests should be named with the full Jira ticket ID (if applicable) plus a brief description. Example:
 
-> YS-10: Basic page content type
+> YI-10: Basic page content type
 
 A pull request [template](https://github.com/yalesites-org/cybersecurity.yale.edu/blob/master/.github/PULL_REQUEST_TEMPLATE.md) has been created. Below is the general outline of the template. We have 5 sections that could be used for any given pull request
 

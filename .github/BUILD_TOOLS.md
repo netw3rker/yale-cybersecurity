@@ -1,24 +1,26 @@
 # Build tools
 
-**Important** 
+**Important**
 You may need to authorize your machine with your token if you are not able to pull assets.
+
 ```
 lando terminus auth:login --machine-token=TOKEN
 ```
 
 ### Local Build Commands
-`yarn build` - Runs a build to startup local environment, then runs `rebuild` command.\
-`yarn rebuild` - Refresh to install new requirements, import Drupal configuration, build theme, and  clear caches.\
-`yarn import-local-db` - Imports the local database: reference/backup.sql.gz.\
-`yarn export-db` - Exports local database to db-%Y-%m-%d-%H%M.sql.gz file.\
-`yarn get-db` - Acquires database from the Pantheon test environment. \
-`yarn get-files` - Acquires file from the Pantheon test environment. \
-`yarn get-assets` - Acquires database and file assets from the Pantheon test environment.
+
+`npm run build` - Runs a build to startup local environment, then runs `rebuild` command.\
+`npm run rebuild` - Refresh to install new requirements, import Drupal configuration, build theme, and  clear caches.\
+`npm run import-local-db` - Imports the local database: reference/backup.sql.gz.\
+`npm run export-db` - Exports local database to db-%Y-%m-%d-%H%M.sql.gz file.\
+`npm run get-db` - Acquires database from the Pantheon test environment. \
+`npm run get-files` - Acquires file from the Pantheon test environment. \
+`npm run get-assets` - Acquires database and file assets from the Pantheon test environment.
 
 #### Drupal specific build commands
 
-`yarn confex` - Exports Drupal configuration. \
-`yarn confim` - Imports Drupal configuration.
+`npm run confex` - Exports Drupal configuration. \
+`npm run confim` - Imports Drupal configuration.
 
 ## Linting
 
@@ -32,5 +34,5 @@ This project uses an [Emulsify](https://github.com/emulsify-ds/emulsify-drupal) 
 
 #### Theme Tasks
 
-`yarn theme` - Run the theme compiler and watch task for active development. \
-`yarn theme-build` - Compile the theme without running the watch task.
+`npm run theme` - Run the theme compiler and watch task for active development. \
+`npm run theme-build` - Compile the theme without running the watch task.
