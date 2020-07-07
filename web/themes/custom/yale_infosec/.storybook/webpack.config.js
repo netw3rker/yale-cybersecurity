@@ -27,6 +27,7 @@ module.exports = async ({ config }) => {
         options: {
           twigOptions: {
             namespaces: {
+              'yale-atoms': path.resolve(__dirname, '../', 'node_modules/@yalesites-org/yale-twig/01-atoms'),
               atoms: path.resolve(__dirname, '../', 'components/01-atoms'),
               molecules: path.resolve(
                 __dirname,
