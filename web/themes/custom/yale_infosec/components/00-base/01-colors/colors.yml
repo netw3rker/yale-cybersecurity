@@ -1,20 +1,5 @@
 colors_heading: 'Palettes:'
 palettes:
-  - palette_heading: 'Yale'
-    colors:
-      - name: 'Blue Yale'
-      - name: 'Blue 28'
-      - name: 'Blue 63'
-      - name: 'Gray 97'
-      - name: 'Gray 4a'
-      - name: 'Gray 22'
-      - name: 'Gray dd'
-      - name: 'Gray f9'
-      - name: 'Green'
-      - name: 'Orange'
-      - name: 'Success'
-      - name: 'Warning'
-      - name: 'Danger'
   - palette_heading: 'Infosec'
     colors:
       - name: 'Text'
