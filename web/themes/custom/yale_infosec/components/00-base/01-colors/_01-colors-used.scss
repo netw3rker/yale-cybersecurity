@@ -1,6 +1,7 @@
 // Color Usage variables - use these (via the `clr` function below)
 // rather than color variables directly.
-$defaultColors: (
+
+$infosecColors: (
   text: $info_gray,
   text-inverse: color('white'),
   text-heavy: color('blue-yale'),
@@ -54,7 +55,7 @@ $darkColors: (
 // property will be created. (e.g. `--c-text:` and `--c-background:`).
 //
 // The first `@each` below will create a custom property for each item in the
-// `$defaultColors` map. So put all of your default colors there.
+// `$infosecColors` map. So put all of your default colors there.
 //
 // The `prefers-color-scheme: dark` media query below will then create custom
 // properties for each of the colors in the `$darkColors` map only if the
@@ -63,7 +64,7 @@ $darkColors: (
 // opted to use the 'dark mode' on their OS.
 :root {
   // Create custom properties for default colors
-  @each $name, $color in $defaultColors {
+  @each $name, $color in $infosecColors {
     --c-#{$name}: #{$color};
   }
 
@@ -78,7 +79,7 @@ $darkColors: (
   // component library regardless of OS setting.
   // This is required to show the correct colors in the component library at all times
   [data-theme='default'] {
-    @each $name, $color in $defaultColors {
+    @each $name, $color in $infosecColors {
       --c-#{$name}: #{$color};
     }
   }
