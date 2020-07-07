@@ -26,9 +26,9 @@
 @function set-color(
   $color,
   $text-primary: accent-high,
-  $text-secondary: muted
+  $text-secondary: text-inverse
 ) {
-  @if (lightness($color) > 50) {
+  @if (lightness($color) > 60) {
     @return clr($text-primary);
   } @else {
     @return clr($text-secondary);

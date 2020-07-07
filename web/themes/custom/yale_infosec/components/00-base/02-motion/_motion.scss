@@ -31,8 +31,9 @@ $transition-timing-function-base: ease-in-out;
 }
 
 .demo-motion {
-  background-color: clr(highlight-high);
+  background-color: clr(highlight);
   border-radius: 2px;
+  color: clr(text-inverse);
   cursor: pointer;
   padding: 3rem;
   text-align: center;
@@ -56,8 +57,7 @@ $transition-timing-function-base: ease-in-out;
   @include transition;
 
   &:hover {
-    background-color: clr(accent-high);
-    color: clr(muted);
+    background-color: clr(muted);
   }
 }
 
