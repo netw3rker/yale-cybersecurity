@@ -1,0 +1,15 @@
+h1_heading: 'This is the Page Title Heading 1'
+paragraph_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore <a href="#">magna aliquyam erat</a>, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+blockquote_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.'
+h2_heading: 'This is a Heading 2'
+h3_heading: 'This is a Heading 3'
+ol_items:
+  - content: 'This is the first item in the ordered list.'
+  - content: 'And here is the item that goes with the label.'
+  - content: "Here's the third item."
+  - content: "And here's the last item."
+ul_items:
+  - content: 'This is the first item in the unordered list.'
+  - content: 'And here is the second item.'
+  - content: "Here's the third item."
+  - content: "And here's the last item."

@@ -17,7 +17,11 @@ ol {
 
 .list-item {
   margin-bottom: 0.2em;
-  padding-left: 1em;
+  padding-left: 1rem;
+
+  @include small {
+    margin-left: 2.5rem;
+  }
 }
 
 /* TODO: BEM selectors should be applied to wysiwyg-created content */

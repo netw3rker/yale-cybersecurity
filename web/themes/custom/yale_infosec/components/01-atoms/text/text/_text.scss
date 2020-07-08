@@ -1,7 +1,7 @@
 /* Create a mixin for paragraph styles that can be implemented
  * in components with other classnames.
 */
-@mixin paragraph($margin: 0 0 1em) {
+@mixin paragraph($margin: 0 0 2rem) {
   margin: $margin;
 }
 
@@ -10,10 +10,16 @@
 }
 
 .blockquote {
-  font-style: italic;
-  border-left: solid 3px clr(accent);
-  margin-left: 1em;
-  padding-left: 1em;
+  color: clr(text-heavy);
+  font-size: 2.7rem;
+  font-style: normal;
+  border-left: solid 1px clr(accent);
+  margin-left: 0;
+  padding-left: 2.5rem;
+
+  &--sb {
+    margin-left: 2.5rem;
+  }
 }
 
 .hr {
@@ -36,4 +42,9 @@
   hr {
     @extend .hr;
   }
+}
+
+// Storybook
+.example-content {
+  padding: 3rem;
 }

@@ -3,16 +3,16 @@
  * All arguments are optional. If not defined, the defaults below will be used
 */
 
-$color-heading: clr(accent);
+$color-heading: clr(text-heavy);
 
 @mixin heading-xl(
   $font-family: $font-heading,
-  $font-size: 2rem,
-  $line-height: 1.4,
+  $font-size: 5.5rem,
+  $line-height: 1.1,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: inherit,
-  $font-weight: 700,
+  $font-weight: normal,
   $margin: 0 0 0.5em
 ) {
   color: $color;
@@ -35,12 +35,12 @@ $color-heading: clr(accent);
 
 @mixin heading-large(
   $font-family: $font-heading,
-  $font-size: 1.8rem,
-  $line-height: 1.4,
+  $font-size: 4.8rem,
+  $line-height: 0.94,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: inherit,
-  $font-weight: 700,
+  $font-weight: normal,
   $margin: 0 0 0.5em
 ) {
   color: $color;
@@ -63,12 +63,12 @@ $color-heading: clr(accent);
 
 @mixin heading-medium(
   $font-family: $font-heading,
-  $font-size: 1.4rem,
-  $line-height: 1.6,
+  $font-size: 3.6rem,
+  $line-height: 1.17,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: inherit,
-  $font-weight: 700,
+  $font-weight: normal,
   $margin: 0 0 0.5em
 ) {
   color: $color;
@@ -91,12 +91,12 @@ $color-heading: clr(accent);
 
 @mixin heading-small(
   $font-family: $font-heading,
-  $font-size: 1.2rem,
-  $line-height: 1.6,
+  $font-size: 2.4rem,
+  $line-height: 1.63,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: inherit,
-  $font-weight: 600,
+  $font-weight: normal,
   $margin: 0 0 0.5em
 ) {
   color: $color;
@@ -119,12 +119,12 @@ $color-heading: clr(accent);
 
 @mixin heading-xs(
   $font-family: $font-heading,
-  $font-size: 1.1rem,
-  $line-height: 2,
+  $font-size: 2rem,
+  $line-height: 1.7,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: inherit,
-  $font-weight: 600,
+  $font-weight: normal,
   $margin: 0 0 0.5em
 ) {
   color: $color;
