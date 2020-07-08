@@ -1,5 +1,7 @@
 .header {
+  background-color: clr(background-inverse);
   margin-bottom: 4em;
+  max-width: 976px;
 
   &__inner {
     @include wrapper;
@@ -9,14 +11,24 @@
   }
 
   &__primary {
+    align-items: baseline;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     padding: $space 0;
+
+    @include medium {
+      padding: 2.6rem 0;
+    }
+
+    @include large {
+      display: block;
+      padding: 3.1rem 0 1.8rem;
+    }
   }
 
-  &__branding {
-    margin-right: $space;
-    max-width: 300px;
+  &__menu {
+    position: relative;
+    top: -3px;
   }
 }

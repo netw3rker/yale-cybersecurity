@@ -10,25 +10,40 @@
     display: block;
     padding: 2rem;
   }
+
+  @include large {
+    border-bottom: 1px solid clr(border);
+    padding-bottom: 0.8rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .logo__yale {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   margin-right: 0.25rem;
 
-  @include xs {
+  @include small {
     font-size: 2.8rem;
     margin-right: 0.5rem;
+  }
+
+  @include medium {
+    font-size: 4rem;
+    margin-right: 1.3rem;
   }
 }
 
 .logo__infosec {
-  font-size: 1.65rem;
+  font-size: 1.57rem;
   position: relative;
   text-transform: uppercase;
   top: 0;
 
-  @include xs {
+  @include small {
     font-size: 1.85rem;
+  }
+
+  @include medium {
+    font-size: 2.8rem;
   }
 }

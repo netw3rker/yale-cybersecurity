@@ -42,6 +42,10 @@ $outer-container-break: $small;
     padding: #{$v-padding} #{$h-padding-large};
   }
 
+  @include medium {
+    padding: #{$v-padding} 4rem;
+  }
+
   @include breakpoint($container-max-width) {
     padding-left: calc(
       #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
