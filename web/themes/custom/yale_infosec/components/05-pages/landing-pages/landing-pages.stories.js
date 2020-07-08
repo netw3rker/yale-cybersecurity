@@ -6,7 +6,7 @@ import '../../02-molecules/menus/main-menu/main-menu';
 
 import home from './home.twig';
 
-import mainMenuData from '../../02-molecules/menus/main-menu/main-menu.yml';
+import menuData from '../../data/menus.yml';
 import breadcrumbData from '../../02-molecules/menus/breadcrumbs/breadcrumbs.yml';
 import socialMenuData from '../../02-molecules/menus/social/social-menu.yml';
 import footerMenuData from '../../02-molecules/menus/inline/inline-menu.yml';
@@ -22,7 +22,7 @@ hrefTo('Pages/Content Types', 'Article').then(url => {
         dangerouslySetInnerHTML={{
           __html: home({
             page_layout_modifier: 'contained',
-            ...mainMenuData,
+            ...menuData,
             ...breadcrumbData,
             ...socialMenuData,
             ...footerMenuData,
