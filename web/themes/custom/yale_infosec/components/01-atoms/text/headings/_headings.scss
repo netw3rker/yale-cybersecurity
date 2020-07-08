@@ -13,7 +13,7 @@ $color-heading: clr(text-heavy);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: normal,
-  $margin: 0 0 0.5em
+  $margin: 3rem 0
 ) {
   color: $color;
   font-family: $font-family;
@@ -41,7 +41,7 @@ $color-heading: clr(text-heavy);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: normal,
-  $margin: 0 0 0.5em
+  $margin: 3rem 0
 ) {
   color: $color;
   font-family: $font-family;
@@ -69,7 +69,7 @@ $color-heading: clr(text-heavy);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: normal,
-  $margin: 0 0 0.5em
+  $margin: 3rem 0
 ) {
   color: $color;
   font-family: $font-family;
@@ -91,13 +91,13 @@ $color-heading: clr(text-heavy);
 
 @mixin heading-small(
   $font-family: $font-heading,
-  $font-size: 2.4rem,
+  $font-size: 3rem,
   $line-height: 1.63,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: normal,
-  $margin: 0 0 0.5em
+  $margin: 2.5rem 0
 ) {
   color: $color;
   font-family: $font-family;
@@ -119,13 +119,13 @@ $color-heading: clr(text-heavy);
 
 @mixin heading-xs(
   $font-family: $font-heading,
-  $font-size: 2rem,
+  $font-size: 2.5rem,
   $line-height: 1.7,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: normal,
-  $margin: 0 0 0.5em
+  $margin: 2rem 0
 ) {
   color: $color;
   font-family: $font-family;

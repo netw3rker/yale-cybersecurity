@@ -10,6 +10,7 @@
     heading: h1_heading,
   } %}
 	{% include "@atoms/text/text/01-paragraph.twig" %}
+  {% include "@atoms/buttons/button.twig" %}
   {% include "@atoms/text/headings/_heading.twig" with {
     heading_level: 2,
     heading: h2_heading,
@@ -24,9 +25,14 @@
   {% include "@atoms/text/text/01-paragraph.twig" %}
   {% include "@atoms/lists/ol.twig" %}
   {% include "@atoms/text/headings/_heading.twig" with {
-    heading_level: 3,
-    heading: h3_heading,
+    heading_level: 4,
+    heading: h4_heading,
   } %}
   {% include "@atoms/lists/ul.twig" %}
+  {% include "@atoms/text/text/01-paragraph.twig" %}
+  {% include "@atoms/text/headings/_heading.twig" with {
+    heading_level: 5,
+    heading: h5_heading,
+  } %}
   {% include "@atoms/text/text/01-paragraph.twig" %}
 </div><!--end .text-->
