@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd web/themes/custom/yale_sc
+cd web/themes/custom/yale_infosec
 npm install
 npm run develop

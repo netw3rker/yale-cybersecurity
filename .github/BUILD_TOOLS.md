@@ -10,7 +10,7 @@ lando terminus auth:login --machine-token=TOKEN
 ### Local Build Commands
 
 `npm run build` - Runs a build to startup local environment, then runs `rebuild` command.\
-`npm run rebuild` - Refresh to install new requirements, import Drupal configuration, build theme, and  clear caches.\
+`npm run rebuild` - Refresh to install new requirements, import Drupal configuration, build theme, and clear caches.\
 `npm run import-local-db` - Imports the local database: reference/backup.sql.gz.\
 `npm run export-db` - Exports local database to db-%Y-%m-%d-%H%M.sql.gz file.\
 `npm run get-db` - Acquires database from the Pantheon test environment. \
@@ -30,7 +30,7 @@ Check on coding standards for all custom code. \
 
 ## Theme
 
-This project uses an [Emulsify](https://github.com/emulsify-ds/emulsify-drupal) theme named `yale_sc` (`web/themes/custom/yale_sc/`). For details on Emulsify usage, see that [project wiki](https://docs.emulsify.info/).
+This project uses an [Emulsify](https://github.com/emulsify-ds/emulsify-drupal) theme named `yale_infosec` (`web/themes/custom/yale_infosec/`). For details on Emulsify usage, see that [project wiki](https://docs.emulsify.info/).
 
 #### Theme Tasks
 

@@ -12,6 +12,6 @@ echo "Compiling theme..."
 cd ~/project-build/web/themes/custom/yale_infosec
 
 echo -e "Step 1: sudo npm install --unsafe-perm --no-save"
-yarn
-yarn build
-yarn build-storybook
+npm install
+npm run build
+npm run build-storybook
