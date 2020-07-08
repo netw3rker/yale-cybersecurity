@@ -1,0 +1,34 @@
+.logo {
+  color: white;
+  display: inline-block;
+  line-height: 1;
+  font-family: $font-family-yale;
+  text-decoration: none;
+
+  &--sb {
+    background-color: clr(background-inverse);
+    display: block;
+    padding: 2rem;
+  }
+}
+
+.logo__yale {
+  font-size: 2.5rem;
+  margin-right: 0.25rem;
+
+  @include xs {
+    font-size: 2.8rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.logo__infosec {
+  font-size: 1.65rem;
+  position: relative;
+  text-transform: uppercase;
+  top: 0;
+
+  @include xs {
+    font-size: 1.85rem;
+  }
+}
