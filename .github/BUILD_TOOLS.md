@@ -30,7 +30,7 @@ Check on coding standards for all custom code. \
 
 ## Theme
 
-This project uses an [Emulsify](https://github.com/emulsify-ds/emulsify-drupal) theme named `yale_sc` (`web/themes/custom/yale_sc/`). For details on Emulsify usage, see that [project wiki](https://docs.emulsify.info/).
+This project uses an [Emulsify](https://github.com/emulsify-ds/emulsify-drupal) theme named `yale_infosec` (`web/themes/custom/yale_infosec/`). For details on Emulsify usage, see that [project wiki](https://docs.emulsify.info/).
 
 #### Theme Tasks
 
