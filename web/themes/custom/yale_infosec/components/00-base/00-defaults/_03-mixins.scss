@@ -45,15 +45,6 @@ $outer-container-break: $small;
   @include medium {
     padding: #{$v-padding} 4rem;
   }
-
-  @include breakpoint($container-max-width) {
-    padding-left: calc(
-      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
-    );
-    padding-right: calc(
-      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
-    );
-  }
 }
 
 // Mixin - Standard Margin
