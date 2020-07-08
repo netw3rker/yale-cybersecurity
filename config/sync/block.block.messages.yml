@@ -1,0 +1,20 @@
+uuid: e0d12c28-7171-42bf-8c27-290fca85a895
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yale_infosec
+id: messages
+theme: yale_infosec
+region: content
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  provider: system
+  label_display: '0'
+visibility: {  }
