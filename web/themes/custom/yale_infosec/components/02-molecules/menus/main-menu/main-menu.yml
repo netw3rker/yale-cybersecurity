@@ -1,3 +1,5 @@
+main_nav_modifiers:
+  - 'sb'
 menu_items:
   - title: 'Menu Item 1'
     url: '#'
