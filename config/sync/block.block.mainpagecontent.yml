@@ -1,0 +1,20 @@
+uuid: 76a69584-0644-43e0-8fbe-1f8017c8a791
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yale_infosec
+id: mainpagecontent
+theme: yale_infosec
+region: content
+weight: 1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

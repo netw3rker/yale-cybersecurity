@@ -129,6 +129,23 @@ jobs:
       - attach_workspace:
           at: /tmp
 
+      # Create theme npmrc.
+      - run:
+          name: Create theme .npmrc.
+          command: mv ./.ci/build/.npmrc-example ./web/themes/custom/yale_infosec/.npmrc
+
+      # Authencate npmrc.
+      - run:
+          name: Authencate .npmrc.
+          command: |
+            echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> ./web/themes/custom/yale_infosec/.npmrc
+            echo "@yalesites-org:registry=https://npm.pkg.github.com/" >> ./web/themes/custom/yale_infosec/.npmrc
+
+      # Copy theme .npmrc to project root.
+      - run:
+          name: Copy theme .npmrc to project root.
+          command: cp ./web/themes/custom/yale_infosec/.npmrc ~/.npmrc
+
       # Build theme.
       - run:
           name: Build Theme.
@@ -188,10 +205,10 @@ workflows:
 
   scheduled_update_check:
     triggers:
-       - schedule:
-           cron: "0 0 * * *"
-           filters:
-             branches:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
               only:
                 - master
     jobs:

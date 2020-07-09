@@ -12,6 +12,15 @@
     "get-files": "./scripts/sous/get-files.sh",
     "get-assets": "./scripts/sous/get-files.sh",
     "theme": "./scripts/sous/theme.sh",
-    "build-theme": "./scripts/sous/build-theme.sh"
+    "build-theme": "./scripts/sous/build-theme.sh",
+    "lint": "./scripts/sous/lint.sh"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.2.5"
   }
 }
