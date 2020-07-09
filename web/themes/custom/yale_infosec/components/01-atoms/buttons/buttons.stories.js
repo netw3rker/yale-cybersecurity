@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Button from './react/Button.component';
-
 import button from './button.twig';
 
 import buttonData from './button.yml';
