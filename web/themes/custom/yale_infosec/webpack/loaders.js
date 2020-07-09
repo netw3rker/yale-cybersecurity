@@ -45,8 +45,15 @@ const SVGSpriteLoader = {
   },
 };
 
+const FontLoader = {
+  test: /.(woff|woff2|ttf|eot|otf)$/,
+  loader: 'file-loader',
+  include: [/fonts/],
+};
+
 module.exports = {
   CSSLoader,
   SVGSpriteLoader,
   ImageLoader,
+  FontLoader
 };

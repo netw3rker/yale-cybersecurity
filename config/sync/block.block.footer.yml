@@ -1,0 +1,31 @@
+uuid: 110b75e4-1728-4997-b65c-16b4b779f392
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - yale_infosec
+id: footer
+theme: yale_infosec
+region: footer
+weight: 0
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: Footer
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 1
+  expand: false
+  parent: 'footer:'
+  suggestion: footer
+  label_type: block
+  label_link: false
+visibility: {  }

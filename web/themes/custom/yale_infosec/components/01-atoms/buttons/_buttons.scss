@@ -4,26 +4,14 @@ $button-colors: (
   primary: (
     text: clr(text-inverse),
     bg: clr(primary),
-    text-hover: clr(primary),
-    bg-hover: clr(highlight),
-  ),
-  primary-dark: (
-    text: clr(text),
-    bg: clr(primary),
-    text-hover: clr(text),
-    bg-hover: clr(highlight-high),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(secondary),
   ),
   secondary: (
     text: clr(text-inverse),
     bg: clr(secondary),
-    text-hover: clr(secondary),
-    bg-hover: clr(highlight),
-  ),
-  secondary-dark: (
-    text: clr(text),
-    bg: clr(secondary),
-    text-hover: clr(text),
-    bg-hover: clr(highlight-high),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
   ),
 );
 
@@ -52,11 +40,13 @@ $button-colors: (
 // regardless of color or size.
 @mixin button-base {
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   display: inline-block;
+  font-family: $font-heading;
+  margin: 2rem 0 1.6rem;
   text-decoration: none;
   text-align: center;
-  text-transform: uppercase;
 }
 
 // Button color variations
@@ -64,23 +54,24 @@ $button-colors: (
 @mixin button-color-primary {
   @include buttonColors(primary);
 
-  @media (prefers-color-scheme: dark) {
-    @include buttonColors(primary-dark);
-  }
+//   @media (prefers-color-scheme: dark) {
+//     @include buttonColors(primary-dark);
+//   }
 }
 
 @mixin button-color-secondary {
   @include buttonColors(secondary);
 
-  @media (prefers-color-scheme: dark) {
-    @include buttonColors(secondary-dark);
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   @include buttonColors(secondary-dark);
+  // }
 }
 
 // Button size variations
 @mixin button-medium {
-  line-height: 1.4;
-  padding: $space-one-half $space;
+  font-size: 2.4rem;
+  line-height: 1.49;
+  padding: 1rem 2rem;
 }
 
 @mixin button-large {

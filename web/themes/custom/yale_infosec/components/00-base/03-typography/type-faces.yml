@@ -1,0 +1,43 @@
+families:
+  - name: YaleNew
+    id: yale
+    styles:
+      - name: bold
+        weight: 700
+        style: normal
+      - name: bolditalic
+        weight: 700
+        style: italic
+      - name: italic
+        weight: 400
+        style: italic
+      - name: roman
+        weight: 400
+        style: normal
+  - name: Mallory
+    id: mallory
+    styles:
+      - name: Bold
+        weight: 700
+        style: normal
+      - name: BoldItalic
+        weight: 700
+        style: italic
+      - name: Medium
+        weight: 500
+        style: normal
+      - name: MediumItalic
+        weight: 500
+        style: italic
+      - name: Book
+        weight: 350
+        style: normal
+      - name: BookItalic
+        weight: 350
+        style: italic
+      - name: Light
+        weight: 300
+        style: normal
+      - name: LightItalic
+        weight: 300
+        style: italic
