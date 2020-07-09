@@ -1,8 +1,9 @@
 import React from 'react';
 
-import colors from './colors.twig';
+import colors from '@yalesites-org/yale-twig/00-base/01-colors/colors.twig';
 
-import colorsData from './colors.yml';
+import yaleColorData from '@yalesites-org/yale-twig/00-base/01-colors/colors.yml';
+import colorData from './colors.yml';
 
 /**
  * Storybook Definition.
@@ -10,5 +11,5 @@ import colorsData from './colors.yml';
 export default { title: 'Base/Colors' };
 
 export const Palettes = () => (
-  <div dangerouslySetInnerHTML={{ __html: colors(colorsData) }} />
+  <div dangerouslySetInnerHTML={{ __html: colors({ ...yaleColorData, ...colorData }) }} />
 );

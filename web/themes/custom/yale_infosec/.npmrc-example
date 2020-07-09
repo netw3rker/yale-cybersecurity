@@ -1,0 +1,6 @@
+# Copy this file to .npmrc and replace `<your-token>` with your Github Auth Token
+
+scripts-prepend-node-path=true
+always-auth=true
+@yalesites-org:registry=https://npm.pkg.github.com
+_authToken=<your-token>

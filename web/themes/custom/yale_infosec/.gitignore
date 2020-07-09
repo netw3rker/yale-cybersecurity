@@ -4,6 +4,7 @@ dist
 # Yarn/NPM
 node_modules/
 yarn.lock
+.npmrc
 
 # Storybook
 .out

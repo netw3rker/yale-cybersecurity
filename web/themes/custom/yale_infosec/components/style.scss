@@ -2,6 +2,9 @@
 @import '~normalize.css/normalize';
 @import '~breakpoint-sass/stylesheets/breakpoint';
 
+// Yale "organization" styles
+@import '~@yalesites-org/yale-scss/style';
+
 // Components
 @import '00-base/**/*.scss';
 @import '01-atoms/**/*.scss';

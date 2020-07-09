@@ -1,0 +1,18 @@
+{#
+ # This template is only used by the coponent library.
+ # It should not be used by any front end theme.
+ #}
+
+{% set type__base_class = 'cl-type' %}
+
+<ul {{ bem(type__base_class) }}>
+  {% for family in families %}
+    <li {{ bem('item', [], type__base_class) }}>
+      {% for style in family.styles %}
+        <div {{ bem('sample', [], type__base_class) }} style="font-family: '{{ family.name }}'; font-weight: {{ style.weight }}; font-style: {{ style.style }}">
+          {{ family.name }} {{ style.name }}
+        </div>
+      {% endfor %}
+    </li>
+  {% endfor %}
+</ul>
