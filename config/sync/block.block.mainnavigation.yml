@@ -1,0 +1,31 @@
+uuid: bcf9a1cb-f726-4578-b936-7b4b1c94b63f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - yale_infosec
+id: mainnavigation
+theme: yale_infosec
+region: header
+weight: 1
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation'
+  provider: menu_block
+  label_display: '0'
+  follow: true
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: true
+  parent: 'main:'
+  suggestion: main
+  label_type: block
+  label_link: false
+visibility: {  }
