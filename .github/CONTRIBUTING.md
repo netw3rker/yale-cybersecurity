@@ -17,7 +17,7 @@ https://cybersecurity.yale.edu
 
 - `master` The master branch is for code ready to be released to pantheon dev environment. Code should progress through the pantheon workflow from there.
 - `YI-XX--short-description` `##` represents the Jira ticket number. Feature branches should branch from and merge back into the `master` branch. They contain code that is currently in development. When a story/feature is complete, a pull request should be created merging the feature branch into the `master` branch.
-- `hotfix/short-description` Create a hotfix branch for quick fixes that need to bypass the `master` branch and get merged directly into `master`.
+- `hotfix/short-description` Create a hotfix branch for quick fixes that get merged directly into `master`. The main purpose of this branch naming concention is for quick fixes that are not associated with a ticket with a sprint or backlog.
 
 ### Pull requests
 
