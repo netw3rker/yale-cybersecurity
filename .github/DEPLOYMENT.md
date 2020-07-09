@@ -5,7 +5,7 @@ This documentation outlines the current deployment process for this project.
 
 ## Deployment workflow
 
-CircleCI takes care of automated deployment to the `master` branch.
+CircleCI takes care of automated deployment for the `master` branch.
 
 An automated deployment process is kicked off for the branches mentioned
 above any time you push. You can monitor the progress of the build and deployment 

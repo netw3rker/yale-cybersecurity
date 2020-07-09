@@ -1,11 +1,14 @@
 @mixin link {
-  color: clr(accent);
+  color: clr(primary);
+  text-decoration: none;
 
   &:hover {
-    color: clr(accent-high);
+    color: clr(secondary);
+    text-decoration: underline;
   }
 }
 
+a,
 .link {
   @include link;
 }
