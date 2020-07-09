@@ -1,0 +1,20 @@
+uuid: 263f104f-52f8-4eb6-8129-e5b50699fb11
+langcode: en
+status: true
+dependencies:
+  theme:
+    - yale_infosec
+id: tabs
+theme: yale_infosec
+region: content
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
