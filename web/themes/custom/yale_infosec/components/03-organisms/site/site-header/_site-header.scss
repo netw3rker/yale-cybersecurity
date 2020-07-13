@@ -1,7 +1,17 @@
 .header {
   background-color: clr(background-inverse);
-  margin-bottom: 4em;
+  left: 0;
   max-width: 976px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+
+  // When no hero is present, the header can't cover the content.
+  // So for now, we will make sure that main has enough margin if hero doesn't exist.
+  // We will likely change this when we get this into Drupal.
+  & + .main {
+    margin-top: 30rem;
+  }
 
   &__inner {
     @include wrapper;
