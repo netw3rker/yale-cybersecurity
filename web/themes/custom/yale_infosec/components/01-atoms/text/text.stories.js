@@ -20,9 +20,10 @@ export const headingsExamples = () => (
   <div dangerouslySetInnerHTML={{ __html: headings }} />
 );
 export const blockquoteExample = () => (
-  <div className="cl-wrap">
-    <div dangerouslySetInnerHTML={{ __html: blockquote({ ...blockquoteData, blockquote_modifiers: ['sb'] }) }} />
-  </div>
+  <div
+    className="cl-wrap"
+    dangerouslySetInnerHTML={{ __html: blockquote({ ...blockquoteData, blockquote_modifiers: ['sb'] }) }}
+  />
 );
 export const preformatted = () => (
   <div dangerouslySetInnerHTML={{ __html: pre({}) }} />
