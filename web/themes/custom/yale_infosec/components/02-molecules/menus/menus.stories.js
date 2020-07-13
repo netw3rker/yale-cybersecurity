@@ -24,7 +24,9 @@ export const inline = () => (
   <div dangerouslySetInnerHTML={{ __html: inlineMenu(inlineMenuData) }} />
 );
 export const main = () => (
-  <div dangerouslySetInnerHTML={{ __html: mainMenu(mainMenuData) }} />
+  <div className="cl-wrap--dark">
+    <div dangerouslySetInnerHTML={{ __html: mainMenu(mainMenuData) }} />
+  </div>
 );
 export const social = () => (
   <div dangerouslySetInnerHTML={{ __html: socialMenu(socialMenuData) }} />

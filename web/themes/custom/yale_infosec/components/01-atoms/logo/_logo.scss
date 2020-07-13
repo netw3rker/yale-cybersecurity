@@ -5,12 +5,6 @@
   font-family: $font-family-yale;
   text-decoration: none;
 
-  &--sb {
-    background-color: clr(background-inverse);
-    display: block;
-    padding: 2rem;
-  }
-
   @include large {
     border-bottom: 1px solid clr(border);
     padding-bottom: 0.8rem;
