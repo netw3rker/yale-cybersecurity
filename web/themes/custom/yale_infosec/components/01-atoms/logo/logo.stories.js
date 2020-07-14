@@ -8,5 +8,8 @@ import logo from './logo.twig';
 export default { title: 'Atoms/Logo' };
 
 export const Example = () => (
-  <div dangerouslySetInnerHTML={{ __html: logo({ link_modifiers: ['sb'] }) }} />
+  <div 
+    className="cl-wrap--dark"
+    dangerouslySetInnerHTML={{ __html: logo() }}
+  />
 );
