@@ -84,6 +84,7 @@
     "develop": "concurrently --raw \"npm run webpack\" \"npm run babel\" \"npm run storybook\""
   },
   "devDependencies": {
+    "@storybook/addon-viewport": "^5.3.19",
     "core-js": "2.6.10",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
