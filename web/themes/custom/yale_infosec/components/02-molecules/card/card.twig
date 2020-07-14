@@ -27,16 +27,18 @@
 
 <div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
   {# Image #}
-  {% block card__img %}
-    {% if card__image__src %}
-      {% include "@atoms/images/image/responsive-image.twig" with {
-        image_blockname: card__base_class,
-        output_image_tag: card__image__output_image_tag,
-        image_src: card__image__src,
-        image_alt: card__image__alt,
-      } %}
-    {% endif %}
-  {% endblock %}
+  <div {{ bem('image', card__content__modifiers, card__base_class) }}>
+    {% block card__img %}
+      {% if card__image__src %}
+        {% include "@atoms/images/image/responsive-image.twig" with {
+          image_blockname: card__base_class,
+          output_image_tag: card__image__output_image_tag,
+          image_src: card__image__src,
+          image_alt: card__image__alt,
+        } %}
+      {% endif %}
+    {% endblock %}
+  </div>
   {# Content #}
   <div {{ bem('copy', card__content__modifiers, card__base_class) }}>
     {# Heading #}

@@ -8,6 +8,8 @@
 
   &--card {
     @include space-stack-page;
+
+    justify-content: center;
   }
 }
 

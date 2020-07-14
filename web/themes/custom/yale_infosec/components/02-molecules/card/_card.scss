@@ -1,6 +1,17 @@
-.card__copy {
+.card {
   border: solid 1px rgba(151, 141, 133, 0.45);
   background-color: clr('accentsubtle');
+  max-width: 500px;
+}
+
+.card__image {
+  img,
+  picture {
+    width: 100%;
+  }
+}
+
+.card__copy {
   padding: 2.7rem $space-half-double $space-double;
 }
 
