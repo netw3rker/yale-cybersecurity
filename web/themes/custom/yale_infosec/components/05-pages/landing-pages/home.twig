@@ -1,6 +1,6 @@
 {% set page_layout_modifier = 'full' %}
 
-{% embed "@templates/full-width.twig" %}
+{% extends "@templates/full-width.twig" %}
   {% block page_content %}
     {% include "@atoms/text/headings/_heading.twig" with {
       heading_level: '2',
@@ -47,4 +47,3 @@
       cta__button_text: 'Click me!',
     } %}
   {% endblock %}
-{% endembed %}
