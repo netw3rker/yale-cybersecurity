@@ -1,0 +1,35 @@
+{#
+ # Available variables:
+ # - teaser_list__base_class - base classname of the wrapper.
+ # - teaser_list__modifiers - array of modifiers to add to the base classname of the wrapper.
+ # - teaser_list__blockname - blockname prepended to the base classname of the wrapper(s) and each component.
+ #
+ # - teaser_list__heading - the content of the title component.
+ # - teaser_list__heading__base_class - base classname of the title component. Defaults to "title".
+ # - teaser_list__heading__blockname - blockname to add to the base classname of the title - defaults to teaser_list__base_class.
+ # - teaser_list__heading__modifiers - array of modifiers to add to the base classname of the title.
+ #}
+{% set teaser_list__base_class = 'teaser-list' %}
+
+<div {{ bem(teaser_list__base_class, teaser_list__modifiers, teaser_list__blockname) }}>
+  {# Heading #}
+  {% if teaser_list__heading %}
+    {{ title_prefix }}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: teaser_list__heading__base_class|default('heading'),
+      heading_modifiers: teaser_list__heading__modifiers,
+      heading_blockname: teaser_list__base_class,
+      heading_level: 2,
+      heading: teaser_list__heading,
+    } %}
+    {{ title_suffix }}
+  {% endif %}
+  <div {{ bem('items', [], teaser_list__base_class) }}>
+    {% for item in teaser_list__items %}
+      {% include "@molecules/teaser/teaser.twig" with {
+        teaser__heading: item.teaser__heading,
+        teaser__body: item.teaser__body,
+      } %}
+    {% endfor %}
+  </div>
+</div>
