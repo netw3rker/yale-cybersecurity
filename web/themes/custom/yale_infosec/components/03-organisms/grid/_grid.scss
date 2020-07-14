@@ -10,6 +10,10 @@
     @include space-stack-page;
 
     justify-content: center;
+
+    @include large {
+      justify-content: normal;
+    }
   }
 }
 
