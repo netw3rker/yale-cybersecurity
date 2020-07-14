@@ -4,18 +4,24 @@
   margin-bottom: $space-triple;
   position: relative;
 
-  &--guide::after {
-    background-image: linear-gradient(to bottom, rgba(44, 44, 44, 0), rgba(44, 44, 44, 1));
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+  &--guide {
+    @include large {
+      height: 90vh;
+    }
 
-    @include medium {
-      background-image: linear-gradient(to bottom, rgba(44, 44, 44, 0), rgba(44, 44, 44, 0.71));
+    &::after {
+      background-image: linear-gradient(to bottom, rgba(44, 44, 44, 0), rgba(44, 44, 44, 1));
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      @include medium {
+        background-image: linear-gradient(to bottom, rgba(44, 44, 44, 0), rgba(44, 44, 44, 0.71));
+      }
     }
   }
 }
@@ -37,6 +43,17 @@
 
     @include medium {
       width: 100%;
+    }
+  }
+
+  &--guide {
+    height: 100%;
+
+    img,
+    picture {
+      @include large {
+        height: 100%;
+      }
     }
   }
 }

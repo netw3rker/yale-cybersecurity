@@ -1,10 +1,11 @@
 .header {
   background-color: clr(background-inverse);
   left: 0;
-  max-width: 976px;
+  max-width: 985px;
   position: absolute;
   top: 0;
   z-index: 1;
+  width: 100%;
 
   // When no hero is present, the header can't cover the content.
   // So for now, we will make sure that main has enough margin if hero doesn't exist.
