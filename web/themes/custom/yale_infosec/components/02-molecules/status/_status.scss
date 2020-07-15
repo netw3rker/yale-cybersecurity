@@ -11,17 +11,16 @@
   text-align: center;
 
   &--warning {
-    color: clr(white);
-    background-color: clr(warning);
+    background-color: color(warning);
   }
 
   &--error {
-    color: clr(white);
-    background-color: clr(error);
+    color: clr(text-inverse);
+    background-color: color(danger);
   }
 
   &--status {
-    color: clr(white);
-    background-color: clr(message);
+    color: clr(text-inverse);
+    background-color: color(success);
   }
 }

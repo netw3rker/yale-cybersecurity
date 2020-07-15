@@ -2,40 +2,56 @@
 .toggle-expand {
   @include link;
 
-  @include medium {
+  color: clr(text-inverse);
+
+  @include large {
     display: none;
   }
 
   display: inline-block;
-  padding: $space;
   text-decoration: none;
   width: 100%;
-
-  /* See main-menu.js */
-  &--open {
-    background-color: clr(accent);
-  }
 }
 
 .toggle-expand__text {
+  color: rgba(255, 255, 255, 0.65);
   display: block;
-  font-size: 0.9rem;
-  font-weight: bold;
+  font-size: 1.24rem;
+  margin-right: 0.75rem;
+  text-transform: uppercase;
 
-  .toggle-expand--open & {
-    color: clr(background);
+  @include medium {
+    font-size: 1.9rem;
+    margin-right: $space;
+
+    .toggle-expand__close & {
+      margin-right: 1rem;
+    }
   }
 }
 
 /* SVG icon */
 .toggle-expand__icon {
-  height: 3rem;
-  width: 3rem;
+  height: 2.3rem;
+  fill: clr(text-inverse);
+  width: 2.3rem;
   margin: 0 auto;
+
+  @include medium {
+    height: 3.2rem;
+    width: 3.2rem;
+
+    .toggle-expand__close & {
+      height: 3.7rem;
+      margin-top: -5px;
+      width: 3.7rem;
+    }
+  }
 }
 
 .toggle-expand__open {
-  display: inline-block;
+  align-items: center;
+  display: flex;
   text-align: center;
 
   .toggle-expand--open & {
@@ -44,18 +60,11 @@
 }
 
 .toggle-expand__close {
+  align-items: center;
   display: none;
   text-align: center;
 
-  &::before {
-    color: clr(background);
-    content: 'X';
-    display: block;
-    font-size: 2.5rem;
-    line-height: 2;
-  }
-
   .toggle-expand--open & {
-    display: inline-block;
+    display: flex;
   }
 }

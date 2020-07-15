@@ -3,9 +3,9 @@
   display: flex;
 
   .icon {
-    height: 100px;
+    height: 120px;
     padding: $space;
-    width: 100px;
+    width: 120px;
 
     @media (prefers-color-scheme: dark) {
       fill: clr(accent-high);
@@ -13,14 +13,14 @@
   }
 
   pre {
-    background-color: clr(muted);
-    font-size: 0.8rem;
+    background-color: clr(background-section);
+    font-size: 1.4rem;
     margin: 0;
     text-align: center;
   }
 }
 
 .icons-demo__item {
-  border: 1px solid clr(muted);
+  border: 1px solid clr(background-section);
   margin: $space-one-fourth;
 }
