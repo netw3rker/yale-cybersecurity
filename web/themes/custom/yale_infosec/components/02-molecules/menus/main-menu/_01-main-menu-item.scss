@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   position: relative;
 
-  @include medium {
+  @include large {
     border-top: none;
     display: inline-block;
 
@@ -14,9 +14,9 @@
       background-color: clr(accent-high);
       transition: all 0.2s;
 
-      & > .main-menu--sub {
-        display: block;
-      }
+      // & > .main-menu--sub {
+      //   display: block;
+      // }
     }
   }
 
@@ -36,7 +36,7 @@
   color: clr(white);
   position: relative;
 
-  @include medium {
+  @include large {
     display: none;
   }
 
@@ -75,7 +75,7 @@
 
 /* LI (Nested) */
 .main-menu__item--sub {
-  @include medium {
+  @include large {
     display: block;
 
     &:not(:first-child) {

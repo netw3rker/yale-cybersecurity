@@ -1,10 +1,10 @@
 /* A */
 .main-menu__link {
-  color: clr(accent);
+  color: clr(text-inverse);
   display: block;
   font-size: 1.2rem;
   line-height: 1.5;
-  padding: $space $space-triple $space $space-double;
+  padding: 0 $space-triple $space $space-double;
   text-decoration: none;
   font-weight: bold;
 
@@ -12,26 +12,20 @@
     width: 80%;
   }
 
-  @include medium {
+  @include large {
     border-bottom: none;
     display: inline-block;
-    font-size: 1.1rem;
-    padding: $space;
-    text-transform: none;
+    font-size: 1.9rem;
+    line-height: 1.47;
+    padding: 0 2rem $space 0;
     position: relative;
+    text-transform: uppercase;
     width: auto;
 
     &.active,
     &:active,
     &:hover {
       color: clr(highlight-high);
-    }
-
-    &::after {
-      color: clr(white);
-      display: inline-block;
-      content: '>';
-      margin-left: 0.5rem;
     }
 
     &--sub::after {
@@ -58,7 +52,7 @@
   padding-left: $space-triple;
   font-weight: normal;
 
-  @include medium {
+  @include large {
     color: clr(highlight);
     display: block;
     padding: $space-one-third $space;
