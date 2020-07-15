@@ -1,6 +1,7 @@
 @mixin link {
   color: clr(primary);
   text-decoration: none;
+  transition: color 0.15s;
 
   &:hover {
     color: clr(secondary);
