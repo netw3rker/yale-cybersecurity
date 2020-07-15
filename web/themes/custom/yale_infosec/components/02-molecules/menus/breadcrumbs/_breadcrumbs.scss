@@ -21,7 +21,7 @@ $color-breadcrumb-active: clr(text);
 
 .breadcrumb__item {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 1.5rem;
 
   &::after {
     content: '/';

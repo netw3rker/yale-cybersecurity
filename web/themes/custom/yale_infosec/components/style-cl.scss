@@ -1,0 +1,19 @@
+// This File is imported by Component Library
+@import "style";
+
+// Styles specific to Component Library (not Drupal).
+@mixin wrap {
+  display: block;
+  padding: 2rem;
+}
+
+.cl-wrap {
+  @include wrap;
+}
+
+
+.cl-wrap--dark {
+  @include wrap;
+
+  background-color: clr(background-inverse);
+}

@@ -5,17 +5,17 @@ $main-menu-medium: $medium;
 .main-nav {
   display: none;
 
-  @include medium {
-    display: block;
+  @include large {
+    display: flex;
   }
 
   &--open {
-    background-color: clr(background);
+    background-color: clr(background-inverse);
     display: block;
     left: 0;
     overflow-y: scroll;
-    position: absolute;
-    top: 134px;
+    position: fixed;
+    top: 94px;
     right: 0;
     width: 100%;
   }
@@ -29,7 +29,7 @@ $main-menu-medium: $medium;
   position: relative;
   z-index: 10;
 
-  @include medium {
+  @include large {
     border-bottom: none;
   }
 }
@@ -46,7 +46,7 @@ $main-menu-medium: $medium;
   background-color: clr(muted);
   width: 100%;
 
-  @include medium {
+  @include large {
     background-color: clr(highlight-high);
     display: none;
     height: auto;
@@ -62,7 +62,7 @@ $main-menu-medium: $medium;
   }
 
   &:hover {
-    @include medium {
+    @include large {
       opacity: 1;
       background-color: clr(accent-high);
       transition: all 0.2s;
@@ -87,7 +87,16 @@ $main-menu-medium: $medium;
 }
 
 .main-menu--sub-2 {
-  @include medium {
+  @include large {
     display: none; /* Never shown on large screens */
   }
+}
+
+// Search Icon
+.search__icon {
+  fill: clr(background);
+  height: 2.5rem;
+  position: relative;
+  top: -1px;
+  width: 2.2rem;
 }
