@@ -1,5 +1,6 @@
 module:
   admin_toolbar: 0
+  admin_toolbar_tools: 0
   allowed_formats: 0
   automated_cron: 0
   blazy: 0
@@ -37,6 +38,7 @@ module:
   file_browser: 0
   filter: 0
   focal_point: 0
+  google_analytics: 0
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
@@ -46,6 +48,7 @@ module:
   linkit: 0
   media: 0
   media_entity_browser: 0
+  media_library: 0
   menu_block: 0
   menu_link_content: 0
   menu_ui: 0
