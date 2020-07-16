@@ -13,6 +13,30 @@ $button-colors: (
     text-hover: clr(text-inverse),
     bg-hover: clr(primary),
   ),
+  yale: (
+    text: clr(text-inverse),
+    bg: clr(background-inverse),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
+  ),
+  yale-light: (
+    text: color(gray-22),
+    bg: clr(muted),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
+  ),
+  muted: (
+    text: clr(text-inverse),
+    bg: clr(accent),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
+  ),
+  muted-dark: (
+    text: clr(text-inverse),
+    bg: color(gray-4a),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
+  ),
 );
 
 // Mixin to define colors for one or more schemes.
@@ -64,10 +88,22 @@ $button-colors: (
 
 @mixin button-color-secondary {
   @include buttonColors(secondary);
+}
 
-  // @media (prefers-color-scheme: dark) {
-  //   @include buttonColors(secondary-dark);
-  // }
+@mixin button-color-yale {
+  @include buttonColors(yale);
+}
+
+@mixin button-color-yale-light {
+  @include buttonColors(yale-light);
+}
+
+@mixin button-color-muted {
+  @include buttonColors(muted);
+}
+
+@mixin button-color-muted-dark {
+  @include buttonColors(muted-dark);
 }
 
 // Button size variations
@@ -82,12 +118,33 @@ $button-colors: (
   padding: $space $space-double;
 }
 
-.button {
-  @include button-base;
-  @include button-color-primary;
-  @include button-medium;
+@mixin button-bg {
+  &--primary {
+    @include button-color-primary;
+  }
 
-  &--alt {
+  &--secondary {
     @include button-color-secondary;
   }
+
+  &--yale {
+    @include button-color-yale;
+  }
+
+  &--yale-light {
+    @include button-color-yale-light;
+  }
+
+  &--muted {
+    @include button-color-muted;
+  }
+
+  &--muted-dark {
+    @include button-color-muted-dark;
+  }
+}
+
+.button {
+  @include button-base;
+  @include button-bg;
 }
