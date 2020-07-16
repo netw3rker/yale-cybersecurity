@@ -25,9 +25,20 @@
  #}
 {% set cta__base_class = 'cta' %}
 
-<div {{ bem(cta__base_class, cta__modifiers, cta__blockname) }}>
+{% set cta__image_modifiers = [] %}
+{% set cta__heading__modifiers = [] %}
+{% set cta__body__modifiers = [] %}
+
+{% if 'image-light' in cta__modifiers %}
+  {% set cta__image_modifiers = cta__image_modifiers|merge(['light']) %}
+  {% set cta__heading__modifiers = cta__heading__modifiers|merge(['dark']) %}
+  {% set cta__body__modifiers = cta__body__modifiers|merge(['dark']) %}
+{% endif %}
+
+<div {{ bem(cta__base_class, cta__modifiers|default(['yale']), cta__blockname) }}>
   {# Image #}
-  <div {{ bem('image', [], cta__base_class) }}>
+  {% if cta__image %}
+  <div {{ bem('image', cta__image_modifiers, cta__base_class) }}>
     {% block cta__img %}
       {% if cta__image__src %}
         {% include "@atoms/images/image/responsive-image.twig" with {
@@ -39,6 +50,7 @@
       {% endif %}
     {% endblock %}
   </div>
+  {% endif %}
   <div {{ bem('inner', [], cta__base_class) }}>
     {# Copy #}
     {% include "@atoms/text/headings/_heading.twig" with {
@@ -64,7 +76,7 @@
         {% include "@atoms/links/link/link.twig" with {
           link_base_class: 'button',
           link_blockname: cta__base_class,
-          link_modifiers: cta__modifiers|default(['secondary']),
+          link_modifiers: cta__btn_modifiers|default(['secondary']),
           link_url: cta__link_url,
           link_content: cta__link_text|default('Click to learn more')
         } %}
@@ -73,6 +85,7 @@
         {% include "@atoms/links/link/link.twig" with {
           link_base_class: 'button',
           link_blockname: cta__base_class,
+          link_modifiers: cta__btn_modifiers|default(['primary']),
           link_url: cta__link_url_2,
           link_content: cta__link_text_2|default('Click to learn more')
         } %}
