@@ -1,0 +1,131 @@
+.hero {
+  color: clr(text-inverse);
+  overflow: hidden;
+  margin-bottom: $space-triple;
+  position: relative;
+
+  &--guide {
+    @include large {
+      height: 90vh;
+    }
+
+    &::after {
+      background-image: linear-gradient(to bottom, rgba(44, 44, 44, 0), rgba(44, 44, 44, 1));
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      @include medium {
+        background-image: linear-gradient(to bottom, rgba(44, 44, 44, 0), rgba(44, 44, 44, 0.71));
+      }
+    }
+  }
+}
+
+.hero__image {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @include medium {
+    position: static;
+  }
+
+  img,
+  picture {
+    max-width: none;
+    object-fit: cover;
+
+    @include medium {
+      width: 100%;
+    }
+  }
+
+  &--guide {
+    height: 100%;
+
+    img,
+    picture {
+      @include large {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.hero__copy {
+  padding: 13rem 1rem 3rem;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  @include medium {
+    bottom: $space-triple;
+    left: 0;
+    padding: 0;
+    position: absolute;
+  }
+}
+
+.hero__copy-inner {
+  margin: 0 auto;
+  max-width: 875px;
+
+  @include small {
+    width: 80%;
+  }
+}
+
+.hero__subheading {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 3.87px;
+  margin: 0 0 0 42px;
+  text-transform: uppercase;
+
+  @include medium {
+    font-size: 1.8rem;
+    margin: 0 0 0 86px;
+  }
+
+  @include large {
+    margin: 0 0 0 88px;
+  }
+}
+
+.hero__icon {
+  fill: rgba(255, 255, 255, 0.7);
+  height: 34px;
+  margin-right: $space;
+  width: 25px;
+
+  @include medium {
+    height: 68px;
+    width: 70px;
+  }
+}
+
+.hero__title {
+  display: flex;
+}
+
+.hero__heading {
+  font-size: 4.2rem;
+  font-weight: 900;
+  line-height: 0.9;
+  margin: 0;
+  width: 92%;
+
+  @include medium {
+    font-size: 5.2rem;
+  }
+
+  @include large {
+    font-size: 7.2rem;
+  }
+}
