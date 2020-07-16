@@ -43,8 +43,11 @@ $button-colors: (
   border-radius: 5px;
   cursor: pointer;
   display: inline-block;
-  font-family: $font-heading;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.21;
   margin: 2rem 0 1.6rem;
+  padding: 1.4rem $space;
   text-decoration: none;
   text-align: center;
 }

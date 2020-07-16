@@ -1,2 +1,6 @@
+cta__image__src: 'https://placeimg.com/1000/480/nature'
+cta__image__alt: 'CTA Image background'
 cta__heading: 'This is a reason to act'
-cta__button_text: 'Click here'
+cta__body: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+cta__link_url: '#'
+cta__link_text: 'Diam Nonumy Eirmod Tempor Invidunt'

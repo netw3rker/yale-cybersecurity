@@ -1,7 +1,83 @@
+{#
+ # Available variables:
+ # - cta__base_class - base classname of the wrapper.
+ # - cta__modifiers - array of modifiers to add to the base classname of the wrapper.
+ # - cta__blockname - blockname prepended to the base classname of the wrapper(s) and each component.
+ #
+ # - cta__image__src - the actual image file location.
+ # - cta__image__alt - (optional) the alt text for screen readers and when the image cannot load.
+ # - cta__image__output_image_tag - whether to print the picture element or not.
+ #
+ # - cta__content__base_class - base classname of the copy wrapper - defaults to 'heading'.
+ # - cta__content__modifiers - array of modifiers to add to the base classname of the copy wrapper.
+ # - cta__content__blockname - blockname prepended to the base classname of the copy wrapper.
+ #
+ # - cta__heading - the content of the title component.
+ # - cta__heading__link - (optional) the url the title should link to. Defaults to cta__link__url.
+ # - cta__heading__base_class - base classname of the title component. Defaults to "title".
+ # - cta__heading__blockname - blockname to add to the base classname of the title - defaults to cta__base_class.
+ # - cta__heading__modifiers - array of modifiers to add to the base classname of the title.
+ # - cta__heading__link_base_class - base class to add to the title link - defaults to 'title-link'.
+ #
+ # - cta__body - the content of the body component.
+ # - cta__body__base_class - base classname of the body component. Defaults to "body".
+ # - cta__body__modifiers - array of modifiers to add to the base classname of the body.
+ #}
 {% set cta__base_class = 'cta' %}
-<div {{ bem(cta__base_class, cta__modifiers, cta__blockname, cta__extra_classes) }}>
-  <h2>{{ cta__heading }}</h2>
-  {% include "@atoms/buttons/button.twig" with {
-    button_content: cta__button_text,
-  } %}
+
+<div {{ bem(cta__base_class, cta__modifiers, cta__blockname) }}>
+  {# Image #}
+  <div {{ bem('image', [], cta__base_class) }}>
+    {% block cta__img %}
+      {% if cta__image__src %}
+        {% include "@atoms/images/image/responsive-image.twig" with {
+          image_blockname: cta__base_class,
+          output_image_tag: cta__image__output_image_tag,
+          image_src: cta__image__src,
+          image_alt: cta__image__alt,
+        } %}
+      {% endif %}
+    {% endblock %}
+  </div>
+  <div {{ bem('inner', [], cta__base_class) }}>
+    {# Copy #}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: 'heading',
+      heading_modifiers: cta__heading__modifiers,
+      heading_blockname: cta__base_class,
+      heading_level: 2,
+      heading: cta__heading,
+    } %}
+    {% if cta__body %}
+      {% include "@atoms/text/text/01-paragraph.twig" with {
+        paragraph_base_class: 'body',
+        paragraph_modifiers: cta__body__modifiers,
+        paragraph_blockname: cta__base_class,
+        paragraph_content: cta__body,
+      } %}
+    {% endif %}
+    {# Links #}
+    {% if cta__link_url_2 %}
+    <div {{ bem('links', [], cta__base_class) }}>
+    {% endif %}
+      {% if cta__link_url %}
+        {% include "@atoms/links/link/link.twig" with {
+          link_base_class: 'button',
+          link_blockname: cta__base_class,
+          link_url: cta__link_url,
+          link_content: cta__link_text|default('Click to learn more')
+        } %}
+      {% endif %}
+      {% if cta__link_url_2 %}
+        {% include "@atoms/links/link/link.twig" with {
+          link_base_class: 'button',
+          link_blockname: cta__base_class,
+          link_url: cta__link_url_2,
+          link_content: cta__link_text_2|default('Click to learn more')
+        } %}
+      {% endif %}
+    {% if cta__link_url_2 %}
+    </div>
+    {% endif %}
+  </div>
 </div>
