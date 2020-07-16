@@ -15,7 +15,13 @@
   }
 
   &__inner {
-    @include wrapper;
+    max-width: 1224px;
+    padding: 0 $space-half;
+    width: 100%;
+
+    @include medium {
+      padding: 0 $space;
+    }
 
     display: flex;
     flex-flow: column nowrap;

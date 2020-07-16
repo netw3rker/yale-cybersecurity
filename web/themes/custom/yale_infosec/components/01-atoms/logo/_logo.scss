@@ -5,6 +5,11 @@
   font-family: $font-family-yale;
   text-decoration: none;
 
+  &:hover {
+    color: clr('muted');
+    text-decoration: none;
+  }
+
   @include large {
     border-bottom: 1px solid clr(border);
     padding-bottom: 0.8rem;
@@ -13,8 +18,7 @@
 }
 
 .logo__yale {
-  font-size: 2.25rem;
-  margin-right: 0.25rem;
+  font-size: 2.15rem;
 
   @include small {
     font-size: 2.8rem;
@@ -28,7 +32,7 @@
 }
 
 .logo__infosec {
-  font-size: 1.57rem;
+  font-size: 1.47rem;
   position: relative;
   text-transform: uppercase;
   top: 0;
