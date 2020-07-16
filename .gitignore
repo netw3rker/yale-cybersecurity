@@ -160,7 +160,7 @@ web/sites/simpletest
 ######################
 .DS_Store*
 ehthumbs.db
-Icon?
+Icon[\r]
 Thumbs.db
 ._*
 
