@@ -1,0 +1,11 @@
+teaser_list__heading: 'Lorem Ipsum Dolor'
+teaser_list__items:
+  - teaser__heading: "Consetetur Sadipscing Elitr"
+    teaser__body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+    teaser__link__url: "#"
+  - teaser__heading: "Sed Diam Nonumy Eirmod"
+    teaser__body: "Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+    teaser__link__url: "#"
+  - teaser__heading: "Ut Labore Et Dolore"
+    teaser__body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+    teaser__link__url: "#"
