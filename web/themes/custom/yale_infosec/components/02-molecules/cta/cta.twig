@@ -64,7 +64,7 @@
         {% include "@atoms/links/link/link.twig" with {
           link_base_class: 'button',
           link_blockname: cta__base_class,
-          link_modifiers: cta__modifiers|default('secondary'),
+          link_modifiers: cta__modifiers|default(['secondary']),
           link_url: cta__link_url,
           link_content: cta__link_text|default('Click to learn more')
         } %}

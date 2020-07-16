@@ -17,7 +17,23 @@
 } %}
 
 <button {{ add_attributes(additional_attributes) }}>
+  {% if button_icon_before %}
+    {% include "@atoms/images/icons/_icon.twig" with {
+      icon_blockname: button_base_class,
+      icon_modifiers: ['before'],
+      icon_name: button_icon_before,
+      icon_decorative: true,
+    } %}
+  {% endif %}
   {% block button_content %}
     {{ button_content }}
   {% endblock %}
+  {% if button_icon_after %}
+    {% include "@atoms/images/icons/_icon.twig" with {
+      icon_blockname: button_base_class,
+      icon_modifiers: ['after'],
+      icon_name: button_icon_after,
+      icon_decorative: true,
+    } %}
+  {% endif %}
 </button>

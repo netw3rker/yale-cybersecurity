@@ -9,6 +9,6 @@ import ctaData from './cta.yml';
  */
 export default { title: 'Molecules/CTA' };
 
-export const ctaExample = () => (
+export const imageOrangeButton = () => (
   <div dangerouslySetInnerHTML={{ __html: cta(ctaData) }} />
 );
