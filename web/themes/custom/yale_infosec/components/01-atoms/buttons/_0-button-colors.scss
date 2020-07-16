@@ -1,0 +1,61 @@
+// Sass map to define colors. Each set should have a "Dark" variation when required.
+// e.g. `default` and `default-dark`. Or `purple` and `purple-dark`.
+$button-colors: (
+  primary: (
+    text: clr(text-inverse),
+    bg: clr(primary),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(secondary),
+  ),
+  secondary: (
+    text: clr(text-inverse),
+    bg: clr(secondary),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
+  ),
+  yale: (
+    text: clr(text-inverse),
+    bg: clr(background-inverse),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
+  ),
+  yale-light: (
+    text: color(gray-22),
+    bg: clr(muted),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
+  ),
+  muted: (
+    text: clr(text-inverse),
+    bg: clr(accent),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
+  ),
+  muted-dark: (
+    text: clr(text-inverse),
+    bg: color(gray-4a),
+    text-hover: clr(text-inverse),
+    bg-hover: clr(primary),
+  ),
+);
+
+// Mixin to define colors for one or more schemes.
+// Simply pass the color scheme to the mixin to get the colors defined in the map.
+// e.g. @include buttonColors(default) will get all of the colors defined in the "default" section.
+@mixin buttonColors(
+  $scheme,
+  $pallate: map-get($button-colors, $scheme),
+  $map: $button-colors
+) {
+  color: map-get($pallate, text);
+  background-color: map-get($pallate, bg);
+
+  &:visited {
+    color: map-get($pallate, text);
+  }
+
+  &:hover {
+    color: map-get($pallate, text-hover);
+    background-color: map-get($pallate, bg-hover);
+  }
+}
