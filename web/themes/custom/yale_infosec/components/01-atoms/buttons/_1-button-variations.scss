@@ -12,7 +12,11 @@
   padding: 1.4rem $space;
   text-decoration: none;
   text-align: center;
-  transition: all 0.15s
+  transition: all 0.15s;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 // Button color variations
