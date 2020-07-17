@@ -13,3 +13,7 @@ items:
     value: 'close'
   - name: 'Book'
     value: 'book'
+  - name: 'Check'
+    value: 'check'
+  - name: 'Arrow Right'
+    value: 'arrow-right'
