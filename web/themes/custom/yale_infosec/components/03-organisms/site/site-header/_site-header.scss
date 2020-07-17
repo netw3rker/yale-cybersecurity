@@ -1,7 +1,7 @@
 .header {
   background-color: clr(background-inverse);
   left: 0;
-  max-width: 985px;
+  max-width: 992px;
   position: absolute;
   top: 0;
   z-index: 1;
@@ -19,8 +19,16 @@
     padding: 0 $space-half;
     width: 100%;
 
-    @include medium {
+    @include small {
       padding: 0 $space;
+    }
+
+    @include medium {
+      padding: 0 $space-triple;
+    }
+
+    @include large {
+      padding: 0 3.6rem 0 5.5rem;
     }
 
     display: flex;

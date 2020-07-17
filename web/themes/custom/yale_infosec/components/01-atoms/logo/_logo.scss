@@ -11,9 +11,19 @@
   }
 
   @include large {
-    border-bottom: 1px solid clr(border);
     padding-bottom: 0.8rem;
+    position: relative;
     margin-bottom: 2rem;
+
+    &::after {
+      background-color: clr(border);
+      bottom: 0;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 106%;
+    }
   }
 }
 

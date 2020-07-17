@@ -11,12 +11,19 @@
 
     /* Only top level */
     &:not(.main-menu__item--sub):hover {
-      background-color: clr(accent-high);
       transition: all 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
 
       // & > .main-menu--sub {
       //   display: block;
       // }
+    }
+
+    &--not-hovered {
+      opacity: 0.8;
     }
   }
 
