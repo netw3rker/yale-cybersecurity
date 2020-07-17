@@ -75,6 +75,7 @@ $main-menu-medium: $medium;
   left: 0;
   position: absolute;
   transform: translateX(100%);
+  transition: transform 0.3s;
   top: 0;
   width: 100%;
   z-index: 1;
