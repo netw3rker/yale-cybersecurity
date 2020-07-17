@@ -1,12 +1,17 @@
 /* A */
 .main-menu__link {
+  border-radius: 4px;
   color: clr(text-inverse);
   display: block;
-  font-size: 1.2rem;
   line-height: 1.5;
-  padding: 0 $space-triple $space $space-double;
+  padding: $space;
   text-decoration: none;
   font-weight: bold;
+
+  &:hover {
+    color: clr(text-inverse);
+    text-decoration: none;
+  }
 
   &--with-sub {
     width: 80%;
@@ -34,7 +39,6 @@
 
     &:hover {
       color: clr(background);
-      text-decoration: none;
 
       &::after {
         color: clr(highlight);

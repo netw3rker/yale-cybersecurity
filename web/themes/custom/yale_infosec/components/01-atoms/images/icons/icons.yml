@@ -13,3 +13,5 @@ items:
     value: 'close'
   - name: 'Book'
     value: 'book'
+  - name: 'Chevron Right'
+    value: 'chevron-right'

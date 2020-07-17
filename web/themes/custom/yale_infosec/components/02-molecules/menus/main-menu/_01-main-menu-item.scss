@@ -1,11 +1,14 @@
 /* LI */
 .main-menu__item {
-  border-top: 1px solid;
+  background-color: clr(primary);
+  border-radius: 4px;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: $space-half;
   position: relative;
 
   @include large {
+    background-color: transparent;
     border-top: none;
     display: inline-block;
 
@@ -36,44 +39,29 @@
 
 /* Expand Button */
 .expand-sub {
-  background-color: clr(accent-high);
+  background-color: #1d5fae;
+  color: clr(white);
   cursor: pointer;
   display: block;
-  width: 20%;
-  color: clr(white);
+  padding: 1.8rem 1.9rem 0;
   position: relative;
+  width: 20%;
 
   @include large {
     display: none;
-  }
-
-  /* Down triangle */
-  &::after {
-    border: 15px solid;
-    border-bottom-color: transparent;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    content: '';
-    display: block;
-    margin-right: -12px;
-    margin-top: -6px;
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    width: 0;
   }
 
   /* See main-menu.js */
   &--open {
     background-color: clr(accent-high);
     color: clr(muted);
-
-    &::after {
-      border-top-color: transparent;
-      border-bottom: 15px solid;
-      margin-top: -20px;
-    }
   }
+}
+
+.main-menu__expand-sub-icon {
+  fill: clr(text-inverse);
+  height: 19px;
+  width: 19px;
 }
 
 /*

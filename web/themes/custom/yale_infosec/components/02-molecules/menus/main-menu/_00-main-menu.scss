@@ -11,9 +11,12 @@ $main-menu-medium: $medium;
 
   &--open {
     background-color: clr(background-inverse);
+    border-top: 1px solid rgba(255, 255, 255, 0.32);;
     display: block;
+    height: 100%;
     left: 0;
     overflow-y: scroll;
+    padding: $space;
     position: fixed;
     top: 62px;
     right: 0;
