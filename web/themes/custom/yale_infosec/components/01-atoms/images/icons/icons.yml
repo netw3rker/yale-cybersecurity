@@ -17,3 +17,7 @@ items:
     value: 'chevron-right'
   - name: 'Chevron Left'
     value: 'chevron-left'
+  - name: 'Check'
+    value: 'check'
+  - name: 'Arrow Right'
+    value: 'arrow-right'

@@ -1,0 +1,21 @@
+@mixin bg-colors {
+  &--yale {
+    background-color: clr(background-inverse);
+  }
+
+  &--yale-light {
+    background-color: clr(primary);
+  }
+
+  &--muted {
+    background-color: clr(accent);
+  }
+
+  &--muted-dark {
+    background-color: color(gray-4a);
+  }
+
+  &--deep {
+    background-color: clr(background-deep);
+  }
+}
