@@ -12,36 +12,13 @@
   padding: 1.4rem $space;
   text-decoration: none;
   text-align: center;
+  transition: all 0.15s
 }
 
 // Button color variations
 // Note how we include dark mode options for each
-@mixin button-color-primary {
-  @include buttonColors(primary);
-
-//   @media (prefers-color-scheme: dark) {
-//     @include buttonColors(primary-dark);
-//   }
-}
-
-@mixin button-color-secondary {
-  @include buttonColors(secondary);
-}
-
-@mixin button-color-yale {
-  @include buttonColors(yale);
-}
-
-@mixin button-color-yale-light {
-  @include buttonColors(yale-light);
-}
-
-@mixin button-color-muted {
-  @include buttonColors(muted);
-}
-
-@mixin button-color-muted-dark {
-  @include buttonColors(muted-dark);
+@mixin buttonClr($color: primary) {
+  @include buttonColors($color);
 }
 
 // Button size variations
@@ -58,19 +35,19 @@
 
 @mixin button-bg {
   &--primary {
-    @include button-color-primary;
+    @include buttonClr;
   }
 
   &--secondary {
-    @include button-color-secondary;
+    @include buttonClr(secondary);
   }
 
   &--yale {
-    @include button-color-yale;
+    @include buttonClr(yale);
   }
 
   &--yale-light {
-    @include button-color-yale-light;
+    @include buttonClr(yale-light);
 
     .button__icon {
       fill: color(gray-22);
@@ -84,11 +61,11 @@
   }
 
   &--muted {
-    @include button-color-muted;
+    @include buttonClr(muted);
   }
 
   &--muted-dark {
-    @include button-color-muted-dark;
+    @include buttonClr(muted-dark);
   }
 }
 

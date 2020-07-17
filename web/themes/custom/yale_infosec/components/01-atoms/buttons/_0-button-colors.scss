@@ -5,37 +5,37 @@ $button-colors: (
     text: clr(text-inverse),
     bg: clr(primary),
     text-hover: clr(text-inverse),
-    bg-hover: clr(secondary),
+    bg-hover: clr(secondary-deep),
   ),
   secondary: (
     text: clr(text-inverse),
     bg: clr(secondary),
     text-hover: clr(text-inverse),
-    bg-hover: clr(primary),
+    bg-hover: clr(primary-deep),
   ),
   yale: (
     text: clr(text-inverse),
     bg: clr(background-inverse),
     text-hover: clr(text-inverse),
-    bg-hover: clr(primary),
+    bg-hover: clr(primary-deep),
   ),
   yale-light: (
     text: color(gray-22),
     bg: clr(muted),
     text-hover: clr(text-inverse),
-    bg-hover: clr(primary),
+    bg-hover: clr(primary-deep),
   ),
   muted: (
     text: clr(text-inverse),
     bg: clr(accent),
     text-hover: clr(text-inverse),
-    bg-hover: clr(primary),
+    bg-hover: clr(primary-deep),
   ),
   muted-dark: (
     text: clr(text-inverse),
     bg: color(gray-4a),
     text-hover: clr(text-inverse),
-    bg-hover: clr(primary),
+    bg-hover: clr(primary-deep),
   ),
 );
 
