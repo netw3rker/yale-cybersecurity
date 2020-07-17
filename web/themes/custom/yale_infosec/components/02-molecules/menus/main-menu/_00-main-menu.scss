@@ -15,9 +15,13 @@ $main-menu-medium: $medium;
     left: 0;
     overflow-y: scroll;
     position: fixed;
-    top: 94px;
+    top: 62px;
     right: 0;
     width: 100%;
+
+    @include medium {
+      top: 94px;
+    }
   }
 }
 
@@ -31,6 +35,12 @@ $main-menu-medium: $medium;
 
   @include large {
     border-bottom: none;
+
+    &:hover {
+      .main-menu__item--top {
+        opacity: 0.65;
+      }
+    }
   }
 }
 
