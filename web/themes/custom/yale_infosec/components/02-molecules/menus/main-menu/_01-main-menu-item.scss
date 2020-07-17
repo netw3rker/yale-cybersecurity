@@ -39,11 +39,13 @@
 
 /* Expand Button */
 .expand-sub {
+  align-items: center;
   background-color: #1d5fae;
+  border-radius: 0 4px 4px 0;
   color: clr(white);
   cursor: pointer;
-  display: block;
-  padding: 1.8rem 1.9rem 0;
+  display: flex;
+  justify-content: center;
   position: relative;
   width: 20%;
 
