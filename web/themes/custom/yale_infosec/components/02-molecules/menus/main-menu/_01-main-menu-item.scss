@@ -5,12 +5,12 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: $space-half;
-  position: relative;
 
   @include large {
     background-color: transparent;
     border-top: none;
     display: inline-block;
+    position: relative;
 
     /* Only top level */
     &:not(.main-menu__item--sub):hover {

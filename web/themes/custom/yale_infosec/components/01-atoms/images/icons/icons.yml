@@ -15,3 +15,5 @@ items:
     value: 'book'
   - name: 'Chevron Right'
     value: 'chevron-right'
+  - name: 'Chevron Left'
+    value: 'chevron-left'

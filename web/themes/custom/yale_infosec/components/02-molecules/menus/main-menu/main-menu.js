@@ -4,6 +4,7 @@ Drupal.behaviors.mainMenu = {
     const menu = context.getElementById('main-nav');
     if (menu) {
       const expandMenu = menu.getElementsByClassName('expand-sub');
+      const backLinks = menu.getElementsByClassName('main-menu__parent-item');
 
       // Mobile Menu Show/Hide.
       toggleExpand.addEventListener('click', e => {
@@ -18,8 +19,16 @@ Drupal.behaviors.mainMenu = {
           const menuItem = e.currentTarget;
           const subMenu = menuItem.nextElementSibling;
 
-          menuItem.classList.toggle('expand-sub--open');
-          subMenu.classList.toggle('main-menu--sub-open');
+          subMenu.classList.toggle('main-menu__child-menu--sub-open');
+        });
+      }
+
+      // Back to parent links.
+      for (let i = 0; i < backLinks.length; i += 1) {
+        backLinks[i].addEventListener('click', e => {
+          const backLink = e.currentTarget;
+          const parentMenu = backLink.parentNode;
+          parentMenu.classList.remove('main-menu__child-menu--sub-open');
         });
       }
     }

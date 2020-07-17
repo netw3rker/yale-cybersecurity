@@ -53,10 +53,6 @@
 
 /* A (Nested) */
 .main-menu__link--sub {
-  color: clr(accent);
-  padding-left: $space-triple;
-  font-weight: normal;
-
   @include large {
     color: clr(highlight);
     display: block;
@@ -69,5 +65,7 @@
 }
 
 .main-menu__link--sub-2 {
-  padding-left: $space-quadruple;
+  @include large {
+    padding-left: $space-quadruple;
+  }
 }
