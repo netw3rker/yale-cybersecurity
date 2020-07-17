@@ -23,7 +23,11 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory) %}
+{% if not parent_item_title %}
+  {% set parent_item_title = "" %}
+{% endif %}
+
+{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory, parent_item_title) %}
   {% import _self as menus %}
   {% if items %}
 
@@ -35,6 +39,10 @@
     {% if menu_level > 0 %}
       {% set menu_modifiers = menu_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
     {% endif %}
+
+    <span {{ bem('parent-item', [], menu_class) }}>
+      {{ parent_item_title }}
+    </span>
 
     {# List #}
     {% embed "@atoms/lists/ul.twig" with {
@@ -57,4 +65,4 @@
 
 {% import _self as menus %}
 
-{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory) }}
+{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory, parent_item_title) }}
