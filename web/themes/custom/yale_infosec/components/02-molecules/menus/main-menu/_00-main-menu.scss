@@ -33,12 +33,14 @@ $main-menu-medium: $medium;
   @include list-reset;
 
   border-bottom: 1px solid;
+  height: 92%;
   overflow: hidden;
   position: relative;
   z-index: 10;
 
   @include large {
     border-bottom: none;
+    height: auto;
 
     &:hover {
       .main-menu__item--top {
@@ -147,9 +149,14 @@ $main-menu-medium: $medium;
 
 // Search Icon
 .search__icon {
+  display: none;
   fill: clr(background);
   height: 2.5rem;
   position: relative;
   top: -1px;
   width: 2.2rem;
+
+  @include large {
+    display: inline-block;
+  }
 }

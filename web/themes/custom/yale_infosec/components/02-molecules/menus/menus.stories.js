@@ -25,7 +25,7 @@ export const inline = () => (
 );
 export const main = () => (
   <div
-    className="cl-wrap--dark" 
+    className="cl-wrap--dark cl-main-menu" 
     dangerouslySetInnerHTML={{ __html: mainMenu(mainMenuData) }}
   />
 );
