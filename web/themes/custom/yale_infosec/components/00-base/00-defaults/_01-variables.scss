@@ -11,9 +11,11 @@ $font-body: $font-family-mallory;
 $font-heading: $font-family-yale;
 
 // Spacing
-$space: 1.6rem;
+$space-half: 0.8rem;
+$space: $space-half * 2;
 
 // Times
+$space-half-double: $space-half * 3; 
 $space-double: $space * 2;
 $space-triple: $space * 3;
 $space-quadruple: $space * 4;

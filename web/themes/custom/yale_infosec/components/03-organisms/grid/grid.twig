@@ -14,8 +14,10 @@
 
 {% if grid_label %}
   {% include "@atoms/text/headings/_heading.twig" with {
-    "heading_level": 2,
-    "heading": grid_label,
+    heading_level: 2,
+    heading: grid_label,
+    heading_base_class: 'heading',
+    heading_blockname: grid_base_class
   } %}
 {% endif %}
 <div {{ bem(grid_base_class, grid_modifiers, grid_blockname) }}>

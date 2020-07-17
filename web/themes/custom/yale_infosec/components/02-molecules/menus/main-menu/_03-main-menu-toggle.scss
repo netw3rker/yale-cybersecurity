@@ -4,6 +4,14 @@
 
   color: clr(text-inverse);
 
+  &:hover {
+    text-decoration: none;
+
+    .toggle-expand__text {
+      color: clr(text-inverse);
+    }
+  }
+
   @include large {
     display: none;
   }
@@ -16,9 +24,15 @@
 .toggle-expand__text {
   color: rgba(255, 255, 255, 0.65);
   display: block;
-  font-size: 1.24rem;
+  font-size: 1.14rem;
+  font-weight: bold;
   margin-right: 0.75rem;
   text-transform: uppercase;
+
+  @include small {
+    font-size: 1.24rem;
+    margin-right: 0.75rem;
+  }
 
   @include medium {
     font-size: 1.9rem;
