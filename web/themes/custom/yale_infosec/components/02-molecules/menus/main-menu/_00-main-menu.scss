@@ -57,6 +57,10 @@ $main-menu-medium: $medium;
   display: block;
   margin-bottom: $space;
 
+  @include large {
+    display: none;
+  }
+
   &:hover {
     text-decoration: underline;
   }
@@ -79,6 +83,11 @@ $main-menu-medium: $medium;
   top: 0;
   width: 100%;
   z-index: 1;
+
+  @include large {
+    height: auto;
+    width: auto;
+  }
 
   &--sub-open {
     transform: translateX(0);
