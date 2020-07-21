@@ -8,7 +8,7 @@
       } %}
     </div>
     <div {{ bem('menu', [], footer__base_class) }}>
-      {% block footer__menu %}
+      {% block footer__content %}
         {% include "@molecules/menus/inline/inline-menu.twig" with {
           inline_item_modifiers: ['light'],
         } %}
