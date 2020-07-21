@@ -23,7 +23,16 @@ $main-menu-medium: $medium;
     width: 100%;
 
     @include medium {
+      padding: $space $space-triple;
       top: 94px;
+    }
+
+    @include large {
+      border-top: none;
+      display: flex;
+      overflow: visible;
+      padding: 0;
+      position: static;
     }
 
     // Drupal admin menu

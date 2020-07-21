@@ -9,6 +9,10 @@
 
   &--fixed {
     position: fixed;
+
+    @include large {
+      position: absolute;
+    }
   }
 
   // Admin Menu
