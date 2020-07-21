@@ -56,11 +56,15 @@ $main-menu-medium: $medium;
 
 .main-menu__parent-item {
   cursor: pointer;
-  display: block;
+  display: none;
   margin-bottom: $space;
 
-  @include large {
-    display: none;
+  .main-menu__child-menu--sub-current & {
+    display: block;
+
+    @include large {
+      display: none;
+    }
   }
 
   &:hover {

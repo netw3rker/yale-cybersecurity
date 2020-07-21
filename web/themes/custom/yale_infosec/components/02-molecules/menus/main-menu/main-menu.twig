@@ -24,13 +24,14 @@
   <div id="main-nav" class="main-nav">
     {# Search #}
     <div class="main-nav-search">
-    {% block nav_search %}
-      <div class="form-item">
-        <label for="edit-search" class="form-item__label form-item__label--required form-item__label--textfield">Search</label>
-        <input id="edit-search" autocorrect="none" autocapitalize="none" spellcheck="false" type="text" name="search" value="" size="60" maxlength="60" class="form-item__textfield form-item__textfield--required" required="required" aria-required="true" placeholder="Search">
-        <input type="submit" />
-      </div>
-    {% endblock %}
+      {% block nav_search %}
+        <div class="form-item">
+          <label for="edit-search" class="form-item__label form-item__label--required form-item__label--textfield">Search</label>
+          <input id="edit-search" autocorrect="none" autocapitalize="none" spellcheck="false" type="text" name="search" value="" size="60" maxlength="60" class="form-item__textfield form-item__textfield--required" required="required" aria-required="true" placeholder="Search">
+          <input type="submit" />
+        </div>
+      {% endblock %}
+    </div>
     {% include "@molecules/menus/_menu.twig" with {
       menu_class: "main-menu",
       items: menu_items,
