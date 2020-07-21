@@ -3,11 +3,11 @@
 }
 
 .inline-menu__item {
-  margin: 0 1rem 0.5rem 0;
+  margin: 0 1rem $space-half 0;
 
   @include large {
     display: inline;
-    margin-bottom: 1rem;
+    margin: 0 $space-double $space-half 0;
   }
 
   &:last-child {
@@ -18,8 +18,16 @@
 .inline-menu__link {
   @include link;
 
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  text-transform: uppercase;
+  border-bottom: 1px solid clr(text-inverse);
+  display: inline-block;
+  line-height: 1.3;
+
+  &:hover {
+    border-color: clr(secondary);
+    text-decoration: none;
+  }
+
+  &--light {
+    color: clr(text-inverse);
+  }
 }
