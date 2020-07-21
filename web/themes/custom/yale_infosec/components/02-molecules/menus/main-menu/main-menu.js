@@ -2,14 +2,28 @@ Drupal.behaviors.mainMenu = {
   attach(context) {
     const toggleExpand = context.getElementById('toggle-expand');
     const menu = context.getElementById('main-nav');
+    const header = context.getElementById('site-header');
+    
     if (menu) {
       const expandMenu = menu.getElementsByClassName('expand-sub');
       const backLinks = menu.getElementsByClassName('main-menu__parent-item');
 
       // Mobile Menu Show/Hide.
       toggleExpand.addEventListener('click', e => {
+        const currentMenus = document.getElementsByClassName('main-menu__child-menu--sub-current');
+        const openMenus = document.getElementsByClassName('main-menu__child-menu--sub-open');
+
+        currentMenus.forEach(item => {
+          item.classList.remove('main-menu__child-menu--sub-current');
+        });
+
+        openMenus.forEach(item => {
+          item.classList.remove('main-menu__child-menu--sub-open');
+        });
+
         toggleExpand.classList.toggle('toggle-expand--open');
         menu.classList.toggle('main-nav--open');
+        header.classList.toggle('header--fixed');
         e.preventDefault();
       });
 

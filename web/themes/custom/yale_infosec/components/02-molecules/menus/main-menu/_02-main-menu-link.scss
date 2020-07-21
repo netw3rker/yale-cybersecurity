@@ -54,9 +54,8 @@
 /* A (Nested) */
 .main-menu__link--sub {
   @include large {
-    color: clr(highlight);
     display: block;
-    padding: $space-one-third $space;
+    padding: 1rem 2.4rem;
   }
 }
 

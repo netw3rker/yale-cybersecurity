@@ -8,21 +8,18 @@
 
   @include large {
     background-color: transparent;
-    border-top: none;
     display: inline-block;
+    margin-bottom: 0;
     position: relative;
 
     /* Only top level */
     &:not(.main-menu__item--sub):hover {
+      opacity: 1;
       transition: all 0.2s;
 
-      &:hover {
-        opacity: 1;
+      & > .main-menu__child-menu {
+        display: block;
       }
-
-      // & > .main-menu--sub {
-      //   display: block;
-      // }
     }
 
     &--not-hovered {
@@ -74,9 +71,5 @@
 .main-menu__item--sub {
   @include large {
     display: block;
-
-    &:not(:first-child) {
-      border-top: 1px solid clr(highlight);
-    }
   }
 }
