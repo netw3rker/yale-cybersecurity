@@ -11,6 +11,16 @@
     position: fixed;
   }
 
+  // Admin Menu
+  .toolbar-fixed &,
+  .toolbar-vertical & {
+    top: 39px;
+  }
+
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open & {
+    top: 79px;
+  }
+
   // When no hero is present, the header can't cover the content.
   // So for now, we will make sure that main has enough margin if hero doesn't exist.
   // We will likely change this when we get this into Drupal.

@@ -25,6 +25,15 @@ $main-menu-medium: $medium;
     @include medium {
       top: 94px;
     }
+
+    // Drupal admin menu
+    .toolbar-vertical & {
+      top: 92px;
+
+      @include medium {
+        top: 114px;
+      }
+    }
   }
 }
 

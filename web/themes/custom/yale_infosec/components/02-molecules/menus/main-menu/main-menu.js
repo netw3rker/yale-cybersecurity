@@ -13,13 +13,13 @@ Drupal.behaviors.mainMenu = {
         const currentMenus = document.getElementsByClassName('main-menu__child-menu--sub-current');
         const openMenus = document.getElementsByClassName('main-menu__child-menu--sub-open');
 
-        currentMenus.forEach(item => {
-          item.classList.remove('main-menu__child-menu--sub-current');
-        });
+        for (let i = 0; i < currentMenus.length; i += 1) {
+          currentMenus[i].classList.remove('main-menu__child-menu--sub-current');
+        };
 
-        openMenus.forEach(item => {
-          item.classList.remove('main-menu__child-menu--sub-open');
-        });
+        for (let i = 0; i < openMenus.length; i += 1) {
+          openMenus[i].classList.remove('main-menu__child-menu--sub-open');
+        };
 
         toggleExpand.classList.toggle('toggle-expand--open');
         menu.classList.toggle('main-nav--open');
