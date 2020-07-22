@@ -1,6 +1,7 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { useEffect } from "@storybook/client-api";
 import { withA11y } from '@storybook/addon-a11y';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 // Theming
 import emulsifyTheme from './emulsifyTheme';
@@ -8,6 +9,9 @@ import emulsifyTheme from './emulsifyTheme';
 addParameters({
   options: {
     theme: emulsifyTheme,
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
   },
 });
 

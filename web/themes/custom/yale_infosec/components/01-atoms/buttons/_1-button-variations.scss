@@ -1,0 +1,79 @@
+// The button-base mixin contains styles that apply to all buttons
+// regardless of color or size.
+@mixin button-base {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.21;
+  margin: 2rem 0 1.6rem;
+  padding: 1.4rem $space;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.15s;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Button color variations
+// Note how we include dark mode options for each
+@mixin buttonClr($color: primary) {
+  @include buttonColors($color);
+}
+
+// Button size variations
+@mixin button-medium {
+  font-size: 2.4rem;
+  line-height: 1.49;
+  padding: 1rem 2rem;
+}
+
+@mixin button-large {
+  line-height: 2;
+  padding: $space $space-double;
+}
+
+@mixin button-bg {
+  &--primary {
+    @include buttonClr;
+  }
+
+  &--secondary {
+    @include buttonClr(secondary);
+  }
+
+  &--yale {
+    @include buttonClr(yale);
+  }
+
+  &--yale-light {
+    @include buttonClr(yale-light);
+
+    .button__icon {
+      fill: color(gray-22);
+    }
+
+    &:hover {
+      .button__icon {
+        fill: clr('text-inverse');
+      }
+    }
+  }
+
+  &--muted {
+    @include buttonClr(muted);
+  }
+
+  &--muted-dark {
+    @include buttonClr(muted-dark);
+  }
+}
+
+.button {
+  @include button-base;
+  @include button-bg;
+}

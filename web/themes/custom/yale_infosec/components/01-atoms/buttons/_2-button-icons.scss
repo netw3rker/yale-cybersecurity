@@ -1,0 +1,15 @@
+.button__icon {
+  fill: clr('text-inverse');
+  height: 17px;
+  position: relative;
+  top: 2px;
+  width: 20px;
+
+  &--before {
+    margin-right: 5px;
+  }
+
+  &--after {
+    margin-left: 5px;
+  }
+}
