@@ -3,8 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image.field_aside_alignment
+    - field.field.paragraph.image.field_aside_quote
     - field.field.paragraph.image.field_image
     - paragraphs.paragraphs_type.image
+  module:
+    - options
 _core:
   default_config_hash: O48ohIdztietNQhMoI8yxJxgLqvbNNHK3OG8MTqpddA
 id: paragraph.image.default
@@ -12,6 +16,20 @@ targetEntityType: paragraph
 bundle: image
 mode: default
 content:
+  field_aside_alignment:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_aside_quote:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_image:
     type: entity_reference_entity_view
     weight: 0
