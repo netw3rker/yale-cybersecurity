@@ -1,0 +1,36 @@
+.main-nav-search {
+  margin-top: 1rem;
+
+  @include large {
+    display: none;
+  }
+
+  .form-item {
+    display: flex;
+    max-width: none;
+  }
+
+  .form-item__label {
+    @include visually-hidden;
+  }
+
+  .form-item__textfield {
+    border-radius: 2px 0 0 2px;
+    font-family: $font-heading;
+    width: 80%;
+  }
+
+  input[type="submit"] {
+    @include button-base;
+
+    background: url(../images/icons/search-white.svg) no-repeat scroll center center clr(secondary);
+    border-radius: 0 2px 2px 0;
+    margin: 0;
+    text-indent: -9999px;
+    width: 20%;
+
+    &:hover {
+      background-color: clr(primary);
+    }
+  }
+}

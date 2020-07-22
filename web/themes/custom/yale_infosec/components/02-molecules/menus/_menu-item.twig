@@ -18,6 +18,7 @@
 {% for modifier in item.modifiers %}
   {% set item_modifiers = item_modifiers|merge([modifier]) %}
 {% endfor %}
+{% set parent_item_title = item.title %}
 
 {% embed "@atoms/lists/_list-item.twig" with {
   list_item_label: item_label,
@@ -38,8 +39,17 @@
       } %}
     {% endif %}
     {% if item.below %}
-      <span class="expand-sub"></span>
-      {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname, directory) }}
+      <span class="expand-sub">
+        {% include "@atoms/images/icons/_icon.twig" with {
+          icon_blockname: menu_class,
+          icon_base_class: "expand-sub-icon",
+          icon_name: "chevron-right",
+          icon_title: "expand subnav",
+        } %}
+      </span>
+      <div {{ bem('child-menu', [], menu_class) }}>
+        {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname, directory, parent_item_title) }}
+      </div>
     {% endif %}
   {% endblock %}
 {% endembed %}

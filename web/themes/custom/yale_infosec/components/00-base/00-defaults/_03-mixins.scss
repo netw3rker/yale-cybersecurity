@@ -62,3 +62,12 @@ $outer-container-break: $small;
   margin: 0;
   padding: 0;
 }
+
+@mixin visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}

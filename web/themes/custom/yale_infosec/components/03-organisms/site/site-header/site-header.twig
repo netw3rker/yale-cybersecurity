@@ -1,6 +1,11 @@
 {% set header__base_class = 'header' %}
 
-<header {{ bem(header__base_class) }}>
+{% set header_attributes = {
+  class: bem(header__base_class),
+  id: 'site-header',
+} %}
+
+<header {{ add_attributes(header_attributes) }}>
   <div {{ bem('inner', [], header__base_class) }}>
     <div {{ bem('inner-color', [], header__base_class) }}>
       <div {{ bem('primary', [], header__base_class) }}>
@@ -14,7 +19,7 @@
             {% include "@molecules/menus/main-menu/main-menu.twig" %}
           {% endblock %}
         </div>
-      </div>
-    </div>
-  </div>
+      </div><!--primary-->
+    </div><!--inner-color-->
+  </div><!--inner-->
 </header>
