@@ -24,11 +24,20 @@
       position: absolute;
       width: 106%;
     }
+
+    &--basic::after {
+      display: none;
+    }
   }
 }
 
 .logo__yale {
   font-size: 2.15rem;
+
+  &--basic {
+    font-size: 2.8rem;
+    margin-right: 0.5rem;
+  }
 
   @include small {
     font-size: 2.8rem;
@@ -46,6 +55,10 @@
   position: relative;
   text-transform: uppercase;
   top: 0;
+
+  &--basic {
+    font-size: 1.85rem;
+  }
 
   @include small {
     font-size: 1.85rem;

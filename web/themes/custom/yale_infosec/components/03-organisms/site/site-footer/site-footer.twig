@@ -2,15 +2,22 @@
 
 <footer {{ bem(footer__base_class) }}>
   <div {{ bem('inner', [], footer__base_class) }}>
-    <div {{ bem('social', [], footer__base_class) }}>
-      {% block footer__social %}
-        {% include "@molecules/menus/social/social-menu.twig" %}
-      {% endblock %}
+    <div {{ bem('logo', [], footer__base_class) }}>
+      {% include "@atoms/logo/logo.twig" with {
+        logo_modifiers: ['basic']
+      } %}
     </div>
     <div {{ bem('menu', [], footer__base_class) }}>
-      {% block footer__menu %}
-        {% include "@molecules/menus/inline/inline-menu.twig" %}
+      {% block footer__content %}
+        {% include "@molecules/menus/inline/inline-menu.twig" with {
+          inline_item_modifiers: ['light'],
+        } %}
       {% endblock %}
     </div>
+    {% include "@atoms/text/text/01-paragraph.twig" with {
+      paragraph_blockname: footer__base_class,
+      paragraph_base_class: "copyright",
+      paragraph_content: "Copyright © 2020 Yale University  All Rights Reserved"
+    } %}
   </div>
 </footer>
