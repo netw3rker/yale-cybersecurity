@@ -30,22 +30,7 @@
     border-color: clr(accent-high);
   }
 
-  &::-webkit-input-placeholder {
-    color: clr(highlight);
-    opacity: 0.66;
-  }
-
-  &:-moz-placeholder {
-    color: clr(highlight);
-    opacity: 0.66;
-  }
-
-  &::-moz-placeholder {
-    color: clr(highlight);
-    opacity: 0.66;
-  }
-
-  &:-ms-input-placeholder {
+  &::placeholder {
     color: clr(highlight);
     opacity: 0.66;
   }
