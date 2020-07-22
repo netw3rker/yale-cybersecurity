@@ -1,25 +1,25 @@
 /* LI */
 .main-menu__item {
-  border-top: 1px solid;
+  background-color: clr(primary);
+  border-radius: 4px;
   display: flex;
   flex-wrap: wrap;
-  position: relative;
+  margin-bottom: $space-half;
 
   @include large {
-    border-top: none;
+    background-color: transparent;
     display: inline-block;
+    margin-bottom: 0;
+    position: relative;
 
     /* Only top level */
     &:not(.main-menu__item--sub):hover {
+      opacity: 1;
       transition: all 0.2s;
 
-      &:hover {
-        opacity: 1;
+      & > .main-menu__child-menu {
+        display: block;
       }
-
-      // & > .main-menu--sub {
-      //   display: block;
-      // }
     }
 
     &--not-hovered {
@@ -36,44 +36,31 @@
 
 /* Expand Button */
 .expand-sub {
-  background-color: clr(accent-high);
-  cursor: pointer;
-  display: block;
-  width: 20%;
+  align-items: center;
+  background-color: #1d5fae;
+  border-radius: 0 4px 4px 0;
   color: clr(white);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
   position: relative;
+  width: 20%;
 
   @include large {
     display: none;
-  }
-
-  /* Down triangle */
-  &::after {
-    border: 15px solid;
-    border-bottom-color: transparent;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    content: '';
-    display: block;
-    margin-right: -12px;
-    margin-top: -6px;
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    width: 0;
   }
 
   /* See main-menu.js */
   &--open {
     background-color: clr(accent-high);
     color: clr(muted);
-
-    &::after {
-      border-top-color: transparent;
-      border-bottom: 15px solid;
-      margin-top: -20px;
-    }
   }
+}
+
+.main-menu__expand-sub-icon {
+  fill: rgba(255, 255, 255, 0.72);
+  height: 19px;
+  width: 19px;
 }
 
 /*
@@ -84,9 +71,5 @@
 .main-menu__item--sub {
   @include large {
     display: block;
-
-    &:not(:first-child) {
-      border-top: 1px solid clr(highlight);
-    }
   }
 }

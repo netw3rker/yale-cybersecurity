@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const globImporter = require('node-sass-glob-importer');
+const postcssCustomProperties = require('postcss-custom-properties');
 
 const ImageLoader = {
   test: /\.(png|svg|jpg|gif)$/i,
@@ -15,6 +16,9 @@ const CSSLoader = {
     MiniCssExtractPlugin.loader,
     {
       loader: 'css-loader',
+      options: {
+        url: false,
+      }
     },
     {
       loader: 'postcss-loader',
@@ -22,6 +26,10 @@ const CSSLoader = {
         config: {
           path: path.resolve('./webpack/'),
         },
+        ident: 'postcss',
+        plugins: () => [
+          postcssCustomProperties()
+        ]
       },
     },
     {
