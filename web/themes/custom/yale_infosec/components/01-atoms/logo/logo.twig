@@ -2,9 +2,10 @@
 
 {% set link_base_class = logo_base_class %}
 {% set link_url = logo_link__url|default('/') %}
+{% set link_modifiers = logo_modifiers %}
 
 {% extends "@atoms/links/link/link.twig" %}
   {% block link_content %}
-    <span {{ bem('yale', [], logo_base_class) }}>Yale</span>
-    <span {{ bem('infosec', [], logo_base_class) }}>Information Security</span>
+    <span {{ bem('yale', logo_modifiers, logo_base_class) }}>Yale</span>
+    <span {{ bem('infosec', logo_modifiers, logo_base_class) }}>Information Security</span>
   {% endblock %}
