@@ -11,16 +11,37 @@ $main-menu-medium: $medium;
 
   &--open {
     background-color: clr(background-inverse);
+    border-top: 1px solid rgba(255, 255, 255, 0.32);;
     display: block;
+    height: 100%;
     left: 0;
     overflow-y: scroll;
+    padding: $space;
     position: fixed;
     top: 62px;
     right: 0;
     width: 100%;
 
     @include medium {
+      padding: $space $space-triple;
       top: 94px;
+    }
+
+    @include large {
+      border-top: none;
+      display: flex;
+      overflow: visible;
+      padding: 0;
+      position: static;
+    }
+
+    // Drupal admin menu
+    .toolbar-vertical & {
+      top: 92px;
+
+      @include medium {
+        top: 114px;
+      }
     }
   }
 }
@@ -30,11 +51,15 @@ $main-menu-medium: $medium;
   @include list-reset;
 
   border-bottom: 1px solid;
+  height: 92%;
+  overflow: hidden;
   position: relative;
   z-index: 10;
 
   @include large {
     border-bottom: none;
+    height: auto;
+    overflow: visible;
 
     &:hover {
       .main-menu__item--top {
@@ -46,49 +71,68 @@ $main-menu-medium: $medium;
 
 /*
  * Sub Navigation
- */
+*/
+
+.main-menu__parent-item {
+  cursor: pointer;
+  display: none;
+  margin-bottom: $space;
+
+  .main-menu__child-menu--sub-current & {
+    display: block;
+
+    @include large {
+      display: none;
+    }
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.main-menu__parent-item-back {
+  fill: clr(text-inverse);
+  height: 14px;
+  width: 17px;
+}
+
+.main-menu__child-menu {
+  @include transition(transform);
+
+  background-color: clr(background-inverse);
+  color: clr(text-inverse);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  transform: translateX(100%);
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  @include large {
+    background-color: clr(primary);
+    display: none;
+    height: auto;
+    left: -$space;
+    overflow: visible;
+    position: absolute;
+    transform: none;
+    top: 40px;
+    width: 315px;
+    z-index: 1;
+    font-size: 0.9rem;
+  }
+
+  &--sub-open {
+    transform: translateX(0);
+  }
+}
 
 /* UL (Nested) */
 .main-menu--sub {
   border-bottom: none;
-  height: 0;
-  overflow: hidden;
-  background-color: clr(muted);
   width: 100%;
-
-  @include large {
-    background-color: clr(highlight-high);
-    display: none;
-    height: auto;
-    left: 0;
-    overflow: visible;
-    padding: $space 0;
-    position: absolute;
-    top: 55px;
-    width: 315px;
-    z-index: 1;
-    font-size: 0.9rem;
-    opacity: 0.6;
-  }
-
-  &:hover {
-    @include large {
-      opacity: 1;
-      background-color: clr(accent-high);
-      transition: all 0.2s;
-
-      .main-menu__link--sub {
-        color: clr(highlight);
-
-        &.active,
-        &:active,
-        &:hover {
-          color: clr(background);
-          background-color: clr(accent-high);
-        }
-      }
-    }
-  }
 
   /* See main-menu.js */
   &-open {
@@ -104,9 +148,14 @@ $main-menu-medium: $medium;
 
 // Search Icon
 .search__icon {
+  display: none;
   fill: clr(background);
   height: 2.5rem;
   position: relative;
   top: -1px;
   width: 2.2rem;
+
+  @include large {
+    display: inline-block;
+  }
 }

@@ -7,17 +7,43 @@
   z-index: 1;
   width: 100%;
 
+  &--fixed {
+    position: fixed;
+
+    @include large {
+      position: absolute;
+    }
+  }
+
+  // Admin Menu
+  .toolbar-fixed &,
+  .toolbar-vertical & {
+    top: 39px;
+  }
+
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open & {
+    top: 79px;
+  }
+
   // When no hero is present, the header can't cover the content.
   // So for now, we will make sure that main has enough margin if hero doesn't exist.
   // We will likely change this when we get this into Drupal.
   & + .main {
-    margin-top: 30rem;
+    margin-top: $space-sextuple;
+
+    @include large {
+      margin-top: 24rem;
+    }
   }
 
   &__inner {
     max-width: 1224px;
     padding: 0 $space-half;
     width: 100%;
+
+    @include breakpoint(335px) {
+      padding: 0 $space;
+    }
 
     @include small {
       padding: 0 $space;

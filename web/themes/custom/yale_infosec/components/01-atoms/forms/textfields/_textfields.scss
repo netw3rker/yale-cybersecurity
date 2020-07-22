@@ -19,27 +19,20 @@
 
 .form-item__textfield {
   border: 1px solid clr(highlight-high);
-  padding: 0.6em;
+  color: clr('gray-4a');
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.56;
+  padding: $space-one-half;
   max-width: 100%;
 
   &:focus {
     border-color: clr(accent-high);
   }
 
-  &::-webkit-input-placeholder {
+  &::placeholder {
     color: clr(highlight);
-  }
-
-  &:-moz-placeholder {
-    color: clr(highlight);
-  }
-
-  &::-moz-placeholder {
-    color: clr(highlight);
-  }
-
-  &:-ms-input-placeholder {
-    color: clr(highlight);
+    opacity: 0.66;
   }
 }
 
