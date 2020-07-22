@@ -1,0 +1,21 @@
+uuid: 03bdf5e7-9c67-4b1a-bf5d-756033c3ec1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.large_image.field_image
+    - paragraphs.paragraphs_type.large_image
+id: paragraph.large_image.default
+targetEntityType: paragraph
+bundle: large_image
+mode: default
+content:
+  field_image:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }
