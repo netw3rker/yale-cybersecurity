@@ -23,7 +23,8 @@
   line-height: 1.3;
 
   &:hover {
-    border-color: clr(secondary);
+    border-color: clr(muted);
+    color: clr(muted);
     text-decoration: none;
   }
 
