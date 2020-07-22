@@ -27,7 +27,12 @@
       </aside>
     {% endif %}
     <main role="main" {{ bem(main_content_base_class, main_content_modifiers, main_content_blockname) }}>
-      {% block page_content %}{% endblock %}
+      <div {{ bem('top', [], main_content_base_class) }}>
+        {% block page_content_top %}{% endblock %}
+      </div>
+      <div {{ bem('bottom', [], main_content_base_class) }}>
+        {% block page_content %}{% endblock %}
+      </div>
     </main>
   </div>
   {% block page_footer %}

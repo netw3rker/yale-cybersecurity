@@ -7,7 +7,7 @@ $color-heading: clr(text-heavy);
 
 @mixin heading-xl(
   $font-family: $font-heading,
-  $font-size: 5.5rem,
+  $font-size: 6.4rem,
   $line-height: 1.1,
   $color: $color-heading,
   $color-link: inherit,
@@ -164,6 +164,24 @@ $color-heading: clr(text-heavy);
 .h5,
 .h6 {
   @include heading-xs;
+}
+
+.page-title {
+  @include heading-xl(
+    $line-height: 1,
+    $margin: 0 0 $space,
+  );
+}
+
+.page-subtitle {
+  @include heading-large(
+    $color: color('gray-4a'),
+    $font-family: $font-body,
+    $font-size: 2.4rem,
+    $font-weight: normal,
+    $line-height: 1,
+    $margin: 0 0 $space,
+  );
 }
 
 /* TODO: BEM selectors should be applied to wysiwyg-created content */
