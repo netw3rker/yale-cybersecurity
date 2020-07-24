@@ -1,0 +1,19 @@
+uuid: 9a83eb60-f74d-42ed-8746-65ba5ed68503
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.callout.call_to_action
+    - field.storage.callout.field_display_title
+id: callout.call_to_action.field_display_title
+field_name: field_display_title
+entity_type: callout
+bundle: call_to_action
+label: 'Display Title'
+description: 'This title is displayed when the CTA is used.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
