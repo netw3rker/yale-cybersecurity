@@ -207,9 +207,9 @@ display:
         - url.query_args
       tags:
         - 'config:core.entity_view_display.callout.call_to_action.default'
-  entity_browser_1:
+  cta_browser:
     display_plugin: entity_browser
-    id: entity_browser_1
+    id: cta_browser
     display_title: 'Entity browser'
     position: 1
     display_options:
