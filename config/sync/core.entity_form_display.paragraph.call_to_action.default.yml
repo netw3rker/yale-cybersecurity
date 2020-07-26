@@ -15,7 +15,7 @@ bundle: call_to_action
 mode: default
 content:
   field_cta:
-    weight: 0
+    weight: 1
     settings:
       form_mode: default
       label_singular: ''
@@ -34,7 +34,7 @@ content:
     type: inline_entity_form_complex
     region: content
   field_size:
-    weight: 1
+    weight: 0
     settings: {  }
     third_party_settings: {  }
     type: options_select
