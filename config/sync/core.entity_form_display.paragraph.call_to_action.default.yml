@@ -30,7 +30,7 @@ content:
       allow_duplicate: false
     third_party_settings:
       entity_browser_entity_form:
-        entity_browser_id: _none
+        entity_browser_id: cta_browser
     type: inline_entity_form_complex
     region: content
   field_size:

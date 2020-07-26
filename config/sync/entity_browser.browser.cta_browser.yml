@@ -7,7 +7,7 @@ dependencies:
   module:
     - views
 name: cta_browser
-label: cta_browser
+label: 'CTA browser'
 display: modal
 display_configuration:
   width: '1070'
@@ -22,7 +22,7 @@ widgets:
   d0550002-2193-453e-a66d-bce0da5318c1:
     settings:
       view: cta_browser
-      view_display: entity_browser_1
+      view_display: cta_browser
       submit_text: 'Select CTA'
       auto_select: false
     uuid: d0550002-2193-453e-a66d-bce0da5318c1
