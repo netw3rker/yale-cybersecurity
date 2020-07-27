@@ -11,14 +11,15 @@ label: Page
 type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
-  0f4c07b8-7766-4c20-bc11-e14196120fed:
+  2452122b-8002-4bab-b2fa-a760c461f064:
     id: node_type
     bundles:
+      alert: alert
       page: page
     negate: false
     context_mapping:
       node: node
-    uuid: 0f4c07b8-7766-4c20-bc11-e14196120fed
+    uuid: 2452122b-8002-4bab-b2fa-a760c461f064
 selection_logic: and
 weight: -5
 relationships: {  }
