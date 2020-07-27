@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.grid_type
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.reference_cards
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_with_media
     - paragraphs.paragraphs_type.video
@@ -32,6 +33,7 @@ settings:
       quote: quote
       text_with_media: text_with_media
       video: video
+      reference_cards: reference_cards
     target_bundles_drag_drop:
       grid_type:
         weight: 6
@@ -42,6 +44,9 @@ settings:
       quote:
         enabled: true
         weight: 9
+      reference_cards:
+        enabled: true
+        weight: 11
       text:
         enabled: true
         weight: 8

@@ -1,0 +1,10 @@
+uuid: ba389fb4-f05c-4457-99d8-22e0e68b27b5
+langcode: en
+status: true
+dependencies: {  }
+id: reference_cards
+label: 'Reference Cards'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
