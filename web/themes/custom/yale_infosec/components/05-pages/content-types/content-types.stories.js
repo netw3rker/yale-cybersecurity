@@ -13,6 +13,8 @@ import footerMenuData from '../../02-molecules/menus/inline/inline-menu.yml';
 
 import heroData from '../../02-molecules/hero/hero-guide.yml';
 
+import basicPageData from './basic-page.yml';
+
 /**
  * Storybook Definition.
  */
@@ -43,6 +45,7 @@ export const basicPage = () => (
         ...socialMenuData,
         ...footerMenuData,
         ...heroData,
+        ...basicPageData,
         card__link__text: 'Click here',
       }),
     }}
