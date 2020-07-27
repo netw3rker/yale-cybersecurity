@@ -26,7 +26,7 @@ content:
     type: media_thumbnail
     weight: 0
     region: content
-    label: above
+    label: hidden
     settings:
       image_style: thumbnail
       image_link: ''
