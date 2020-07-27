@@ -1,43 +1,41 @@
-uuid: 328ceb29-e2fd-44d2-b661-1c318ed69388
+uuid: f53adb3d-af06-4d3e-9473-d4f875df463c
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.content_browser
     - field.field.node.page.field_content_body
     - field.field.node.page.field_metadata
     - field.field.node.page.field_seo_title
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser_media
     - field.field.node.page.field_teaser_text
+    - image.style.thumbnail
     - node.type.page
   module:
-    - entity_reference_revisions
+    - media
     - user
 _core:
   default_config_hash: r1tD2d3xfgugcFCakPpaMsHLgkoF0C5up8qu-Ku9v1w
-id: node.page.default
+id: node.page.content_browser
 targetEntityType: node
 bundle: page
-mode: default
+mode: content_browser
 content:
-  content_moderation_control:
-    weight: -20
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_content_body:
-    type: entity_reference_revisions_entity_view
+  field_teaser_media:
+    type: media_thumbnail
     weight: 0
     region: content
-    label: hidden
+    label: above
     settings:
-      view_mode: default
-      link: ''
+      image_style: thumbnail
+      image_link: ''
     third_party_settings: {  }
 hidden:
+  content_moderation_control: true
+  field_content_body: true
   field_metadata: true
   field_seo_title: true
   field_tags: true
-  field_teaser_media: true
   field_teaser_text: true
   links: true
