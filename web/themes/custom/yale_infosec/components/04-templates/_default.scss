@@ -2,38 +2,22 @@
  * General Layout
 */
 
-$sidebar-width: 33%;
-$gutter: $space-triple;
-$main-width: calc(100% - (#{$sidebar-width} + #{$gutter} + #{$gutter} + #{$gutter}));
-
-/*
- * Layout Using CSS Grid (NO IE11 support)
- * Remove Flexbox code above and uncomment this section to use CSS Grid.
-*/
-
-.main {
-  @include wrapper;
-
-  margin-bottom: 4em;
-
-  @include large {
-    display: grid;
-    grid-template-areas: "left-side left-gutter content sidebar right-side";
-    grid-template-columns: $gutter $gutter $main-width #{$sidebar-width} $gutter;
-  }
-}
-
-.main-sidebar {
-  grid-area: sidebar;
-  margin-bottom: $space-double;
-  margin-left: $gutter;
-}
-
 .main-content {
-  grid-area: content;
-  width: 100%;
+  margin-top: 21rem;
 }
 
 .main-content__top {
+  @include grid;
+
   margin-bottom: $space-triple;
+}
+
+.main-content__top-inner {
+  grid-area: content;
+}
+
+.main-content__bottom {
+  @include wrapper;
+
+  margin-bottom: 4em;
 }

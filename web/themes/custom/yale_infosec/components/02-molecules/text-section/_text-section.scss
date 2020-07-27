@@ -1,0 +1,9 @@
+.text-section {
+  @include large {
+    @include grid;
+  }
+}
+
+.text-section__content {
+  grid-area: content;
+}

@@ -53,6 +53,15 @@ $outer-container-break: $small;
   }
 }
 
+@mixin grid(
+    $areas: "left-side left-gutter content sidebar right-side",
+    $columns: $space-triple $space-triple 63% 25% $space-triple
+  ) {
+  display: grid;
+  grid-template-areas: $areas;
+  grid-template-columns: $columns;
+}
+
 // Mixin - Standard Margin
 @mixin margin {
   margin-bottom: 1em;

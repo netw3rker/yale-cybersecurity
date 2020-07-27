@@ -1,4 +1,4 @@
-{% extends "@templates/with-sidebar.twig" %}
+{% extends "@templates/primary.twig" %}
   {% block page_content_top %}
     {% include "@atoms/text/headings/_heading.twig" with {
       heading_base_class: 'page-title',
@@ -12,14 +12,15 @@
     } %}
   {% endblock %}
   {% block page_content %}
-    {% include "@atoms/text/text/01-paragraph.twig" %}
-    {% include "@atoms/images/image/figure.twig" %}
-    {% include "@atoms/text/text/01-paragraph.twig" %}
-  {% endblock %}
-  {% block page_sidebar %}
-    {% include "@molecules/cta/cta.twig" with {
-      cta__heading: 'We have a podcast',
-      cta__button_text: 'Subscribe now!',
+    {% include "@molecules/text-section/text-section.twig" %}
+    {% include "@molecules/image-section/image-section.twig" %}
+    {% include "@molecules/text-section/text-section.twig" %}
+    {% include "@molecules/image-section/image-section.twig" with {
+      image_section_content_modifiers: ['large'],
+      image_src: 'https://placeimg.com/1200/400/tech',
+      image_caption: 'This is a large image caption.'
     } %}
-
+    {% include "@molecules/text-with-image/text-with-image.twig" with {
+      paragraph_content: basic_page_small_text
+    } %}
   {% endblock %}
