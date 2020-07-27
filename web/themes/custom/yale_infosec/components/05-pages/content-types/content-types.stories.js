@@ -3,6 +3,7 @@ import React from 'react';
 import '../../02-molecules/menus/main-menu/main-menu';
 
 import articleTwig from './article.twig';
+import pageTwig from './basic-page.twig';
 import guideTwig from './guide.twig';
 
 import menuData from '../../data/menus.yml';
@@ -26,6 +27,22 @@ export const article = () => (
         ...breadcrumbData,
         ...socialMenuData,
         ...footerMenuData,
+        card__link__text: 'Click here',
+      }),
+    }}
+  />
+);
+
+export const basicPage = () => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: pageTwig({
+        page_layout_modifier: 'contained',
+        ...menuData,
+        ...breadcrumbData,
+        ...socialMenuData,
+        ...footerMenuData,
+        ...heroData,
         card__link__text: 'Click here',
       }),
     }}

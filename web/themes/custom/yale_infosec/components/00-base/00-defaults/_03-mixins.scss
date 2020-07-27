@@ -32,7 +32,8 @@ $outer-container-break: $small;
   $v-margin: 0,
   $v-padding: 0,
   $h-padding: $space,
-  $h-padding-large: $h-padding
+  $h-padding-break: $h-padding,
+  $h-padding-large: 0
 ) {
   max-width: #{$container-max-width};
   width: 100%;
@@ -40,7 +41,7 @@ $outer-container-break: $small;
   padding: #{$v-padding} #{$h-padding};
 
   @include breakpoint($outer-container-break) {
-    padding: #{$v-padding} #{$h-padding-large};
+    padding: #{$v-padding} #{$h-padding-break};
   }
 
   @include medium {
@@ -48,11 +49,7 @@ $outer-container-break: $small;
   }
 
   @include large {
-    padding: #{$v-padding} 0;
-  }
-
-  @include max-width {
-    padding: #{$v-padding} 0;
+    padding: #{$v-padding} #{$h-padding-large};
   }
 }
 
