@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_header_image
     - node.type.page
-    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.large_image
   module:
     - entity_reference_revisions
 id: node.page.field_header_image
@@ -23,14 +23,17 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      image: image
+      large_image: large_image
     target_bundles_drag_drop:
       grid_type:
         weight: 6
         enabled: false
       image:
-        enabled: true
         weight: 7
+        enabled: false
+      large_image:
+        enabled: true
+        weight: 9
       text:
         weight: 8
         enabled: false

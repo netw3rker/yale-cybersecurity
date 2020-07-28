@@ -1,8 +1,9 @@
-uuid: c8ac80b9-c1f5-4c7b-b90b-4a7b0a593bef
+uuid: 0dbd1aab-09e9-42e4-802a-b707a9f057fd
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.aside
     - field.field.paragraph.image.field_aside_alignment
     - field.field.paragraph.image.field_aside_quote
     - field.field.paragraph.image.field_image
@@ -11,10 +12,10 @@ dependencies:
     - options
 _core:
   default_config_hash: O48ohIdztietNQhMoI8yxJxgLqvbNNHK3OG8MTqpddA
-id: paragraph.image.default
+id: paragraph.image.aside
 targetEntityType: paragraph
 bundle: image
-mode: default
+mode: aside
 content:
   field_aside_alignment:
     weight: 2
@@ -35,7 +36,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: default
+      view_mode: full
       link: false
     third_party_settings: {  }
     region: content
