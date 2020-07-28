@@ -1,0 +1,43 @@
+uuid: 48152037-13f4-4c0b-9a74-b18e2a7b2cf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.event.field_content_body
+    - field.field.node.event.field_metadata
+    - field.field.node.event.field_seo_title
+    - field.field.node.event.field_tags
+    - field.field.node.event.field_teaser_media
+    - field.field.node.event.field_teaser_text
+    - node.type.event
+  module:
+    - user
+id: node.event.card
+targetEntityType: node
+bundle: event
+mode: card
+content:
+  field_teaser_media:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_teaser_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  content_moderation_control: true
+  field_content_body: true
+  field_metadata: true
+  field_seo_title: true
+  field_tags: true
+  links: true
