@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.news.field_content_body
+    - field.field.node.news.field_intro_aside
+    - field.field.node.news.field_intro_text
     - field.field.node.news.field_metadata
     - field.field.node.news.field_news_author
     - field.field.node.news.field_news_category
@@ -15,6 +17,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - metatag
+    - text
     - user
 id: node.news.default
 targetEntityType: node
@@ -34,6 +37,22 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_intro_aside:
+    weight: 110
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_intro_text:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_metadata:
     weight: 104
