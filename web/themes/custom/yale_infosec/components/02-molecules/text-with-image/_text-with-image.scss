@@ -1,4 +1,6 @@
 .text-with-image {
+  @include wrapper;
+
   @include large {
     @include grid(
       $areas: "left-side left-gutter content-left content-right sidebar right-side",
@@ -27,6 +29,10 @@
 
 // Intro Text
 .intro-text {
+  @include wrapper;
+
+  margin-bottom: $space-triple;
+
   @include large {
     @include grid;
   }
@@ -34,7 +40,15 @@
 
 .intro-text__image {
   grid-area: sidebar;
-  margin-top: -16rem;
+
+  @include large {
+    margin-top: -16rem;
+  }
+
+  picture,
+  img {
+    width: 100%;
+  }
 }
 
 .intro-text__text {

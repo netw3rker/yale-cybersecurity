@@ -179,10 +179,17 @@ $color-heading: clr(text-heavy);
 }
 
 .page-title {
-  @include heading-xl(
+  @include heading-large(
     $line-height: 1,
     $margin: 0 0 $space,
   );
+
+  @include medium {
+    @include heading-xl(
+      $line-height: 1,
+      $margin: 0 0 $space,
+    );
+  }
 }
 
 .page-subtitle {

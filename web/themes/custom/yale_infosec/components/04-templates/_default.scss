@@ -3,7 +3,11 @@
 */
 
 .main-content__top {
-  @include grid;
+  @include wrapper;
+
+  @include large {
+    @include grid;
+  }
 
   margin-bottom: $space-triple;
 }

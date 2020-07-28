@@ -1,4 +1,6 @@
 .image-section {
+  @include wrapper;
+
   @include large {
     @include grid;
   }

@@ -1,4 +1,6 @@
 .text-section {
+  @include wrapper;
+
   @include large {
     @include grid;
   }

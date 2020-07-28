@@ -29,7 +29,11 @@
   // So for now, we will make sure that main has enough margin if hero doesn't exist.
   // We will likely change this when we get this into Drupal.
   & + #main-content + .main-content {
-    margin-top: 19.5rem;
+    margin-top: 10.5rem;
+
+    @include medium {
+      margin-top: 19.5rem;
+    }
 
     @include large {
       margin-top: 24rem;
