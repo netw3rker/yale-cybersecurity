@@ -1,0 +1,21 @@
+uuid: fbf051d0-fde9-40c5-816c-80b436ef9c1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_aside_alignment
+    - paragraphs.paragraphs_type.image
+  module:
+    - options
+id: paragraph.image.field_aside_alignment
+field_name: field_aside_alignment
+entity_type: paragraph
+bundle: image
+label: 'Aside alignment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

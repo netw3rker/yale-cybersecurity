@@ -1,0 +1,18 @@
+{#
+ # Available variables:
+ # - image_section__base_class - base classname of the wrapper.
+ #}
+{% set image_section__base_class = 'image-section' %}
+
+<div {{ bem(image_section__base_class) }}>
+  <div {{ bem('image', image_section_content_modifiers, image_section__base_class) }}>
+    {% block image_section_img %}
+      {% include "@atoms/images/image/figure.twig" %}
+    {% endblock %}
+  </div>
+  <div {{ bem('aside', image_section_content_modifiers, image_section__base_class) }}>
+    {% block image_section_aside %}
+      {% include "@atoms/text/text/02-blockquote.twig" %}
+    {% endblock %}
+  </div>
+</div>

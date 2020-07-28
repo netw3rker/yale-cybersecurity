@@ -1,0 +1,45 @@
+uuid: 1bfc5dd7-23a0-4dc2-8326-78d99efdea18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_aside
+    - node.type.page
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: node.page.field_intro_aside
+field_name: field_intro_aside
+entity_type: node
+bundle: page
+label: 'Intro Aside'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image: image
+      text: text
+    target_bundles_drag_drop:
+      grid_type:
+        weight: 6
+        enabled: false
+      image:
+        enabled: true
+        weight: 7
+      text:
+        enabled: true
+        weight: 8
+      text_with_media:
+        weight: 9
+        enabled: false
+      video:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

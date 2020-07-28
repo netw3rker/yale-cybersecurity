@@ -29,6 +29,14 @@
 .hero__image {
   max-height: 300px;
 
+  @include medium {
+    max-height: 500px;
+  }
+
+  @include medium {
+    max-height: 750px;
+  }
+
   &--guide {
     height: 100%;
     left: 0;
@@ -51,7 +59,6 @@
 
   img,
   picture {
-    max-width: none;
     object-fit: cover;
 
     @include medium {

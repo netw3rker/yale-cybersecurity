@@ -28,8 +28,9 @@ const CSSLoader = {
         },
         ident: 'postcss',
         plugins: () => [
-          postcssCustomProperties()
-        ]
+          postcssCustomProperties(),
+          require('autoprefixer')({ grid: 'autoplace' })
+        ],
       },
     },
     {

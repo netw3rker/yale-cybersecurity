@@ -1,0 +1,10 @@
+uuid: c6f091a9-3253-4118-aadd-762a5206400b
+langcode: en
+status: true
+dependencies: {  }
+id: large_image
+label: 'Large image'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -3,7 +3,7 @@
   padding: 5.6rem 0 $space-triple;
 
   &__inner {
-    @include wrapper;
+    @include wrapper($h-padding-large: 4rem);
   }
 }
 

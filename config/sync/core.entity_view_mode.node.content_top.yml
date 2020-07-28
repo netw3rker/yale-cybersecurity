@@ -1,0 +1,10 @@
+uuid: 90b1b028-0c9b-4d61-bd05-9e130b93b52e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.content_top
+label: 'Content Top'
+targetEntityType: node
+cache: true

@@ -1,0 +1,56 @@
+.text-with-image {
+  @include wrapper;
+
+  @include large {
+    @include grid(
+      $areas: "left-side left-gutter content-left content-right sidebar right-side",
+      $columns: 3.5% 3.5% 32.25% 32.25% 25% 3.5%
+    );
+  }
+}
+
+.text-with-image__image {
+  grid-column-end: sidebar;
+  grid-column-start: content-right;
+  grid-row-start: 1;
+
+  figure,
+  img {
+    width: 100%;
+  }
+}
+
+.text-with-image__text {
+  grid-column-end: content-left;
+  grid-column-start: content-left;
+  grid-row-start: 1;
+  margin-right: $space-triple;
+}
+
+// Intro Text
+.intro-text {
+  @include wrapper;
+
+  margin-bottom: $space-triple;
+
+  @include large {
+    @include grid;
+  }
+}
+
+.intro-text__image {
+  grid-area: sidebar;
+
+  @include large {
+    margin-top: -16rem;
+  }
+
+  picture,
+  img {
+    width: 100%;
+  }
+}
+
+.intro-text__text {
+  grid-area: content;
+}
