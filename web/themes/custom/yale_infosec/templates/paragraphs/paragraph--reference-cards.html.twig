@@ -37,12 +37,15 @@
  */
 #}
 
-{% embed "@organisms/grid/grid.twig" with {
-  grid_label: content.field_heading,
-  grid_type: 'card',
-  item_type: 'card'
-} %}
-  {% block grid_content %}
-    {{ content.field_content_reference }}
+{% extends "@molecules/text-section/text-section.twig" %}
+  {% block text_section_content %}
+    {% embed "@organisms/grid/grid.twig" with {
+      grid_label: content.field_heading,
+      grid_type: 'card',
+      item_type: 'card'
+    } %}
+      {% block grid_content %}
+        {{ content.field_content_reference }}
+      {% endblock %}
+    {% endembed %}
   {% endblock %}
-{% endembed %}

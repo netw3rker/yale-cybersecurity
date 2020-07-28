@@ -36,7 +36,9 @@
  * @ingroup themeable
  */
 #}
-
-{% include "@atoms/text/text/02-blockquote.twig" with {
-  blockquote_content: content.field_text_plain
-} %}
+{% extends "@molecules/text-section/text-section.twig" %}
+  {% block text_section_content %}
+    {% include "@atoms/text/text/02-blockquote.twig" with {
+      blockquote_content: content.field_text_plain
+    } %}
+  {% endblock %}
