@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.guide.field_content_body
+    - field.field.node.guide.field_header_image
     - field.field.node.guide.field_metadata
     - field.field.node.guide.field_seo_title
     - field.field.node.guide.field_tags
@@ -19,8 +20,22 @@ targetEntityType: node
 bundle: guide
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_content_body:
     weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_header_image:
+    weight: 107
     label: above
     settings:
       view_mode: default

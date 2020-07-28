@@ -1,0 +1,46 @@
+uuid: 506078e3-cb4b-4e0c-8f4f-dd405a83cc70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_image
+    - node.type.guide
+    - paragraphs.paragraphs_type.large_image
+  module:
+    - entity_reference_revisions
+id: node.guide.field_header_image
+field_name: field_header_image
+entity_type: node
+bundle: guide
+label: 'Header Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      large_image: large_image
+    target_bundles_drag_drop:
+      grid_type:
+        weight: 7
+        enabled: false
+      image:
+        weight: 8
+        enabled: false
+      large_image:
+        enabled: true
+        weight: 9
+      text:
+        weight: 10
+        enabled: false
+      text_with_media:
+        weight: 11
+        enabled: false
+      video:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions
