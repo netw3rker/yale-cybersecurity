@@ -2,9 +2,9 @@
  # Available variables:
  # - text_with_image__base_class - base classname of the wrapper.
  #}
-{% set text_with_image__base_class = 'text-with-image' %}
+{% set text_with_image__base_class = text_with_image__base_class|default('text-with-image') %}
 
-<div {{ bem(text_with_image__base_class) }}>
+<div {{ bem(text_with_image__base_class, text_with_image__modifiers) }}>
   <div {{ bem('image', [], text_with_image__base_class) }}>
     {% block text_with_image_img %}
       {% include "@atoms/images/image/figure.twig" %}

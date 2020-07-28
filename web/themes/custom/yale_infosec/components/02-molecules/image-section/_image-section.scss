@@ -9,11 +9,15 @@
   }
 }
 
-.image-section__content {
+.image-section__image {
   grid-area: content;
 
   &--large {
     grid-column-end: sidebar;
     grid-column-start: left-gutter;
   }
+}
+
+.image-section__aside {
+  grid-area: sidebar;
 }

@@ -23,4 +23,14 @@
     color: clr(text-inverse);
     background-color: color(success);
   }
+
+  // Links
+  a {
+    color: clr(text-inverse);
+    text-decoration: underline;
+
+    &:hover {
+      color: clr(accentsubtle);
+    }
+  }
 }

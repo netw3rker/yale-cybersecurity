@@ -38,7 +38,29 @@
 
  @TODO: THIS CAN BE REMOVED IF BEM CLASSES CAN BE APPLIED IN WYSIWYG
 #}
+{%
+  set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
 
-{% for item in items %}
-  {{ item.content }}
-{% endfor %}
+{% if label_hidden %}
+  {% if multiple %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  {% else %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  {% endif %}
+{% else %}
+    {{ label }}
+    {% if multiple %}
+    {% endif %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+    {% if multiple %}
+    {% endif %}
+{% endif %}

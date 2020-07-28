@@ -18,6 +18,12 @@ p,
   border-left: solid 1px clr(accent);
   margin-left: 0;
   padding-left: 2.5rem;
+
+  .bg--dark-gray &,
+  .bg--blue &,
+  .bg--dark-blue & {
+    color: clr(text-inverse);
+  }
 }
 
 .hr {

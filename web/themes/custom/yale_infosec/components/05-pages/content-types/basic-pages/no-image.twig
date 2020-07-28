@@ -12,6 +12,10 @@
     } %}
   {% endblock %}
   {% block page_content %}
+    {% include "@molecules/text-with-image/text-with-image.twig" with {
+      text_with_image__base_class: 'intro-text',
+      image_src: 'https://placeimg.com/350/400/tech'
+    } %}
     {% include "@molecules/text-section/text-section.twig" %}
     {% include "@molecules/image-section/image-section.twig" %}
     {% include "@molecules/text-section/text-section.twig" %}

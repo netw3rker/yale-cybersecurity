@@ -38,7 +38,7 @@ export const Blue = () => (
 export const YaleBlue = () => (
   <div dangerouslySetInnerHTML={{ __html: bg({
     bg__extra_classes: ['cl-wrap'],
-    bg__modifiers: ['yale-blue']
+    bg__modifiers: ['dark-blue']
   }) }} />
 );
 

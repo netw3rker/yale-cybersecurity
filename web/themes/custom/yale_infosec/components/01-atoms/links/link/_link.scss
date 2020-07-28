@@ -12,4 +12,15 @@
 a,
 .link {
   @include link;
+
+  .bg--dark-gray &,
+  .bg--blue &,
+  .bg--dark-blue & {
+    color: clr(text-inverse);
+    text-decoration: underline;
+
+    &:hover {
+      color: clr(secondary);
+    }
+  }
 }

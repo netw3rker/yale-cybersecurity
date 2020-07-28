@@ -40,5 +40,7 @@
 #}
 
 {% for item in items %}
-  {{ item.content }}
+  {% include "@atoms/text/text/02-blockquote.twig" with {
+    blockquote_content: item.content,
+  } %}
 {% endfor %}

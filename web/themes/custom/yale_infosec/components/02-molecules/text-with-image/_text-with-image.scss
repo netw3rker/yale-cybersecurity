@@ -2,7 +2,7 @@
   @include large {
     @include grid(
       $areas: "left-side left-gutter content-left content-right sidebar right-side",
-      $columns: $space-triple $space-triple 31.5% 31.5% 25% $space-triple
+      $columns: 3.5% 3.5% 32.25% 32.25% 25% 3.5%
     );
   }
 }
@@ -23,4 +23,20 @@
   grid-column-start: content-left;
   grid-row-start: 1;
   margin-right: $space-triple;
+}
+
+// Intro Text
+.intro-text {
+  @include large {
+    @include grid;
+  }
+}
+
+.intro-text__image {
+  grid-area: sidebar;
+  margin-top: -16rem;
+}
+
+.intro-text__text {
+  grid-area: content;
 }

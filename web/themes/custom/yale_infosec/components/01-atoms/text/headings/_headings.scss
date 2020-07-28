@@ -166,6 +166,18 @@ $color-heading: clr(text-heavy);
   @include heading-xs;
 }
 
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  .bg--dark-gray &,
+  .bg--blue &,
+  .bg--dark-blue & {
+    color: clr(text-inverse);
+  }
+}
+
 .page-title {
   @include heading-xl(
     $line-height: 1,

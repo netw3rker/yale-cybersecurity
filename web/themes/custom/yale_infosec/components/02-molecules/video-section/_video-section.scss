@@ -1,4 +1,6 @@
 .video-section {
+  margin-bottom: $space-triple;
+
   @include large {
     @include grid;
   }

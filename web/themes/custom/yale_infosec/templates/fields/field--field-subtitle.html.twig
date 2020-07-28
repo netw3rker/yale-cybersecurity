@@ -40,5 +40,9 @@
 #}
 
 {% for item in items %}
-  {{ item.content }}
+  {% include "@atoms/text/headings/_heading.twig" with {
+    heading_base_class: 'page-subtitle',
+    heading_level: '2',
+    heading: item.content,
+  } %}
 {% endfor %}
