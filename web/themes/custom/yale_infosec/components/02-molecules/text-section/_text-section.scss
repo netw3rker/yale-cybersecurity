@@ -1,0 +1,11 @@
+.text-section {
+  @include wrapper;
+
+  @include large {
+    @include grid;
+  }
+}
+
+.text-section__content {
+  grid-area: content;
+}

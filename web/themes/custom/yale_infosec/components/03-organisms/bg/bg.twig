@@ -1,0 +1,12 @@
+{#
+ # Background
+ #}
+{% set bg__base_class = 'bg' %}
+
+<div {{ bem(bg__base_class, bg__modifiers, bg__blockname, bg__extra_classes) }}>
+  {% block bg_contents %}
+    {% include "@templates/placeholder/place-holder.twig" with {
+      "place_holder": "Background Content",
+    } %}
+  {% endblock %}
+</div>

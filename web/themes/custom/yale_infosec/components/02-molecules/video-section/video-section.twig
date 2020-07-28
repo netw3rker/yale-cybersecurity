@@ -1,0 +1,13 @@
+{#
+ # Available variables:
+ # - video_section__base_class - base classname of the wrapper.
+ #}
+{% set video_section__base_class = 'video-section' %}
+
+<div {{ bem(video_section__base_class) }}>
+  <div {{ bem('content', [], video_section__base_class) }}>
+    {% block video_section_content %}
+      {% include "@atoms/video/video.twig" %}
+    {% endblock %}
+  </div>
+</div>

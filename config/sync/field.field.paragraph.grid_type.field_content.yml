@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.reference_cards
     - paragraphs.paragraphs_type.reference_list
+    - paragraphs.paragraphs_type.large_image
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_with_media
     - paragraphs.paragraphs_type.video
@@ -32,6 +33,7 @@ settings:
       image: image
       text: text
       quote: quote
+      large_image: large_image
       text_with_media: text_with_media
       video: video
       reference_cards: reference_cards
@@ -52,6 +54,9 @@ settings:
       reference_list:
         enabled: true
         weight: 13
+      large_image:
+        enabled: true
+        weight: 9
       text:
         enabled: true
         weight: 8

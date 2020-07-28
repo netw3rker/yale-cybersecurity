@@ -1,0 +1,19 @@
+uuid: b5b30f9a-7111-49c4-96f5-a451ef64b30a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_aside_quote
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.field_aside_quote
+field_name: field_aside_quote
+entity_type: paragraph
+bundle: image
+label: 'Aside quote'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

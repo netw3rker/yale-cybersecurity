@@ -1,0 +1,23 @@
+uuid: acd397ca-8820-4d47-96a2-408e8b0e87bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+  theme:
+    - yale_infosec
+id: entityviewcontent_2
+theme: yale_infosec
+region: content_top
+weight: -2
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Content Top Content'
+  provider: ctools
+  label_display: '0'
+  view_mode: content_top
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }
