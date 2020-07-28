@@ -4,6 +4,7 @@ import '../../../02-molecules/menus/main-menu/main-menu';
 
 import noImageTwig from './no-image.twig';
 import withImageTwig from './with-image.twig';
+import bgTwig from './bg-examples.twig';
 
 import menuData from '../../../data/menus.yml';
 import breadcrumbData from '../../../02-molecules/menus/breadcrumbs/breadcrumbs.yml';
@@ -37,6 +38,22 @@ export const withImage = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: withImageTwig({
+        page_layout_modifier: 'contained',
+        ...menuData,
+        ...breadcrumbData,
+        ...socialMenuData,
+        ...footerMenuData,
+        ...contentTypeData,
+        card__link__text: 'Click here',
+      }),
+    }}
+  />
+);
+
+export const backgroundExamples = () => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: bgTwig({
         page_layout_modifier: 'contained',
         ...menuData,
         ...breadcrumbData,

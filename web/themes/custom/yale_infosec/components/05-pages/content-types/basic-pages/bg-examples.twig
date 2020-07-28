@@ -1,0 +1,154 @@
+{% extends "@templates/primary.twig" %}
+  {% block page_content_top %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: 'page-title',
+      heading_level: '1',
+      heading: 'Basic Page with Multiple Backgrounds',
+    } %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: 'page-subtitle',
+      heading_level: '2',
+      heading: 'This is a Basic Page Subtitle',
+    } %}
+  {% endblock %}
+  {% block page_content %}
+    {% include "@molecules/text-with-image/text-with-image.twig" with {
+      text_with_image__base_class: 'intro-text',
+      image_src: 'https://placeimg.com/350/400/tech'
+    } %}
+    {% embed "@organisms/bg/bg.twig" with {
+      bg__modifiers: ['light-gray']
+    } %}
+      {% block bg_contents %}
+        {% include "@pages/content-types/basic-pages/bg-examples-text-section.twig" with {
+          heading_level_1: 2,
+          heading_level_2: 3
+        } %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          blockquote_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
+        } %}
+        {% include "@molecules/text-section/text-section.twig" %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          image_section_content_modifiers: ['large'],
+          image_src: 'https://placeimg.com/1200/400/tech',
+          image_caption: 'This is a large image caption.'
+        } %}
+        {% include "@molecules/text-with-image/text-with-image.twig" with {
+          paragraph_content: basic_page_small_text
+        } %}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@organisms/bg/bg.twig" with {
+      bg__modifiers: ['gray']
+    } %}
+      {% block bg_contents %}
+        {% include "@pages/content-types/basic-pages/bg-examples-text-section.twig" with {
+          heading_level_1: 2,
+          heading_level_2: 3
+        } %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          blockquote_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
+        } %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          image_section_content_modifiers: ['large'],
+          image_src: 'https://placeimg.com/1200/400/tech',
+          image_caption: 'This is a large image caption.'
+        } %}
+        {% include "@pages/content-types/basic-pages/bg-examples-text-section.twig" with {
+          heading_level_1: 4,
+          heading_level_2: 5
+        } %}
+        {% include "@molecules/text-with-image/text-with-image.twig" with {
+          paragraph_content: basic_page_small_text
+        } %}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@organisms/bg/bg.twig" with {
+      bg__modifiers: ['dark-gray']
+    } %}
+      {% block bg_contents %}
+        {% include "@pages/content-types/basic-pages/bg-examples-text-section.twig" with {
+          heading_level_1: 2,
+          heading_level_2: 3
+        } %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          blockquote_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
+        } %}
+        {% include "@molecules/text-section/text-section.twig" %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          image_section_content_modifiers: ['large'],
+          image_src: 'https://placeimg.com/1200/400/tech',
+          image_caption: 'This is a large image caption.'
+        } %}
+        {% include "@molecules/text-with-image/text-with-image.twig" with {
+          paragraph_content: basic_page_small_text
+        } %}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@organisms/bg/bg.twig" with {
+      bg__modifiers: ['light-blue']
+    } %}
+      {% block bg_contents %}
+        {% include "@molecules/text-section/text-section.twig" %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          blockquote_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
+        } %}
+        {% include "@molecules/text-section/text-section.twig" %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          image_section_content_modifiers: ['large'],
+          image_src: 'https://placeimg.com/1200/400/tech',
+          image_caption: 'This is a large image caption.'
+        } %}
+        {% include "@molecules/text-with-image/text-with-image.twig" with {
+          paragraph_content: basic_page_small_text
+        } %}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@organisms/bg/bg.twig" with {
+      bg__modifiers: ['blue']
+    } %}
+      {% block bg_contents %}
+        {% include "@molecules/text-section/text-section.twig" %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          blockquote_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
+        } %}
+        {% include "@pages/content-types/basic-pages/bg-examples-text-section.twig" with {
+          heading_level_1: 4,
+          heading_level_2: 5
+        } %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          image_section_content_modifiers: ['large'],
+          image_src: 'https://placeimg.com/1200/400/tech',
+          image_caption: 'This is a large image caption.'
+        } %}
+        {% include "@molecules/text-with-image/text-with-image.twig" with {
+          paragraph_content: basic_page_small_text
+        } %}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@organisms/bg/bg.twig" with {
+      bg__modifiers: ['dark-blue']
+    } %}
+      {% block bg_contents %}
+        {% include "@pages/content-types/basic-pages/bg-examples-text-section.twig" with {
+          heading_level_1: 2,
+          heading_level_2: 3
+        } %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          blockquote_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
+        } %}
+        {% include "@pages/content-types/basic-pages/bg-examples-text-section.twig" with {
+          heading_level_1: 4,
+          heading_level_2: 5
+        } %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          image_section_content_modifiers: ['large'],
+          image_src: 'https://placeimg.com/1200/400/tech',
+          image_caption: 'This is a large image caption.'
+        } %}
+        {% include "@molecules/text-with-image/text-with-image.twig" with {
+          paragraph_content: basic_page_small_text
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
