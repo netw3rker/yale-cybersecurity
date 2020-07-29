@@ -1,0 +1,13 @@
+{% extends "@molecules/text-section/text-section.twig" %}
+  {% block text_section_content %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_level: heading_level_1,
+      heading: 'This is a Heading ' ~ heading_level_1,
+    } %}
+    {% include "@atoms/text/text/01-paragraph.twig" %}
+    {% include "@atoms/text/text/02-blockquote.twig" %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_level: heading_level_2,
+      heading: 'This is a Heading ' ~ heading_level_2,
+    } %}
+  {% endblock %}

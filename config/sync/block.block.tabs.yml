@@ -6,7 +6,7 @@ dependencies:
     - yale_infosec
 id: tabs
 theme: yale_infosec
-region: content
+region: content_top
 weight: -1
 provider: null
 plugin: local_tasks_block

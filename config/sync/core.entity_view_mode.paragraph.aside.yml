@@ -1,0 +1,10 @@
+uuid: 18baf661-5765-4ec4-ade1-f1f0f0767677
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.aside
+label: Aside
+targetEntityType: paragraph
+cache: true

@@ -62,7 +62,7 @@ $max-width: $xl;
 /// Mixin - max-width Breakpoint
 /// Allows easier @include max-width {} syntax
 @mixin max-width {
-  @include breakpoint($max-width) {
+  @include breakpoint($max-width + 60px) {
     @content;
   }
 }

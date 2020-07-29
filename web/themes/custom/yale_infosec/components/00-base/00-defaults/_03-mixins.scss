@@ -27,12 +27,13 @@ $outer-container-break: $small;
 /// Mixin - Wrapper
 /// Outer container mixin for large screens
 @mixin wrapper(
-  $container-max-width: $max-width,
+  $container-max-width: 1440px,
   $outer-container-break: $small,
   $v-margin: 0,
   $v-padding: 0,
   $h-padding: $space,
-  $h-padding-large: $h-padding
+  $h-padding-break: $h-padding,
+  $h-padding-large: 0
 ) {
   max-width: #{$container-max-width};
   width: 100%;
@@ -40,12 +41,25 @@ $outer-container-break: $small;
   padding: #{$v-padding} #{$h-padding};
 
   @include breakpoint($outer-container-break) {
-    padding: #{$v-padding} #{$h-padding-large};
+    padding: #{$v-padding} #{$h-padding-break};
   }
 
   @include medium {
     padding: #{$v-padding} 4rem;
   }
+
+  @include large {
+    padding: #{$v-padding} #{$h-padding-large};
+  }
+}
+
+@mixin grid(
+    $areas: "left-side left-gutter content gutter sidebar right-side",
+    $columns: 3.5% 3.5% 61% 3.5% 25% 3.5%
+  ) {
+  display: grid;
+  grid-template-areas: $areas;
+  grid-template-columns: $columns;
 }
 
 // Mixin - Standard Margin

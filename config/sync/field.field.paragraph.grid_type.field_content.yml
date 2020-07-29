@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_content
     - paragraphs.paragraphs_type.grid_type
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.large_image
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_with_media
     - paragraphs.paragraphs_type.video
@@ -28,6 +29,7 @@ settings:
     target_bundles:
       image: image
       text: text
+      large_image: large_image
       text_with_media: text_with_media
       video: video
     target_bundles_drag_drop:
@@ -37,6 +39,9 @@ settings:
       image:
         enabled: true
         weight: 7
+      large_image:
+        enabled: true
+        weight: 9
       text:
         enabled: true
         weight: 8

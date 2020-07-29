@@ -44,6 +44,11 @@ module.exports = async ({ config }) => {
                 '../',
                 'components/04-templates',
               ),
+              pages: path.resolve(
+                __dirname,
+                '../',
+                'components/05-pages',
+              ),
             },
           },
         },
