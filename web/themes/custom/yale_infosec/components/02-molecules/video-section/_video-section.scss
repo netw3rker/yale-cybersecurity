@@ -1,4 +1,6 @@
 .video-section {
+  @include wrapper;
+
   margin-bottom: $space-triple;
 
   @include large {

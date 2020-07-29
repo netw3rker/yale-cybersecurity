@@ -1,7 +1,9 @@
-$bgSpace: $space-triple;
-
 .bg {
-  padding: $bgSpace 0;
+  padding: $space-double 0;
+
+  @include medium {
+    padding: $space-triple 0;
+  }
 
   &--white {
     padding: 0;

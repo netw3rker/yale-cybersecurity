@@ -8,8 +8,6 @@ dependencies:
     - field.field.paragraph.image.field_aside_quote
     - field.field.paragraph.image.field_image
     - paragraphs.paragraphs_type.image
-  module:
-    - options
 _core:
   default_config_hash: O48ohIdztietNQhMoI8yxJxgLqvbNNHK3OG8MTqpddA
 id: paragraph.image.aside
@@ -17,13 +15,6 @@ targetEntityType: paragraph
 bundle: image
 mode: aside
 content:
-  field_aside_alignment:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_aside_quote:
     weight: 1
     label: hidden
@@ -40,4 +31,5 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_aside_alignment: true
