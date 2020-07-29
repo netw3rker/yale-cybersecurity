@@ -61,12 +61,16 @@
       heading: cta__heading,
     } %}
     {% if cta__body %}
-      {% include "@atoms/text/text/01-paragraph.twig" with {
-        paragraph_base_class: 'body',
-        paragraph_modifiers: cta__body__modifiers,
-        paragraph_blockname: cta__base_class,
-        paragraph_content: cta__body,
-      } %}
+      <div {{ bem('text', [], cta__base_class) }}>
+        {% block cta_text %}
+          {% include "@atoms/text/text/01-paragraph.twig" with {
+            paragraph_base_class: 'body',
+            paragraph_modifiers: cta__body__modifiers,
+            paragraph_blockname: cta__base_class,
+            paragraph_content: cta__body,
+          } %}
+        {% endblock %}
+      </div>
     {% endif %}
     {# Links #}
     {% if cta__link_url_2 %}

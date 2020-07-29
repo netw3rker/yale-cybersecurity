@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an ECK entity.
+ *
+ * Available variables:
+ * - eck_entity: The full ECK entity with limited access to object properties
+ *   and methods. Only "getter" methods (method names starting with "get",
+ *   "has", or "is") and a few common methods such as "id" and "label" are
+ *   available. Calling other methods (such as node.delete) will result in an
+ *   exception.
+ * - content: All ECK entity items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *
+ * @see template_preprocess_eck_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content.field_image.0 %}
+  {% set cta__image = true %}
+{% endif %}
+
+{% if content.field_text.0 %}
+  {% set cta__body = true %}
+{% endif %}
+
+{% embed "@molecules/cta/cta.twig" with {
+  cta__heading: content.field_display_title,
+  cta__link_url: content.field_link.0['#url'],
+  cta__link_text: content.field_link.0['#title']
+} %}
+  {% block cta__img %}
+    {{ content.field_image }}
+  {% endblock %}
+  {% block cta_text %}
+    {{ content.field_text }}
+  {% endblock %}
+{% endembed %}

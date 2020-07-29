@@ -64,7 +64,8 @@
   }
 }
 
-.cta__body {
+.cta__body,
+.cta__text {
   color: clr('text-inverse');
   font-size: 2.2rem;
   line-height: 1.21;
