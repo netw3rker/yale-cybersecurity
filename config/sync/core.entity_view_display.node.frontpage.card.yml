@@ -1,8 +1,9 @@
-uuid: c2b458a9-bf06-46fa-9f34-4680034320a3
+uuid: 7d434503-7883-4278-843c-56fe00e974b7
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - field.field.node.frontpage.field_metadata
     - field.field.node.frontpage.field_seo_title
     - field.field.node.frontpage.field_teaser_media
@@ -12,19 +13,29 @@ dependencies:
     - user
 _core:
   default_config_hash: '-dTbOfljyuYfgcn7hK8miRbYRNWhQdHKcDEMdnYNjEg'
-id: node.frontpage.default
+id: node.frontpage.card
 targetEntityType: node
 bundle: frontpage
-mode: default
+mode: card
 content:
-  content_moderation_control:
-    weight: -20
+  field_teaser_media:
+    type: entity_reference_entity_view
+    weight: 0
     region: content
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+  field_teaser_text:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
 hidden:
+  content_moderation_control: true
   field_metadata: true
   field_seo_title: true
-  field_teaser_media: true
-  field_teaser_text: true
   links: true

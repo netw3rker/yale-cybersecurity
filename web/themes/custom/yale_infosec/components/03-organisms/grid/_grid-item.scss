@@ -3,8 +3,8 @@
   margin-bottom: $space-double;
 
   @include large {
-    margin: 0 $space-double $space-double 0;
-    flex-basis: 48%;
+    margin: 0 5% 5% 0;
+    flex-basis: 45%;
   }
 
   &:nth-child(2n),

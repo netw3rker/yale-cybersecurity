@@ -6,6 +6,9 @@ dependencies:
     - field.storage.paragraph.field_content
     - paragraphs.paragraphs_type.grid_type
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.reference_cards
+    - paragraphs.paragraphs_type.reference_list
     - paragraphs.paragraphs_type.large_image
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_with_media
@@ -29,9 +32,12 @@ settings:
     target_bundles:
       image: image
       text: text
+      quote: quote
       large_image: large_image
       text_with_media: text_with_media
       video: video
+      reference_cards: reference_cards
+      reference_list: reference_list
     target_bundles_drag_drop:
       grid_type:
         weight: 6
@@ -42,6 +48,15 @@ settings:
       large_image:
         enabled: true
         weight: 9
+      quote:
+        enabled: true
+        weight: 9
+      reference_cards:
+        enabled: true
+        weight: 11
+      reference_list:
+        enabled: true
+        weight: 13
       text:
         enabled: true
         weight: 8

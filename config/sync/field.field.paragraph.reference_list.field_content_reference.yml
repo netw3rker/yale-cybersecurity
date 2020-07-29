@@ -1,0 +1,38 @@
+uuid: 7141aa6f-37c8-4f0c-866b-f8535d4f7496
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_reference
+    - node.type.alert
+    - node.type.event
+    - node.type.frontpage
+    - node.type.guide
+    - node.type.news
+    - node.type.page
+    - paragraphs.paragraphs_type.reference_list
+id: paragraph.reference_list.field_content_reference
+field_name: field_content_reference
+entity_type: paragraph
+bundle: reference_list
+label: 'Content Reference'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      alert: alert
+      event: event
+      frontpage: frontpage
+      guide: guide
+      news: news
+      page: page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: alert
+field_type: entity_reference

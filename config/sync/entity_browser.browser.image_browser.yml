@@ -15,8 +15,8 @@ name: image_browser
 label: 'Image Browser'
 display: modal
 display_configuration:
-  width: '1070'
-  height: '800'
+  width: '1100'
+  height: '750'
   link_text: 'Select Image'
   auto_open: false
 selection_display: no_display
