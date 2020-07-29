@@ -6,3 +6,5 @@ output_image_tag: true
 image_src: 'https://placeimg.com/800/400/tech'
 image_alt: 'This is the alt text'
 image_caption: 'This is an image caption.'
+
+blockquote_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.'

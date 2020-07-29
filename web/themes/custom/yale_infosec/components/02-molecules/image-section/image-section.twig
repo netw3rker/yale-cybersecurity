@@ -10,9 +10,11 @@
       {% include "@atoms/images/image/figure.twig" %}
     {% endblock %}
   </div>
-  <div {{ bem('aside', image_section_content_modifiers, image_section__base_class) }}>
-    {% block image_section_aside %}
-      {% include "@atoms/text/text/02-blockquote.twig" %}
-    {% endblock %}
-  </div>
+  {% if 'large' not in image_section_content_modifiers %}
+    <div {{ bem('aside', image_section_content_modifiers, image_section__base_class) }}>
+      {% block image_section_aside %}
+        {% include "@atoms/text/text/02-blockquote.twig" %}
+      {% endblock %}
+    </div>
+  {% endif %}
 </div>
