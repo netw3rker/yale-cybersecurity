@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ */
+#}
+
+{% embed "@atoms/images/image/figure.twig" with {
+  image_caption: content.field_caption.0
+} %}
+  {% block figure_content %}
+    {{ content|without('field_caption') }}
+  {% endblock %}
+{% endembed %}

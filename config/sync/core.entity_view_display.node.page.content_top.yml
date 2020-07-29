@@ -1,0 +1,46 @@
+uuid: d801e3b6-e9ec-4be6-9b64-dcd47667ddb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.content_top
+    - field.field.node.page.field_content_body
+    - field.field.node.page.field_header_image
+    - field.field.node.page.field_intro_aside
+    - field.field.node.page.field_intro_text
+    - field.field.node.page.field_metadata
+    - field.field.node.page.field_seo_title
+    - field.field.node.page.field_subtitle
+    - field.field.node.page.field_tags
+    - field.field.node.page.field_teaser_media
+    - field.field.node.page.field_teaser_text
+    - node.type.page
+  module:
+    - user
+_core:
+  default_config_hash: r1tD2d3xfgugcFCakPpaMsHLgkoF0C5up8qu-Ku9v1w
+id: node.page.content_top
+targetEntityType: node
+bundle: page
+mode: content_top
+content:
+  field_subtitle:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  content_moderation_control: true
+  field_content_body: true
+  field_header_image: true
+  field_intro_aside: true
+  field_intro_text: true
+  field_metadata: true
+  field_seo_title: true
+  field_tags: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true

@@ -1,0 +1,33 @@
+uuid: 5325c3ff-e53c-4a43-b928-0c1ac727f1d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.large_image.field_image
+    - paragraphs.paragraphs_type.large_image
+  module:
+    - entity_browser
+id: paragraph.large_image.default
+targetEntityType: paragraph
+bundle: large_image
+mode: default
+content:
+  field_image:
+    weight: 0
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_display_settings:
+        view_mode: preview
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+hidden:
+  created: true
+  status: true

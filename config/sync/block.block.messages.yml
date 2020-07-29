@@ -8,7 +8,7 @@ dependencies:
     - yale_infosec
 id: messages
 theme: yale_infosec
-region: content
+region: content_top
 weight: 0
 provider: null
 plugin: system_messages_block

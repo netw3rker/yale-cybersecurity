@@ -16,12 +16,12 @@ bundle: grid_type
 mode: default
 content:
   field_color_style:
+    type: list_key
     weight: 1
-    label: above
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
-    region: content
   field_content:
     type: entity_reference_revisions_entity_view
     weight: 0
@@ -32,10 +32,10 @@ content:
     third_party_settings: {  }
     region: content
   field_grid_style:
+    type: list_key
     weight: 2
-    label: above
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
-    region: content
 hidden: {  }

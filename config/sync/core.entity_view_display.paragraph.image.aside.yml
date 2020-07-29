@@ -1,0 +1,35 @@
+uuid: 0dbd1aab-09e9-42e4-802a-b707a9f057fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.aside
+    - field.field.paragraph.image.field_aside_alignment
+    - field.field.paragraph.image.field_aside_quote
+    - field.field.paragraph.image.field_image
+    - paragraphs.paragraphs_type.image
+_core:
+  default_config_hash: O48ohIdztietNQhMoI8yxJxgLqvbNNHK3OG8MTqpddA
+id: paragraph.image.aside
+targetEntityType: paragraph
+bundle: image
+mode: aside
+content:
+  field_aside_quote:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_aside_alignment: true

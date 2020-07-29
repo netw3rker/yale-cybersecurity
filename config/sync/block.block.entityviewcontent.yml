@@ -1,0 +1,23 @@
+uuid: 59c49ddc-69f1-4349-80fb-1d4419fc9d7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+  theme:
+    - yale_infosec
+id: entityviewcontent
+theme: yale_infosec
+region: hero
+weight: 0
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Hero Node Content'
+  provider: ctools
+  label_display: '0'
+  view_mode: hero
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }

@@ -1,0 +1,25 @@
+.image-section {
+  @include wrapper;
+
+  @include large {
+    @include grid;
+  }
+
+  figure,
+  img {
+    width: 100%;
+  }
+}
+
+.image-section__image {
+  grid-area: content;
+
+  &--large {
+    grid-column-end: sidebar;
+    grid-column-start: left-gutter;
+  }
+}
+
+.image-section__aside {
+  grid-area: sidebar;
+}
