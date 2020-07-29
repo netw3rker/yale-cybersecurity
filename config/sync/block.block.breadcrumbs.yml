@@ -10,8 +10,8 @@ dependencies:
     - yale_infosec
 id: breadcrumbs
 theme: yale_infosec
-region: content
-weight: -2
+region: content_top
+weight: -4
 provider: null
 plugin: system_breadcrumb_block
 settings:

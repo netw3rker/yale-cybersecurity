@@ -1,0 +1,13 @@
+.video-section {
+  @include wrapper;
+
+  margin-bottom: $space-triple;
+
+  @include large {
+    @include grid;
+  }
+}
+
+.video-section__content {
+  grid-area: content;
+}

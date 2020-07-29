@@ -1,0 +1,48 @@
+uuid: 62059be2-d140-49ca-a193-7a53ca6de36a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.hero
+    - field.field.node.page.field_content_body
+    - field.field.node.page.field_header_image
+    - field.field.node.page.field_intro_aside
+    - field.field.node.page.field_intro_text
+    - field.field.node.page.field_metadata
+    - field.field.node.page.field_seo_title
+    - field.field.node.page.field_subtitle
+    - field.field.node.page.field_tags
+    - field.field.node.page.field_teaser_media
+    - field.field.node.page.field_teaser_text
+    - node.type.page
+  module:
+    - entity_reference_revisions
+    - user
+_core:
+  default_config_hash: r1tD2d3xfgugcFCakPpaMsHLgkoF0C5up8qu-Ku9v1w
+id: node.page.hero
+targetEntityType: node
+bundle: page
+mode: hero
+content:
+  field_header_image:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: hero
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  content_moderation_control: true
+  field_content_body: true
+  field_intro_aside: true
+  field_intro_text: true
+  field_metadata: true
+  field_seo_title: true
+  field_subtitle: true
+  field_tags: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true

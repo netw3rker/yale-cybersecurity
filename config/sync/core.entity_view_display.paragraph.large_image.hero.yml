@@ -1,0 +1,23 @@
+uuid: f5f91465-1963-4759-af7c-c9da52ed5ea0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.hero
+    - field.field.paragraph.large_image.field_image
+    - paragraphs.paragraphs_type.large_image
+id: paragraph.large_image.hero
+targetEntityType: paragraph
+bundle: large_image
+mode: hero
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden: {  }
