@@ -28,7 +28,10 @@
   {% set cta__body = true %}
 {% endif %}
 
+{% set cta_color = content.field_color.0['#plain_text']|lower|replace(' ', '-') %}
+
 {% embed "@molecules/cta/cta.twig" with {
+  cta__modifiers: [cta_color],
   cta__heading: content.field_display_title,
   cta__link_url: content.field_link.0['#url'],
   cta__link_text: content.field_link.0['#title']
