@@ -45,6 +45,9 @@ settings:
       image:
         enabled: true
         weight: 7
+      large_image:
+        enabled: true
+        weight: 9
       quote:
         enabled: true
         weight: 9
@@ -54,9 +57,6 @@ settings:
       reference_list:
         enabled: true
         weight: 13
-      large_image:
-        enabled: true
-        weight: 9
       text:
         enabled: true
         weight: 8

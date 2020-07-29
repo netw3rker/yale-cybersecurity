@@ -5,8 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.page.field_content_body
+    - field.field.node.page.field_header_image
+    - field.field.node.page.field_intro_aside
+    - field.field.node.page.field_intro_text
     - field.field.node.page.field_metadata
     - field.field.node.page.field_seo_title
+    - field.field.node.page.field_subtitle
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser_media
     - field.field.node.page.field_teaser_text
@@ -26,7 +30,7 @@ content:
     region: content
     label: hidden
     settings:
-      view_mode: full
+      view_mode: card
       link: false
     third_party_settings: {  }
   field_teaser_text:
@@ -39,7 +43,11 @@ content:
 hidden:
   content_moderation_control: true
   field_content_body: true
+  field_header_image: true
+  field_intro_aside: true
+  field_intro_text: true
   field_metadata: true
   field_seo_title: true
+  field_subtitle: true
   field_tags: true
   links: true
