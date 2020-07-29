@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - eck.eck_type.callout.call_to_action
+    - field.field.callout.call_to_action.field_color
     - field.field.callout.call_to_action.field_display_title
     - field.field.callout.call_to_action.field_image
     - field.field.callout.call_to_action.field_link
@@ -17,6 +18,12 @@ targetEntityType: callout
 bundle: call_to_action
 mode: default
 content:
+  field_color:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_display_title:
     weight: 3
     settings:

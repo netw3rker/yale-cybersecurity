@@ -12,7 +12,7 @@ entity_type: callout
 bundle: call_to_action
 label: Image
 description: 'This image will be used as the background of the callout.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
