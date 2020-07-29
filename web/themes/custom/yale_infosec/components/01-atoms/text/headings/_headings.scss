@@ -147,6 +147,10 @@ $color-heading: clr(text-heavy);
 
 .h1 {
   @include heading-xl;
+
+  &--page-title {
+    margin-top: $space-half;
+  }
 }
 
 .h2 {
