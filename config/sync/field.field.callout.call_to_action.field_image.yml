@@ -1,0 +1,28 @@
+uuid: ea2b27fa-693d-486b-8b2c-44d0254c8fb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.callout.call_to_action
+    - field.storage.callout.field_image
+    - media.type.image
+id: callout.call_to_action.field_image
+field_name: field_image
+entity_type: callout
+bundle: call_to_action
+label: Image
+description: 'This image will be used as the background of the callout.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

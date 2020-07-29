@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.grid_type
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.quote
@@ -30,6 +31,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      call_to_action: call_to_action
       image: image
       text: text
       quote: quote
@@ -39,6 +41,9 @@ settings:
       reference_cards: reference_cards
       reference_list: reference_list
     target_bundles_drag_drop:
+      call_to_action:
+        enabled: true
+        weight: 7
       grid_type:
         weight: 6
         enabled: false

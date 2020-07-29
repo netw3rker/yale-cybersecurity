@@ -11,10 +11,10 @@ import ctaImageLightData from './cta-image-light.yml';
  */
 export default { title: 'Molecules|CTA/Image' };
 
-export const imageOrangeButton = () => (
+export const Example = () => (
   <div dangerouslySetInnerHTML={{ __html: cta({ ...ctaData, ...ctaImageData }) }} />
 );
-export const imageLightTwoButtons = () => (
+export const TwoButtons = () => (
   <div dangerouslySetInnerHTML={{ __html: cta({
     ...ctaData,
     ...ctaImageData,

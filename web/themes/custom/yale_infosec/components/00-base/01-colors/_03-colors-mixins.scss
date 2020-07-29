@@ -1,9 +1,9 @@
 @mixin bg-colors {
-  &--yale {
+  &--dark-blue {
     background-color: clr(background-inverse);
   }
 
-  &--yale-light {
+  &--light-blue {
     background-color: clr(primary);
   }
 
@@ -11,11 +11,11 @@
     background-color: clr(accent);
   }
 
-  &--muted-dark {
+  &--dark-muted {
     background-color: color(gray-4a);
   }
 
-  &--deep {
+  &--dark-gray {
     background-color: clr(background-deep);
   }
 }

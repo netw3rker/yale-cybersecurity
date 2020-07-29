@@ -1,0 +1,44 @@
+uuid: 2f04042e-e3aa-46bf-9cb6-6c3dbc571742
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.call_to_action.field_cta
+    - field.field.paragraph.call_to_action.field_size
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+id: paragraph.call_to_action.default
+targetEntityType: paragraph
+bundle: call_to_action
+mode: default
+content:
+  field_cta:
+    weight: 1
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: cta_browser
+    type: inline_entity_form_complex
+    region: content
+  field_size:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
