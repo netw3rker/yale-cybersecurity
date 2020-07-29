@@ -31,7 +31,7 @@
   }
 
   &--light {
-    &::before {
+    &::after {
       background-image: linear-gradient(to bottom, rgba(218, 216, 216, 0.65), rgba(241, 240, 240, 0.41));
       mix-blend-mode: normal;
     }
@@ -69,6 +69,11 @@
   color: clr('text-inverse');
   font-size: 2.2rem;
   line-height: 1.21;
+  margin: 0 0 $space;
+
+  p {
+    margin: 0 0 $space;
+  }
 
   &--dark {
     color: clr('text-deep');

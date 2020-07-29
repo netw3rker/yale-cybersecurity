@@ -28,13 +28,18 @@
   {% set cta__body = true %}
 {% endif %}
 
-{% set cta_color = content.field_color.0['#plain_text']|lower|replace(' ', '-') %}
+{% set cta__modifiers = [content.field_color.0['#plain_text']|lower|replace(' ', '-')] %}
+
+{% if content.field_light_image_overlay.0['#markup'] == 'On' %}
+  {% set cta__modifiers = cta__modifiers|merge(['image-light']) %}
+{% endif %}
 
 {% embed "@molecules/cta/cta.twig" with {
-  cta__modifiers: [cta_color],
   cta__heading: content.field_display_title,
   cta__link_url: content.field_link.0['#url'],
-  cta__link_text: content.field_link.0['#title']
+  cta__link_text: content.field_link.0['#title'],
+  cta__link_url_2: content.field_link_2.0['#url'],
+  cta__link_text_2: content.field_link_2.0['#title']
 } %}
   {% block cta__img %}
     {{ content.field_image }}
