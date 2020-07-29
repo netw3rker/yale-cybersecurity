@@ -9,16 +9,17 @@ _core:
 id: page
 label: Page
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: '[node:menu-link:parent:url:path]/[node:title]'
 selection_criteria:
-  0f4c07b8-7766-4c20-bc11-e14196120fed:
+  dc9787ff-c6e3-4cf0-9d2f-eacc593936ea:
     id: node_type
     bundles:
+      alert: alert
       page: page
     negate: false
     context_mapping:
       node: node
-    uuid: 0f4c07b8-7766-4c20-bc11-e14196120fed
+    uuid: dc9787ff-c6e3-4cf0-9d2f-eacc593936ea
 selection_logic: and
 weight: -5
 relationships: {  }
