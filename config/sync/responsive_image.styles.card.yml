@@ -1,0 +1,21 @@
+uuid: 8bc05d3e-1f5c-4270-8691-6809fef4c3df
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.400x210
+    - image.style.600x315
+id: card
+label: Card
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 400x210
+        - 600x315
+breakpoint_group: responsive_image
+fallback_image_style: 400x210
