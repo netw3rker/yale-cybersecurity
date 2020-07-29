@@ -7,7 +7,7 @@ dependencies:
 id: pagetitle
 theme: yale_infosec
 region: content
-weight: -3
+weight: -2
 provider: null
 plugin: page_title_block
 settings:
