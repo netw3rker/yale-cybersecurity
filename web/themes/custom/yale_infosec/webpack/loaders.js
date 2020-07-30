@@ -17,7 +17,14 @@ const CSSLoader = {
     {
       loader: 'css-loader',
       options: {
-        url: false,
+        url: (url) => {
+          // Don't handle `img.png` urls
+          if (url.includes('.png') || url.includes('.svg') || url.includes('.jpg')) {
+            return false;
+          }
+
+          return true;
+        },
       }
     },
     {
