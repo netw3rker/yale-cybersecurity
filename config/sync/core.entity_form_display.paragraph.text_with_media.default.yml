@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_entity_browser
+    - entity_browser.browser.media_entity_browser_modal
     - field.field.paragraph.text_with_media.field_media
     - field.field.paragraph.text_with_media.field_media_alignment
     - field.field.paragraph.text_with_media.field_text
@@ -21,7 +21,7 @@ content:
   field_media:
     weight: 1
     settings:
-      entity_browser: media_entity_browser
+      entity_browser: media_entity_browser_modal
       field_widget_display: label
       field_widget_edit: true
       field_widget_remove: true
