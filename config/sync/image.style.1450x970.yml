@@ -1,0 +1,17 @@
+uuid: 3faf62ac-76cf-4ac8-96c4-aa4b21df4715
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 1450x970
+label: 1450x970
+effects:
+  16714c14-0750-4101-ab9e-54cd41b50c28:
+    uuid: 16714c14-0750-4101-ab9e-54cd41b50c28
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1450
+      height: 970
+      crop_type: focal_point
