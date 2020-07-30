@@ -22,4 +22,9 @@
 
 .image-section__aside {
   grid-area: sidebar;
+
+  .blockquote {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }
