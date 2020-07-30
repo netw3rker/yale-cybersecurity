@@ -15,6 +15,10 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:yalesites-org/yale_sso.git"
         }
     ],
     "require": {
@@ -41,6 +45,7 @@
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
+        "yalesites-org/yale_sso": "dev-master",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
@@ -70,7 +75,7 @@
             "scripts/composer/ScriptHandler.php"
         ],
         "psr-4": {
-            "Sous\\" : "sous"
+            "Sous\\": "sous"
         }
     },
     "scripts": {
@@ -110,7 +115,9 @@
             "bower-asset"
         ],
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
+            "web/core": [
+                "type:drupal-core"
+            ],
             "web/libraries/masonry": [
                 "bower-asset/masonry-layout"
             ],
@@ -119,11 +126,21 @@
                 "type:bower-asset",
                 "type:npm-asset"
             ],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/private/scripts/quicksilver/{$name}/": [
+                "type:quicksilver-script"
+            ]
         },
         "build-env": {
             "install-cms": [
@@ -154,7 +171,7 @@
                 "sites/example.settings.local.php": "sites/example.settings.local.php",
                 "sites/example.sites.php": "sites/example.sites.php"
             },
-            "omit-defaults": false         
+            "omit-defaults": false
         }
     },
     "config": {
@@ -163,6 +180,6 @@
         "sort-packages": true,
         "platform": {
             "php": "7.2"
-        }   
+        }
     }
 }
