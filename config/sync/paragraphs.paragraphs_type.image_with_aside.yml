@@ -1,0 +1,10 @@
+uuid: dd765113-cb2b-4e39-be1b-c02e80ccbe59
+langcode: en
+status: true
+dependencies: {  }
+id: image_with_aside
+label: 'Image with Aside'
+icon_uuid: null
+icon_default: null
+description: 'Image with aside quote and alignment selection.'
+behavior_plugins: {  }

@@ -1,0 +1,33 @@
+uuid: d11fec57-f20d-46bf-9d0f-c50c09f0d3cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.aside
+    - field.field.paragraph.image_with_aside.field_aside_alignment
+    - field.field.paragraph.image_with_aside.field_aside_quote
+    - field.field.paragraph.image_with_aside.field_image
+    - paragraphs.paragraphs_type.image_with_aside
+id: paragraph.image_with_aside.aside
+targetEntityType: paragraph
+bundle: image_with_aside
+mode: aside
+content:
+  field_aside_quote:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  field_aside_alignment: true
