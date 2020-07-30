@@ -7,10 +7,11 @@ dependencies:
     - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.grid_type
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.image_with_aside
+    - paragraphs.paragraphs_type.large_image
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.reference_cards
     - paragraphs.paragraphs_type.reference_list
-    - paragraphs.paragraphs_type.large_image
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_with_media
     - paragraphs.paragraphs_type.video
@@ -34,12 +35,13 @@ settings:
       call_to_action: call_to_action
       image: image
       text: text
-      quote: quote
       large_image: large_image
+      quote: quote
       text_with_media: text_with_media
       video: video
       reference_cards: reference_cards
       reference_list: reference_list
+      image_with_aside: image_with_aside
     target_bundles_drag_drop:
       call_to_action:
         enabled: true
@@ -50,6 +52,9 @@ settings:
       image:
         enabled: true
         weight: 7
+      image_with_aside:
+        enabled: true
+        weight: 15
       large_image:
         enabled: true
         weight: 9
