@@ -36,6 +36,10 @@
   @include large {
     @include grid;
   }
+
+  .blockquote {
+    margin-bottom: 0;
+  }
 }
 
 .intro-text__image {
