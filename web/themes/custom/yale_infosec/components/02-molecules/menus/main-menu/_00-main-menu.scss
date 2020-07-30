@@ -43,6 +43,10 @@ $main-menu-medium: $medium;
         top: 114px;
       }
     }
+
+    .toolbar-horizontal & {
+      top: 173px;
+    }
   }
 }
 
