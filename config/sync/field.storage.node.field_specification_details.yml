@@ -1,4 +1,4 @@
-uuid: 68b1dd15-7608-4149-9822-8da066a7a1cf
+uuid: e2b84faa-166d-4834-b56d-9e915cd8a3a8
 langcode: en
 status: true
 dependencies:
@@ -6,15 +6,15 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-id: node.field_standard_specifications
-field_name: field_standard_specifications
+id: node.field_specification_details
+field_name: field_specification_details
 entity_type: node
 type: entity_reference_revisions
 settings:
   target_type: paragraph
 module: entity_reference_revisions
 locked: false
-cardinality: 12
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

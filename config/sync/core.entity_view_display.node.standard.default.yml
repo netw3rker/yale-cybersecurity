@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.standard.field_metadata
     - field.field.node.standard.field_policy_number
     - field.field.node.standard.field_seo_title
+    - field.field.node.standard.field_specification_details
     - field.field.node.standard.field_standard_description
     - field.field.node.standard.field_standard_specifications
     - field.field.node.standard.field_sub_policy
@@ -72,6 +73,15 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+    region: content
+  field_specification_details:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_standard_description:
     weight: 5

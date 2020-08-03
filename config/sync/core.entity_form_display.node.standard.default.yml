@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.standard.field_metadata
     - field.field.node.standard.field_policy_number
     - field.field.node.standard.field_seo_title
+    - field.field.node.standard.field_specification_details
     - field.field.node.standard.field_standard_description
     - field.field.node.standard.field_standard_specifications
     - field.field.node.standard.field_sub_policy
@@ -62,7 +63,7 @@ third_party_settings:
       children:
         - field_content_body
       parent_name: group_main
-      weight: 6
+      weight: 7
       format_type: tab
       region: content
       format_settings:
@@ -95,6 +96,7 @@ third_party_settings:
         - group_taxonomies
         - group_policy_details
         - group_policy_specifications
+        - group_specification_details
         - group_content
       parent_name: ''
       weight: 0
@@ -135,6 +137,20 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: 'Policy Specifications'
+    group_specification_details:
+      children:
+        - field_specification_details
+      parent_name: group_main
+      weight: 6
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Specification Details'
 _core:
   default_config_hash: bj4E3sRYNFKIYPioo2xn66r1kR8cg_CqDhI6G3acxNI
 id: node.standard.default
@@ -193,6 +209,24 @@ content:
           optimax: 50
           tolerance: 10
     type: string_textfield
+    region: content
+  field_specification_details:
+    type: paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
     region: content
   field_standard_description:
     weight: 13
