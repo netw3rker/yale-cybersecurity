@@ -1,0 +1,29 @@
+uuid: 9b3b8af1-21ff-4400-b4e6-90b8ed5a9788
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_device_type
+    - paragraphs.paragraphs_type.specification
+    - taxonomy.vocabulary.device_type
+id: paragraph.specification.field_device_type
+field_name: field_device_type
+entity_type: paragraph
+bundle: specification
+label: 'Device type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      device_type: device_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,29 @@
+uuid: c1e7158b-3c16-4884-bd5a-5781b03b41a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_obligation
+    - paragraphs.paragraphs_type.specification
+    - taxonomy.vocabulary.obligation
+id: paragraph.specification.field_obligation
+field_name: field_obligation
+entity_type: paragraph
+bundle: specification
+label: Obligation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      obligation: obligation
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
