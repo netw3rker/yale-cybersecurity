@@ -1,0 +1,59 @@
+uuid: edd5923d-6624-4ecf-b742-b45603a2cf19
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.content_top
+    - field.field.node.news.field_content_body
+    - field.field.node.news.field_intro_aside
+    - field.field.node.news.field_intro_text
+    - field.field.node.news.field_metadata
+    - field.field.node.news.field_news_author
+    - field.field.node.news.field_news_category
+    - field.field.node.news.field_seo_title
+    - field.field.node.news.field_tags
+    - field.field.node.news.field_teaser_media
+    - field.field.node.news.field_teaser_text
+    - node.type.news
+  module:
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_intro:
+      children:
+        - field_intro_text
+        - field_intro_aside
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: hidden
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Intro
+id: node.news.content_top
+targetEntityType: node
+bundle: news
+mode: content_top
+content: {  }
+hidden:
+  content_moderation_control: true
+  field_content_body: true
+  field_intro_aside: true
+  field_intro_text: true
+  field_metadata: true
+  field_news_author: true
+  field_news_category: true
+  field_seo_title: true
+  field_tags: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true
