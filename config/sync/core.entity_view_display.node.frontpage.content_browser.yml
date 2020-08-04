@@ -1,0 +1,37 @@
+uuid: e621d4c0-6d63-43e9-b2b4-dbaf62d11e56
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.content_browser
+    - field.field.node.frontpage.field_metadata
+    - field.field.node.frontpage.field_seo_title
+    - field.field.node.frontpage.field_teaser_media
+    - field.field.node.frontpage.field_teaser_text
+    - image.style.thumbnail
+    - node.type.frontpage
+  module:
+    - media
+    - user
+_core:
+  default_config_hash: '-dTbOfljyuYfgcn7hK8miRbYRNWhQdHKcDEMdnYNjEg'
+id: node.frontpage.content_browser
+targetEntityType: node
+bundle: frontpage
+mode: content_browser
+content:
+  field_teaser_media:
+    type: media_thumbnail
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_metadata: true
+  field_seo_title: true
+  field_teaser_text: true
+  links: true

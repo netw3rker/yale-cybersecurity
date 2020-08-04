@@ -16,7 +16,12 @@ id: node.frontpage.default
 targetEntityType: node
 bundle: frontpage
 mode: default
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_metadata: true
   field_seo_title: true

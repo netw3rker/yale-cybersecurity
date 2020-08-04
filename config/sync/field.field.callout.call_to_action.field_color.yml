@@ -1,0 +1,33 @@
+uuid: 8ca70989-fa14-4282-80c8-cc179876a508
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.callout.call_to_action
+    - field.storage.callout.field_color
+    - taxonomy.vocabulary.color
+  content:
+    - 'taxonomy_term:color:49f7544e-a7d1-421f-b145-5e0775bf7576'
+id: callout.call_to_action.field_color
+field_name: field_color
+entity_type: callout
+bundle: call_to_action
+label: Color
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 49f7544e-a7d1-421f-b145-5e0775bf7576
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      color: color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

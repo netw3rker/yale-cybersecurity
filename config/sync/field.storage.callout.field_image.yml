@@ -1,0 +1,20 @@
+uuid: fa99a0c8-e681-4cd0-abe7-cf38e5d5d5d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - media
+id: callout.field_image
+field_name: field_image
+entity_type: callout
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

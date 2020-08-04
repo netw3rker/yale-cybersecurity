@@ -1,0 +1,17 @@
+.cta-section {
+  @include wrapper;
+
+  @include large {
+    @include grid;
+  }
+}
+
+.cta-section__content {
+  grid-column-end: content;
+  grid-column-start: left-side;
+
+  &--large {
+    grid-column-end: sidebar;
+    grid-column-start: left-side;
+  }
+}

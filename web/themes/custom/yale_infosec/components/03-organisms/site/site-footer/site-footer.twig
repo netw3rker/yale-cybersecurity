@@ -1,5 +1,7 @@
 {% set footer__base_class = 'footer' %}
 
+{% set currentYear = 'now'|date('Y') %}
+
 <footer {{ bem(footer__base_class) }}>
   <div {{ bem('inner', [], footer__base_class) }}>
     <div {{ bem('logo', [], footer__base_class) }}>
@@ -17,7 +19,7 @@
     {% include "@atoms/text/text/01-paragraph.twig" with {
       paragraph_blockname: footer__base_class,
       paragraph_base_class: "copyright",
-      paragraph_content: "Copyright © 2020 Yale University  All Rights Reserved"
+      paragraph_content: "Copyright © " ~ currentYear ~ " Yale University  All Rights Reserved"
     } %}
   </div>
 </footer>

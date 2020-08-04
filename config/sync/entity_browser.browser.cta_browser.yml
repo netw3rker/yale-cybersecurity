@@ -1,0 +1,31 @@
+uuid: 4162b41c-f47d-48ee-88c2-dfa6c4c43898
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.cta_browser
+  module:
+    - views
+name: cta_browser
+label: 'CTA browser'
+display: modal
+display_configuration:
+  width: '1070'
+  height: '700'
+  link_text: 'Select CTA'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  d0550002-2193-453e-a66d-bce0da5318c1:
+    settings:
+      view: cta_browser
+      view_display: cta_browser
+      submit_text: 'Select CTA'
+      auto_select: false
+    uuid: d0550002-2193-453e-a66d-bce0da5318c1
+    weight: 1
+    label: 'Call to Action'
+    id: view

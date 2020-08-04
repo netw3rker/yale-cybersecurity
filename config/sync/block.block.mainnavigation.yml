@@ -19,7 +19,7 @@ settings:
   label: 'Main navigation'
   provider: menu_block
   label_display: '0'
-  follow: true
+  follow: false
   follow_parent: child
   level: 1
   depth: 0

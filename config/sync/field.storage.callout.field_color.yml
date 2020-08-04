@@ -1,0 +1,20 @@
+uuid: 5cf97474-2e30-4f1e-8768-92567ef1c92b
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - taxonomy
+id: callout.field_color
+field_name: field_color
+entity_type: callout
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

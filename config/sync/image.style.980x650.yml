@@ -1,0 +1,17 @@
+uuid: 01de9461-c7ed-482c-9db3-3b74805e1a0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 980x650
+label: 980x650
+effects:
+  4ab54991-591f-42eb-876d-4527bc2e3ee0:
+    uuid: 4ab54991-591f-42eb-876d-4527bc2e3ee0
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 980
+      height: 650
+      crop_type: focal_point

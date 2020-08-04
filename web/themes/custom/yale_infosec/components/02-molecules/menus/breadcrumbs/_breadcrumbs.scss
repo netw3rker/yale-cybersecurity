@@ -1,9 +1,14 @@
-$color-breadcrumb: clr(accent);
-$color-breadcrumb-hover: clr(accent-high);
+$color-breadcrumb: clr(text);
+$color-breadcrumb-hover: lighten($info_gray, 25%);
 $color-breadcrumb-active: clr(text);
+$breadcrumb-separator: '>';
+$breadcrumb-font-size: 1.3rem;
 
 .breadcrumb {
   @include list-reset;
+
+  line-height: 1;
+  margin-bottom: 0.3rem;
 }
 
 .breadcrumb__item,
@@ -21,10 +26,11 @@ $color-breadcrumb-active: clr(text);
 
 .breadcrumb__item {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: $breadcrumb-font-size;
+  text-transform: uppercase;
 
   &::after {
-    content: '/';
+    content: '#{$breadcrumb-separator}';
   }
 
   &:last-child {

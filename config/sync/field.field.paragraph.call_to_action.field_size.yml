@@ -1,0 +1,23 @@
+uuid: 6fd2a360-d249-41a5-82d4-3aa6c414bed8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_size
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - options
+id: paragraph.call_to_action.field_size
+field_name: field_size
+entity_type: paragraph
+bundle: call_to_action
+label: Size
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: small
+default_value_callback: ''
+settings: {  }
+field_type: list_string

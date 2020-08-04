@@ -9,30 +9,30 @@ import ctaData from './cta.yml';
  */
 export default { title: 'Molecules|CTA/Color' };
 
-export const yaleOrangeButton = () => (
+export const darkBlue = () => (
   <div dangerouslySetInnerHTML={{ __html: cta(ctaData) }} />
 );
-export const yaleLightOrangeButton = () => (
+export const lightBlue = () => (
   <div dangerouslySetInnerHTML={{ __html: cta({
     ...ctaData,
-    cta__modifiers: ['yale-light'],
+    cta__modifiers: ['light-blue'],
   }) }} />
 );
-export const mutedOrangeButton = () => (
+export const muted = () => (
   <div dangerouslySetInnerHTML={{ __html: cta({
     ...ctaData,
     cta__modifiers: ['muted'],
   }) }} />
 );
-export const mutedDarkOrangeButton = () => (
+export const mutedDark = () => (
   <div dangerouslySetInnerHTML={{ __html: cta({
     ...ctaData,
-    cta__modifiers: ['muted-dark'],
+    cta__modifiers: ['dark-muted'],
   }) }} />
 );
-export const darkOrangeButton = () => (
+export const darkGray = () => (
   <div dangerouslySetInnerHTML={{ __html: cta({
     ...ctaData,
-    cta__modifiers: ['deep'],
+    cta__modifiers: ['dark-gray'],
   }) }} />
 );

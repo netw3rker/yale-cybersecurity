@@ -1,0 +1,23 @@
+uuid: 665afc21-1975-45af-9fad-f4f7432658de
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.callout.call_to_action
+    - field.storage.callout.field_light_image_overlay
+id: callout.call_to_action.field_light_image_overlay
+field_name: field_light_image_overlay
+entity_type: callout
+bundle: call_to_action
+label: 'Light Image Overlay'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
