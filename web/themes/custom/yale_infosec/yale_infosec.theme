@@ -4,9 +4,13 @@
  * @file
  * Functions to support theming.
  */
+
+/**
+ * Implements theme_suggestions_page_alter().
+ */
 function yale_infosec_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $content_type = $node->bundle();
-    $suggestions[] = 'page__'.$content_type;
+    $suggestions[] = 'page__' . $content_type;
   }
 }
