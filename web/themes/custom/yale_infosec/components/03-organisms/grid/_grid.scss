@@ -23,4 +23,10 @@
   line-height: 0.94;
   margin: 0 0 4rem;
   text-transform: uppercase;
+
+  .bg--dark-gray &,
+  .bg--blue &,
+  .bg--dark-blue & {
+    color: clr(text-inverse);
+  }
 }

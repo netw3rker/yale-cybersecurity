@@ -2,6 +2,12 @@
   border: solid 1px rgba(151, 141, 133, 0.45);
   background-color: clr('accentsubtle');
   max-width: 500px;
+
+  .bg--dark-gray &,
+  .bg--blue &,
+  .bg--dark-blue & {
+    border: none;
+  }
 }
 
 .card__image {
@@ -21,8 +27,20 @@
 
 .card__heading-link {
   color: clr('text-heavy');
+
+  .bg--dark-gray &,
+  .bg--blue &,
+  .bg--dark-blue & {
+    color: clr(text-heavy);
+  }
 }
 
 .card__body {
   margin: 0;
+
+  .bg--dark-gray &,
+  .bg--blue &,
+  .bg--dark-blue & {
+    color: clr(text);
+  }
 }
