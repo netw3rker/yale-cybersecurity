@@ -16,7 +16,7 @@ entity_type: node
 bundle: standard
 label: 'Content Body'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -27,11 +27,35 @@ settings:
     target_bundles:
       grid_type: grid_type
     target_bundles_drag_drop:
+      call_to_action:
+        weight: 14
+        enabled: false
       grid_type:
         enabled: true
         weight: 6
       image:
         weight: 5
+        enabled: false
+      image_with_aside:
+        weight: 17
+        enabled: false
+      large_image:
+        weight: 18
+        enabled: false
+      quote:
+        weight: 19
+        enabled: false
+      reference_cards:
+        weight: 20
+        enabled: false
+      reference_list:
+        weight: 21
+        enabled: false
+      specification:
+        weight: 22
+        enabled: false
+      specification_details:
+        weight: 23
         enabled: false
       text:
         weight: 6
