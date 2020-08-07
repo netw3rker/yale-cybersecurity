@@ -1,0 +1,23 @@
+uuid: c228dcb9-caf8-4efd-b280-00409fc79372
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_upcoming
+    - paragraphs.paragraphs_type.specification
+id: paragraph.specification.field_upcoming
+field_name: field_upcoming
+entity_type: paragraph
+bundle: specification
+label: Upcoming
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'True'
+  off_label: 'False'
+field_type: boolean

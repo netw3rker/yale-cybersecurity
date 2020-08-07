@@ -1,0 +1,10 @@
+uuid: 20591439-b8a0-4ccb-9c6d-6ae81e87090c
+langcode: en
+status: true
+dependencies: {  }
+id: specification
+label: Specification
+icon_uuid: null
+icon_default: null
+description: 'Specification attached to a policy for standards.'
+behavior_plugins: {  }

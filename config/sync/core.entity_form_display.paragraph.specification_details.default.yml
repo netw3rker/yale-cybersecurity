@@ -1,0 +1,32 @@
+uuid: 06723216-2e43-4d8e-9788-5a064e3ec715
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.specification_details.field_specification_detail_data
+    - field.field.paragraph.specification_details.field_specification_detail_type
+    - paragraphs.paragraphs_type.specification_details
+  module:
+    - text
+id: paragraph.specification_details.default
+targetEntityType: paragraph
+bundle: specification_details
+mode: default
+content:
+  field_specification_detail_data:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_specification_detail_type:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

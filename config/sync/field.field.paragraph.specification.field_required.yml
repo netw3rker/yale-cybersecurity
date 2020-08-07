@@ -1,0 +1,23 @@
+uuid: 66517c99-47c8-40b7-8003-88f75e5345e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_required
+    - paragraphs.paragraphs_type.specification
+id: paragraph.specification.field_required
+field_name: field_required
+entity_type: paragraph
+bundle: specification
+label: Required
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'True'
+  off_label: 'False'
+field_type: boolean
