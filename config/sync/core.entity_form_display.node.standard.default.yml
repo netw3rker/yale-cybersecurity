@@ -1,98 +1,103 @@
-uuid: f9160abc-3448-4bf8-a373-5109d7e76b84
+uuid: eae46180-cd92-45e7-97ba-efb17f6dc6fa
 langcode: en
 status: true
 dependencies:
   config:
     - entity_browser.browser.media_entity_browser_modal
-    - field.field.node.news.field_content_body
-    - field.field.node.news.field_intro_aside
-    - field.field.node.news.field_intro_text
-    - field.field.node.news.field_metadata
-    - field.field.node.news.field_news_author
-    - field.field.node.news.field_news_category
-    - field.field.node.news.field_seo_title
-    - field.field.node.news.field_tags
-    - field.field.node.news.field_teaser_media
-    - field.field.node.news.field_teaser_text
-    - node.type.news
-    - workflows.workflow.editorial
+    - field.field.node.standard.field_metadata
+    - field.field.node.standard.field_policy_number
+    - field.field.node.standard.field_seo_title
+    - field.field.node.standard.field_specification_details
+    - field.field.node.standard.field_standard_description
+    - field.field.node.standard.field_standard_specifications
+    - field.field.node.standard.field_sub_policy
+    - field.field.node.standard.field_subtitle
+    - field.field.node.standard.field_tags
+    - field.field.node.standard.field_teaser_media
+    - field.field.node.standard.field_teaser_text
+    - node.type.standard
   module:
     - content_moderation
     - entity_browser
     - field_group
     - metatag
     - paragraphs
+    - paragraphs_features
     - path
     - text
 third_party_settings:
   field_group:
-    group_main:
-      children:
-        - group_header
-        - group_teaser
-        - group_taxonomies
-        - group_content
-      parent_name: ''
-      weight: 0
-      format_type: tabs
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        direction: vertical
-      label: Main
     group_header:
       children:
         - title
         - field_seo_title
+        - field_subtitle
       parent_name: group_main
-      weight: 15
+      weight: 1
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         formatter: open
         required_fields: true
+        id: ''
+        classes: ''
       label: Header
     group_teaser:
       children:
         - field_teaser_media
         - field_teaser_text
       parent_name: group_main
-      weight: 16
+      weight: 2
       format_type: tab
       region: content
       format_settings:
         id: ''
         classes: ''
         description: ''
-        formatter: closed
+        open: true
         required_fields: true
+        formatter: closed
       label: Teaser
     group_taxonomies:
       children:
         - field_tags
-        - field_news_category
       parent_name: group_main
-      weight: 17
+      weight: 3
       format_type: tab
       region: content
       format_settings:
         id: ''
         classes: ''
         description: ''
-        formatter: closed
+        open: true
         required_fields: true
+        formatter: closed
       label: Taxonomies
-    group_content:
+    group_main:
       children:
-        - group_page_intro
-        - field_news_author
-        - field_content_body
+        - group_header
+        - group_teaser
+        - group_taxonomies
+        - group_policy_details
+        - group_policy_specifications
+        - group_specification_details
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Main
+      region: content
+    group_policy_details:
+      children:
+        - field_policy_number
+        - field_standard_description
+        - field_sub_policy
       parent_name: group_main
-      weight: 18
+      weight: 4
       format_type: tab
       region: content
       format_settings:
@@ -101,24 +106,40 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: Content
-    group_page_intro:
+      label: 'Policy Details'
+    group_policy_specifications:
       children:
-        - field_intro_text
-        - field_intro_aside
-      parent_name: group_content
-      weight: 20
-      format_type: fieldset
+        - field_standard_specifications
+      parent_name: group_main
+      weight: 5
+      format_type: tab
       region: content
       format_settings:
         id: ''
         classes: ''
         description: ''
+        formatter: closed
         required_fields: true
-      label: 'Page Intro'
-id: node.news.default
+      label: 'Policy Specifications'
+    group_specification_details:
+      children:
+        - field_specification_details
+      parent_name: group_main
+      weight: 6
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Specification Details'
+_core:
+  default_config_hash: bj4E3sRYNFKIYPioo2xn66r1kR8cg_CqDhI6G3acxNI
+id: node.standard.default
 targetEntityType: node
-bundle: news
+bundle: standard
 mode: default
 content:
   created:
@@ -127,79 +148,22 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content_body:
-    weight: 22
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: grid_type
-      features:
-        add_above: '0'
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings:
-      paragraphs_features:
-        show_drag_and_drop: true
-        delete_confirmation: false
-        add_in_between: false
-        split_text: false
-    type: paragraphs
-    region: content
-  field_intro_aside:
-    weight: 102
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
-    type: paragraphs
-    region: content
-  field_intro_text:
-    weight: 101
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_metadata:
-    weight: 12
+    weight: 9
     settings:
       sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
     region: content
-  field_news_author:
-    weight: 21
+  field_policy_number:
+    weight: 12
     settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_news_category:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
+    type: number
     region: content
   field_seo_title:
-    weight: 17
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -212,8 +176,86 @@ content:
           tolerance: 10
     type: string_textfield
     region: content
+  field_specification_details:
+    type: paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings:
+      paragraphs_features:
+        show_drag_and_drop: true
+        delete_confirmation: false
+        add_in_between: false
+        split_text: false
+    region: content
+  field_standard_description:
+    weight: 13
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_standard_specifications:
+    type: paragraphs
+    weight: 14
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings:
+      paragraphs_features:
+        show_drag_and_drop: true
+        delete_confirmation: false
+        add_in_between: false
+        split_text: false
+    region: content
+  field_sub_policy:
+    weight: 14
+    settings:
+      entity_browser: browse_content
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_replace: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_subtitle:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_tags:
-    weight: 9
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -243,7 +285,7 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 10
     settings: {  }
     region: content
     third_party_settings: {  }
@@ -276,7 +318,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 16
+    weight: 1
     region: content
     settings:
       size: 60
@@ -284,7 +326,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

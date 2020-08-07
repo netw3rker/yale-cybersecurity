@@ -1,0 +1,28 @@
+uuid: 13f4fcda-ce43-46b3-857b-aaa9c0328b0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_standard_description
+    - node.type.standard
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.standard.field_standard_description
+field_name: field_standard_description
+entity_type: node
+bundle: standard
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
