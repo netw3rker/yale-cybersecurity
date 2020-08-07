@@ -1,0 +1,8 @@
+uuid: fd972ea9-5c19-42ff-9217-32c5179c760f
+langcode: en
+status: true
+dependencies: {  }
+name: Obligation
+vid: obligation
+description: ''
+weight: 0

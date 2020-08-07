@@ -1,0 +1,8 @@
+uuid: ae88d428-12ff-4da1-9726-990c6e80b3da
+langcode: en
+status: true
+dependencies: {  }
+name: 'Device type'
+vid: device_type
+description: ''
+weight: 0

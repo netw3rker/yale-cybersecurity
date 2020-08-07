@@ -1,0 +1,28 @@
+uuid: c089d711-5653-4d67-9672-5b4aad964e90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sub_policy
+    - node.type.standard
+id: node.standard.field_sub_policy
+field_name: field_sub_policy
+entity_type: node
+bundle: standard
+label: 'Sub policy'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      standard: standard
+    sort:
+      field: field_policy_number
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
