@@ -1,0 +1,48 @@
+uuid: 639db50f-85f6-429a-bb77-f68fc92cc0ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_aside
+    - node.type.news
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: node.news.field_intro_aside
+field_name: field_intro_aside
+entity_type: node
+bundle: news
+label: 'Intro Aside'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image: image
+      text: text
+    target_bundles_drag_drop:
+      grid_type:
+        weight: 7
+        enabled: false
+      image:
+        enabled: true
+        weight: 8
+      large_image:
+        weight: 9
+        enabled: false
+      text:
+        enabled: true
+        weight: 10
+      text_with_media:
+        weight: 11
+        enabled: false
+      video:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

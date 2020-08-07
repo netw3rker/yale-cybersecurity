@@ -55,6 +55,12 @@
   img {
     width: 100%;
   }
+
+  .intro-text--news & {
+    @include large {
+      margin-top: -29rem;
+    }
+  }
 }
 
 .intro-text__text {
