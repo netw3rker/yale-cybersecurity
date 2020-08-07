@@ -1,0 +1,28 @@
+uuid: f916ec9c-e479-45e8-a6a6-32bc0baa0e7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_specification_detail_data
+    - paragraphs.paragraphs_type.specification_details
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.specification_details.field_specification_detail_data
+field_name: field_specification_detail_data
+entity_type: paragraph
+bundle: specification_details
+label: Data
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

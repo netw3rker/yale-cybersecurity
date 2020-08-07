@@ -1,0 +1,31 @@
+uuid: 53fbd054-4fc5-4f85-b6fc-e160cedd1284
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.specification_details.field_specification_detail_data
+    - field.field.paragraph.specification_details.field_specification_detail_type
+    - paragraphs.paragraphs_type.specification_details
+  module:
+    - text
+id: paragraph.specification_details.default
+targetEntityType: paragraph
+bundle: specification_details
+mode: default
+content:
+  field_specification_detail_data:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_specification_detail_type:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }
