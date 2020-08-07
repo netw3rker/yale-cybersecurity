@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.media_entity_browser_modal
-    - field.field.node.standard.field_content_body
     - field.field.node.standard.field_metadata
     - field.field.node.standard.field_policy_number
     - field.field.node.standard.field_seo_title
@@ -60,21 +59,6 @@ third_party_settings:
         required_fields: true
         formatter: closed
       label: Teaser
-    group_content:
-      children:
-        - field_content_body
-      parent_name: group_main
-      weight: 7
-      format_type: tab
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        open: true
-        required_fields: true
-        formatter: closed
-      label: Content
     group_taxonomies:
       children:
         - field_tags
@@ -98,7 +82,6 @@ third_party_settings:
         - group_policy_details
         - group_policy_specifications
         - group_specification_details
-        - group_content
       parent_name: ''
       weight: 0
       format_type: tabs
@@ -165,30 +148,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content_body:
-    type: paragraphs
-    weight: 23
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        add_above: '0'
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings:
-      paragraphs_features:
-        show_drag_and_drop: true
-        delete_confirmation: false
-        add_in_between: false
-        split_text: false
-    region: content
   field_metadata:
     weight: 9
     settings:

@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.standard.field_content_body
     - field.field.node.standard.field_metadata
     - field.field.node.standard.field_policy_number
     - field.field.node.standard.field_seo_title
@@ -53,15 +52,6 @@ content:
     weight: -20
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_content_body:
-    type: entity_reference_revisions_entity_view
-    weight: 4
-    region: content
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
     third_party_settings: {  }
   field_policy_number:
     weight: 6

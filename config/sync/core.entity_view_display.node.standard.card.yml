@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - field.field.node.standard.field_content_body
     - field.field.node.standard.field_metadata
     - field.field.node.standard.field_policy_number
     - field.field.node.standard.field_seo_title
@@ -44,7 +43,6 @@ content:
     third_party_settings: {  }
 hidden:
   content_moderation_control: true
-  field_content_body: true
   field_metadata: true
   field_policy_number: true
   field_seo_title: true
