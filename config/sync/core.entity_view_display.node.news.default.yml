@@ -25,18 +25,18 @@ third_party_settings:
       children:
         - field_intro_text
         - field_intro_aside
-      parent_name: ""
+      parent_name: ''
       weight: 3
       format_type: html_element
       region: content
       format_settings:
-        id: ""
-        classes: ""
+        id: ''
+        classes: ''
         element: div
         show_label: false
         label_element: h3
-        label_element_classes: ""
-        attributes: ""
+        label_element_classes: ''
+        attributes: ''
         effect: none
         speed: fast
       label: Intro
@@ -48,15 +48,15 @@ content:
   content_moderation_control:
     weight: -20
     region: content
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
   field_content_body:
     weight: 4
     label: hidden
     settings:
       view_mode: default
-      link: ""
-    third_party_settings: {}
+      link: ''
+    third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
   field_intro_aside:
@@ -64,15 +64,15 @@ content:
     label: hidden
     settings:
       view_mode: aside
-      link: ""
-    third_party_settings: {}
+      link: ''
+    third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
   field_intro_text:
     weight: 11
     label: hidden
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
     type: text_default
     region: content
   field_news_author:
@@ -80,7 +80,7 @@ content:
     label: inline
     settings:
       link_to_entity: false
-    third_party_settings: {}
+    third_party_settings: {  }
     type: string
     region: content
   field_news_category:
@@ -88,7 +88,7 @@ content:
     label: inline
     settings:
       link: true
-    third_party_settings: {}
+    third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_tags:
@@ -96,7 +96,7 @@ content:
     label: above
     settings:
       link: true
-    third_party_settings: {}
+    third_party_settings: {  }
     type: entity_reference_label
     region: content
 hidden:

@@ -5,19 +5,32 @@ dependencies:
   config:
     - entity_browser.browser.browse_content
     - field.field.node.event.field_content_body
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_host
+    - field.field.node.event.field_event_link
+    - field.field.node.event.field_event_registration
+    - field.field.node.event.field_intro_aside
+    - field.field.node.event.field_intro_text
+    - field.field.node.event.field_location_text
     - field.field.node.event.field_metadata
     - field.field.node.event.field_seo_title
+    - field.field.node.event.field_subtitle
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser_media
     - field.field.node.event.field_teaser_text
     - node.type.event
+    - workflows.workflow.editorial
   module:
+    - content_moderation
+    - datetime_range
     - entity_browser
     - field_group
+    - link
     - metatag
     - paragraphs
     - paragraphs_features
     - path
+    - text
 third_party_settings:
   field_group:
     group_main:
@@ -25,6 +38,7 @@ third_party_settings:
         - group_header
         - group_teaser
         - group_taxonomies
+        - group_event_details
         - group_content
       parent_name: ''
       weight: 0
@@ -38,6 +52,7 @@ third_party_settings:
     group_header:
       children:
         - title
+        - field_subtitle
         - field_seo_title
       parent_name: group_main
       weight: 15
@@ -81,9 +96,10 @@ third_party_settings:
       label: Taxonomies
     group_content:
       children:
+        - group_page_intro
         - field_content_body
       parent_name: group_main
-      weight: 18
+      weight: 19
       format_type: tab
       region: content
       format_settings:
@@ -93,6 +109,39 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: Content
+    group_event_details:
+      children:
+        - field_event_date
+        - field_location_text
+        - field_event_link
+        - field_event_registration
+        - field_event_host
+      parent_name: group_main
+      weight: 18
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Event Details'
+    group_page_intro:
+      children:
+        - field_intro_text
+        - field_intro_aside
+      parent_name: group_content
+      weight: 20
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Page Intro'
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -105,7 +154,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_content_body:
-    weight: 12
+    weight: 23
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -128,6 +177,76 @@ content:
         split_text: false
     type: paragraphs
     region: content
+  field_event_date:
+    weight: 104
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_event_host:
+    weight: 108
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_link:
+    weight: 106
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_event_registration:
+    weight: 107
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_intro_aside:
+    weight: 22
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings:
+      paragraphs_features:
+        show_drag_and_drop: true
+        delete_confirmation: false
+        add_in_between: false
+        split_text: false
+    type: paragraphs
+    region: content
+  field_intro_text:
+    weight: 21
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_location_text:
+    weight: 105
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
   field_metadata:
     weight: 11
     settings:
@@ -136,7 +255,7 @@ content:
     type: metatag_firehose
     region: content
   field_seo_title:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -147,6 +266,14 @@ content:
           optimin: 15
           optimax: 50
           tolerance: 10
+    type: string_textfield
+    region: content
+  field_subtitle:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
     type: string_textfield
     region: content
   field_tags:
@@ -178,6 +305,12 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 6
