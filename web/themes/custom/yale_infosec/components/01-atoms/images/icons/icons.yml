@@ -21,3 +21,5 @@ items:
     value: 'check'
   - name: 'Arrow Right'
     value: 'arrow-right'
+  - name: 'tag'
+    value: 'tag'

@@ -1,0 +1,37 @@
+.news-categories {
+  @include wrapper;
+
+  margin-bottom: 4.7rem;
+
+  @include large {
+    @include grid;
+  }
+
+  font-size: 1.4rem;
+
+  &__content {
+    grid-area: content;
+  }
+
+  ul {
+    @include list-reset;
+
+    display: inline;
+
+    li {
+      @include list-reset;
+
+      display: inline;
+
+      &:not(:last-child) {
+        ::after {
+          content: ', ';
+        }
+      }
+    }
+
+    a {
+      color: clr('text');
+    }
+  }
+}

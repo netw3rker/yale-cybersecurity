@@ -1,0 +1,64 @@
+uuid: 6000e480-804f-4e1d-b167-d2257ce77b0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_standard_specifications
+    - node.type.standard
+    - paragraphs.paragraphs_type.specification
+  module:
+    - entity_reference_revisions
+id: node.standard.field_standard_specifications
+field_name: field_standard_specifications
+entity_type: node
+bundle: standard
+label: Specifications
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      specification: specification
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 13
+        enabled: false
+      grid_type:
+        weight: 14
+        enabled: false
+      image:
+        weight: 15
+        enabled: false
+      image_with_aside:
+        weight: 16
+        enabled: false
+      large_image:
+        weight: 17
+        enabled: false
+      quote:
+        weight: 18
+        enabled: false
+      reference_cards:
+        weight: 19
+        enabled: false
+      reference_list:
+        weight: 20
+        enabled: false
+      specification:
+        enabled: true
+        weight: 21
+      text:
+        weight: 22
+        enabled: false
+      text_with_media:
+        weight: 23
+        enabled: false
+      video:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

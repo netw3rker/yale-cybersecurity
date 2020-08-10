@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.news.field_content_body
+    - field.field.node.news.field_intro_aside
+    - field.field.node.news.field_intro_text
     - field.field.node.news.field_metadata
+    - field.field.node.news.field_news_author
+    - field.field.node.news.field_news_category
     - field.field.node.news.field_seo_title
     - field.field.node.news.field_tags
     - field.field.node.news.field_teaser_media
@@ -12,8 +16,30 @@ dependencies:
     - node.type.news
   module:
     - entity_reference_revisions
-    - metatag
+    - field_group
+    - text
     - user
+third_party_settings:
+  field_group:
+    group_intro:
+      children:
+        - field_intro_text
+        - field_intro_aside
+      parent_name: ""
+      weight: 3
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ""
+        classes: ""
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ""
+        attributes: ""
+        effect: none
+        speed: fast
+      label: Intro
 id: node.news.default
 targetEntityType: node
 bundle: news
@@ -22,58 +48,60 @@ content:
   content_moderation_control:
     weight: -20
     region: content
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
   field_content_body:
-    weight: 103
-    label: above
+    weight: 4
+    label: hidden
     settings:
       view_mode: default
-      link: ''
-    third_party_settings: {  }
+      link: ""
+    third_party_settings: {}
     type: entity_reference_revisions_entity_view
     region: content
-  field_metadata:
-    weight: 104
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
+  field_intro_aside:
+    weight: 12
+    label: hidden
+    settings:
+      view_mode: aside
+      link: ""
+    third_party_settings: {}
+    type: entity_reference_revisions_entity_view
     region: content
-  field_seo_title:
-    weight: 106
-    label: above
+  field_intro_text:
+    weight: 11
+    label: hidden
+    settings: {}
+    third_party_settings: {}
+    type: text_default
+    region: content
+  field_news_author:
+    weight: 1
+    label: inline
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     type: string
     region: content
+  field_news_category:
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {}
+    type: entity_reference_label
+    region: content
   field_tags:
-    weight: 101
+    weight: 5
     label: above
     settings:
       link: true
-    third_party_settings: {  }
+    third_party_settings: {}
     type: entity_reference_label
     region: content
-  field_teaser_media:
-    weight: 102
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_teaser_text:
-    weight: 105
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_metadata: true
+  field_seo_title: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true

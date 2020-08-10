@@ -1,0 +1,21 @@
+uuid: 32c527fe-ab25-4e23-b794-5a3597a625b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_text
+    - node.type.standard
+_core:
+  default_config_hash: gQnN2ZfmQ4sB3_CQBitiLIVPAw6kqnYpP6qhzZ--m8o
+id: node.standard.field_teaser_text
+field_name: field_teaser_text
+entity_type: node
+bundle: standard
+label: 'Teaser Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

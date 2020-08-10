@@ -1,0 +1,10 @@
+<div class="news-categories">
+  <div class="news-categories__content">
+    <strong class="news-categories__label">Topic:</strong>
+    <ul>
+      {% for term in terms %}
+        <li><a href="#">{{ term }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

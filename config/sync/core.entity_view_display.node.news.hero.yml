@@ -1,0 +1,108 @@
+uuid: ab69d7eb-5312-49f8-84d7-06bca3ce99be
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.hero
+    - field.field.node.news.field_content_body
+    - field.field.node.news.field_intro_aside
+    - field.field.node.news.field_intro_text
+    - field.field.node.news.field_metadata
+    - field.field.node.news.field_news_author
+    - field.field.node.news.field_news_category
+    - field.field.node.news.field_seo_title
+    - field.field.node.news.field_tags
+    - field.field.node.news.field_teaser_media
+    - field.field.node.news.field_teaser_text
+    - node.type.news
+  module:
+    - entity_reference_revisions
+    - field_group
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_intro:
+      children:
+        - field_intro_text
+        - field_intro_aside
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Intro
+id: node.news.hero
+targetEntityType: node
+bundle: news
+mode: hero
+content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_content_body:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_intro_aside:
+    weight: 12
+    label: hidden
+    settings:
+      view_mode: aside
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_intro_text:
+    weight: 11
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_news_author:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_news_category:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tags:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_metadata: true
+  field_seo_title: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true

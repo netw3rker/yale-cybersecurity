@@ -1,0 +1,8 @@
+uuid: cc33d11b-99df-4a16-91d7-e20d47eb8070
+langcode: en
+status: true
+dependencies: {  }
+name: 'Specification Detail Type'
+vid: specification_detail_type
+description: 'Type of standard specification information detail.'
+weight: 0

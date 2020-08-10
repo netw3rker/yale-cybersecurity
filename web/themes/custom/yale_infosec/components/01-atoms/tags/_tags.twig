@@ -1,0 +1,14 @@
+<div class="tags">
+  <div class="tags__content">
+    {% include "@atoms/images/icons/_icon.twig" with {
+      icon_blockname: 'tags',
+      icon_base_class: 'icon',
+      icon_name: 'tag',
+    } %}
+    <ul>
+      {% for tag in tags %}
+        <li><a href="#">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
