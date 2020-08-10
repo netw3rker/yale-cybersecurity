@@ -4,20 +4,27 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.browse_content
+    - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
+    - field.field.node.alert.field_link
     - field.field.node.alert.field_metadata
     - field.field.node.alert.field_seo_title
+    - field.field.node.alert.field_summary
     - field.field.node.alert.field_tags
     - field.field.node.alert.field_teaser_media
     - field.field.node.alert.field_teaser_text
     - node.type.alert
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - entity_browser
     - field_group
+    - link
     - metatag
     - paragraphs
     - paragraphs_features
     - path
+    - text
 third_party_settings:
   field_group:
     group_main:
@@ -81,6 +88,9 @@ third_party_settings:
       label: Taxonomies
     group_content:
       children:
+        - field_alert_level
+        - field_summary
+        - field_link
         - field_content_body
       parent_name: group_main
       weight: 18
@@ -104,8 +114,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_alert_level:
+    weight: 103
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_content_body:
-    weight: 11
+    weight: 106
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -128,6 +144,14 @@ content:
         split_text: false
     type: paragraphs
     region: content
+  field_link:
+    weight: 105
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_metadata:
     weight: 12
     settings:
@@ -148,6 +172,14 @@ content:
           optimax: 50
           tolerance: 10
     type: string_textfield
+    region: content
+  field_summary:
+    weight: 104
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   field_tags:
     weight: 9
@@ -178,6 +210,12 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 6
