@@ -2,7 +2,6 @@
   background-color: clr(background-inverse);
   left: 0;
   max-width: 992px;
-  position: absolute;
   top: 0;
   z-index: 100;
   width: 100%;
@@ -12,31 +11,6 @@
 
     @include large {
       position: absolute;
-    }
-  }
-
-  // Admin Menu
-  .toolbar-fixed &,
-  .toolbar-vertical & {
-    top: 39px;
-  }
-
-  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open & {
-    top: 79px;
-  }
-
-  // When no hero is present, the header can't cover the content.
-  // So for now, we will make sure that main has enough margin if hero doesn't exist.
-  // We will likely change this when we get this into Drupal.
-  & + #main-content + .main-content {
-    margin-top: 10.5rem;
-
-    @include medium {
-      margin-top: 19.5rem;
-    }
-
-    @include large {
-      margin-top: 24rem;
     }
   }
 

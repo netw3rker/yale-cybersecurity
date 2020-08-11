@@ -1,8 +1,9 @@
-uuid: 85d5b8ca-d827-4ff0-bcf8-cb13b8a8495d
+uuid: 5b1e08e5-dbe2-4747-b07a-9e4574440f85
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.hero
     - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
     - field.field.node.alert.field_link
@@ -14,38 +15,17 @@ dependencies:
     - field.field.node.alert.field_teaser_text
     - node.type.alert
   module:
-    - entity_reference_revisions
-    - link
     - user
-id: node.alert.default
+id: node.alert.hero
 targetEntityType: node
 bundle: alert
-mode: default
-content:
-  field_content_body:
-    weight: 0
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
-  field_link:
-    type: link
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
+mode: hero
+content: {  }
 hidden:
   content_moderation_control: true
   field_alert_level: true
+  field_content_body: true
+  field_link: true
   field_metadata: true
   field_seo_title: true
   field_summary: true
