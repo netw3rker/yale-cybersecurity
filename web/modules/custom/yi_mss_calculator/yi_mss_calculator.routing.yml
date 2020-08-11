@@ -6,3 +6,5 @@ yi_mss_calculator.calculator:
     _title: 'Minimum Security Standards Filter'
   requirements:
     _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
