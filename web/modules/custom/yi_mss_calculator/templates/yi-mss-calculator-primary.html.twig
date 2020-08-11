@@ -1,0 +1,21 @@
+<div class="mss-primary">
+  {% for item in results %}
+    <h2>{{ link(item.title, item.uri) }}</h2>
+    <p>{{ item.description }}</p>
+    <ul class="mss-sub-policies">
+      {% for subitem in item.children %}
+        <li>
+          {% if subitem.labels|length > 0 %}
+          <span class="labels">
+             {% for class, label in subitem.labels %}
+              <p class="label-{{class}}">{{ label }}</p>
+             {% endfor %}
+          </span>
+          {% endif %}
+          {{ link(subitem.title, subitem.uri) }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+  </div>
+</div>

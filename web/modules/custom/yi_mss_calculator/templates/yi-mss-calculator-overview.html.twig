@@ -1,0 +1,19 @@
+<a class="calculator-restart" href="/mss/calculator">&lt;- Start Over</a>
+<div class="mss-overview">
+  <h2>Overview of Requirements</h2>
+  <h3>Based on the following selections: <em>{{ filters|join(', ') }}</em></h3>
+  <div class="results">
+  {% if results|length < 1 %}
+    <h4>No results! Try again</h4>
+  {% endif %}
+  {% for item in results %}
+    <h4>
+      {{item.title}}:
+      {% for child in item.children %}
+        {{ link(child.policy_number, child.uri) }}
+      {% endfor %}
+    </h4>
+  {% endfor %}
+  </div>
+</div>
+
