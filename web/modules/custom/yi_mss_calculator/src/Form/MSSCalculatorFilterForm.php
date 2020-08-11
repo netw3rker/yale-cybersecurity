@@ -23,6 +23,7 @@ class MSSCalculatorFilterForm extends FormBase {
    * Get a list of terms by vocab id.
    */
   private function getTerms($vid) {
+    // phpcs:ignore
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
     $term_data = [];
     foreach ($terms as $term) {

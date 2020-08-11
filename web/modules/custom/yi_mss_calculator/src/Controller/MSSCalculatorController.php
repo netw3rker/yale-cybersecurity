@@ -17,6 +17,7 @@ class MSSCalculatorController extends ControllerBase {
    * Get the parent node of a specification.
    */
   private function getSpecParentNode($pid) {
+    // phpcs:ignore
     $q = \Drupal::entityQuery('node')
       ->condition('type', 'standard')
       ->condition('status', 1)
@@ -24,6 +25,7 @@ class MSSCalculatorController extends ControllerBase {
       ->range(0, 1)
       ->execute();
 
+    // phpcs:ignore
     return Node::load(current($q));
   }
 
@@ -31,6 +33,7 @@ class MSSCalculatorController extends ControllerBase {
    * Get the first parent node on sub-policy.
    */
   private function getParentNid($nid) {
+    // phpcs:ignore
     $q = \Drupal::entityQuery('node')
       ->condition('type', 'standard')
       ->condition('status', 1)
@@ -73,6 +76,7 @@ class MSSCalculatorController extends ControllerBase {
     $out = [];
 
     // Device type.
+    // phpcs:ignore
     $type = Term::load($args->type);
     $out[] = $type->getName();
 
@@ -80,11 +84,13 @@ class MSSCalculatorController extends ControllerBase {
     $out[] = $args->access ? 'Can Access Internet' : 'Cannot Access Internet';
 
     // Risk.
+    // phpcs:ignore
     $risk = Term::load($args->risk);
     $out[] = $risk->getName();
 
     // Obligations.
     if ($args->obligations) {
+      // phpcs:ignore
       $obs = Term::loadMultiple(explode(',', $args->obligations));
       foreach ($obs as $term) {
         $out[] = $term->getName();
@@ -98,6 +104,9 @@ class MSSCalculatorController extends ControllerBase {
    * Get tiered array of results based on grouping primary mss node.
    */
   private function getFilterResults($args) {
+    $results = [];
+
+    // phpcs:ignore
     $specs = \Drupal::entityQuery('paragraph')
       ->condition('type', 'specification')
       ->condition('field_device_type', $args->type)
@@ -140,6 +149,7 @@ class MSSCalculatorController extends ControllerBase {
       if ($primary) {
         // Setup primary result container.
         if (!isset($results[$primary])) {
+          // phpcs:ignore
           $n = Node::load($primary);
           $results[$primary] = [
             'title' => $n->getTitle(),
@@ -173,10 +183,12 @@ class MSSCalculatorController extends ControllerBase {
     $build = [];
 
     // Filter data.
+    // phpcs:ignore
     $filters = (object) \Drupal::request()->query->all();
 
     // Add Filter form if not filtered.
     if (!isset($filters->type) || !isset($filters->access) || !isset($filters->risk)) {
+      // phpcs:ignore
       $build['filters'] = \Drupal::formBuilder()->getForm('Drupal\yi_mss_calculator\Form\MSSCalculatorFilterForm');
       return $build;
     }
