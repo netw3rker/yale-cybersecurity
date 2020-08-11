@@ -6,11 +6,37 @@
   z-index: 100;
   width: 100%;
 
+  .header-hero & {
+    @include large {
+      position: absolute;
+
+      // Admin Menu	
+      .toolbar-fixed &,	
+      .toolbar-vertical & {	
+        top: 39px;	
+      }	
+
+      .toolbar-fixed.toolbar-horizontal.toolbar-tray-open & {	
+        top: 79px;	
+      }
+    }
+  }
+
   &--fixed {
     position: fixed;
 
     @include large {
       position: absolute;
+    }
+
+    // Admin Menu	
+    .toolbar-fixed &,	
+    .toolbar-vertical & {	
+      top: 39px;	
+    }	
+
+    .toolbar-fixed.toolbar-horizontal.toolbar-tray-open & {	
+      top: 79px;	
     }
   }
 
