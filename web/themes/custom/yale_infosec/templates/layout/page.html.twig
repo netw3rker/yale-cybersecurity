@@ -50,11 +50,11 @@
 
 {% extends "@templates/_default.twig" %}
   {% block page_header %}
-    {% if page.hero %}<div {{ bem('header-hero') }}>{% endif %}
+    {% if withHeaderImage %}<div {{ bem('header-hero') }}>{% endif %}
       {% if page.header %}
         {{ page.header }}
       {% endif %}
-    {% if page.hero %}</div>{% endif %}
+    {% if withHeaderImage %}</div>{% endif %}
   {% endblock %}
 
   {% block page_hero %}
