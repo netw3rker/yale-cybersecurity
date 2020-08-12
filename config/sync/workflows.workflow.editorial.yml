@@ -9,6 +9,7 @@ dependencies:
     - node.type.guide
     - node.type.news
     - node.type.page
+    - node.type.standard
   module:
     - content_moderation
 id: editorial
@@ -49,4 +50,5 @@ type_settings:
       - guide
       - news
       - page
+      - standard
   default_moderation_state: draft

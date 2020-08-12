@@ -1,0 +1,25 @@
+.news-categories {
+  font-size: 1.4rem;
+
+  ul {
+    @include list-reset;
+
+    display: inline;
+
+    li {
+      @include list-reset;
+
+      display: inline;
+
+      &:not(:last-child) {
+        ::after {
+          content: ', ';
+        }
+      }
+    }
+
+    a {
+      color: clr('text');
+    }
+  }
+}

@@ -1,0 +1,28 @@
+uuid: fe129770-1bd5-421c-9815-f48b56eb16c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.callout.call_to_action
+    - field.storage.callout.field_text
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: callout.call_to_action.field_text
+field_name: field_text
+entity_type: callout
+bundle: call_to_action
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

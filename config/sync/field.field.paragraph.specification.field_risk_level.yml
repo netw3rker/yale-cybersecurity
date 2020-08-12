@@ -1,0 +1,29 @@
+uuid: 765e3152-97f4-4631-923f-f1a8353392df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_risk_level
+    - paragraphs.paragraphs_type.specification
+    - taxonomy.vocabulary.risk_level
+id: paragraph.specification.field_risk_level
+field_name: field_risk_level
+entity_type: paragraph
+bundle: specification
+label: 'Risk level'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      risk_level: risk_level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

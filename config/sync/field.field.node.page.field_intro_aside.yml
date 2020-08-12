@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_intro_aside
     - node.type.page
     - paragraphs.paragraphs_type.image
-    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.quote
   module:
     - entity_reference_revisions
 id: node.page.field_intro_aside
@@ -25,17 +25,32 @@ settings:
     negate: 0
     target_bundles:
       image: image
-      text: text
+      quote: quote
     target_bundles_drag_drop:
+      call_to_action:
+        weight: 11
+        enabled: false
       grid_type:
         weight: 6
         enabled: false
       image:
         enabled: true
         weight: 7
-      text:
+      large_image:
+        weight: 14
+        enabled: false
+      quote:
         enabled: true
+        weight: 15
+      reference_cards:
+        weight: 16
+        enabled: false
+      reference_list:
+        weight: 17
+        enabled: false
+      text:
         weight: 8
+        enabled: false
       text_with_media:
         weight: 9
         enabled: false

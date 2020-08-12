@@ -5,7 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.field_content_body
+    - field.field.node.news.field_intro_aside
+    - field.field.node.news.field_intro_text
     - field.field.node.news.field_metadata
+    - field.field.node.news.field_news_author
+    - field.field.node.news.field_news_category
     - field.field.node.news.field_seo_title
     - field.field.node.news.field_tags
     - field.field.node.news.field_teaser_media
@@ -18,6 +22,11 @@ targetEntityType: node
 bundle: news
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
@@ -25,7 +34,11 @@ content:
     region: content
 hidden:
   field_content_body: true
+  field_intro_aside: true
+  field_intro_text: true
   field_metadata: true
+  field_news_author: true
+  field_news_category: true
   field_seo_title: true
   field_tags: true
   field_teaser_media: true

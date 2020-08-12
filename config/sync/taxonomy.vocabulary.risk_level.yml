@@ -1,0 +1,8 @@
+uuid: e627479d-285e-4eff-b3e0-6c9f0ff295fb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Risk level'
+vid: risk_level
+description: ''
+weight: 0

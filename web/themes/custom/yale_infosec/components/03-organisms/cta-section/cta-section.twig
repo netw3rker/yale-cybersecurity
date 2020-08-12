@@ -1,0 +1,13 @@
+{#
+ # Available variables:
+ # - cta_section__base_class - base classname of the wrapper.
+ #}
+{% set cta_section__base_class = 'cta-section' %}
+
+<div {{ bem(cta_section__base_class) }}>
+  <div {{ bem('content', cta_section_content__modifiers, cta_section__base_class) }}>
+    {% block cta_section_content %}
+      {% include "@molecules/cta/cta.twig" %}
+    {% endblock %}
+  </div>
+</div>

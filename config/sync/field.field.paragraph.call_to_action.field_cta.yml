@@ -1,0 +1,28 @@
+uuid: 172617a6-0a4c-43fa-8c2d-5c119af04d25
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.callout.call_to_action
+    - field.storage.paragraph.field_cta
+    - paragraphs.paragraphs_type.call_to_action
+id: paragraph.call_to_action.field_cta
+field_name: field_cta
+entity_type: paragraph
+bundle: call_to_action
+label: 'Call to Action'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:callout'
+  handler_settings:
+    target_bundles:
+      call_to_action: call_to_action
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

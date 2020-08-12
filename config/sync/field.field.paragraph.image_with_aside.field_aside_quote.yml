@@ -1,18 +1,18 @@
-uuid: b5b30f9a-7111-49c4-96f5-a451ef64b30a
+uuid: 74edb845-8295-49a2-8555-fec85780b563
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_aside_quote
-    - paragraphs.paragraphs_type.image
-id: paragraph.image.field_aside_quote
+    - paragraphs.paragraphs_type.image_with_aside
+id: paragraph.image_with_aside.field_aside_quote
 field_name: field_aside_quote
 entity_type: paragraph
-bundle: image
+bundle: image_with_aside
 label: 'Aside quote'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

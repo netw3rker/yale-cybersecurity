@@ -1,0 +1,10 @@
+uuid: 1dfe4042-0751-4409-a9c1-f05e6856141b
+langcode: en
+status: true
+dependencies: {  }
+id: specification_details
+label: 'Specification Details'
+icon_uuid: null
+icon_default: null
+description: 'Detail fields for specifications'
+behavior_plugins: {  }

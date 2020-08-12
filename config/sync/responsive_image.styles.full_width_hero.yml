@@ -1,0 +1,31 @@
+uuid: 79a8bd40-8669-4600-904f-ccb35d2ec24f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.1000x665
+    - image.style.1240x825
+    - image.style.1450x970
+    - image.style.470x320
+    - image.style.720x480
+    - image.style.820x545
+    - image.style.980x650
+id: full_width_hero
+label: 'Full Width/Hero'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 1000x665
+        - 1240x825
+        - 1450x970
+        - 470x320
+        - 720x480
+        - 820x545
+        - 980x650
+breakpoint_group: responsive_image
+fallback_image_style: 470x320

@@ -1,0 +1,22 @@
+uuid: eb3f97a7-4741-4749-b7d8-9869fc2436d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: standard
+label: Standard
+type: 'canonical_entities:node'
+pattern: 'security-standard/[node:title]'
+selection_criteria:
+  1558d339-a88e-47f6-9e6f-bd079ccaae8a:
+    id: node_type
+    bundles:
+      standard: standard
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 1558d339-a88e-47f6-9e6f-bd079ccaae8a
+selection_logic: and
+weight: -5
+relationships: {  }

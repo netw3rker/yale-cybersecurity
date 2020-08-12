@@ -1,0 +1,39 @@
+uuid: 0c46bc7c-d844-47ad-977c-b8d49c9c5466
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.content_browser
+    - field.field.node.alert.field_content_body
+    - field.field.node.alert.field_metadata
+    - field.field.node.alert.field_seo_title
+    - field.field.node.alert.field_tags
+    - field.field.node.alert.field_teaser_media
+    - field.field.node.alert.field_teaser_text
+    - image.style.thumbnail
+    - node.type.alert
+  module:
+    - media
+    - user
+id: node.alert.content_browser
+targetEntityType: node
+bundle: alert
+mode: content_browser
+content:
+  field_teaser_media:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+hidden:
+  content_moderation_control: true
+  field_content_body: true
+  field_metadata: true
+  field_seo_title: true
+  field_tags: true
+  field_teaser_text: true
+  links: true

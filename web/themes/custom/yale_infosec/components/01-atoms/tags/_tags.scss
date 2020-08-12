@@ -1,0 +1,45 @@
+.tags {
+  @include wrapper;
+
+  margin-bottom: 4.7rem;
+
+  @include large {
+    @include grid;
+  }
+
+  font-size: 1.4rem;
+
+  &__content {
+    grid-area: content;
+    display: flex;
+  }
+
+  ul {
+    @include list-reset;
+
+    display: inline;
+
+    li {
+      @include list-reset;
+
+      display: inline;
+
+      &:not(:last-child) {
+        ::after {
+          content: ', ';
+        }
+      }
+    }
+
+    a {
+      color: clr('text');
+    }
+  }
+
+  &__icon {
+    margin-right: $space-half;
+    color: clr(accent);
+    width: 14px;
+    height: 21px;
+  }
+}

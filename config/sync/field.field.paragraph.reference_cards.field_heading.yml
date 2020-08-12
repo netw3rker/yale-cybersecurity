@@ -1,0 +1,19 @@
+uuid: 57cfb61c-0810-47ab-baa5-bd9bd39b96f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.reference_cards
+id: paragraph.reference_cards.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: reference_cards
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

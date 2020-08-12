@@ -1,0 +1,59 @@
+uuid: 85cea0c9-e6a9-436f-b768-9213b019be86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.specification.field_device_type
+    - field.field.paragraph.specification.field_internet_access
+    - field.field.paragraph.specification.field_obligation
+    - field.field.paragraph.specification.field_required
+    - field.field.paragraph.specification.field_risk_level
+    - field.field.paragraph.specification.field_upcoming
+    - paragraphs.paragraphs_type.specification
+id: paragraph.specification.default
+targetEntityType: paragraph
+bundle: specification
+mode: default
+content:
+  field_device_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_internet_access:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_obligation:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_required:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_risk_level:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_upcoming:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+hidden:
+  created: true
+  status: true
