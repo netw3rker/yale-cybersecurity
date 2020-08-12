@@ -14,7 +14,7 @@ entity_type: node
 bundle: guide
 label: 'Header Image'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -25,15 +25,36 @@ settings:
     target_bundles:
       large_image: large_image
     target_bundles_drag_drop:
+      call_to_action:
+        weight: 14
+        enabled: false
       grid_type:
         weight: 7
         enabled: false
       image:
         weight: 8
         enabled: false
+      image_with_aside:
+        weight: 17
+        enabled: false
       large_image:
         enabled: true
         weight: 9
+      quote:
+        weight: 19
+        enabled: false
+      reference_cards:
+        weight: 20
+        enabled: false
+      reference_list:
+        weight: 21
+        enabled: false
+      specification:
+        weight: 22
+        enabled: false
+      specification_details:
+        weight: 23
+        enabled: false
       text:
         weight: 10
         enabled: false
