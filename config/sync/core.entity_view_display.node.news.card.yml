@@ -37,7 +37,11 @@ content:
 hidden:
   content_moderation_control: true
   field_content_body: true
+  field_intro_aside: true
+  field_intro_text: true
   field_metadata: true
+  field_news_author: true
+  field_news_category: true
   field_seo_title: true
   field_tags: true
   links: true
