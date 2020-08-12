@@ -5,8 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.content_browser
     - field.field.node.event.field_content_body
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_host
+    - field.field.node.event.field_event_link
+    - field.field.node.event.field_event_registration
+    - field.field.node.event.field_intro_aside
+    - field.field.node.event.field_intro_text
+    - field.field.node.event.field_location_text
     - field.field.node.event.field_metadata
     - field.field.node.event.field_seo_title
+    - field.field.node.event.field_subtitle
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser_media
     - field.field.node.event.field_teaser_text
@@ -32,8 +40,16 @@ content:
 hidden:
   content_moderation_control: true
   field_content_body: true
+  field_event_date: true
+  field_event_host: true
+  field_event_link: true
+  field_event_registration: true
+  field_intro_aside: true
+  field_intro_text: true
+  field_location_text: true
   field_metadata: true
   field_seo_title: true
+  field_subtitle: true
   field_tags: true
   field_teaser_text: true
   links: true

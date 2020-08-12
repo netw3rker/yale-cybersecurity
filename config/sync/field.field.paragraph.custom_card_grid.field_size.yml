@@ -1,0 +1,21 @@
+uuid: 33775001-1592-47ca-9b2e-589569a3b5ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_size
+    - paragraphs.paragraphs_type.custom_card_grid
+  module:
+    - options
+id: paragraph.custom_card_grid.field_size
+field_name: field_size
+entity_type: paragraph
+bundle: custom_card_grid
+label: Size
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

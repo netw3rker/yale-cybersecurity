@@ -1,0 +1,33 @@
+uuid: 5b1e08e5-dbe2-4747-b07a-9e4574440f85
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.hero
+    - field.field.node.alert.field_alert_level
+    - field.field.node.alert.field_content_body
+    - field.field.node.alert.field_metadata
+    - field.field.node.alert.field_seo_title
+    - field.field.node.alert.field_summary
+    - field.field.node.alert.field_tags
+    - field.field.node.alert.field_teaser_media
+    - field.field.node.alert.field_teaser_text
+    - node.type.alert
+  module:
+    - user
+id: node.alert.hero
+targetEntityType: node
+bundle: alert
+mode: hero
+content: {  }
+hidden:
+  content_moderation_control: true
+  field_alert_level: true
+  field_content_body: true
+  field_metadata: true
+  field_seo_title: true
+  field_summary: true
+  field_tags: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true

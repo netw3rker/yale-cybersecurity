@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
+    - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
     - field.field.node.alert.field_metadata
     - field.field.node.alert.field_seo_title
+    - field.field.node.alert.field_summary
     - field.field.node.alert.field_tags
     - field.field.node.alert.field_teaser_media
     - field.field.node.alert.field_teaser_text
@@ -36,8 +38,10 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_alert_level: true
   field_content_body: true
   field_metadata: true
   field_seo_title: true
+  field_summary: true
   field_tags: true
   links: true
