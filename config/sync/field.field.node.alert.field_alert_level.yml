@@ -1,0 +1,29 @@
+uuid: 5812c6b9-3c30-401a-b156-7d459f11ca6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alert_level
+    - node.type.alert
+    - taxonomy.vocabulary.alert_level
+id: node.alert.field_alert_level
+field_name: field_alert_level
+entity_type: node
+bundle: alert
+label: 'Alert Level'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      alert_level: alert_level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

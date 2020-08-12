@@ -1,0 +1,8 @@
+uuid: f1eadda6-eba0-4a80-981b-f741719176c8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Alert Level'
+vid: alert_level
+description: ''
+weight: 0
