@@ -10,7 +10,7 @@ field_name: field_location_text
 entity_type: node
 bundle: event
 label: Location
-description: ''
+description: 'Set a location for the event.'
 required: false
 translatable: false
 default_value: {  }
