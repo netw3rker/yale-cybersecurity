@@ -37,54 +37,43 @@
  */
 #}
 {%
-  set title_classes = [
-    label_display == 'visually_hidden' ? 'visually-hidden',
+  set field_classes = [
+    'inline',
+    'inline--alert',
+    'inline--' ~ items.0.content['#plain_text']|lower,
   ]
 %}
-{% set attributes = attributes.addClass('news-categories__content') %}
-{% set presentationLabel = 'Topic:' %}
 
-{% macro term(categoryTerm) %}
-  {{ categoryTerm }}
-{% endmacro %}
+{%
+  set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+    'inline__label'
+  ]
+%}
 
-<div class="news-categories">
-  {% if label_hidden %}
-    {% if multiple %}
-      <div {{ attributes }}>
-        <ul>
-          {% for item in items %}
-            <li{{ item.attributes }}>
-              {{ _self.term(item.content) }}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% else %}
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes.addClass(field_classes) }}>
       {% for item in items %}
-        <div{{ attributes }}>
-          {{ _self.term(item.content) }}
-        </div>
+        <div{{ item.attributes }}>{{ item.content }}</div>
       {% endfor %}
-    {% endif %}
-  {% else %}
-    <div{{ attributes }}>
-      <strong{{ title_attributes.addClass(title_classes) }} class="news-categories__label">{{ presentationLabel }}</strong>
-      {% if multiple %}
-        <ul>
-          {% for item in items %}
-            <li{{ item.attributes }}>
-              {{ _self.term(item.content) }}
-            </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        {% for item in items %}
-          <div{{ item.attributes }}>
-            {{ _self.term(item.content) }}
-          </div>
-        {% endfor %}
-      {% endif %}
     </div>
+  {% else %}
+    {% for item in items %}
+      <div{{ attributes }}>{{ item.content }}</div>
+    {% endfor %}
   {% endif %}
-</div>
+{% else %}
+  <div{{ attributes.addClass(field_classes) }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% if multiple %}
+      <div>
+    {% endif %}
+    {% for item in items %}
+      <div{{ item.attributes }}>{{ item.content }}</div>
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
