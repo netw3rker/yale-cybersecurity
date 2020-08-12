@@ -6,7 +6,6 @@ dependencies:
     - entity_browser.browser.media_entity_browser_modal
     - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
-    - field.field.node.alert.field_link
     - field.field.node.alert.field_metadata
     - field.field.node.alert.field_seo_title
     - field.field.node.alert.field_summary
@@ -19,7 +18,6 @@ dependencies:
     - content_moderation
     - entity_browser
     - field_group
-    - link
     - metatag
     - paragraphs
     - paragraphs_features
@@ -143,14 +141,6 @@ content:
         add_in_between: false
         split_text: false
     type: paragraphs
-    region: content
-  field_link:
-    weight: 105
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
     region: content
   field_metadata:
     weight: 12

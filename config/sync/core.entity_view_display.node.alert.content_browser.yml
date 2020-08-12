@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.content_browser
     - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
-    - field.field.node.alert.field_link
     - field.field.node.alert.field_metadata
     - field.field.node.alert.field_seo_title
     - field.field.node.alert.field_summary
@@ -36,7 +35,6 @@ hidden:
   content_moderation_control: true
   field_alert_level: true
   field_content_body: true
-  field_link: true
   field_metadata: true
   field_seo_title: true
   field_summary: true

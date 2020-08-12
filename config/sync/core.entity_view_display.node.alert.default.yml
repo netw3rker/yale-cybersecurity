@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
-    - field.field.node.alert.field_link
     - field.field.node.alert.field_metadata
     - field.field.node.alert.field_seo_title
     - field.field.node.alert.field_summary
@@ -15,7 +14,6 @@ dependencies:
     - node.type.alert
   module:
     - entity_reference_revisions
-    - link
     - user
 id: node.alert.default
 targetEntityType: node
@@ -31,18 +29,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
-  field_link:
-    type: link
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
 hidden:
   content_moderation_control: true
   field_alert_level: true
