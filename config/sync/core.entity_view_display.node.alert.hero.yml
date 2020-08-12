@@ -1,9 +1,9 @@
-uuid: 0c46bc7c-d844-47ad-977c-b8d49c9c5466
+uuid: 5b1e08e5-dbe2-4747-b07a-9e4574440f85
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.content_browser
+    - core.entity_view_mode.node.hero
     - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
     - field.field.node.alert.field_metadata
@@ -12,25 +12,14 @@ dependencies:
     - field.field.node.alert.field_tags
     - field.field.node.alert.field_teaser_media
     - field.field.node.alert.field_teaser_text
-    - image.style.thumbnail
     - node.type.alert
   module:
-    - media
     - user
-id: node.alert.content_browser
+id: node.alert.hero
 targetEntityType: node
 bundle: alert
-mode: content_browser
-content:
-  field_teaser_media:
-    weight: 0
-    label: hidden
-    settings:
-      image_style: thumbnail
-      image_link: ''
-    third_party_settings: {  }
-    type: media_thumbnail
-    region: content
+mode: hero
+content: {  }
 hidden:
   content_moderation_control: true
   field_alert_level: true
@@ -39,5 +28,6 @@ hidden:
   field_seo_title: true
   field_summary: true
   field_tags: true
+  field_teaser_media: true
   field_teaser_text: true
   links: true
