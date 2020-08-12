@@ -1,0 +1,78 @@
+uuid: d9ca0ec0-72cd-42ad-98e8-a88caada3bb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_body
+    - node.type.frontpage
+    - paragraphs.paragraphs_type.cta_home
+    - paragraphs.paragraphs_type.custom_card_grid
+  module:
+    - entity_reference_revisions
+id: node.frontpage.field_content_body
+field_name: field_content_body
+entity_type: node
+bundle: frontpage
+label: 'Content Body'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      cta_home: cta_home
+      custom_card_grid: custom_card_grid
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 15
+        enabled: false
+      cta_home:
+        enabled: true
+        weight: 18
+      custom_card:
+        weight: 16
+        enabled: false
+      custom_card_grid:
+        enabled: true
+        weight: 20
+      grid_type:
+        weight: 17
+        enabled: false
+      image:
+        weight: 18
+        enabled: false
+      image_with_aside:
+        weight: 19
+        enabled: false
+      large_image:
+        weight: 20
+        enabled: false
+      quote:
+        weight: 21
+        enabled: false
+      reference_cards:
+        weight: 22
+        enabled: false
+      reference_list:
+        weight: 23
+        enabled: false
+      specification:
+        weight: 24
+        enabled: false
+      specification_details:
+        weight: 25
+        enabled: false
+      text:
+        weight: 26
+        enabled: false
+      text_with_media:
+        weight: 27
+        enabled: false
+      video:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions
