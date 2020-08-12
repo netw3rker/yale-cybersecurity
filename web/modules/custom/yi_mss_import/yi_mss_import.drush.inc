@@ -149,7 +149,7 @@ function yi_mss_import_get_nid($data, $header, $terms) {
       $tid = yi_mss_import_get_tid($header->$col, 'specification_detail_type');
       $details[] = Paragraph::create([
         'type' => 'specification_details',
-        'field_specification_detail_data' => $data->$col,
+        'field_specification_detail_data' => ['value' => nl2br($data->$col), 'format' => 'basic_html'],
         'field_specification_detail_type' => ['target_id' => $tid],
       ]);
     }
@@ -163,7 +163,7 @@ function yi_mss_import_get_nid($data, $header, $terms) {
     'field_policy_number' => $data->b,
     'title' => $title,
     'field_seo_title' => substr($data->c, 0, 120),
-    'field_standard_description' => $data->c,
+    'field_standard_description' => ['value' => nl2br($data->c), 'format' => 'basic_html'],
     'field_teaser_text' => $data->c,
     'field_standard_specifications' => $specs,
     'field_specification_details' => $details,
