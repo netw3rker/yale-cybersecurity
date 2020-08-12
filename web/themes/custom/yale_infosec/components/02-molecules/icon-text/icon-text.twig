@@ -9,19 +9,21 @@
  #}
 {% set icon_text__base_class = 'icon-text' %}
 
-<span {{ bem(icon_text__base_class, icon_text__modifiers) }}>
-  {% include "@atoms/images/icons/_icon.twig" with {
-    icon_blockname: icon_text__base_class,
-    icon_name: icon_text__icon,
-    icon_decorative: true,
-  } %}
-  {% if icon_text__link %}
-    {% include "@atoms/links/link/link.twig" with {
-      link_blockname: icon_text__base_class,
-      link_url: icon_text__link,
-      link_content: icon_text__copy
+<div {{ bem(icon_text__base_class, icon_text__modifiers) }}>
+  <div {{ bem('inner', [], icon_text__base_class) }}>
+    {% include "@atoms/images/icons/_icon.twig" with {
+      icon_blockname: icon_text__base_class,
+      icon_name: icon_text__icon,
+      icon_decorative: true,
     } %}
-  {% else %}
-    {{ icon_text__copy }}
-  {% endif %}
-</span>
+    {% if icon_text__link %}
+      {% include "@atoms/links/link/link.twig" with {
+        link_blockname: icon_text__base_class,
+        link_url: icon_text__link,
+        link_content: icon_text__copy
+      } %}
+    {% else %}
+      {{ icon_text__copy }}
+    {% endif %}
+  </div>
+</div>

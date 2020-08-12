@@ -16,15 +16,8 @@
  */
 #}
 
-<{{ wrapper_element }} {{ attributes }}>
-  {% if title %}
-  <{{ title_element }}{{ title_attributes }}>{{ title }}</{{ title_element }}>
-  {% endif %}
-  {% if collapsible %}
-  <div class="field-group-wrapper">
-  {% endif %}
-  {{children}}
-  {% if collapsible %}
-  </div>
-  {% endif %}
-</{{ wrapper_element }}>
+{% embed "@molecules/text-section/text-section.twig" %}
+  {% block text_section_content %}
+    {{children}}
+  {% endblock %}
+{% endembed %}
