@@ -1,0 +1,28 @@
+uuid: 5b7b0ef5-d97a-4d2b-a6e6-4edff079030d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_text
+    - node.type.event
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: full_html
+    basic_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
+id: node.event.field_intro_text
+field_name: field_intro_text
+entity_type: node
+bundle: event
+label: 'Intro text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
