@@ -61,6 +61,11 @@
       margin-top: -19rem;
     }
   }
+
+  .text-section__content {
+    grid-column-end: right-side;
+    grid-column-start: content;
+  }
 }
 
 .intro-text__text {
