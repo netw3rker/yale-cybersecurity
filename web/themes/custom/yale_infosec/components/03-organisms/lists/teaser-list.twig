@@ -25,12 +25,14 @@
     {{ title_suffix }}
   {% endif %}
   <div {{ bem('items', [], teaser_list__base_class) }}>
-    {% for item in teaser_list__items %}
-      {% include "@molecules/teaser/teaser.twig" with {
-        teaser__heading: item.teaser__heading,
-        teaser__body: item.teaser__body,
-        teaser__link__url: item.teaser__link__url,
-      } %}
-    {% endfor %}
+    {% block items %}
+      {% for item in teaser_list__items %}
+        {% include "@molecules/teaser/teaser.twig" with {
+          teaser__heading: item.teaser__heading,
+          teaser__body: item.teaser__body,
+          teaser__link__url: item.teaser__link__url,
+        } %}
+      {% endfor %}
+    {% endblock %}
   </div>
 </div>
