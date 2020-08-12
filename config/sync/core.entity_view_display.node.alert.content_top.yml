@@ -1,9 +1,9 @@
-uuid: 0c46bc7c-d844-47ad-977c-b8d49c9c5466
+uuid: 82be7f6e-2009-4f76-8362-742fc87df970
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.content_browser
+    - core.entity_view_mode.node.content_top
     - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
     - field.field.node.alert.field_metadata
@@ -12,32 +12,29 @@ dependencies:
     - field.field.node.alert.field_tags
     - field.field.node.alert.field_teaser_media
     - field.field.node.alert.field_teaser_text
-    - image.style.thumbnail
     - node.type.alert
   module:
-    - media
     - user
-id: node.alert.content_browser
+id: node.alert.content_top
 targetEntityType: node
 bundle: alert
-mode: content_browser
+mode: content_top
 content:
-  field_teaser_media:
+  field_alert_level:
+    type: entity_reference_label
     weight: 0
-    label: hidden
-    settings:
-      image_style: thumbnail
-      image_link: ''
-    third_party_settings: {  }
-    type: media_thumbnail
     region: content
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
 hidden:
   content_moderation_control: true
-  field_alert_level: true
   field_content_body: true
   field_metadata: true
   field_seo_title: true
   field_summary: true
   field_tags: true
+  field_teaser_media: true
   field_teaser_text: true
   links: true

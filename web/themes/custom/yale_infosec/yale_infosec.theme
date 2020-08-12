@@ -14,3 +14,20 @@ function yale_infosec_theme_suggestions_page_alter(array &$suggestions, array $v
     $suggestions[] = 'page__' . $content_type;
   }
 }
+
+/**
+ * Implements theme_preprocess_page.
+ *
+ * @param array $vars
+ *   Array of variables containing field content.
+ */
+function yale_infosec_preprocess_page(array &$vars) {
+  // Node information.
+  if (isset($vars['node'])) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    // Hero header image information.
+    if (isset($node->field_header_image) && $node->get('field_header_image')->getValue()) {
+      $vars['withHeaderImage'] = TRUE;
+    }
+  }
+}

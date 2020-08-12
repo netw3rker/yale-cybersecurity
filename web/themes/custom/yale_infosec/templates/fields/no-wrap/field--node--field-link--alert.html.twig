@@ -35,56 +35,32 @@
  *
  * @see template_preprocess_field()
  */
+
+ @TODO: THIS CAN BE REMOVED IF BEM CLASSES CAN BE APPLIED IN WYSIWYG
 #}
 {%
   set title_classes = [
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
-{% set attributes = attributes.addClass('news-categories__content') %}
-{% set presentationLabel = 'Topic:' %}
 
-{% macro term(categoryTerm) %}
-  {{ categoryTerm }}
-{% endmacro %}
-
-<div class="news-categories">
-  {% if label_hidden %}
-    {% if multiple %}
-      <div {{ attributes }}>
-        <ul>
-          {% for item in items %}
-            <li{{ item.attributes }}>
-              {{ _self.term(item.content) }}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% else %}
-      {% for item in items %}
-        <div{{ attributes }}>
-          {{ _self.term(item.content) }}
-        </div>
-      {% endfor %}
-    {% endif %}
+{% if label_hidden %}
+  {% if multiple %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
   {% else %}
-    <div{{ attributes }}>
-      <strong{{ title_attributes.addClass(title_classes) }} class="news-categories__label">{{ presentationLabel }}</strong>
-      {% if multiple %}
-        <ul>
-          {% for item in items %}
-            <li{{ item.attributes }}>
-              {{ _self.term(item.content) }}
-            </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        {% for item in items %}
-          <div{{ item.attributes }}>
-            {{ _self.term(item.content) }}
-          </div>
-        {% endfor %}
-      {% endif %}
-    </div>
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
   {% endif %}
-</div>
+{% else %}
+    {{ label }}
+    {% if multiple %}
+    {% endif %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+    {% if multiple %}
+    {% endif %}
+{% endif %}
