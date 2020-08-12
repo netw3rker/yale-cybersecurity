@@ -1,12 +1,19 @@
 /*
  * General Layout
 */
-
 .main-content__top {
   @include wrapper;
 
+  margin-top: $space-double;	
+
+  @include medium {	
+    margin-top: $space-triple;	
+  }
+
   @include large {
     @include grid;
+
+    margin-top: $space-quadruple;
   }
 
   margin-bottom: $space-triple;
