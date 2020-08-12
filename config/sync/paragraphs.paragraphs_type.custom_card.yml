@@ -1,0 +1,10 @@
+uuid: 3289a494-d1dc-4a16-8efa-979a4c63fa4c
+langcode: en
+status: true
+dependencies: {  }
+id: custom_card
+label: 'Custom card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

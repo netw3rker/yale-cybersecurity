@@ -1,0 +1,19 @@
+uuid: fff34753-5abd-49eb-a2b0-cca19702ee69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_subtitle
+    - node.type.frontpage
+id: node.frontpage.field_header_subtitle
+field_name: field_header_subtitle
+entity_type: node
+bundle: frontpage
+label: 'Header Subtitle'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

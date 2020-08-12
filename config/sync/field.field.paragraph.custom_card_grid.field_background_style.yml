@@ -1,0 +1,23 @@
+uuid: ad1d26b0-95b0-43a9-8693-b8b79eec693b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_style
+    - paragraphs.paragraphs_type.custom_card_grid
+  module:
+    - options
+id: paragraph.custom_card_grid.field_background_style
+field_name: field_background_style
+entity_type: paragraph
+bundle: custom_card_grid
+label: 'Background Style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

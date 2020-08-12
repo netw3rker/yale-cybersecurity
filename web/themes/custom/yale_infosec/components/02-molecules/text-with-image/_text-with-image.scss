@@ -61,6 +61,16 @@
       margin-top: -19rem;
     }
   }
+
+  .text-section__content {
+    grid-column-end: right-side;
+    grid-column-start: content;
+
+    .blockquote {
+      margin-right: 0;
+      margin-top: 0;
+    }
+  }
 }
 
 .intro-text__text {

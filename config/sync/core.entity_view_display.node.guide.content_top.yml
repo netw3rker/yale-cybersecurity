@@ -1,9 +1,9 @@
-uuid: 0e019054-3ec2-4de4-80f4-c3f40bf0f558
+uuid: c14d30ba-766d-416a-842f-e8d4efc3553f
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.content_top
     - field.field.node.guide.field_content_body
     - field.field.node.guide.field_header_image
     - field.field.node.guide.field_metadata
@@ -14,22 +14,13 @@ dependencies:
     - node.type.guide
   module:
     - user
-id: node.guide.teaser
+id: node.guide.content_top
 targetEntityType: node
 bundle: guide
-mode: teaser
-content:
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
+mode: content_top
+content: {  }
 hidden:
+  content_moderation_control: true
   field_content_body: true
   field_header_image: true
   field_metadata: true
@@ -37,3 +28,4 @@ hidden:
   field_tags: true
   field_teaser_media: true
   field_teaser_text: true
+  links: true
