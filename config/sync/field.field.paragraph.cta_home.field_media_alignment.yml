@@ -1,0 +1,21 @@
+uuid: 3a9bc98c-320a-4a6e-a7db-4c8eda7d4ad6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_alignment
+    - paragraphs.paragraphs_type.cta_home
+  module:
+    - options
+id: paragraph.cta_home.field_media_alignment
+field_name: field_media_alignment
+entity_type: paragraph
+bundle: cta_home
+label: 'Media Alignment'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

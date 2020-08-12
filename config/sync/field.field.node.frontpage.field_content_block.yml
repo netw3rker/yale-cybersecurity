@@ -1,0 +1,28 @@
+uuid: 78bbc954-2a3d-488d-bc37-4ffab37c2505
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_block
+    - node.type.frontpage
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.frontpage.field_content_block
+field_name: field_content_block
+entity_type: node
+bundle: frontpage
+label: 'Content Block'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
