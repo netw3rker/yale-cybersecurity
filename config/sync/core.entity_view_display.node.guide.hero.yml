@@ -1,0 +1,40 @@
+uuid: 94328d32-aec1-48e6-9a62-fef7e2ec7681
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.hero
+    - field.field.node.guide.field_content_body
+    - field.field.node.guide.field_header_image
+    - field.field.node.guide.field_metadata
+    - field.field.node.guide.field_seo_title
+    - field.field.node.guide.field_tags
+    - field.field.node.guide.field_teaser_media
+    - field.field.node.guide.field_teaser_text
+    - node.type.guide
+  module:
+    - entity_reference_revisions
+    - user
+id: node.guide.hero
+targetEntityType: node
+bundle: guide
+mode: hero
+content:
+  field_header_image:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: hero
+      link: ''
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_content_body: true
+  field_metadata: true
+  field_seo_title: true
+  field_tags: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true

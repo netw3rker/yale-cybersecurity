@@ -32,6 +32,10 @@
   @include wrapper;
 
   margin-bottom: $space-triple;
+  
+  .node--event & {
+    margin-bottom: 0;
+  }
 
   @include large {
     @include grid;
@@ -59,6 +63,16 @@
   .intro-text--news & {
     @include large {
       margin-top: -19rem;
+    }
+  }
+
+  .text-section__content {
+    grid-column-end: right-side;
+    grid-column-start: content;
+
+    .blockquote {
+      margin-right: 0;
+      margin-top: 0;
     }
   }
 }

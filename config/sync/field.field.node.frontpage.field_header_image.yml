@@ -1,0 +1,67 @@
+uuid: 84ddf266-d383-4f52-b809-30a4a6ef9ab4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_image
+    - node.type.frontpage
+    - paragraphs.paragraphs_type.image
+  module:
+    - entity_reference_revisions
+id: node.frontpage.field_header_image
+field_name: field_header_image
+entity_type: node
+bundle: frontpage
+label: 'Header Image'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image: image
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 14
+        enabled: false
+      grid_type:
+        weight: 15
+        enabled: false
+      image:
+        enabled: true
+        weight: 16
+      image_with_aside:
+        weight: 17
+        enabled: false
+      large_image:
+        weight: 18
+        enabled: false
+      quote:
+        weight: 19
+        enabled: false
+      reference_cards:
+        weight: 20
+        enabled: false
+      reference_list:
+        weight: 21
+        enabled: false
+      specification:
+        weight: 22
+        enabled: false
+      specification_details:
+        weight: 23
+        enabled: false
+      text:
+        weight: 24
+        enabled: false
+      text_with_media:
+        weight: 25
+        enabled: false
+      video:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

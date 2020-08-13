@@ -31,3 +31,49 @@ function yale_infosec_preprocess_page(array &$vars) {
     }
   }
 }
+
+/**
+ * Implements theme_suggestions_paragraph_alter().
+ */
+function yale_infosec_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $parent = $paragraph->getParentEntity();
+  if ($parent) {
+    $suggestions[] = 'paragraph__' . $parent->bundle() . '__' . $paragraph->bundle();
+  }
+}
+
+/**
+ * Implements theme_preprocess_paragraph.
+ *
+ * @param array $vars
+ *   Array of variables containing field content.
+ */
+function yale_infosec_preprocess_paragraph(array &$vars) {
+  $paragraph = $vars['paragraph'];
+  // Node information.
+  $node = $paragraph->getParentEntity();
+  if ($node) {
+    $vars['title'] = $node->label();
+  }
+}
+
+/**
+ * Implements theme_preprocess_time.
+ *
+ * @param array $vars
+ *   Array of variables containing field content.
+ */
+function yale_infosec_preprocess_time(array &$vars) {
+  $vars['timeStamp'] = $vars['attributes']['datetime'];
+}
+
+/**
+ * Implements theme_suggestions_time_alter().
+ */
+function yale_infosec_theme_suggestions_time_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (isset($node)) {
+    $suggestions[] = 'time__' . $node->bundle();
+  }
+}

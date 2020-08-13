@@ -1,0 +1,70 @@
+uuid: 45b5cc52-895a-4785-b345-f0f9ae0c6660
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cards
+    - node.type.frontpage
+    - paragraphs.paragraphs_type.custom_card
+  module:
+    - entity_reference_revisions
+id: node.frontpage.field_cards
+field_name: field_cards
+entity_type: node
+bundle: frontpage
+label: Cards
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      custom_card: custom_card
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 15
+        enabled: false
+      custom_card:
+        enabled: true
+        weight: 16
+      grid_type:
+        weight: 17
+        enabled: false
+      image:
+        weight: 18
+        enabled: false
+      image_with_aside:
+        weight: 19
+        enabled: false
+      large_image:
+        weight: 20
+        enabled: false
+      quote:
+        weight: 21
+        enabled: false
+      reference_cards:
+        weight: 22
+        enabled: false
+      reference_list:
+        weight: 23
+        enabled: false
+      specification:
+        weight: 24
+        enabled: false
+      specification_details:
+        weight: 25
+        enabled: false
+      text:
+        weight: 26
+        enabled: false
+      text_with_media:
+        weight: 27
+        enabled: false
+      video:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

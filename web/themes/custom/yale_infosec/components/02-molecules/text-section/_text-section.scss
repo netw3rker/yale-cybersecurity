@@ -1,6 +1,8 @@
 .text-section {
   @include wrapper;
 
+  margin-bottom: $space-triple;
+
   @include large {
     @include grid;
   }

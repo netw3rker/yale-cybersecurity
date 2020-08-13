@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.guide.field_content_body
+    - field.field.node.guide.field_header_image
     - field.field.node.guide.field_metadata
     - field.field.node.guide.field_seo_title
     - field.field.node.guide.field_tags
@@ -18,6 +19,11 @@ targetEntityType: node
 bundle: guide
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
@@ -25,6 +31,7 @@ content:
     region: content
 hidden:
   field_content_body: true
+  field_header_image: true
   field_metadata: true
   field_seo_title: true
   field_tags: true
