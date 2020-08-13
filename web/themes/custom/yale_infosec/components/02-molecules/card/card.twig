@@ -36,6 +36,13 @@
           image_src: card__image__src,
           image_alt: card__image__alt,
         } %}
+        {% if card__date_month %}
+          {% include "@molecules/date/date.twig" with {
+            date__modifiers: ['fixed'],
+            date__month: card__date_month,
+            date__day: card__date_day
+          } %}
+        {% endif %}
       {% endif %}
     {% endblock %}
   </div>
@@ -55,6 +62,10 @@
         heading_link_blockname: card__base_class,
       } %}
       {{ title_suffix }}
+    {% endif %}
+    {% if card__date %}
+    {% endif %}
+    {% if card__host %}
     {% endif %}
     {# Body #}
     {% if card__body %}
