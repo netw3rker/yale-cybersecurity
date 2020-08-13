@@ -46,3 +46,29 @@
     color: clr(text);
   }
 }
+
+// Side by Side
+.card--sbs {
+  @include large {
+    display: flex;
+    max-width: none;
+  }
+}
+
+.card__image--sbs {
+  @include large {
+    width: 55%;
+
+    img,
+    picture {
+      height: 100%;
+    }
+  }
+}
+
+.card__copy--sbs {
+  @include large {
+    padding: 4.4rem;
+    width: 45%;
+  }
+}

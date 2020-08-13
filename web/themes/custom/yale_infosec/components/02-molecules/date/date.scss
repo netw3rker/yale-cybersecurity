@@ -12,10 +12,12 @@
   }
 
   &--fixed-top {
-    bottom: auto;
-    left: auto;
-    right: 0;
-    top: 0;
+    @include large {
+      bottom: auto;
+      left: auto;
+      right: 0;
+      top: 0;
+    }
   }
 }
 
