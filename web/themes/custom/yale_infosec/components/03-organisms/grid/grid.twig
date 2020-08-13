@@ -20,8 +20,13 @@
     heading_blockname: grid_base_class
   } %}
 {% endif %}
+<div {{ bem(grid_base_class, grid_modifiers, grid_blockname) }}>
 {% block grid_top_content %}
+  {% for item in grid_top_items %}
+    {% include "@organisms/grid/_grid-top-examples.twig" %}
+  {% endfor %}
 {% endblock %}
+</div>
 <div {{ bem(grid_base_class, grid_modifiers, grid_blockname) }}>
   {% block grid_content %}
     {% for item in items %}
