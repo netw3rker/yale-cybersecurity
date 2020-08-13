@@ -38,14 +38,28 @@
 #}
 
 {% for item in items %}
-  {% set startHour = item.content.start_date['#attributes']['datetime']|date('ga') %}
-  {% set endHour = item.content.end_date['#attributes']['datetime']|date('ga') %}
-  {% include "@molecules/icon-text/icon-text.twig" with {
-    icon_text__icon: 'calendar',
-    icon_text__copy: item.content
-  } %}
-  {% include "@molecules/icon-text/icon-text.twig" with {
-    icon_text__icon: 'clock',
-    icon_text__copy: startHour ~ '-' ~ endHour
-  } %}
+  {% set startDate = item.content.start_date['#attributes']['datetime']|date('M d, Y') %}
+  {% set endDate = item.content.end_date['#attributes']['datetime']|date('M d, Y') %}
+  {% set startTime = item.content.start_date['#attributes']['datetime']|date('ga') %}
+  {% set endTime = item.content.end_date['#attributes']['datetime']|date('ga') %}
+  {% set startDateTime = startDate ~ ' at ' ~ startTime %}
+  {% set endDateTime = endDate ~ ' at ' ~ endTime %}
+  {# If on a single date #}
+  {% if startDate == endDate %}
+    {% include "@molecules/icon-text/icon-text.twig" with {
+      icon_text__icon: 'calendar',
+      icon_text__copy: startDateTime ~ '-' ~ endTime
+    } %}
+  {% else %}
+    {% include "@molecules/icon-text/icon-text.twig" with {
+      icon_text__icon: 'calendar',
+      icon_text__copy: startDateTime,
+      icon_text__copy_pre_bold: 'Start: '
+    } %}
+    {% include "@molecules/icon-text/icon-text.twig" with {
+      icon_text__icon: '',
+      icon_text__copy: endDateTime,
+      icon_text__copy_pre_bold: 'End: '
+    } %}
+  {% endif %}
 {% endfor %}

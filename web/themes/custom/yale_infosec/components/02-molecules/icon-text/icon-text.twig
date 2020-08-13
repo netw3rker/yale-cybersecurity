@@ -23,6 +23,7 @@
         link_content: icon_text__copy
       } %}
     {% else %}
+      <span {{ bem('bold', [], icon_text__base_class) }}>{{ icon_text__copy_pre_bold }}</span>
       {{ icon_text__copy }}
       <span {{ bem('bold', [], icon_text__base_class) }}>{{ icon_text__copy_bold }}</span>
     {% endif %}
