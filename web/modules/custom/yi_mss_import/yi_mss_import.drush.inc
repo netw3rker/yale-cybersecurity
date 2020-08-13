@@ -267,8 +267,6 @@ function drush_yi_mss_import_import_mss() {
       'field_policy_number' => $policy,
       'title' => $d['title'],
       'field_seo_title' => $d['title'],
-      'field_standard_description' => $d['title'],
-      'field_teaser_text' => $d['title'],
       'field_sub_policy' => $d['subs'],
     ]);
 
