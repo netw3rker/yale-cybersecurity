@@ -86,8 +86,17 @@
       {{ title_suffix }}
     {% endif %}
     {% if card__date %}
+      {% include "@molecules/icon-text/icon-text.twig" with {
+        icon_text__icon: 'calendar',
+        icon_text__copy: card__date
+      } %}
     {% endif %}
     {% if card__host %}
+      {% include "@molecules/icon-text/icon-text.twig" with {
+        icon_text__icon: 'mic',
+        icon_text__copy: 'Hosted by',
+        icon_text__copy_bold: card__host
+      } %}
     {% endif %}
     {# Body #}
     {% if card__body %}

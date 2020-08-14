@@ -4,6 +4,7 @@ import grid from './grid.twig';
 
 import gridData from './grid.yml';
 import gridCardData from './grid-cards.yml';
+import gridCardThreeData from './grid-cards-three.yml';
 import gridCtaData from './grid-ctas.yml';
 
 /**
@@ -17,6 +18,15 @@ export const defaultGrid = () => (
 export const cardGrid = () => (
   <div
     dangerouslySetInnerHTML={{ __html: grid({ ...gridData, ...gridCardData }) }}
+  />
+);
+export const cardThreeGrid = () => (
+  <div
+    dangerouslySetInnerHTML={{ __html: grid({
+      ...gridData,
+      ...gridCardData,
+      ...gridCardThreeData
+    }) }}
   />
 );
 export const ctaGrid = () => (

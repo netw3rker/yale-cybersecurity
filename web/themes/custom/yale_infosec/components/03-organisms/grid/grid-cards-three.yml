@@ -1,9 +1,23 @@
-grid_label: 'Card Grid 2 Across'
-grid_type: 'card'
-item_type: 'card'
+grid_modifiers:
+  - 'full'
+grid_label: 'Card Grid 3 Across with Sticky Item'
+grid_top_items:
+  - card__modifiers: ['sbs']
+    card__image__src: 'https://placeimg.com/480/300/people'
+    card__image__alt: 'People'
+    card__image__output_image_tag: true
+    card__date_month: "Sep"
+    card__date_day: "22"
+    card__date: "September 22, 2020"
+    card__host: "Name Namersonston"
+    card__heading: 'Super Awesome Event Card'
+    card__link__url: '#'
+    card__link__text: 'Click here'
+    card__subheading: 'Person of Interest'
+    card__body: 'Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh.'
 items:
   - card__extra_classes:
-      - 'grid__item'
+      - 'grid__item-three'
     card__image__src: 'https://placeimg.com/480/300/people'
     card__image__alt: 'People'
     card__image__output_image_tag: true
@@ -13,15 +27,19 @@ items:
     card__subheading: 'Person of Interest'
     card__body: 'Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh.'
   - card__extra_classes:
-      - 'grid__item'
+      - 'grid__item-three'
     card__image__src: 'https://placeimg.com/480/300/nature'
     card__image__alt: 'Nature'
     card__image__output_image_tag: true
-    card__heading: 'Card Number Two'
+    card__date_month: "Sep"
+    card__date_day: "22"
+    card__date: "September 22, 2020"
+    card__host: "Name Namersonston"
+    card__heading: 'Event Card Number Two'
     card__subheading: 'Some pretty sweet nature'
     card__body: 'Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo.'
   - card__extra_classes:
-      - 'grid__item'
+      - 'grid__item-three'
     card__image__src: 'https://placeimg.com/480/300/animals'
     card__image__alt: 'Animals'
     card__image__output_image_tag: true
