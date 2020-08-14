@@ -58,15 +58,15 @@
           image_src: card__image__src,
           image_alt: card__image__alt,
         } %}
-        {% if card__date_month %}
-          {% include "@molecules/date/date.twig" with {
-            date__modifiers: date__modifiers|merge(['fixed']),
-            date__month: card__date_month,
-            date__day: card__date_day
-          } %}
-        {% endif %}
       {% endif %}
     {% endblock %}
+    {% if card__date_month %}
+      {% include "@molecules/date/date.twig" with {
+        date__modifiers: date__modifiers|merge(['fixed']),
+        date__month: card__date_month,
+        date__day: card__date_day
+      } %}
+    {% endif %}
   </div>
   {# Content #}
   <div {{ bem('copy', card__content__modifiers, card__base_class) }}>
@@ -85,12 +85,14 @@
       } %}
       {{ title_suffix }}
     {% endif %}
-    {% if card__date %}
-      {% include "@molecules/icon-text/icon-text.twig" with {
-        icon_text__icon: 'calendar',
-        icon_text__copy: card__date
-      } %}
-    {% endif %}
+    {% block card_date %}
+      {% if card__date %}
+        {% include "@molecules/icon-text/icon-text.twig" with {
+          icon_text__icon: 'calendar',
+          icon_text__copy: card__date
+        } %}
+      {% endif %}
+    {% endblock %}
     {% if card__host %}
       {% include "@molecules/icon-text/icon-text.twig" with {
         icon_text__icon: 'mic',
