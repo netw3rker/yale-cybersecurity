@@ -47,7 +47,9 @@
   {% endif %}
 
   {{ exposed }}
-  {{ attachment_before }}
+  {% if view.pager.current_page == 0 %}
+    {{ attachment_before }}
+  {% endif %}
 
   {% embed "@organisms/grid/grid-container.twig" %}
     {% block grid_container_content %}
