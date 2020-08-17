@@ -5,7 +5,9 @@
 
 <div {{ bem('layout-container', layout_modifiers) }}>
   {% block page_header %}
-    {% include "@organisms/site/site-header/site-header.twig" %}
+    {% if hero_img %}<div {{ bem('header-hero') }}>{% endif %}
+      {% include "@organisms/site/site-header/site-header.twig" %}
+    {% if hero_img %}</div>{% endif %}
   {% endblock %}
   {% block page_hero %}
   {% endblock %}

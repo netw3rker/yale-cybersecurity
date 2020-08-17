@@ -1,6 +1,7 @@
 import React from 'react';
 
 import grid from './grid.twig';
+import gridContainerTwig from './grid-container.twig';
 
 import gridData from './grid.yml';
 import gridCardData from './grid-cards.yml';
@@ -32,5 +33,10 @@ export const cardThreeGrid = () => (
 export const ctaGrid = () => (
   <div
     dangerouslySetInnerHTML={{ __html: grid({ ...gridData, ...gridCtaData }) }}
+  />
+);
+export const gridContainer = () => (
+  <div
+    dangerouslySetInnerHTML={{ __html: gridContainerTwig(gridData) }}
   />
 );
