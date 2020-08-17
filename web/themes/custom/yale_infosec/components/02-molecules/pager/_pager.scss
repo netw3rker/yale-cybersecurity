@@ -1,26 +1,26 @@
-.pager {
+.pager,
+.pager-mini {
   margin: 2em 0;
 }
 
-.pager__items {
+.pager__items,
+.pager-mini__items {
   @include list-reset;
 
   text-align: center;
 }
 
-.pager__item {
+.pager__item,
+.pager-mini__item {
   display: inline-block;
-  margin: 0 0.7em;
-
-  @include large {
-    margin: 0 1em;
-  }
+  margin: 0 $space-half;
 }
 
 .pager__link,
 .pager__link:link,
 .pager__link:visited {
   color: clr(text);
+  font-size: 1.6rem;
   font-weight: 600;
   text-decoration: none;
 
@@ -28,6 +28,15 @@
   &:hover {
     color: clr(accent);
   }
+}
+
+.pager-mini__link {
+  @include button-base;
+  @include button-bg;
+  @include buttonClr;
+
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .pager__link--next,
@@ -68,4 +77,13 @@
       border-right-color: clr(accent);
     }
   }
+}
+
+// Mini Pager Specific
+.pager-mini__icon {
+  fill: clr(text-inverse);
+  height: 13px;
+  position: relative;
+  top: 1px;
+  width: 20px;
 }

@@ -81,3 +81,20 @@ function yale_infosec_theme_suggestions_time_alter(array &$suggestions, array $v
     $suggestions[] = 'time__' . $node->bundle();
   }
 }
+
+/**
+ * Implements theme_preprocess_node.
+ *
+ * @param array $vars
+ *   Array of variables containing field content.
+ */
+function yale_infosec_preprocess_node(array &$vars) {
+  if ($vars['view_mode'] === 'card') {
+    // If News and Events view.
+    if (isset($vars['view'])) {
+      if ($vars['view']->id() === 'news_events') {
+        $vars['threeAcross'] = TRUE;
+      }
+    }
+  }
+}
