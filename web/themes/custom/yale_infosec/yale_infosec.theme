@@ -22,6 +22,10 @@ function yale_infosec_theme_suggestions_page_alter(array &$suggestions, array $v
  *   Array of variables containing field content.
  */
 function yale_infosec_preprocess_page(array &$vars) {
+  $view_id = \Drupal::routeMatch()->getParameter('view_id');
+  if ($view_id) {
+    $vars['viewPage'] = TRUE;
+  }
   // Node information.
   if (isset($vars['node'])) {
     $node = \Drupal::routeMatch()->getParameter('node');

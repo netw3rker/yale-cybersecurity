@@ -43,9 +43,8 @@
  * @see html.html.twig
  */
 #}
-
-{% if page.sidebar|render %} {# this may or may not correctly filter sidebar #}
-  {% set sidebar = TRUE %}
+{% if viewPage %}
+  {% set smallTop = true %}
 {% endif %}
 
 {% extends "@templates/_default.twig" %}
