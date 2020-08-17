@@ -2135,6 +2135,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "3089478": "https://www.drupal.org/files/issues/2019-10-22/profile-library-support-3089478-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3748,6 +3751,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Field validation tabs issue": "./patches/2787179-highlight-html5-validation-53.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -11708,12 +11714,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:yalesites-org/yale_sso.git",
-                "reference": "7dbcad80d1b7390fed124cdd512c2747bdd1201d"
+                "reference": "84c9ab873540e6c1a8d9dc0697e51bff10f53d18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yalesites-org/yale_sso/zipball/7dbcad80d1b7390fed124cdd512c2747bdd1201d",
-                "reference": "7dbcad80d1b7390fed124cdd512c2747bdd1201d",
+                "url": "https://api.github.com/repos/yalesites-org/yale_sso/zipball/84c9ab873540e6c1a8d9dc0697e51bff10f53d18",
+                "reference": "84c9ab873540e6c1a8d9dc0697e51bff10f53d18",
                 "shasum": ""
             },
             "require": {
@@ -11732,7 +11738,7 @@
                 "source": "https://github.com/yalesites-org/yale_sso/tree/master",
                 "issues": "https://github.com/yalesites-org/yale_sso/issues"
             },
-            "time": "2020-07-29T21:04:12+00:00"
+            "time": "2020-08-17T22:51:43+00:00"
         },
         {
             "name": "zaporylie/composer-drupal-optimizations",
@@ -13386,6 +13392,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2017-12-04T08:55:13+00:00"
         },
         {
