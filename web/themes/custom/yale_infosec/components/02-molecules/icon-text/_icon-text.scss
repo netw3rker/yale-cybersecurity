@@ -1,0 +1,17 @@
+.icon-text {
+  align-items: center;
+  display: flex;
+  line-height: 1.49;
+  margin-bottom: $space-one-half;
+}
+
+.icon-text__icon {
+  height: 18px;
+  fill: clr(accent);
+  margin-right: 6px;
+  width: 18px;
+}
+
+.icon-text__bold {
+  font-weight: bold;
+}
