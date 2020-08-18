@@ -22,6 +22,10 @@ function yale_infosec_theme_suggestions_page_alter(array &$suggestions, array $v
  *   Array of variables containing field content.
  */
 function yale_infosec_preprocess_page(array &$vars) {
+  $view_id = \Drupal::routeMatch()->getParameter('view_id');
+  if ($view_id) {
+    $vars['viewPage'] = TRUE;
+  }
   // Node information.
   if (isset($vars['node'])) {
     $node = \Drupal::routeMatch()->getParameter('node');
@@ -75,5 +79,22 @@ function yale_infosec_theme_suggestions_time_alter(array &$suggestions, array $v
   $node = \Drupal::routeMatch()->getParameter('node');
   if (isset($node)) {
     $suggestions[] = 'time__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements theme_preprocess_node.
+ *
+ * @param array $vars
+ *   Array of variables containing field content.
+ */
+function yale_infosec_preprocess_node(array &$vars) {
+  if ($vars['view_mode'] === 'card') {
+    // If News and Events view.
+    if (isset($vars['view'])) {
+      if ($vars['view']->id() === 'news_events') {
+        $vars['threeAcross'] = TRUE;
+      }
+    }
   }
 }

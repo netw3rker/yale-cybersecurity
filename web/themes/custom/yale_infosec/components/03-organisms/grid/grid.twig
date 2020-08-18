@@ -4,12 +4,15 @@
   {% set grid_modifiers = [] %}
 {% endif %}
 
+{% set grid_top_modifiers = ['top'] %}
+
 {% if page_layout_modifier %}
   {% set grid_modifiers = grid_modifiers|merge([page_layout_modifier]) %}
 {% endif %}
 
 {% if grid_type %}
   {% set grid_modifiers = grid_modifiers|merge([grid_type]) %}
+  {% set grid_top_modifiers = grid_top_modifiers|merge([grid_type]) %}
 {% endif %}
 
 {% if grid_label %}
@@ -20,6 +23,13 @@
     heading_blockname: grid_base_class
   } %}
 {% endif %}
+<div {{ bem(grid_base_class, grid_top_modifiers, grid_blockname) }}>
+{% block grid_top_content %}
+  {% for item in grid_top_items %}
+    {% include "@organisms/grid/_grid-top-examples.twig" %}
+  {% endfor %}
+{% endblock %}
+</div>
 <div {{ bem(grid_base_class, grid_modifiers, grid_blockname) }}>
   {% block grid_content %}
     {% for item in items %}

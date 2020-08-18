@@ -1,4 +1,4 @@
-{% extends "@templates/primary.twig" %}
+{% extends "@templates/_default.twig" %}
   {% block page_content_top %}
     {% include "@atoms/text/headings/_heading.twig" with {
       heading_base_class: 'page-title',
@@ -27,4 +27,5 @@
     {% include "@molecules/text-with-image/text-with-image.twig" with {
       paragraph_content: basic_page_small_text
     } %}
+    {% include "@organisms/cta-section/cta-section.twig" %}
   {% endblock %}

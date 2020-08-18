@@ -20,12 +20,31 @@ dependencies:
     - field.field.node.event.field_teaser_text
     - node.type.event
   module:
+    - datetime_range
     - user
 id: node.event.card
 targetEntityType: node
 bundle: event
 mode: card
 content:
+  field_event_date:
+    type: daterange_default
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_event_host:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_teaser_media:
     weight: 0
     label: hidden
@@ -36,7 +55,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_teaser_text:
-    weight: 1
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -45,8 +64,6 @@ content:
 hidden:
   content_moderation_control: true
   field_content_body: true
-  field_event_date: true
-  field_event_host: true
   field_event_link: true
   field_event_registration: true
   field_intro_aside: true

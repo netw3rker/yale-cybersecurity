@@ -3,9 +3,15 @@
 {% set main_content_base_class = main_content_base_class|default('main-content') %}
 {% set main_content_modifiers = [] %}
 
+{% if smallTop %}
+  {% set main_content_top_modifiers = ['small'] %}
+{% endif %}
+
 <div {{ bem('layout-container', layout_modifiers) }}>
   {% block page_header %}
-    {% include "@organisms/site/site-header/site-header.twig" %}
+    {% if hero_img %}<div {{ bem('header-hero') }}>{% endif %}
+      {% include "@organisms/site/site-header/site-header.twig" %}
+    {% if hero_img %}</div>{% endif %}
   {% endblock %}
   {% block page_hero %}
   {% endblock %}
@@ -13,7 +19,7 @@
   {% endblock %}
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
   <main role="main" {{ bem(main_content_base_class, main_content_modifiers, main_content_blockname) }}>
-    <div {{ bem('top', [], main_content_base_class) }}>
+    <div {{ bem('top', main_content_top_modifiers, main_content_base_class) }}>
       <div {{ bem('top-inner', [], main_content_base_class) }}>
         {% block page_content_top %}{% endblock %}
       </div>
