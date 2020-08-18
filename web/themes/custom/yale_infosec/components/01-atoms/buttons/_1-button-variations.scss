@@ -33,7 +33,6 @@
 }
 
 @mixin button-large {
-  line-height: 2;
   padding: $space $space-double;
 }
 
@@ -76,4 +75,8 @@
 .button {
   @include button-base;
   @include button-bg;
+}
+
+.button--large {
+  @include button-large;
 }

@@ -21,23 +21,66 @@ dependencies:
   module:
     - datetime_range
     - entity_reference_revisions
+    - field_group
     - link
-    - metatag
     - text
     - user
+third_party_settings:
+  field_group:
+    group_intro:
+      children:
+        - field_intro_text
+        - field_intro_aside
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Intro
+    group_event_info:
+      children:
+        - field_event_date
+        - field_location_text
+        - field_event_host
+        - field_event_link
+        - field_event_registration
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Event Info'
 id: node.event.default
 targetEntityType: node
 bundle: event
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_content_body:
-    weight: 104
-    label: above
+    weight: 3
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -45,26 +88,26 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_event_date:
-    weight: 110
-    label: above
+    weight: 3
+    label: hidden
     settings:
+      timezone_override: ''
       separator: '-'
       format_type: medium
-      timezone_override: ''
     third_party_settings: {  }
     type: daterange_default
     region: content
   field_event_host:
-    weight: 114
-    label: above
+    weight: 5
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_event_link:
-    weight: 112
-    label: above
+    weight: 6
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -75,8 +118,8 @@ content:
     type: link
     region: content
   field_event_registration:
-    weight: 113
-    label: above
+    weight: 7
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -87,77 +130,40 @@ content:
     type: link
     region: content
   field_intro_aside:
-    weight: 109
-    label: above
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    region: content
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
   field_intro_text:
-    weight: 108
-    label: above
+    type: text_default
+    weight: 8
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   field_location_text:
-    weight: 111
-    label: above
+    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-    region: content
-  field_metadata:
-    weight: 103
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
-  field_seo_title:
-    weight: 105
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_subtitle:
-    weight: 107
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_tags:
-    weight: 101
-    label: above
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_teaser_media:
-    weight: 102
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_teaser_text:
-    weight: 106
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_metadata: true
+  field_seo_title: true
+  field_subtitle: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true
