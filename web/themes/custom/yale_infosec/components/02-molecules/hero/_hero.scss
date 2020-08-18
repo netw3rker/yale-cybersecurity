@@ -166,7 +166,7 @@
 
   &--serif {
     font: normal 5.3rem/1 $font-heading;
-    margin: 0;
+    margin: 0 0 2.4rem;
   }
 }
 
@@ -191,5 +191,6 @@
   &--small {
     font-size: 1.6rem;
     font-weight: normal;
+    margin: 0;
   }
 }
