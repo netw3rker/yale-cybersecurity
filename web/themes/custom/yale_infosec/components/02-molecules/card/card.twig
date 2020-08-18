@@ -25,9 +25,31 @@
  #}
 {% set card__base_class = 'card' %}
 
+{% if not card__modifiers %}
+  {% set card__modifiers = [] %}
+{% endif %}
+
+{% if not card__image__modifiers %}
+  {% set card__image__modifiers = [] %}
+{% endif %}
+
+{% if not card__content__modifiers %}
+  {% set card__content__modifiers = [] %}
+{% endif %}
+
+{% if not date__modifiers %}
+  {% set date__modifiers = [] %}
+{% endif %}
+
+{% if "sbs" in card__modifiers %}
+  {% set card__image__modifiers = card__image__modifiers|merge(['sbs']) %}
+  {% set card__content__modifiers = card__content__modifiers|merge(['sbs']) %}
+  {% set date__modifiers = date__modifiers|merge(['fixed-top']) %}
+{% endif %}
+
 <div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
   {# Image #}
-  <div {{ bem('image', card__content__modifiers, card__base_class) }}>
+  <div {{ bem('image', card__image__modifiers, card__base_class) }}>
     {% block card__img %}
       {% if card__image__src %}
         {% include "@atoms/images/image/responsive-image.twig" with {
@@ -38,6 +60,13 @@
         } %}
       {% endif %}
     {% endblock %}
+    {% if card__date_month %}
+      {% include "@molecules/date/date.twig" with {
+        date__modifiers: date__modifiers|merge(['fixed']),
+        date__month: card__date_month,
+        date__day: card__date_day
+      } %}
+    {% endif %}
   </div>
   {# Content #}
   <div {{ bem('copy', card__content__modifiers, card__base_class) }}>
@@ -55,6 +84,21 @@
         heading_link_blockname: card__base_class,
       } %}
       {{ title_suffix }}
+    {% endif %}
+    {% block card_date %}
+      {% if card__date %}
+        {% include "@molecules/icon-text/icon-text.twig" with {
+          icon_text__icon: 'calendar',
+          icon_text__copy: card__date
+        } %}
+      {% endif %}
+    {% endblock %}
+    {% if card__host %}
+      {% include "@molecules/icon-text/icon-text.twig" with {
+        icon_text__icon: 'mic',
+        icon_text__copy: 'Hosted by',
+        icon_text__copy_bold: card__host
+      } %}
     {% endif %}
     {# Body #}
     {% if card__body %}

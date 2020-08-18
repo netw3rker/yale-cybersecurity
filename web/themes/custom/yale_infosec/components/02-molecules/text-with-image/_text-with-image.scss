@@ -47,7 +47,8 @@
 }
 
 .intro-text__image {
-  grid-area: sidebar;
+  grid-column-end: right-gutter;
+  grid-column-start: sidebar;
   margin-bottom: $space-triple;
 
   @include large {

@@ -1,9 +1,11 @@
 import React from 'react';
 
 import grid from './grid.twig';
+import gridContainerTwig from './grid-container.twig';
 
 import gridData from './grid.yml';
 import gridCardData from './grid-cards.yml';
+import gridCardThreeData from './grid-cards-three.yml';
 import gridCtaData from './grid-ctas.yml';
 
 /**
@@ -19,8 +21,22 @@ export const cardGrid = () => (
     dangerouslySetInnerHTML={{ __html: grid({ ...gridData, ...gridCardData }) }}
   />
 );
+export const cardThreeGrid = () => (
+  <div
+    dangerouslySetInnerHTML={{ __html: grid({
+      ...gridData,
+      ...gridCardData,
+      ...gridCardThreeData
+    }) }}
+  />
+);
 export const ctaGrid = () => (
   <div
     dangerouslySetInnerHTML={{ __html: grid({ ...gridData, ...gridCtaData }) }}
+  />
+);
+export const gridContainer = () => (
+  <div
+    dangerouslySetInnerHTML={{ __html: gridContainerTwig(gridData) }}
   />
 );
