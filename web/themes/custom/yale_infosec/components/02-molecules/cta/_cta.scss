@@ -62,12 +62,19 @@
     color: clr('text-heavy');
   }
 
+  &--featured {
+    font: normal 4.8rem/1.1 $font-heading;
+  }
+
   @include medium {
     font-size: 4.8rem;
     line-height: 1.21;
 
-    &--thin {
-      max-width: 74%;
+    &--featured {
+      font-size: 6.4rem;
+      line-height: 1.15;
+      margin-bottom: $space-double;
+      max-width: 93%;
     }
   }
 }
@@ -78,6 +85,10 @@
   font-size: 2.2rem;
   line-height: 1.21;
   margin: 0 0 $space;
+
+  &--featured {
+    font-size: 1.9rem;
+  }
 
   p {
     margin: 0 0 $space;
@@ -90,10 +101,6 @@
   @include medium {
     font-size: 2.7rem;
     line-height: 1.21;
-
-    &--thin {
-      max-width: 74%;
-    }
   }
 }
 
