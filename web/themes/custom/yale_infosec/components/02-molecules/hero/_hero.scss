@@ -109,6 +109,7 @@
     @include large {
       bottom: auto;
       left: auto;
+      max-width: 500px;
       padding: $space-triple;
       position: absolute;
       right: 3.5%;
