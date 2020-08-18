@@ -40,6 +40,10 @@
     background-image: linear-gradient(to right, rgba(0, 53, 107, 1) 37%, rgba(0, 53, 107, 0));
     mix-blend-mode: normal;
   }
+
+  &--left::after {
+    background-image: linear-gradient(to left, rgba(0, 53, 107, 1) 37%, rgba(0, 53, 107, 0))
+  }
 }
 
 .cta__inner {
@@ -49,6 +53,11 @@
 
   @include medium {
     padding: $space-quadruple $space-septuple;
+
+    &--right {
+      float: right;
+      text-align: right;
+    }
   }
 }
 
@@ -75,6 +84,10 @@
       line-height: 1.15;
       margin-bottom: $space-double;
       max-width: 93%;
+
+      .cta__inner--right & {
+        max-width: none;
+      }
     }
   }
 }
