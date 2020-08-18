@@ -26,14 +26,16 @@
   }
 
   &--home::after {
-    background-image: linear-gradient(to bottom, rgba(44, 44, 44, 0) 70%, rgba(44, 44, 44, 1));
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    @include large {
+      background-image: linear-gradient(to bottom, rgba(44, 44, 44, 0) 70%, rgba(44, 44, 44, 1));
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 }
 
@@ -46,6 +48,12 @@
 
   @include large {
     max-height: 750px;
+  }
+
+  &--home {
+    @include large {
+      max-height: 900px;
+    }
   }
 
   &--guide {
@@ -92,13 +100,21 @@
 
   &--bg {
     background-color: clr(primary);
-    padding: $space-triple;
-    position: absolute;
-    top: 150px;
-    left: auto;
-    bottom: auto;
-    right: 3.5%;
-    width: 50%;
+    padding: $space-double;
+
+    @include medium {
+      position: relative;
+    }
+
+    @include large {
+      bottom: auto;
+      left: auto;
+      padding: $space-triple;
+      position: absolute;
+      right: 3.5%;
+      top: 219px;
+      width: 50%;
+    }
   }
 }
 
