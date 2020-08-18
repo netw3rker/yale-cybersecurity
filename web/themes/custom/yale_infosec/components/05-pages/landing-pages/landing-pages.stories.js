@@ -11,6 +11,10 @@ import breadcrumbData from '../../02-molecules/menus/breadcrumbs/breadcrumbs.yml
 import socialMenuData from '../../02-molecules/menus/social/social-menu.yml';
 import footerMenuData from '../../02-molecules/menus/inline/inline-menu.yml';
 
+import ctaData from '../../02-molecules/cta/cta.yml';
+import ctaImageData from '../../02-molecules/cta/cta-image.yml';
+import ctaFeaturedData from '../../02-molecules/cta/cta-image-featured.yml';
+
 /**
  * Storybook Definition.
  */
@@ -26,8 +30,9 @@ hrefTo('Pages/Content Types', 'Article').then(url => {
             ...breadcrumbData,
             ...socialMenuData,
             ...footerMenuData,
-            card_link_url: url,
-            card__link__text: 'Click here',
+            ...ctaData,
+            ...ctaImageData,
+            ...ctaFeaturedData
           }),
         }}
       />
