@@ -28,6 +28,7 @@
 {% set cta__image_modifiers = [] %}
 {% set cta__heading__modifiers = [] %}
 {% set cta__body__modifiers = [] %}
+{% set cta__btn_2_modifiers = [] %}
 
 {% if 'image-light' in cta__modifiers %}
   {% set cta__image_modifiers = cta__image_modifiers|merge(['light']) %}
@@ -39,6 +40,7 @@
   {% set cta__image_modifiers = cta__image_modifiers|merge(['fade']) %}
   {% set cta__heading__modifiers = cta__heading__modifiers|merge(['thin']) %}
   {% set cta__body__modifiers = cta__body__modifiers|merge(['thin']) %}
+  {% set cta__btn_2_modifiers = cta__btn_2_modifiers|merge(['secondary']) %}
 {% endif %}
 
 <div {{ bem(cta__base_class, cta__modifiers|default(['dark-blue']), cta__blockname) }}>
@@ -94,7 +96,7 @@
         {% include "@atoms/links/link/link.twig" with {
           link_base_class: 'button',
           link_blockname: cta__base_class,
-          link_modifiers: cta__btn_modifiers|default(['primary']),
+          link_modifiers: cta__btn_2_modifiers|default(['primary']),
           link_url: cta__link_url_2,
           link_content: cta__link_text_2|default('Click to learn more')
         } %}

@@ -101,6 +101,8 @@
   @include button-base;
   @include button-bg;
 
+  margin-bottom: 0;
+
   @include medium {
     margin-right: 1rem;
   }
