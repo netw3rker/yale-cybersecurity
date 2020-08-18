@@ -24,6 +24,17 @@
       }
     }
   }
+
+  &--home::after {
+    background-image: linear-gradient(to bottom, rgba(44, 44, 44, 0) 70%, rgba(44, 44, 44, 1));
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 
 .hero__image {
@@ -78,31 +89,29 @@
     padding: 0;
     position: absolute;
   }
+
+  &--bg {
+    background-color: clr(primary);
+    padding: $space-triple;
+    position: absolute;
+    top: 150px;
+    left: auto;
+    bottom: auto;
+    right: 3.5%;
+    width: 50%;
+  }
 }
 
 .hero__copy-inner {
-  margin: 0 auto;
-  max-width: 875px;
+  &--reverse {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    max-width: 875px;
 
-  @include small {
-    width: 80%;
-  }
-}
-
-.hero__subheading {
-  font-size: 1.5rem;
-  font-weight: 900;
-  letter-spacing: 3.87px;
-  margin: 0 0 0 42px;
-  text-transform: uppercase;
-
-  @include medium {
-    font-size: 1.8rem;
-    margin: 0 0 0 86px;
-  }
-
-  @include large {
-    margin: 0 0 0 88px;
+    @include small {
+      width: 80%;
+    }
   }
 }
 
@@ -123,17 +132,48 @@
 }
 
 .hero__heading {
-  font-size: 4.2rem;
-  font-weight: 900;
-  line-height: 0.9;
-  margin: 0;
-  width: 92%;
+  &--large {
+    font-size: 4.2rem;
+    font-weight: 900;
+    line-height: 0.9;
+    margin: 0;
+    width: 92%;
 
-  @include medium {
-    font-size: 5.2rem;
+    @include medium {
+      font-size: 5.2rem;
+    }
+
+    @include large {
+      font-size: 7.2rem;
+    }
   }
 
-  @include large {
-    font-size: 7.2rem;
+  &--serif {
+    font: normal 5.3rem/1 $font-heading;
+    margin: 0;
+  }
+}
+
+.hero__subheading {
+  &--large {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 3.87px;
+    margin: 0 0 0 42px;
+    text-transform: uppercase;
+
+    @include medium {
+      font-size: 1.8rem;
+      margin: 0 0 0 86px;
+    }
+
+    @include large {
+      margin: 0 0 0 88px;
+    }
+  }
+
+  &--small {
+    font-size: 1.6rem;
+    font-weight: normal;
   }
 }
