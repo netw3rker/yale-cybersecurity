@@ -35,6 +35,12 @@
   {% set cta__body__modifiers = cta__body__modifiers|merge(['dark']) %}
 {% endif %}
 
+{% if 'featured' in cta__modifiers %}
+  {% set cta__image_modifiers = cta__image_modifiers|merge(['fade']) %}
+  {% set cta__heading__modifiers = cta__heading__modifiers|merge(['thin']) %}
+  {% set cta__body__modifiers = cta__body__modifiers|merge(['thin']) %}
+{% endif %}
+
 <div {{ bem(cta__base_class, cta__modifiers|default(['dark-blue']), cta__blockname) }}>
   {# Image #}
   {% if cta__image %}

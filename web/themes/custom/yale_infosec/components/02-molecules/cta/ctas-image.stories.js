@@ -5,6 +5,7 @@ import cta from './cta.twig';
 import ctaData from './cta.yml';
 import ctaImageData from './cta-image.yml';
 import ctaImageLightData from './cta-image-light.yml';
+import ctaImageFeaturedData from './cta-image-featured.yml';
 
 /**
  * Storybook Definition.
@@ -19,5 +20,12 @@ export const TwoButtons = () => (
     ...ctaData,
     ...ctaImageData,
     ...ctaImageLightData
+  }) }} />
+);
+export const Featured = () => (
+  <div dangerouslySetInnerHTML={{ __html: cta({
+    ...ctaData,
+    ...ctaImageData,
+    ...ctaImageFeaturedData
   }) }} />
 );
