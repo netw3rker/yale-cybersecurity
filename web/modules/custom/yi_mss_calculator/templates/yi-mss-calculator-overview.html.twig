@@ -4,7 +4,7 @@
   <h3>Based on the following selections: <em>{{ filters|join(', ') }}</em></h3>
   <div class="results">
   {% if results|length < 1 %}
-    <h4>No results! Try again</h4>
+    <h4>There are no Security Standards that match your selected criteria. <a href="/mss/calculator">Adjust your selection and try again.</a></h4>
   {% endif %}
   {% for item in results %}
     <h4>
