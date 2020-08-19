@@ -8,7 +8,7 @@ use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * Implements an example form.
+ * Implements the MSS Calculator form.
  */
 class MSSCalculatorFilterForm extends FormBase {
 
@@ -37,13 +37,19 @@ class MSSCalculatorFilterForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $config = $this->config('yi_mss_calculator.messages');
+
+    // Header.
+    $form['header'] = [
+      '#markup' => $config->get('filter_header'),
+    ];
 
     // Device types.
     $form['type'] = [
       '#title' => $this->t('Choose Device Type'),
       '#type' => 'radios',
       '#options' => $this->getTerms('device_type'),
-      '#description' => $this->t('Device type description text goes here.'),
+      '#description' => $config->get('message_device'),
     ];
 
     // Internet Access.
@@ -54,7 +60,7 @@ class MSSCalculatorFilterForm extends FormBase {
         0 => $this->t('No, it cannot access the Internet'),
         1 => $this->t('Yes, it can access the Internet'),
       ],
-      '#description' => $this->t('Internet Access description text goes here.'),
+      '#description' => $config->get('message_access'),
     ];
 
     // External Obligations.
@@ -62,7 +68,7 @@ class MSSCalculatorFilterForm extends FormBase {
       '#title' => $this->t('External Obligations (Select all that apply)'),
       '#type' => 'checkboxes',
       '#options' => $this->getTerms('obligation'),
-      '#description' => $this->t('Obligations description text goes here.'),
+      '#description' => $config->get('message_obligations'),
     ];
 
     // Risk classification.
@@ -70,7 +76,7 @@ class MSSCalculatorFilterForm extends FormBase {
       '#title' => $this->t('Risk Classification'),
       '#type' => 'radios',
       '#options' => $this->getTerms('risk_level'),
-      '#description' => $this->t('Risk description text goes here.'),
+      '#description' => $config->get('message_risk'),
     ];
 
     // Submit.

@@ -260,9 +260,11 @@ class MSSCalculatorController extends ControllerBase {
       $standards[] = $primary;
     }
 
+    $config = $this->config('yi_mss_calculator.messages');
     $build = [
       '#theme' => 'yi_mss_calculator_listing_page',
       '#standards' => $standards,
+      '#header_text' => $config->get('listing_header'),
     ];
 
     return $build;

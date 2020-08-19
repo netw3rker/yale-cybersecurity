@@ -14,3 +14,12 @@ yi_mss_calculator.listing:
     _title: 'Minimum Security Standards'
   requirements:
     _permission: 'access content'
+yi_mss_calculator.admin_settings_form:
+  path: '/admin/config/mss'
+  defaults:
+    _form: '\Drupal\yi_mss_calculator\Form\MSSCalculatorAdminForm'
+    _title: 'Minimum Security Standard Settings'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
