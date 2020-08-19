@@ -56,12 +56,7 @@ $dot-space: 7px;
     @include grid;
   }
 
-  &--pattern {
-    background:
-      linear-gradient(90deg, $patternBg ($dot-space - $dot-size), transparent 1%) center,
-		  linear-gradient($patternBg ($dot-space - $dot-size), transparent 1%) center,
-      $patternDot;
-    background-size: $dot-space $dot-space;
+  &--padded {
     padding-bottom: $space-triple;
     padding-top: $space-triple;
 
@@ -69,6 +64,16 @@ $dot-space: 7px;
       padding-bottom: $space-quintuple;
       padding-top: $space-quintuple;
     }
+  }
+
+  &--pattern {
+    background:
+      linear-gradient(90deg, $patternBg ($dot-space - $dot-size), transparent 1%) center,
+		  linear-gradient($patternBg ($dot-space - $dot-size), transparent 1%) center,
+      $patternDot;
+    background-size: $dot-space $dot-space;
+    padding-bottom: $space-quintuple;
+    padding-top: $space-quintuple;
   }
 }
 

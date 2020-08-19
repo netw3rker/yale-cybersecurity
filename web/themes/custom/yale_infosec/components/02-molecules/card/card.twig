@@ -111,13 +111,17 @@
       } %}
     {% endif %}
     {# Body #}
-    {% if card__body %}
-      {% include "@atoms/text/text/01-paragraph.twig" with {
-        paragraph_base_class: card__body__base_class|default('body'),
-        paragraph_modifiers: card__body__modifiers,
-        paragraph_blockname: card__base_class,
-        paragraph_content: card__body,
-      } %}
-    {% endif %}
+    <div {{ bem('body', card__content__modifiers, card__base_class) }}>
+      {% block card_body %}      
+        {% if card__body %}
+          {% include "@atoms/text/text/01-paragraph.twig" with {
+            paragraph_base_class: card__body__base_class|default('body'),
+            paragraph_modifiers: card__body__modifiers,
+            paragraph_blockname: card__base_class,
+            paragraph_content: card__body,
+          } %}
+        {% endif %}
+      {% endblock %}
+    </div>
   </div>
 </div>
