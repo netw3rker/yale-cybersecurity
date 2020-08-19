@@ -39,5 +39,10 @@ function yi_mss_calculator_theme() {
         'results' => [],
       ],
     ],
+    'yi_mss_calculator_listing_page' => [
+      'variables' => [
+        'standards' => [],
+      ],
+    ],
   ];
 }

@@ -211,4 +211,61 @@ class MSSCalculatorController extends ControllerBase {
     return $build;
   }
 
+  /**
+   * Returns the MSS listing page.
+   *
+   * @return array
+   *   A simple renderable array.
+   */
+  public function listingPage() {
+    $standards = [];
+
+    // Get list of primary standards.
+    // phpcs:ignore
+    $items = \Drupal::entityQuery('node')
+      ->condition('type', 'standard')
+      ->condition('field_policy_number', '^[1-9]$|^[1-9][1-9]$', 'REGEXP')
+      ->execute();
+
+    // phpcs:ignore
+    $nodes = Node::loadMultiple($items);
+    foreach ($nodes as $node) {
+      $primary = [
+        'title' => $node->getTitle(),
+        'secondaries' => [],
+      ];
+
+      // Compile list of secondary items.
+      foreach ($node->get('field_sub_policy')->referencedEntities() as $sub) {
+        $secondary = [
+          'title' => $sub->getTitle(),
+          'uri' => Url::fromRoute('entity.node.canonical', ['node' => $sub->id()], ['absolute' => TRUE])->toString(),
+          'specifications' => [],
+        ];
+
+        // Add specifications for each.
+        foreach ($sub->get('field_standard_specifications')->referencedEntities() as $spec) {
+          $risk = $spec->field_risk_level->entity->getName();
+          $device = $spec->field_device_type->entity->getName();
+          $title = "$risk $device";
+          $secondary['specifications'][] = [
+            'title' => $title,
+            'labels' => $this->getLabels($spec),
+          ];
+        }
+
+        $primary['secondaries'][] = $secondary;
+      }
+
+      $standards[] = $primary;
+    }
+
+    $build = [
+      '#theme' => 'yi_mss_calculator_listing_page',
+      '#standards' => $standards,
+    ];
+
+    return $build;
+  }
+
 }

@@ -2,9 +2,15 @@ yi_mss_calculator.calculator:
   path: '/mss/calculator'
   defaults:
     _controller: '\Drupal\yi_mss_calculator\Controller\MSSCalculatorController::calculatorPage'
-    # _form: '\Drupal\yi_mss_calculator\Form\MSSCalculatorFilterForm'
     _title: 'Minimum Security Standards Filter'
   requirements:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+yi_mss_calculator.listing:
+  path: '/mss'
+  defaults:
+    _controller: '\Drupal\yi_mss_calculator\Controller\MSSCalculatorController::listingPage'
+    _title: 'Minimum Security Standards'
+  requirements:
+    _permission: 'access content'
