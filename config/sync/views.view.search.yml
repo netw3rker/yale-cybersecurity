@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block.block.exposedformsearchsearch_page
     - search_api.index.global_index
   module:
     - search_api
@@ -207,7 +208,20 @@ display:
             label: ''
           plugin_id: search_api
       title: Search
-      header: {  }
+      header:
+        entity_block:
+          id: entity_block
+          table: views
+          field: entity_block
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: true
+          target: exposedformsearchsearch_page
+          view_mode: default
+          bypass_access: false
+          plugin_id: entity
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -222,14 +236,15 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.global_index'
-  page_1:
+  search_page:
     display_plugin: page
-    id: page_1
+    id: search_page
     display_title: Page
     position: 1
     display_options:
       display_extenders: {  }
       path: search
+      exposed_block: true
     cache_metadata:
       max-age: -1
       contexts:
