@@ -85,6 +85,8 @@ content:
     region: content
 hidden:
   field_metadata: true
+  field_news_author: true
+  field_news_category: true
   field_seo_title: true
   field_teaser_media: true
   field_teaser_text: true
