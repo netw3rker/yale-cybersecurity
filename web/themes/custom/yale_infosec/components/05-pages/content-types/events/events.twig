@@ -1,0 +1,53 @@
+{% extends "@templates/primary.twig" %}
+  {% block page_content_top %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: 'page-title',
+      heading_level: '1',
+      heading: 'Event name vitae magna vel nunc rhoncus volutpat.',
+    } %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: 'page-subtitle',
+      heading_level: '2',
+      heading: 'Series Name',
+    } %}
+  {% endblock %}
+  {% block page_content %}
+    {% embed "@molecules/text-section/text-section.twig" %}
+      {% block text_section_content %}
+        {% include "@molecules/icon-text/icon-text.twig" with {
+          icon_text__icon: 'calendar',
+          icon_text__copy: 'November 12-13, 2020'
+        } %}
+        {% include "@molecules/icon-text/icon-text.twig" with {
+          icon_text__icon: 'clock',
+          icon_text__copy: '7-8pm'
+        } %}
+        {% include "@molecules/icon-text/icon-text.twig" with {
+          icon_text__icon: 'pin',
+          icon_text__copy: '218 Road Street, Citytown ST 00000'
+        } %}
+        {% include "@molecules/icon-text/icon-text.twig" with {
+          icon_text__icon: 'mic',
+          icon_text__copy: 'Hosted by Name Namersonston'
+        } %}
+        {% include "@molecules/icon-text/icon-text.twig" with {
+          icon_text__icon: 'globe',
+          icon_text__copy: 'Link Label Goes Here',
+          icon_text__link: '#'
+        } %}
+        {% include "@atoms/links/link/link.twig" with {
+          link_base_class: 'button',
+          link_extra_classes: ['button--primary'],
+          link_url: '#',
+          link_content: 'Register'
+        } %}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@molecules/text-section/text-section.twig" %}
+      {% block text_section_content %}
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_content: 'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.',
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}

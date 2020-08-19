@@ -70,15 +70,27 @@
  *   in different view modes.
  */
 #}
-
+{# Date fields #}
+{% if content.field_event_date.0 %}
+  {% set card__date_month = content.field_event_date.0.start_date['#attributes']['datetime']|date('M') %}
+  {% set card__date_day = content.field_event_date.0.start_date['#attributes']['datetime']|date('d') %}
+{% endif %}
 
 {% embed "@molecules/card/card.twig" with {
-  card__extra_classes: ["grid__item"],
+  card__modifiers: node.isSticky() ? 'sbs',
+  card__extra_classes: [
+    not threeAcross ? "grid__item",
+    threeAcross ? "grid__item-three"
+  ],
   card__heading: label,
   card__body: content.field_teaser_text,
+  card__host: content.field_event_host.0,
   card__link__url: url,
 } %}
   {% block card__img %}
     {{ content.field_teaser_media }}
+  {% endblock %}
+  {% block card_date %}
+    {{ content.field_event_date }}
   {% endblock %}
 {% endembed %}
