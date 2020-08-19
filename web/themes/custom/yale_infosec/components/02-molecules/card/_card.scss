@@ -8,6 +8,13 @@
   .bg--dark-blue & {
     border: none;
   }
+
+  &--blue {
+    background-color: clr(background-inverse);
+    box-shadow: 0 2.8px 2.2px 0 rgba(0, 0, 0, 0.02), 0 6.7px 5.3px 0 rgba(0, 0, 0, 0.03), 0 12.5px 10px 0 rgba(0, 0, 0, 0.04), 0 22.3px 17.9px 0 rgba(0, 0, 0, 0.05), 0 41.8px 33.4px 0 rgba(0, 0, 0, 0.06), 0 100px 80px 0 rgba(0, 0, 0, 0.08);
+    border: none;
+    color: clr(text-inverse);
+  }
 }
 
 .card__image {
@@ -21,10 +28,24 @@
 
 .card__copy {
   padding: 2.7rem $space-half-double $space-double;
+
+  &--blue {
+    padding: $space-triple $space-double;
+  }
 }
 
 .card__heading {
   @include heading-large($font-size: 3.6rem, $line-height: 1.06, $margin: 0 0 2rem);
+
+  &--light {
+    color: clr(text-inverse);
+    font: bold 3.3rem/1 $font-body;
+    text-transform: uppercase;
+
+    @include medium {
+      font-size: 5.3rem;
+    }
+  }
 }
 
 .card__heading-link {
@@ -34,6 +55,10 @@
   .bg--blue &,
   .bg--dark-blue & {
     color: clr(text-heavy);
+  }
+
+  &--light {
+    color: clr(text-inverse);
   }
 }
 

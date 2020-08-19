@@ -1,0 +1,42 @@
+grid_label: 'Security Support'
+grid_type: 'card'
+grid_heading_modifiers:
+  - 'featured'
+item_type: 'card'
+items:
+  - card__modifiers:
+      - 'blue'
+    card__extra_classes:
+      - 'grid__item'
+    card__image__src: 'https://placeimg.com/480/300/people'
+    card__image__alt: 'People'
+    card__image__output_image_tag: true
+    card__heading: 'Request'
+    card__body: 'Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh.'
+  - card__modifiers:
+      - 'blue'
+    card__extra_classes:
+      - 'grid__item'
+    card__image__src: 'https://placeimg.com/480/300/nature'
+    card__image__alt: 'Nature'
+    card__image__output_image_tag: true
+    card__heading: 'Report'
+    card__body: 'Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo.'
+  - card__modifiers:
+      - 'blue'
+    card__extra_classes:
+      - 'grid__item'
+    card__image__src: 'https://placeimg.com/480/300/animals'
+    card__image__alt: 'Animals'
+    card__image__output_image_tag: true
+    card__heading: 'Contact'
+    card__body: 'Tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat.. Nulla quis lorem ut libero malesuada feugiat.'
+  - card__modifiers:
+      - 'blue'
+    card__extra_classes:
+      - 'grid__item'
+    card__image__src: 'https://placeimg.com/480/300/animals'
+    card__image__alt: 'Animals'
+    card__image__output_image_tag: true
+    card__heading: 'Learn'
+    card__body: 'Tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat.. Nulla quis lorem ut libero malesuada feugiat.'
