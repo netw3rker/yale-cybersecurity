@@ -23,29 +23,15 @@ id: node.frontpage.content_top
 targetEntityType: node
 bundle: frontpage
 mode: content_top
-content:
-  field_header_subtitle:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_header_title:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
+content: {  }
 hidden:
   content_moderation_control: true
   field_cards: true
   field_content_block: true
   field_content_body: true
   field_header_image: true
+  field_header_subtitle: true
+  field_header_title: true
   field_metadata: true
   field_seo_title: true
   field_teaser_media: true
