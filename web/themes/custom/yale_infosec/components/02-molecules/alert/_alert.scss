@@ -1,7 +1,24 @@
 .alert {
+  @include large {
+    @include grid;
+
+    margin-top: $space-double;
+  }
+}
+
+.alert__inner {
   @include alert-bg;
 
-  padding: $space-double $space-triple;
+  grid-area: content;
+  padding: $space $space 2.2rem;
+
+  @include medium {
+    padding: $space-double $space-triple;
+  }
+
+  @include large {
+    padding: $space-double $space-quadruple;
+  }
 }
 
 .alert__heading {

@@ -30,7 +30,7 @@ body {
   @include alert-bg;
 
   &--alert {
-    padding: $space-double;
+    padding: 1rem 1.5rem;
   }
 
   & > div {
