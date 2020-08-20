@@ -1,0 +1,38 @@
+.date {
+  background-color: clr(primary);
+  color: clr(text-inverse);
+  display: inline-block;
+  min-width: 100px;
+  padding: $space-one-half 13px 0;
+
+  &--fixed {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  &--fixed-top {
+    @include large {
+      bottom: auto;
+      left: auto;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.date__month,
+.date__day {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 0.9;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.date__day {
+  font-size: 7rem;
+  line-height: 0.7;
+  margin-bottom: 0;
+}

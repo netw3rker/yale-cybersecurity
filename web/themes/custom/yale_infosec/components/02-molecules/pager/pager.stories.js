@@ -1,6 +1,7 @@
 import React from 'react';
 
 import pager from './pager.twig';
+import pagerMini from './pager-mini.twig';
 
 import pagerData from './pager.yml';
 import pagerEllipsesData from './pager-ellipses.yml';
@@ -35,4 +36,11 @@ export const pagerExample = () => (
       }}
     />
   </>
+);
+export const miniPager = () => (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: pagerMini({ ...pagerData, ...pagerBothEllipsesData }),
+      }}
+    />
 );

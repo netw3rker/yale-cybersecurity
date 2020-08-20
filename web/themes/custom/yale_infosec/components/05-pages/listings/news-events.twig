@@ -1,0 +1,17 @@
+{% set smallTop = true %}
+
+{% extends "@templates/_default.twig" %}
+  {% block page_content_top %}
+    {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: 'page-title',
+      heading_level: '1',
+      heading: 'News & Events',
+    } %}
+  {% endblock %}
+  {% block page_content %}
+    {% include "@pages/listings/news-events-container.twig" %}
+    {% include "@molecules/pager/pager-mini.twig" with {
+      items: pager_items
+    } %}
+  {% endblock %}

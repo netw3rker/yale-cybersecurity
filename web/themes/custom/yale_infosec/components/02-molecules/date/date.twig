@@ -1,0 +1,13 @@
+{#
+ # Available variables:
+ # - date__base_class - base classname of the wrapper.
+ #
+ # - date__month - Month of the date.
+ # - date__day - Day of the date.
+ #}
+{% set date__base_class = 'date' %}
+
+<div {{ bem(date__base_class, date__modifiers) }}>
+  <span {{ bem('month', [], date__base_class) }}>{{ date__month }}</span>
+  <span {{ bem('day', [], date__base_class) }}>{{ date__day }}</span>
+</div>
