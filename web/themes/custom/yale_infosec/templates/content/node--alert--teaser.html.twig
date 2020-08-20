@@ -71,10 +71,13 @@
  */
 #}
 
+{{ attach_library('yale_infosec/alert') }}
+
 {% embed "@molecules/alert/alert.twig" with {
   alert__modifiers: [content.field_alert_level.0['#plain_text']|lower],
   alert__heading: label,
   alert__link: url,
+  alert_id: node.id(),
 } %}
   {% block alert__copy %}
     {{ content.field_summary }}

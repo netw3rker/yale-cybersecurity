@@ -4,6 +4,8 @@ import alert from './alert.twig';
 
 import alertData from './alert.yml';
 
+import './alert';
+
 /**
  * Storybook Definition.
  */
