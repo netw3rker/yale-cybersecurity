@@ -10,7 +10,7 @@ dependencies:
     - yale_infosec
 id: alerts_block
 theme: yale_infosec
-region: content
+region: alert
 weight: -4
 provider: null
 plugin: 'views_block:alerts-block_1'

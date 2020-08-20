@@ -23,7 +23,7 @@ mode: default
 content:
   field_alert_active:
     weight: 1
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
