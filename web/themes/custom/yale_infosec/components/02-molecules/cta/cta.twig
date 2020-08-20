@@ -26,13 +26,30 @@
 {% set cta__base_class = 'cta' %}
 
 {% set cta__image_modifiers = [] %}
+{% set cta__inner__modifiers = [] %}
 {% set cta__heading__modifiers = [] %}
 {% set cta__body__modifiers = [] %}
+{% set cta__btn_2_modifiers = ['primary'] %}
+
+{% if not cta_media_alignment %}
+  {% set cta_media_alignment = '' %}
+{% endif %}
 
 {% if 'image-light' in cta__modifiers %}
   {% set cta__image_modifiers = cta__image_modifiers|merge(['light']) %}
   {% set cta__heading__modifiers = cta__heading__modifiers|merge(['dark']) %}
   {% set cta__body__modifiers = cta__body__modifiers|merge(['dark']) %}
+{% endif %}
+
+{% if 'featured' in cta__modifiers %}
+  {% set cta__image_modifiers = cta__image_modifiers|merge(['fade', cta_media_alignment]) %}
+  {% set cta__heading__modifiers = cta__heading__modifiers|merge(['featured']) %}
+  {% set cta__body__modifiers = cta__body__modifiers|merge(['featured']) %}
+  {% set cta__btn_2_modifiers = cta__btn_2_modifiers|merge(['secondary']) %}
+{% endif %}
+
+{% if cta_media_alignment == 'left' %}
+  {% set cta__inner__modifiers = cta__inner__modifiers|merge(['right']) %}
 {% endif %}
 
 <div {{ bem(cta__base_class, cta__modifiers|default(['dark-blue']), cta__blockname) }}>
@@ -51,7 +68,7 @@
     {% endblock %}
   </div>
   {% endif %}
-  <div {{ bem('inner', [], cta__base_class) }}>
+  <div {{ bem('inner', cta__inner__modifiers, cta__base_class) }}>
     {# Copy #}
     {% include "@atoms/text/headings/_heading.twig" with {
       heading_base_class: 'heading',
@@ -88,7 +105,7 @@
         {% include "@atoms/links/link/link.twig" with {
           link_base_class: 'button',
           link_blockname: cta__base_class,
-          link_modifiers: cta__btn_modifiers|default(['primary']),
+          link_modifiers: cta__btn_2_modifiers|default(['primary']),
           link_url: cta__link_url_2,
           link_content: cta__link_text_2|default('Click to learn more')
         } %}

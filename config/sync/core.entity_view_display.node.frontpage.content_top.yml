@@ -1,8 +1,9 @@
-uuid: c2b458a9-bf06-46fa-9f34-4680034320a3
+uuid: 9e5b15f1-e690-43de-9490-1b09c9706b9e
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.content_top
     - field.field.node.frontpage.field_cards
     - field.field.node.frontpage.field_content_block
     - field.field.node.frontpage.field_content_body
@@ -15,47 +16,19 @@ dependencies:
     - field.field.node.frontpage.field_teaser_text
     - node.type.frontpage
   module:
-    - entity_reference_revisions
-    - text
     - user
 _core:
   default_config_hash: '-dTbOfljyuYfgcn7hK8miRbYRNWhQdHKcDEMdnYNjEg'
-id: node.frontpage.default
+id: node.frontpage.content_top
 targetEntityType: node
 bundle: frontpage
-mode: default
-content:
-  content_moderation_control:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_cards:
-    type: entity_reference_revisions_entity_view
-    weight: 1
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-  field_content_block:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_content_body:
-    weight: 3
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
+mode: content_top
+content: {  }
 hidden:
+  content_moderation_control: true
+  field_cards: true
+  field_content_block: true
+  field_content_body: true
   field_header_image: true
   field_header_subtitle: true
   field_header_title: true

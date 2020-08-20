@@ -1,5 +1,25 @@
 {% set hero__base_class = 'hero' %}
 
+{# Guide Related #}
+{% set hero__copy__modifiers = [] %}
+{% set hero__copy_inner__modifiers = [] %}
+{% set hero__subheading__modifiers = [] %}
+{% set hero__heading__modifiers = [] %}
+
+{% if 'guide' in hero__modifiers %}
+  {% set hero__copy__modifiers = hero__copy__modifiers|merge(['guide']) %}
+  {% set hero__copy_inner__modifiers = hero__copy_inner__modifiers|merge(['reverse']) %}
+  {% set hero_icon = 'book' %}
+  {% set hero__heading__modifiers = hero__heading__modifiers|merge(['large']) %}
+  {% set hero__subheading__modifiers = hero__subheading__modifiers|merge(['large']) %}
+{% endif %}
+
+{% if 'home' in hero__modifiers %}
+  {% set hero__copy__modifiers = hero__copy__modifiers|merge(['bg']) %}
+  {% set hero__heading__modifiers = hero__heading__modifiers|merge(['serif']) %}
+  {% set hero__subheading__modifiers = hero__subheading__modifiers|merge(['small']) %}
+{% endif %}
+
 <div {{ bem(hero__base_class, hero__modifiers) }}>
   <div {{ bem('image', hero__modifiers, hero__base_class) }}>
     {% block hero_image %}
@@ -9,28 +29,32 @@
     {% endblock %}
   </div>
   {% if hero_heading %}
-  <div {{ bem('copy', [], hero__base_class) }}>
-    <div {{ bem('copy-inner', [], hero__base_class) }}>
-      {% include "@atoms/text/headings/_heading.twig" with {
-        heading_blockname: hero__base_class,
-        heading_base_class: 'subheading',
-        heading_level: 2,
-        heading: hero_subheading
-      } %}
+  <div {{ bem('copy', hero__copy__modifiers, hero__base_class) }}>
+    <div {{ bem('copy-inner', hero__copy_inner__modifiers, hero__base_class) }}>
       <div {{ bem('title', [], hero__base_class) }}>
-        {% include "@atoms/images/icons/_icon.twig" with {
-          icon_blockname: hero__base_class,
-          icon_base_class: 'icon',
-          icon_name: hero_icon|default('book'),
-          icon_decorative: true,
-        } %}
+        {% if hero_icon %}
+          {% include "@atoms/images/icons/_icon.twig" with {
+            icon_blockname: hero__base_class,
+            icon_base_class: 'icon',
+            icon_name: hero_icon,
+            icon_decorative: true,
+          } %}
+        {% endif %}
         {% include "@atoms/text/headings/_heading.twig" with {
           heading_blockname: hero__base_class,
+          heading_modifiers: hero__heading__modifiers,
           heading_base_class: 'heading',
           heading_level: 1,
           heading: hero_heading
         } %}
       </div>
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading_blockname: hero__base_class,
+        heading_modifiers: hero__subheading__modifiers,
+        heading_base_class: 'subheading',
+        heading_level: 2,
+        heading: hero_subheading
+      } %}
     </div>
   </div>
   {% endif %}

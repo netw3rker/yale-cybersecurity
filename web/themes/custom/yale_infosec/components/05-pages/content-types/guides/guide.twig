@@ -1,4 +1,6 @@
-{% extends "@templates/primary.twig" %}
+{% set hero_img = true %}
+
+{% extends "@templates/_default.twig" %}
   {% block page_hero %}
     {% include "@molecules/hero/hero.twig" with {
       hero_img_src: "https://placeimg.com/1280/720/nature"
