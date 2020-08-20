@@ -13,6 +13,21 @@
   }
 }
 
+@mixin grid-item-3 {
+  flex: 1 1 100%;
+  margin-bottom: $space-double;
+
+  @include large {
+    margin: 0 3% 3% 0;
+    flex-basis: 31%;
+  }
+
+  &:nth-child(3n),
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .grid__item {
   @include grid-item;
 
@@ -21,4 +36,8 @@
     background-color: clr(background-section);
     padding: $space-quadruple;
   }
+}
+
+.grid__item-three {
+  @include grid-item-3;
 }

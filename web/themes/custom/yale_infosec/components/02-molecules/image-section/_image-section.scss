@@ -15,13 +15,14 @@
   grid-area: content;
 
   &--large {
-    grid-column-end: sidebar;
+    grid-column-end: right-gutter;
     grid-column-start: left-gutter;
   }
 }
 
 .image-section__aside {
-  grid-area: sidebar;
+  grid-column-end: right-gutter;
+  grid-column-start: sidebar;
 
   .blockquote {
     margin-bottom: 0;
