@@ -12,6 +12,7 @@ $ctaGreen: #96b246;
   padding: 2.3rem 2.3rem 4rem;
   text-align: center;
   transition: background-color .3s;
+  width: 100%;
 
   &:hover {
     background-color: clr(highlight);
@@ -21,42 +22,42 @@ $ctaGreen: #96b246;
 
   &--orange {
     border-color: $ctaOrange;
+
+    & svg {
+      fill: $ctaOrange;
+    }
   }
 
   &--purple {
     border-color: $ctaPurple;
+
+    & svg {
+      fill: $ctaPurple;
+    }
   }
 
   &--yellow {
     border-color: $ctaYellow;
+
+    & svg {
+      fill: $ctaYellow;
+    }
   }
 
   &--green {
     border-color: $ctaGreen;
+
+    & svg {
+      fill: $ctaGreen;
+    }
   }
 }
 
 // Icon
-.cta-icon__icon {
+.cta-icon svg {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto $space-double;
   width: 100%;
-
-  &--orange {
-    fill: $ctaOrange;
-  }
-
-  &--purple {
-    fill: $ctaPurple;
-  }
-
-  &--yellow {
-    fill: $ctaYellow;
-  }
-
-  &--green {
-    fill: $ctaGreen;
-  }
 }
 
 .cta-icon__heading {
