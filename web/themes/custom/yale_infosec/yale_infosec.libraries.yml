@@ -20,3 +20,10 @@ tabs:
     dist/js/02-molecules/tabs/tabs.js: {}
   dependencies:
     - core/drupal
+
+alert:
+  js:
+    dist/js/02-molecules/alert/alert.js: {}
+    https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js: { type: external, minified: true }
+  dependencies:
+    - core/drupal

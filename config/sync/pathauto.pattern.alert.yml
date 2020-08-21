@@ -7,16 +7,16 @@ dependencies:
 id: alert
 label: Alert
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: 'alerts/[node:title]'
 selection_criteria:
-  5a025767-1474-4465-8c22-679d812a74eb:
+  23539612-a4b2-4e85-9140-7c132a8d367b:
     id: node_type
     bundles:
       alert: alert
     negate: false
     context_mapping:
       node: node
-    uuid: 5a025767-1474-4465-8c22-679d812a74eb
+    uuid: 23539612-a4b2-4e85-9140-7c132a8d367b
 selection_logic: and
 weight: -5
 relationships: {  }
