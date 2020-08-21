@@ -17,10 +17,13 @@
     card__image__output_image_tag: item.card__image__output_image_tag,
   } %}
 {% elseif item_type == 'cta' %}
-  {% include "@molecules/cta/cta.twig" with {
-    cta__extra_classes: ['grid__item'],
-    cta__heading: item.cta__heading,
-    cta__button_text: item.cta__button_text,
+  {% include "@molecules/cta/cta-icon.twig" with {
+    cta_icon_extra_classes: ['grid__item'],
+    cta_icon_modifiers: item.cta_icon_modifiers,
+    cta_icon_icon: item.cta_icon_icon,
+    cta_icon_link: '#',
+    cta_icon_heading: item.cta_icon_heading,
+    cta_icon_body: item.cta_icon_body,
   } %}
 {% else %}
   <div class="grid__item grid__item--example"></div>

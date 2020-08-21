@@ -1,9 +1,23 @@
-grid_label: 'CTA Grid'
 item_type: 'cta'
+grid_label: ''
 items:
-  - cta__heading: 'This is an awesome CTA'
-    cta__button_text: 'Click me!'
-  - cta__heading: 'This is an even better CTA!!'
-    cta__button_text: 'No, click me!'
-  - cta__heading: 'This is a boring CTA'
-    cta__button_text: 'Click me, I guess...'
+  - cta_icon_modifiers:
+      - 'orange'
+    cta_icon_icon: 'know-your-risk'
+    cta_icon_heading: 'Lorem Ipsum Something'
+    cta_icon_body: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+  - cta_icon_modifiers:
+      - 'purple'
+    cta_icon_icon: 'click-with-caution'
+    cta_icon_heading: 'Consetetur Sadipscing'
+    cta_icon_body: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+  - cta_icon_modifiers:
+      - 'yellow'
+    cta_icon_icon: 'apply-updates'
+    cta_icon_heading: 'Sed Diam Nonumy'
+    cta_icon_body: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+  - cta_icon_modifiers:
+      - 'green'
+    cta_icon_icon: 'use-secure-passwords'
+    cta_icon_heading: 'Eirmod Tempor Invidunt'
+    cta_icon_body: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
