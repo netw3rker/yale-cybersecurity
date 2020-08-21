@@ -25,6 +25,15 @@ targetEntityType: node
 bundle: frontpage
 mode: hero
 content:
+  field_cards:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_header_image:
     weight: 0
     label: hidden
@@ -36,7 +45,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_cards: true
   field_content_block: true
   field_content_body: true
   field_header_subtitle: true

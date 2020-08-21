@@ -30,24 +30,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_cards:
-    type: entity_reference_revisions_entity_view
-    weight: 1
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_content_block:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_content_body:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       view_mode: default
@@ -56,6 +47,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
 hidden:
+  field_cards: true
   field_header_image: true
   field_header_subtitle: true
   field_header_title: true
