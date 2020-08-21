@@ -15,6 +15,8 @@ import ctaData from '../../02-molecules/cta/cta.yml';
 import ctaImageData from '../../02-molecules/cta/cta-image.yml';
 import ctaFeaturedData from '../../02-molecules/cta/cta-image-featured.yml';
 
+import homeData from './home.yml';
+
 /**
  * Storybook Definition.
  */
@@ -32,7 +34,8 @@ hrefTo('Pages/Content Types', 'Article').then(url => {
             ...footerMenuData,
             ...ctaData,
             ...ctaImageData,
-            ...ctaFeaturedData
+            ...ctaFeaturedData,
+            ...homeData
           }),
         }}
       />

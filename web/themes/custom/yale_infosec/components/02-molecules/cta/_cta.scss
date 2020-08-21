@@ -4,6 +4,10 @@
   overflow: hidden;
   margin-bottom: $space-triple;
   position: relative;
+
+  &--featured {
+    margin-bottom: 0;
+  }
 }
 
 .cta__image {
