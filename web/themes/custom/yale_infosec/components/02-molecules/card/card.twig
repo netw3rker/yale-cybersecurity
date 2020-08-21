@@ -41,10 +41,19 @@
   {% set date__modifiers = [] %}
 {% endif %}
 
+{% if not card__heading__modifiers %}
+  {% set card__heading__modifiers = [] %}
+{% endif %}
+
 {% if "sbs" in card__modifiers %}
   {% set card__image__modifiers = card__image__modifiers|merge(['sbs']) %}
   {% set card__content__modifiers = card__content__modifiers|merge(['sbs']) %}
   {% set date__modifiers = date__modifiers|merge(['fixed-top']) %}
+{% endif %}
+
+{% if "blue" in card__modifiers %}
+  {% set card__content__modifiers = card__content__modifiers|merge(['blue']) %}
+  {% set card__heading__modifiers = card__heading__modifiers|merge(['light']) %}
 {% endif %}
 
 <div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
@@ -82,6 +91,7 @@
         heading_url: card__heading__link|default(card__link__url),
         heading_link_base_class: card__heading__link_base_class|default('heading-link'),
         heading_link_blockname: card__base_class,
+        heading_link_modifiers: card__heading__modifiers
       } %}
       {{ title_suffix }}
     {% endif %}
@@ -101,13 +111,17 @@
       } %}
     {% endif %}
     {# Body #}
-    {% if card__body %}
-      {% include "@atoms/text/text/01-paragraph.twig" with {
-        paragraph_base_class: card__body__base_class|default('body'),
-        paragraph_modifiers: card__body__modifiers,
-        paragraph_blockname: card__base_class,
-        paragraph_content: card__body,
-      } %}
-    {% endif %}
+    <div {{ bem('body', card__content__modifiers, card__base_class) }}>
+      {% block card_body %}      
+        {% if card__body %}
+          {% include "@atoms/text/text/01-paragraph.twig" with {
+            paragraph_base_class: card__body__base_class|default('body'),
+            paragraph_modifiers: card__body__modifiers,
+            paragraph_blockname: card__base_class,
+            paragraph_content: card__body,
+          } %}
+        {% endif %}
+      {% endblock %}
+    </div>
   </div>
 </div>

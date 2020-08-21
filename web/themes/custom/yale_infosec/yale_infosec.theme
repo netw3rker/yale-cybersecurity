@@ -57,8 +57,16 @@ function yale_infosec_preprocess_paragraph(array &$vars) {
   $paragraph = $vars['paragraph'];
   // Node information.
   $node = $paragraph->getParentEntity();
-  if ($node) {
+  if ($node->bundle() == 'frontpage') {
     $vars['title'] = $node->label();
+    // Title.
+    if (!empty($node->get('field_header_title'))) {
+      $vars['headerTitle'] = $node->get('field_header_title')->getString();
+    }
+    // Subtitle.
+    if (!empty($node->get('field_header_subtitle'))) {
+      $vars['subTitle'] = $node->get('field_header_subtitle')->getString();
+    }
   }
 }
 

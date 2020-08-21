@@ -9,7 +9,7 @@ import ctaImageLightData from './cta-image-light.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules|CTA/Image' };
+export default { title: 'Molecules|CTA/Image/Plain' };
 
 export const Example = () => (
   <div dangerouslySetInnerHTML={{ __html: cta({ ...ctaData, ...ctaImageData }) }} />

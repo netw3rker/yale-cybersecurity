@@ -85,3 +85,30 @@ $outer-container-break: $small;
   width: 1px;
   word-wrap: normal;
 }
+
+@mixin alert-bg {
+  &--persistent {
+    background-color: color(gray-dd);
+  }
+
+  &--warning {
+    background-color: color(warning);
+  }
+
+  &--danger {
+    background-color: color(danger);
+    color: clr(text-inverse);
+  }
+
+  &--notice {
+    background-color: color(success);
+    color: clr(text-inverse);
+  }
+}
+
+@mixin btn-reset {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}

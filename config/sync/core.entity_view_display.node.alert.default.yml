@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.alert.field_alert_active
     - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
     - field.field.node.alert.field_metadata
@@ -20,6 +21,16 @@ targetEntityType: node
 bundle: alert
 mode: default
 content:
+  field_alert_active:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_content_body:
     weight: 0
     label: hidden
