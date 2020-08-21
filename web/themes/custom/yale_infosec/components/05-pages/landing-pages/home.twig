@@ -1,12 +1,18 @@
 {% set hero_img = true %}
 
-{% extends "@templates/primary.twig" %}
+{% extends "@templates/_default.twig" %}
   {% block page_hero %}
     {% include "@molecules/hero/hero.twig" with {
       hero__modifiers: ['home'],
       hero_img_src: "https://picsum.photos/1440/900",
       hero_heading: 'Empowered Users, Safer Yale.',
       hero_subheading: 'We are here to empower you to stay safe online.',
+    } %}
+    {% include "@organisms/grid/grid-container.twig" with {
+      grid_container_modifiers: ['pattern', 'pulled'],
+      item_type: 'cta',
+      grid_label: '',
+      items: grid_cta_items,
     } %}
   {% endblock %}
   {% block page_content %}

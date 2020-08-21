@@ -31,9 +31,11 @@ export const cardThreeGrid = () => (
   />
 );
 export const ctaGrid = () => (
-  <div
-    dangerouslySetInnerHTML={{ __html: gridContainerTwig({ ...gridData, ...gridCtaData }) }}
-  />
+  <div className="cl-mt">
+    <div
+      dangerouslySetInnerHTML={{ __html: gridContainerTwig({ ...gridData, ...gridCtaData }) }}
+    />
+  </div>
 );
 export const gridContainer = () => (
   <div
