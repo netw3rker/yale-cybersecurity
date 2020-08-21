@@ -11768,12 +11768,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:yalesites-org/yale_sso.git",
-                "reference": "7dbcad80d1b7390fed124cdd512c2747bdd1201d"
+                "reference": "b09325ee972961bfedb34b711ecbc3d3ba1b7877"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yalesites-org/yale_sso/zipball/7dbcad80d1b7390fed124cdd512c2747bdd1201d",
-                "reference": "7dbcad80d1b7390fed124cdd512c2747bdd1201d",
+                "url": "https://api.github.com/repos/yalesites-org/yale_sso/zipball/b09325ee972961bfedb34b711ecbc3d3ba1b7877",
+                "reference": "b09325ee972961bfedb34b711ecbc3d3ba1b7877",
                 "shasum": ""
             },
             "require": {
@@ -11792,7 +11792,7 @@
                 "source": "https://github.com/yalesites-org/yale_sso/tree/master",
                 "issues": "https://github.com/yalesites-org/yale_sso/issues"
             },
-            "time": "2020-07-29T21:04:12+00:00"
+            "time": "2020-08-17T23:34:03+00:00"
         },
         {
             "name": "zaporylie/composer-drupal-optimizations",
