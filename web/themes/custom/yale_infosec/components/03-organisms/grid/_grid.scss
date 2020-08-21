@@ -10,10 +10,6 @@
     @include space-stack-page;
 
     justify-content: center;
-
-    @include large {
-      justify-content: normal;
-    }
   }
 
   &--top {
@@ -33,14 +29,57 @@
   .bg--dark-blue & {
     color: clr(text-inverse);
   }
+
+  &--featured {
+    font: normal 5.5rem/1 $font-heading;
+    text-align: center;
+    text-transform: none;
+
+    @include medium {
+      font-size: 6.4rem;
+    }
+  }
 }
+
+$patternBg: #eae9e8;
+$patternDot: #d3d2d0;
+$dot-size: 1.5px;
+$dot-space: 7px;
 
 // Container
 .grid-container {
-  @include grid;
+  @include wrapper;
+
+  max-width: none;
+
+  @include medium {
+    @include grid;
+  }
+
+  &--padded {
+    padding-bottom: $space-triple;
+    padding-top: $space-triple;
+
+    @include medium {
+      padding-bottom: $space-quintuple;
+      padding-top: $space-quintuple;
+    }
+  }
+
+  &--pattern {
+    background:
+      linear-gradient(90deg, $patternBg ($dot-space - $dot-size), transparent 1%) center,
+		  linear-gradient($patternBg ($dot-space - $dot-size), transparent 1%) center,
+      $patternDot;
+    background-size: $dot-space $dot-space;
+    padding-bottom: $space-quintuple;
+    padding-top: $space-quintuple;
+  }
 }
 
 .grid-container__inner {
-  grid-column-start: content;
-  grid-column-end: sidebar;
+  @include medium {
+    grid-column-start: content;
+    grid-column-end: sidebar;
+  }
 }

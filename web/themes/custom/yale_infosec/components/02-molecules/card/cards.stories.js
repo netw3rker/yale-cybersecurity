@@ -11,8 +11,16 @@ import sbsData from './card-sbs.yml';
  */
 export default { title: 'Molecules/Cards' };
 
-export const cardExample = () => (
+export const Basic = () => (
   <div dangerouslySetInnerHTML={{ __html: card(cardData) }} />
+);
+
+export const Blue = () => (
+  <div dangerouslySetInnerHTML={{ __html: card({
+    ...cardData,
+    card__modifiers: ['blue'],
+    card__heading: 'Report'
+  }) }} />
 );
 
 export const Event = () => (

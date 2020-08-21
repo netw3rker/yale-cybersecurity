@@ -1,6 +1,6 @@
 {% set grid_container_base_class = 'grid-container' %}
 
-<div {{ bem(grid_container_base_class) }}>
+<div {{ bem(grid_container_base_class, grid_container_modifiers) }}>
   <div {{ bem('inner', [], grid_container_base_class) }}>
     {% block grid_container_content %}
       {% include "@organisms/grid/grid.twig" %}
