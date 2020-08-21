@@ -4,6 +4,7 @@ namespace Drupal\yi_mss_calculator\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
 
 /**
  * Implements the MSS Calculator admin config form.
@@ -31,6 +32,13 @@ class MSSCalculatorAdminForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('yi_mss_calculator.messages');
+
+    $export_link = Link::createFromRoute(
+      'Click to download the MSS CSV export',
+      'yi_mss_calculator.export'
+    );
+
+    $form['export_link'] = $export_link->toRenderable();
 
     $form['listing_header'] = [
       '#type' => 'textarea',

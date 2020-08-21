@@ -7,6 +7,7 @@ use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Provides route responses for the Example module.
@@ -268,6 +269,168 @@ class MSSCalculatorController extends ControllerBase {
     ];
 
     return $build;
+  }
+
+  /**
+   * Get (or create) term based on name and vocab.
+   */
+  private function getTerm($name, $vid) {
+    // phpcs:ignore
+    $term = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties(['name' => $name, 'vid' => $vid]);
+
+    if (empty($term)) {
+      $new_term = Term::create(['vid' => $vid, 'name' => $name]);
+      $new_term->save();
+      return $new_term;
+    }
+    else {
+      return current($term);
+    }
+  }
+
+  /**
+   * Export Data view.
+   */
+  public function dataExport() {
+    // Field => CSV header title.
+    $headers = [
+      'title' => 'Title',
+      'field_policy_number' => 'Policy Number',
+      'field_standard_description' => 'Description',
+    ];
+    $rows = [];
+
+    // Compile all specifications in a standard way.
+    $terms = [
+      'low' => $this->getTerm('Low Risk', 'risk_level'),
+      'mod' => $this->getTerm('Moderate Risk', 'risk_level'),
+      'high' => $this->getTerm('High Risk', 'risk_level'),
+      'endpoint' => $this->getTerm('Endpoint', 'device_type'),
+      'server' => $this->getTerm('Server', 'device_type'),
+      'mobile' => $this->getTerm('Mobile Device', 'device_type'),
+      'printer' => $this->getTerm('Network Printer', 'device_type'),
+      'hipaa' => $this->getTerm('HIPAA', 'obligation'),
+      'pci' => $this->getTerm('PCI', 'obligation'),
+    ];
+
+    $spec_types = [
+      ['low', 'endpoint'],
+      ['mod', 'endpoint'],
+      ['high', 'endpoint'],
+
+      ['low', 'server'],
+      ['mod', 'server'],
+      ['high', 'server'],
+
+      ['low', 'mobile'],
+      ['mod', 'mobile'],
+      ['high', 'mobile'],
+
+      ['low', 'printer'],
+      ['mod', 'printer'],
+      ['high', 'printer'],
+    ];
+
+    $spec_headers = [];
+    foreach ($spec_types as $keys) {
+      $spec_headers[] = $terms[$keys[0]]->getName() . ' ' . $terms[$keys[1]]->getName();
+    }
+
+    // Get all details term data.
+    // phpcs:ignore
+    $tids = \Drupal::entityQuery('taxonomy_term')
+      ->condition('vid', 'specification_detail_type')
+      ->execute();
+
+    $detail_headers = [];
+    // phpcs:ignore
+    $deets = Term::loadMultiple($tids);
+    foreach ($deets as $term) {
+      $detail_headers[] = $term->getName();
+    }
+
+    // Get all secondary and tertiary level standards.
+    // phpcs:ignore
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'standard')
+      ->condition('field_policy_number', '%.%', 'LIKE')
+      ->execute();
+
+    // phpcs:ignore
+    $nodes = Node::loadMultiple($nids);
+    foreach ($nodes as $node) {
+      $row = [];
+      foreach ($headers as $field => $name) {
+        $row[$name] = $node->get($field)->getString();
+      }
+
+      // Add device specs, start with empty values.
+      foreach ($spec_headers as $key) {
+        $row[$key] = 'NA';
+      }
+
+      // Add actual spec data to header.
+      foreach ($node->get('field_standard_specifications')->referencedEntities() as $spec) {
+        $risk = $spec->field_risk_level->entity->getName();
+        $device = $spec->field_device_type->entity->getName();
+        $type = "$risk $device";
+
+        // If it matches, add the data.
+        if (isset($row[$type])) {
+          $data = [];
+
+          if ($spec->field_required->getString()) {
+            $data[] = 'required';
+          }
+          if ($spec->field_upcoming->getString()) {
+            $data[] = 'upcoming';
+          }
+          if ($spec->field_internet_access->getString()) {
+            $data[] = 'internet';
+          }
+
+          foreach ($spec->get('field_obligation')->referencedEntities() as $ob) {
+            $data[] = $ob->getName();
+          }
+
+          if (count($data)) {
+            $row[$type] = implode("|", $data);
+          }
+        }
+      }
+
+      // Attach detail data, start with empty values..
+      foreach ($detail_headers as $key) {
+        $row[$key] = '';
+      }
+
+      foreach ($node->get('field_specification_details')->referencedEntities() as $deet) {
+        $type = $deet->field_specification_detail_type->entity->getName();
+        if (isset($row[$type])) {
+          $row[$type] = $deet->field_specification_detail_data->getString();
+        }
+      }
+
+      $rows[] = array_values($row);
+    }
+
+    // Combine final headers with rows for output.
+    $headers = array_merge(array_values($headers), $spec_headers, $detail_headers);
+    array_unshift($rows, $headers);
+
+    // Write a CSV to 1mb of memory and then send to response.
+    $csv = fopen('php://temp/maxmemory:' . (1 * 1024 * 1024), 'r+');
+    foreach ($rows as $row) {
+      fputcsv($csv, $row);
+    }
+    rewind($csv);
+
+    $response = new Response(stream_get_contents($csv));
+    $response->headers->set('Content-Type', 'text/csv');
+
+    return $response;
   }
 
 }
