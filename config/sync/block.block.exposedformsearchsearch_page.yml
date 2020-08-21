@@ -1,0 +1,23 @@
+uuid: 1cfd1bfd-7d9b-41e5-ba22-dc6f3bc07b29
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - views
+  theme:
+    - yale_infosec
+id: exposedformsearchsearch_page
+theme: yale_infosec
+region: content_top
+weight: -4
+provider: null
+plugin: 'views_exposed_filter_block:search-search_page'
+settings:
+  id: 'views_exposed_filter_block:search-search_page'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility: {  }

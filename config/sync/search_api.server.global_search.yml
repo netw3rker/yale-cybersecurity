@@ -1,0 +1,23 @@
+uuid: 508f6132-e5f3-43a6-9d69-b2861fa8bca0
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_pantheon
+    - search_api_solr
+id: global_search
+name: 'Global Search'
+description: ''
+backend: search_api_solr
+backend_config:
+  connector: pantheon
+  connector_config:
+    schema: modules/contrib/search_api_solr/solr-conf/4.x/schema.xml
+  retrieve_data: false
+  highlight_data: false
+  excerpt: false
+  skip_schema_check: false
+  site_hash: false
+  suggest_suffix: true
+  suggest_corrections: true
+  suggest_words: false
