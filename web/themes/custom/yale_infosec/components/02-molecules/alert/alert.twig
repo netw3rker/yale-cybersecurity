@@ -1,0 +1,66 @@
+{#
+ # Available variables:
+ # - alert__base_class - base classname of the wrapper.
+ # - alert__modifiers - array of modifiers to add to the base classname of the wrapper.
+ #
+ # - alert__heading - the content of the title component.
+ # - alert__heading__base_class - base classname of the title component. Defaults to "title".
+ #
+ # - alert__copy_txt - the content of the body component.
+ #
+ # - alert__link - the link url.
+ # - alert__btn_modifiers - array of modifiers to add to the base classname of the link/button component.
+ #}
+{% set alert__base_class = 'alert' %}
+
+{% if not alert__btn_modifiers %}
+  {% set alert__btn_modifiers = [] %}
+{% endif %}
+
+{% if not alert__icon_modifiers %}
+  {% set alert__icon_modifiers = [] %}
+{% endif %}
+
+{% if 'notice' in alert__modifiers or 'danger' in alert__modifiers %}
+  {% set alert__btn_modifiers = ['white'] %}
+  {% set alert__icon_modifiers = ['white'] %}
+{% endif %}
+
+{% set alert_btn_attributes = {
+  id: "alert-close",
+  class: bem('close', alert__icon_modifiers, alert__base_class)
+ } %}
+
+<div {{ bem(alert__base_class) }} data-id="{{ 'alert' ~ alert_id }}">
+  <div {{ bem('inner', alert__modifiers|default(['persistent']), alert__base_class) }}>
+    <button {{ add_attributes(alert_btn_attributes) }}>
+      <span {{ bem('close-txt', [], alert__base_class) }}>Close</span>
+      {% include "@atoms/images/icons/_icon.twig" with {
+        icon_blockname: alert__base_class,
+        icon_modifiers: alert__icon_modifiers,
+        icon_name: 'close',
+        icon_decorative: true,
+      } %}
+    </button>
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_level: 2,
+      heading_base_class: 'heading',
+      heading_blockname: alert__base_class,
+      heading: alert__heading,
+    } %}
+    <div {{ bem('copy', [], alert__base_class) }}>
+      {% block alert__copy %}
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_content: alert__copy_txt,
+        } %}
+      {% endblock %}
+    </div>
+    {% include "@atoms/links/link/link.twig" with {
+      link_base_class: 'button',
+      link_blockname: alert__base_class,
+      link_modifiers: alert__btn_modifiers,
+      link_url: alert__link,
+      link_content: 'Read More'
+    } %}
+  </div>
+</div>

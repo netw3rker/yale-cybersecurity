@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.media_entity_browser_modal
+    - field.field.node.alert.field_alert_active
     - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
     - field.field.node.alert.field_metadata
@@ -87,8 +88,8 @@ third_party_settings:
     group_content:
       children:
         - field_alert_level
+        - field_alert_active
         - field_summary
-        - field_link
         - field_content_body
       parent_name: group_main
       weight: 18
@@ -112,14 +113,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_alert_active:
+    weight: 109
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_alert_level:
-    weight: 103
+    weight: 108
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_content_body:
-    weight: 106
+    weight: 111
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -164,7 +172,7 @@ content:
     type: string_textfield
     region: content
   field_summary:
-    weight: 104
+    weight: 110
     settings:
       rows: 5
       placeholder: ''
