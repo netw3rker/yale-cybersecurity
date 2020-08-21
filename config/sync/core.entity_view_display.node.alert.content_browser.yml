@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.content_browser
+    - field.field.node.alert.field_alert_active
     - field.field.node.alert.field_alert_level
     - field.field.node.alert.field_content_body
     - field.field.node.alert.field_metadata
@@ -33,6 +34,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_alert_active: true
   field_alert_level: true
   field_content_body: true
   field_metadata: true
@@ -41,3 +43,4 @@ hidden:
   field_tags: true
   field_teaser_text: true
   links: true
+  search_api_excerpt: true

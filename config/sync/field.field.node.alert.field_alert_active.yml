@@ -1,0 +1,23 @@
+uuid: 5f390078-431f-415d-a489-30d8aeb02550
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alert_active
+    - node.type.alert
+id: node.alert.field_alert_active
+field_name: field_alert_active
+entity_type: node
+bundle: alert
+label: 'Active Alert'
+description: 'Only when this is selected will the alert display across the site.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

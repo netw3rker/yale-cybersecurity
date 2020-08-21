@@ -1,0 +1,38 @@
+uuid: 3b8e26e4-1a43-43b3-ba22-46de887eb6b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.guide.field_content_body
+    - field.field.node.guide.field_header_image
+    - field.field.node.guide.field_metadata
+    - field.field.node.guide.field_seo_title
+    - field.field.node.guide.field_tags
+    - field.field.node.guide.field_teaser_media
+    - field.field.node.guide.field_teaser_text
+    - node.type.guide
+  module:
+    - user
+id: node.guide.search_result
+targetEntityType: node
+bundle: guide
+mode: search_result
+content:
+  field_teaser_text:
+    type: basic_string
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_content_body: true
+  field_header_image: true
+  field_metadata: true
+  field_seo_title: true
+  field_tags: true
+  field_teaser_media: true
+  links: true
+  search_api_excerpt: true

@@ -9,7 +9,7 @@ dependencies:
 id: pagetitle
 theme: yale_infosec
 region: content_top
-weight: -3
+weight: -4
 provider: null
 plugin: page_title_block
 settings:
@@ -20,6 +20,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/guide/*'
+    pages: "/guide/*\r\n<front>"
     negate: true
     context_mapping: {  }

@@ -1,0 +1,68 @@
+uuid: f97c43e6-7c12-44ec-90de-ea41a68bf7e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.standard.field_metadata
+    - field.field.node.standard.field_policy_number
+    - field.field.node.standard.field_seo_title
+    - field.field.node.standard.field_specification_details
+    - field.field.node.standard.field_standard_description
+    - field.field.node.standard.field_standard_specifications
+    - field.field.node.standard.field_sub_policy
+    - field.field.node.standard.field_subtitle
+    - field.field.node.standard.field_tags
+    - field.field.node.standard.field_teaser_media
+    - field.field.node.standard.field_teaser_text
+    - node.type.standard
+  module:
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_intro:
+      children: {  }
+      parent_name: ''
+      weight: 6
+      format_type: html_element
+      region: hidden
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Intro
+_core:
+  default_config_hash: r1tD2d3xfgugcFCakPpaMsHLgkoF0C5up8qu-Ku9v1w
+id: node.standard.search_result
+targetEntityType: node
+bundle: standard
+mode: search_result
+content:
+  field_teaser_text:
+    type: basic_string
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_metadata: true
+  field_policy_number: true
+  field_seo_title: true
+  field_specification_details: true
+  field_standard_description: true
+  field_standard_specifications: true
+  field_sub_policy: true
+  field_subtitle: true
+  field_tags: true
+  field_teaser_media: true
+  links: true
+  search_api_excerpt: true
