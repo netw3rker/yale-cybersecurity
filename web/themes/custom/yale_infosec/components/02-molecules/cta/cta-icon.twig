@@ -1,0 +1,44 @@
+{#
+ # Available variables:
+ # - cta__icon__base_class - base classname of the wrapper.
+ #
+ # - cta_icon_link - base classname of the copy wrapper - defaults to 'heading'.
+ #
+ # - cta_icon_icon - base classname of the copy wrapper - defaults to 'heading'.
+ #
+ # - cta_icon_heading - the content of the title component.
+ #
+ # - cta_icon_body - the content of the body component.
+ #}
+{% set cta_icon_base_class = 'cta-icon' %}
+
+{% set cta_icon_attributes = {
+  class: bem(cta_icon_base_class, cta_icon_modifiers),
+  href: cta_icon_link
+} %}
+
+<a {{ add_attributes(cta_icon_attributes) }}>
+  {# Icon #}
+  {% block cta_icon_icon_area %}
+    {% include "@atoms/images/icons/_icon.twig" with {
+      icon_name: cta_icon_icon,
+      icon_blockname: cta_icon_base_class,
+      icon_modifiers: cta_icon_modifiers,
+      icon_decorative: true,
+    } %}
+  {% endblock %}
+  {% include "@atoms/text/headings/_heading.twig" with {
+    heading_base_class: 'heading',
+    heading_blockname: cta_icon_base_class,
+    heading_level: 2,
+    heading: cta_icon_heading,
+  } %}
+  <div {{ bem('body', [], cta_icon_base_class) }}>
+    {% block cta_icon_body_area %}
+      {% include "@atoms/text/text/01-paragraph.twig" with {
+        paragraph_base_class: 'body',
+        paragraph_content: cta_icon_body,
+      } %}
+    {% endblock %}
+  </div>
+</a>

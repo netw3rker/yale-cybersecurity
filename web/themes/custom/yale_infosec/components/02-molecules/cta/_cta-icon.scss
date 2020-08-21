@@ -1,0 +1,72 @@
+$ctaOrange: #aa5426;
+$ctaPurple: #9046b2;
+$ctaYellow: #b39b36;
+$ctaGreen: #96b246;
+
+.cta-icon {
+  background-color: clr(background-inverse);
+  box-shadow: 0 2.8px 2.2px 0 rgba(0, 0, 0, 0.04), 0 6.7px 5.3px 0 rgba(0, 0, 0, 0.06), 0 12.5px 10px 0 rgba(0, 0, 0, 0.08), 0 22.3px 17.9px 0 rgba(0, 0, 0, 0.1), 0 41.8px 33.4px 0 rgba(0, 0, 0, 0.12), 0 100px 80px 0 rgba(0, 0, 0, 0.16);
+  border-top: 10px solid;
+  color: clr(text-inverse);
+  display: block;
+  padding: 2.3rem;
+  text-align: center;
+  transition: all .3s;
+
+  &:hover {
+    background-color: clr(highlight);
+    color: clr(text-inverse);
+    text-decoration: none;
+  }
+
+  &--orange {
+    border-color: $ctaOrange;
+  }
+
+  &--purple {
+    border-color: $ctaPurple;
+  }
+
+  &--yellow {
+    border-color: $ctaYellow;
+  }
+
+  &--green {
+    border-color: $ctaGreen;
+  }
+}
+
+// Icon
+.cta-icon__icon {
+  display: block;
+  margin: 0 auto;
+
+  &--orange {
+    fill: $ctaOrange;
+  }
+
+  &--purple {
+    fill: $ctaPurple;
+  }
+
+  &--yellow {
+    fill: $ctaYellow;
+  }
+
+  &--green {
+    fill: $ctaGreen;
+  }
+}
+
+.cta-icon__heading {
+  font: normal 5.6rem/1 $font-heading;
+  margin: 2.1rem 0 1.7rem;
+}
+
+.cta-icon__body {
+  font-size: 1.8rem;
+
+  p {
+    margin: 0;
+  }
+}
