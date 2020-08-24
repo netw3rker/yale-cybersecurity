@@ -1,0 +1,68 @@
+uuid: 408501e8-569d-4607-a64d-b093113240f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.page.field_content_body
+    - field.field.node.page.field_header_image
+    - field.field.node.page.field_intro_aside
+    - field.field.node.page.field_intro_text
+    - field.field.node.page.field_metadata
+    - field.field.node.page.field_seo_title
+    - field.field.node.page.field_subtitle
+    - field.field.node.page.field_tags
+    - field.field.node.page.field_teaser_media
+    - field.field.node.page.field_teaser_text
+    - node.type.page
+  module:
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_intro:
+      children:
+        - field_intro_text
+        - field_intro_aside
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: hidden
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Intro
+_core:
+  default_config_hash: r1tD2d3xfgugcFCakPpaMsHLgkoF0C5up8qu-Ku9v1w
+id: node.page.search_result
+targetEntityType: node
+bundle: page
+mode: search_result
+content:
+  field_teaser_text:
+    type: basic_string
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_content_body: true
+  field_header_image: true
+  field_intro_aside: true
+  field_intro_text: true
+  field_metadata: true
+  field_seo_title: true
+  field_subtitle: true
+  field_tags: true
+  field_teaser_media: true
+  links: true
+  search_api_excerpt: true
