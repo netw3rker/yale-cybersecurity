@@ -39,11 +39,17 @@
 
 {% embed "@organisms/bg/bg.twig" with {
   bg__modifiers: ['blue', 'top-shadow', 'white-content'],
-  bg__extra_classes: ['text-long'],
 } %}
   {% block bg_contents %}
-    {% for item in items %}
-      {{ item.content }}
-    {% endfor %}
+    {% embed "@molecules/split-section/split-section.twig" %}
+      {% block split_section_content_left %}
+        {% for item in items %}
+          {{ item.content }}
+        {% endfor %}
+      {% endblock %}
+      {% block split_section_content_right %}
+        {{ home_news }}
+      {% endblock %}
+    {% endembed %}
   {% endblock %}
 {% endembed %}

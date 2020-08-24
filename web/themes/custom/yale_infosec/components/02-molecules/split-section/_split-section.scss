@@ -31,16 +31,22 @@
     margin-bottom: 0;
     margin-right: $space-double;
     padding-bottom: 0;
-    padding-right: $space-double;
-    width: 55%;
+    padding-right: $space-quintuple;
+    width: 57%;
   }
 
   h2 {
+    @include heading-large;
+
     margin-top: 0;
   }
 
   p {
     margin: 0;
+  }
+
+  .button {
+    text-decoration: none;
   }
 }
 

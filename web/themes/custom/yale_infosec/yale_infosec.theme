@@ -106,3 +106,15 @@ function yale_infosec_preprocess_node(array &$vars) {
     }
   }
 }
+
+/**
+ * Implements theme_preprocess_field.
+ *
+ * @param array $vars
+ *   Array of variables containing field content.
+ */
+function yale_infosec_preprocess_field(array &$vars) {
+  if ($vars['field_name'] === 'field_content_block') {
+    $vars['home_news'] = views_embed_view('news_events', 'block_1');
+  }
+}
