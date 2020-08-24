@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - core.entity_view_mode.node.list_teaser
+    - core.entity_view_mode.node.teaser_light
     - node.type.event
     - node.type.news
     - taxonomy.vocabulary.news_category
@@ -292,7 +292,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: list_teaser
+          view_mode: teaser_light
       block_description: 'Featured News List'
       pager:
         type: some
