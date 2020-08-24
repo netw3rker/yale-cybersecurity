@@ -10,6 +10,7 @@ dependencies:
     - node.type.guide
     - node.type.news
     - node.type.page
+    - node.type.standard
     - paragraphs.paragraphs_type.reference_cards
 id: paragraph.reference_cards.field_content_reference
 field_name: field_content_reference
@@ -31,6 +32,7 @@ settings:
       guide: guide
       news: news
       page: page
+      standard: standard
     sort:
       field: _none
     auto_create: false
