@@ -23,9 +23,7 @@ dependencies:
 third_party_settings:
   field_group:
     group_intro:
-      children:
-        - field_intro_text
-        - field_intro_aside
+      children: {  }
       parent_name: ''
       weight: 1
       format_type: html_element

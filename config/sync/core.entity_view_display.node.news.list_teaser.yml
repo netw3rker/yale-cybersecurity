@@ -1,20 +1,20 @@
-uuid: 6092a944-fc3c-4059-8d4b-38e436e6f08a
+uuid: 05cff52d-daad-4cf3-96d1-d79eac2feaf1
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.list_teaser
-    - field.field.node.page.field_content_body
-    - field.field.node.page.field_header_image
-    - field.field.node.page.field_intro_aside
-    - field.field.node.page.field_intro_text
-    - field.field.node.page.field_metadata
-    - field.field.node.page.field_seo_title
-    - field.field.node.page.field_subtitle
-    - field.field.node.page.field_tags
-    - field.field.node.page.field_teaser_media
-    - field.field.node.page.field_teaser_text
-    - node.type.page
+    - field.field.node.news.field_content_body
+    - field.field.node.news.field_intro_aside
+    - field.field.node.news.field_intro_text
+    - field.field.node.news.field_metadata
+    - field.field.node.news.field_news_author
+    - field.field.node.news.field_news_category
+    - field.field.node.news.field_seo_title
+    - field.field.node.news.field_tags
+    - field.field.node.news.field_teaser_media
+    - field.field.node.news.field_teaser_text
+    - node.type.news
   module:
     - field_group
     - user
@@ -22,8 +22,8 @@ third_party_settings:
   field_group:
     group_intro:
       children:
-        - field_intro_aside
         - field_intro_text
+        - field_intro_aside
       parent_name: ''
       weight: 2
       format_type: html_element
@@ -39,11 +39,9 @@ third_party_settings:
         effect: none
         speed: fast
       label: Intro
-_core:
-  default_config_hash: r1tD2d3xfgugcFCakPpaMsHLgkoF0C5up8qu-Ku9v1w
-id: node.page.list_teaser
+id: node.news.list_teaser
 targetEntityType: node
-bundle: page
+bundle: news
 mode: list_teaser
 content:
   field_teaser_text:
@@ -56,12 +54,12 @@ content:
 hidden:
   content_moderation_control: true
   field_content_body: true
-  field_header_image: true
   field_intro_aside: true
   field_intro_text: true
   field_metadata: true
+  field_news_author: true
+  field_news_category: true
   field_seo_title: true
-  field_subtitle: true
   field_tags: true
   field_teaser_media: true
   links: true
