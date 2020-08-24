@@ -11,3 +11,13 @@ tooling:
   drush:
     service: appserver
     cmd: "drush --root=/app/web --uri=https://cybersecurity.lndo.site"
+services:
+  # Add an indexing backend
+  # See: https://docs.devwithlando.io/services/solr.html
+  index:
+    type: solr:3.6
+    core: collection1
+    # Look in `lando info` for the port here. Avoids collisions.
+    portforward: true
+    config:
+      dir: web/modules/contrib/search_api_solr/solr-conf/4.x
