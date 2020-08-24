@@ -15,3 +15,14 @@
     color: clr(text-inverse);
   }
 }
+
+.teaser-list__heading--light {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.teaser-list__link--light {
+  @include light-link;
+
+  display: block;
+  margin-top: $space;
+}

@@ -48,3 +48,10 @@ export const DarkGray = () => (
     bg__modifiers: ['dark-gray']
   }) }} />
 );
+
+export const TopShadow = () => (
+  <div dangerouslySetInnerHTML={{ __html: bg({
+    bg__extra_classes: ['cl-wrap'],
+    bg__modifiers: ['blue', 'top-shadow']
+  }) }} />
+);

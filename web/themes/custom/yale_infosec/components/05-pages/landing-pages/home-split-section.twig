@@ -1,0 +1,18 @@
+{% extends "@molecules/split-section/split-section.twig" %}
+  {% block split_section_content_left %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_level: 2,
+      heading: "Lorem ipsum dolor sit amet, consecetur adipiscing elit"
+    } %}
+    {% include "@atoms/text/text/01-paragraph.twig" with {
+      paragraph_content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare scelerisque orci non euismod. Maecenas eleifend ultrices nisl, non hendrerit purus ultricies vel. Ut eu bibendum eros. Cras eget egestas lorem. Ut vel hendrerit ipsum."
+    } %}
+    {% include "@atoms/links/link/link.twig" with {
+      link_base_class: 'button',
+      link_extra_classes: ['button--yale'],
+      link_content: "Action Link"
+    } %}
+  {% endblock %}
+  {% block split_section_content_right %}
+    {% include "@organisms/lists/teaser-list.twig" %}
+  {% endblock %}

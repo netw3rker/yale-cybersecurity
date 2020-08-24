@@ -23,12 +23,13 @@
     {{ title_prefix }}
     {% include "@atoms/text/headings/_heading.twig" with {
       heading_base_class: teaser__heading__base_class|default('heading'),
-      heading_modifiers: teaser__heading__modifiers,
+      heading_modifiers: teaser__modifiers,
       heading_blockname: teaser__base_class,
       heading_level: 2,
       heading: teaser__heading,
       heading_url: teaser__heading__link|default(teaser__link__url),
       heading_link_base_class: teaser__heading__link_base_class|default('heading-link'),
+      heading_link_modifiers: teaser__modifiers,
       heading_link_blockname: teaser__base_class,
     } %}
     {{ title_suffix }}

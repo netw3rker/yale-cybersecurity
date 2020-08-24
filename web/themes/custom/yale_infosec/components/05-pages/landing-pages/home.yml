@@ -40,3 +40,21 @@ items:
     card__image__output_image_tag: true
     card__heading: 'Learn'
     card__body: 'Tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat.. Nulla quis lorem ut libero malesuada feugiat.'
+
+teaser_list__modifiers:
+  - 'light'
+teaser_list__heading: 'Lorem Ipsum Dolor'
+teaser_list__items:
+  - teaser__modifiers:
+      - 'light'
+    teaser__heading: "Consetetur Sadipscing Elitr"
+    teaser__link__url: "#"
+  - teaser__modifiers:
+      - 'light'
+    teaser__heading: "Sed Diam Nonumy Eirmod"
+    teaser__link__url: "#"
+  - teaser__modifiers:
+      - 'light'
+    teaser__heading: "Ut Labore Et Dolore"
+    teaser__link__url: "#"
+teaser_list__link_content: 'More of this'

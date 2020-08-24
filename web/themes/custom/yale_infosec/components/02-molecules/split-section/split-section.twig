@@ -1,0 +1,24 @@
+{#
+ # Available variables:
+ # - split_section__base_class - base classname of the wrapper.
+ #}
+{% set split_section__base_class = 'split-section' %}
+
+<div {{ bem(split_section__base_class) }}>
+  <div {{ bem('inner', [], split_section__base_class) }}>
+    <div {{ bem('left', [], split_section__base_class) }}>
+      {% block split_section_content_left %}
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_content: left_content
+        } %}
+      {% endblock %}
+    </div>
+    <div {{ bem('right', [], split_section__base_class) }}>
+      {% block split_section_content_right %}
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_content: right_content
+        } %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
