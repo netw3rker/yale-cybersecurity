@@ -7,6 +7,15 @@ yi_mss_calculator.calculator:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+yi_mss_calculator.download:
+  path: '/mss/calculator/download'
+  defaults:
+    _controller: '\Drupal\yi_mss_calculator\Controller\MSSCalculatorController::resultsDownloadPage'
+    _title: 'Minimum Security Standards | Filtered Results Download'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
 yi_mss_calculator.listing:
   path: '/mss'
   defaults:

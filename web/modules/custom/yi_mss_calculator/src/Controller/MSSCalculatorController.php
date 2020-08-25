@@ -104,7 +104,7 @@ class MSSCalculatorController extends ControllerBase {
   /**
    * Get tiered array of results based on grouping primary mss node.
    */
-  private function getFilterResults($args) {
+  private function getFilterResults($args, $attach_specs = FALSE) {
     $results = [];
 
     // phpcs:ignore
@@ -168,10 +168,32 @@ class MSSCalculatorController extends ControllerBase {
           'uri' => Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
           'labels' => $this->getLabels($spec),
         ];
+
+        if ($attach_specs) {
+          $results[$primary]['children'][$policy]['specifications'] = $this->getAllSpecs($node);
+        }
       }
     }
 
     return $results;
+  }
+
+  /**
+   * Get a formatted flat array of specifications for a single standard node.
+   */
+  private function getAllSpecs($node) {
+    $specs = [];
+    foreach ($node->get('field_standard_specifications')->referencedEntities() as $spec) {
+      $risk = $spec->field_risk_level->entity->getName();
+      $device = $spec->field_device_type->entity->getName();
+      $title = "$risk $device";
+      $specs[] = [
+        'title' => $title,
+        'labels' => $this->getLabels($spec),
+      ];
+    }
+
+    return $specs;
   }
 
   /**
@@ -204,8 +226,39 @@ class MSSCalculatorController extends ControllerBase {
       '#results' => $results,
     ];
 
+    $build['download'] = [
+      '#type' => 'link',
+      '#url' => Url::fromRoute('yi_mss_calculator.download', [], ['query' => (array) $filters]),
+      '#title' => $this->t('View Full Report'),
+    ];
+
     $build['primary'] = [
       '#theme' => 'yi_mss_calculator_primary',
+      '#results' => $results,
+    ];
+
+    return $build;
+  }
+
+  /**
+   * Returns a calculator filter results download page.
+   *
+   * @return array
+   *   A simple renderable array.
+   */
+  public function resultsDownloadPage() {
+    $build = [];
+
+    // Filter data.
+    // phpcs:ignore
+    $filters = (object) \Drupal::request()->query->all();
+
+    // Get filtered results array.
+    $results = $this->getFilterResults($filters, TRUE);
+
+    $build['results'] = [
+      '#theme' => 'yi_mss_calculator_results_download',
+      '#filters' => $this->getFilterStrings($filters),
       '#results' => $results,
     ];
 
@@ -245,15 +298,7 @@ class MSSCalculatorController extends ControllerBase {
         ];
 
         // Add specifications for each.
-        foreach ($sub->get('field_standard_specifications')->referencedEntities() as $spec) {
-          $risk = $spec->field_risk_level->entity->getName();
-          $device = $spec->field_device_type->entity->getName();
-          $title = "$risk $device";
-          $secondary['specifications'][] = [
-            'title' => $title,
-            'labels' => $this->getLabels($spec),
-          ];
-        }
+        $secondary['specifications'] = $this->getAllSpecs($sub);
 
         $primary['secondaries'][] = $secondary;
       }

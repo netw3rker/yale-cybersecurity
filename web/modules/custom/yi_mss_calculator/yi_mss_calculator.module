@@ -45,5 +45,11 @@ function yi_mss_calculator_theme() {
         'header_text' => NULL,
       ],
     ],
+    'yi_mss_calculator_results_download' => [
+      'variables' => [
+        'results' => [],
+        'filters' => [],
+      ],
+    ],
   ];
 }
