@@ -38,10 +38,12 @@
 #}
 
 {% embed "@molecules/card/card.twig" with {
-  card__modifiers: ['blue'],
-  card__extra_classes: ['grid__item'],
+  card__modifiers: (card_size == 'large') ? ['blue'] : ['white'],
+  card__extra_classes: ['grid__item-three'],
   card__heading: content.field_heading,
   card__link__url: content.field_link.0['#url'],
+  card_link: content.field_link.0['#url'],
+  card_link_content: content.field_link.0['#title'],
 } %}
   {% block card__img %}
     {{ content.field_image }}

@@ -15,6 +15,11 @@
     border: none;
     color: clr(text-inverse);
   }
+
+  &--white {
+    background-color: transparent;
+    border: none;
+  }
 }
 
 .card__image {
@@ -101,4 +106,9 @@
     padding: 4.4rem;
     width: 45%;
   }
+}
+
+.card__link {
+  display: block;
+  margin-top: $space;
 }

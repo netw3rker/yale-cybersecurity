@@ -123,5 +123,13 @@
         {% endif %}
       {% endblock %}
     </div>
+    {% if card_link %}
+      {% include "@atoms/links/link/link.twig" with {
+        link_blockname: card__base_class,
+        link_icon: 'arrow-right',
+        link_content: card_link_content,
+        link_url: card_link,
+      } %}
+    {% endif %}
   </div>
 </div>
