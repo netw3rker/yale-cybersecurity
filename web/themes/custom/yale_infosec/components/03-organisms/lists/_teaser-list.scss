@@ -1,5 +1,9 @@
 .teaser-list {
   margin-bottom: 4.8rem;
+
+  .teaser-list__link--light {
+    text-decoration: none;
+  }
 }
 
 .teaser-list__heading {
@@ -14,4 +18,15 @@
   .bg--dark-blue & {
     color: clr(text-inverse);
   }
+}
+
+.teaser-list__heading--light {
+  opacity: 0.7;
+}
+
+.teaser-list__link--light {
+  @include light-link;
+
+  display: block;
+  margin-top: $space;
 }
