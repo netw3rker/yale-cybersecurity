@@ -1,5 +1,10 @@
 {{ attach_library('yale_infosec/main-menu') }}
 
+{% set search_btn_attributes = {
+  class: bem('search_btn', [], "main-nav"),
+  id: 'search-btn'
+} %}
+
 <nav {{ bem('main-nav-nav', main_nav_modifiers) }}>
   <a href="#" id="toggle-expand" class="toggle-expand">
     <span class="toggle-expand__open">
@@ -24,21 +29,19 @@
     {# Search #}
     <div class="main-nav-search">
       {% block nav_search %}
-        <div class="form-item">
-          <label for="edit-search" class="form-item__label form-item__label--required form-item__label--textfield">Search</label>
-          <input id="edit-search" autocorrect="none" autocapitalize="none" spellcheck="false" type="text" name="search" value="" size="60" maxlength="60" class="form-item__textfield form-item__textfield--required" required="required" aria-required="true" placeholder="Search">
-          <input type="submit" />
-        </div>
+        {% include "@molecules/search/search.twig" %}
       {% endblock %}
     </div>
     {% include "@molecules/menus/_menu.twig" with {
       menu_class: "main-menu",
       items: menu_items,
     } %}
-    {% include "@atoms/images/icons/_icon.twig" with {
-      icon_base_class: "icon",
-      icon_blockname: "search",
-      icon_name: "search",
-    } %}
+    <button {{ add_attributes(search_btn_attributes) }}>
+      {% include "@atoms/images/icons/_icon.twig" with {
+        icon_base_class: "icon",
+        icon_blockname: "search",
+        icon_name: "search",
+      } %}
+    </button>
   </div>
 </nav>
