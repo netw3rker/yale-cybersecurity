@@ -51,6 +51,8 @@ $dot-space: 7px;
   @include wrapper;
 
   max-width: none;
+  position: relative;
+  z-index: 1;
 
   @include medium {
     @include grid;
@@ -72,12 +74,23 @@ $dot-space: 7px;
 		  linear-gradient($patternBg ($dot-space - $dot-size), transparent 1%) center,
       $patternDot;
     background-size: $dot-space $dot-space;
-    padding-bottom: $space-quintuple;
-    padding-top: $space-quintuple;
+    padding-bottom: $space-triple;
+    padding-top: $space-triple;
+
+    @include medium {
+      padding-bottom: $space-quintuple;
+      padding-top: $space-quintuple;
+    }
   }
 }
 
 .grid-container__inner {
+  &--pulled {
+    @include large {
+      margin-top: -12rem;
+    }
+  }
+
   @include medium {
     grid-column-start: content;
     grid-column-end: sidebar;
