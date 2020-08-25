@@ -81,6 +81,13 @@
   @include button-bg;
 }
 
+.button-primary {
+  @include button-base;
+  @include button-bg;
+
+  @extend .button--primary;
+}
+
 .button--large {
   @include button-large;
 }

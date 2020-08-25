@@ -6,21 +6,45 @@
   &:hover {
     color: clr(secondary);
     text-decoration: underline;
+
+    .link__icon {
+      fill: clr(secondary);
+    }
   }
+}
+
+@mixin light-link {
+  color: clr(text-inverse);
+  text-decoration: underline;
+
+  .link__icon {
+    fill: clr(text-inverse);
+  }
+
+  &:hover {
+    opacity: 0.8;
+
+    .link__icon {
+      fill: clr(text-inverse);
+    }
+  }
+}
+
+.link__icon {
+  fill: clr(primary);
+  height: 14px;
+  margin-left: 4px;
+  width: 14px;
 }
 
 a,
 .link {
   @include link;
 
+  &--light,
   .bg--dark-gray &,
   .bg--blue &,
   .bg--dark-blue & {
-    color: clr(text-inverse);
-    text-decoration: underline;
-
-    &:hover {
-      color: clr(secondary);
-    }
+    @include light-link;
   }
 }

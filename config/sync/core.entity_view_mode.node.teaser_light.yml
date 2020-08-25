@@ -1,0 +1,10 @@
+uuid: 4fadabd1-d236-4572-9c91-ecf52e675504
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_light
+label: 'Teaser Light'
+targetEntityType: node
+cache: true

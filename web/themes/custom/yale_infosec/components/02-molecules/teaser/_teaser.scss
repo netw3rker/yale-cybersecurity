@@ -5,6 +5,19 @@
   &:first-child {
     border-top: 1px solid clr('border-light');
   }
+
+  &--light {
+    border-bottom: none;
+    padding: 0.6rem 0 0.8rem;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    .teaser__heading-link--light {
+      text-decoration: none;
+    }
+  }
 }
 
 .teaser__heading {
@@ -13,6 +26,10 @@
   font-size: 3.6rem;
   line-height: 1.49;
   margin: 0;
+}
+
+.teaser__heading-link--light {
+  color: clr(text-inverse);
 }
 
 .teaser__body {
