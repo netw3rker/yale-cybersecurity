@@ -5,6 +5,8 @@
  * Functions to preprocess.
  */
 
+use Drupal\block\Entity\Block;
+
 /**
  * Implements theme_preprocess_page.
  *
@@ -92,5 +94,20 @@ function yale_infosec_preprocess_node(array &$vars) {
 function yale_infosec_preprocess_field(array &$vars) {
   if ($vars['field_name'] === 'field_content_block') {
     $vars['home_news'] = views_embed_view('news_events', 'block_1');
+  }
+}
+
+/**
+ * Implements theme_preprocess_menu.
+ *
+ * @param array $vars
+ *   Array of variables containing menu content.
+ */
+function yale_infosec_preprocess_menu(array &$vars) {
+  if ($vars['menu_name'] === 'main') {
+    $block = Block::load('exposedformsearchsearch_page');
+    $vars['search_form'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);
   }
 }
