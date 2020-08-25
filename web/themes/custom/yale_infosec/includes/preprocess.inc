@@ -105,7 +105,7 @@ function yale_infosec_preprocess_field(array &$vars) {
  */
 function yale_infosec_preprocess_menu(array &$vars) {
   if ($vars['menu_name'] === 'main') {
-    $block = Block::load('exposedformsearchsearch_page');
+    $block = Block::load('exposedformsearchsearch_page_2');
     $vars['search_form'] = \Drupal::entityTypeManager()
       ->getViewBuilder('block')
       ->view($block);

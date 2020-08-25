@@ -1,8 +1,4 @@
 // Search block
-.search-form {
-  position: relative;
-}
-
 .search-form__close,
 .search-form__clear {
   @include btn-reset;
@@ -53,65 +49,69 @@
 }
 
 // Search block Form
-#views-exposed-form-search-search-page {
-  display: flex;
-}
+.search-form {
+  position: relative;
 
-#views-exposed-form-search-search-page .form-item {
-  margin: 0;
-  max-width: none;
-  width: 80%;
-
-  @include large {
-    width: 100%;
+  #views-exposed-form-search-search-page {
+    display: flex;
   }
-}
 
-#views-exposed-form-search-search-page .form-item__textfield {
-  border: none;
-  border-radius: 2px 0 0 2px;
-  font-family: $font-heading;
-  font-style: italic;
-  width: 100%;
-
-  @include large {
-    background-color: clr(background);
-    border-radius: 0;
-    font-size: 2.8rem;
-    line-height: 1;
-    padding: 1.3rem 2.4rem;
+  #views-exposed-form-search-search-page .form-item {
+    margin: 0;
     max-width: none;
-  }
-}
+    width: 80%;
 
-#views-exposed-form-search-search-page .form-actions  {
-  width: 20%;
-
-  @include large {
-    width: auto;
-  }
-}
-
-#views-exposed-form-search-search-page .form-submit {
-  @include button-base;
-
-  background: url(../images/icons/search-white.svg) no-repeat scroll center center clr(secondary);
-  border-radius: 0 2px 2px 0;
-  margin: 0;
-  padding: 1.3rem 1.6rem;
-  text-indent: -9999px;
-
-  @include large {
-    background-position: 153px 14px;
-    background-size: 30px 30px;
-    border-radius: 0;
-    color: clr(text-inverse);
-    font: normal 2.8rem/1 $font-body;
-    padding: $space 6rem $space 2.4rem;
-    text-indent: 0;
+    @include large {
+      width: 100%;
+    }
   }
 
-  &:hover {
-    background-color: clr(secondary-deep);
+  #views-exposed-form-search-search-page .form-item__textfield {
+    border: none;
+    border-radius: 2px 0 0 2px;
+    font-family: $font-heading;
+    font-style: italic;
+    width: 100%;
+
+    @include large {
+      background-color: clr(background);
+      border-radius: 0;
+      font-size: 2.8rem;
+      line-height: 1;
+      padding: 1.3rem 2.4rem;
+      max-width: none;
+    }
+  }
+
+  #views-exposed-form-search-search-page .form-actions  {
+    width: 20%;
+
+    @include large {
+      width: auto;
+    }
+  }
+
+  #views-exposed-form-search-search-page .form-submit {
+    @include button-base;
+
+    background: url(../images/icons/search-white.svg) no-repeat scroll center center clr(secondary);
+    border-radius: 0 2px 2px 0;
+    margin: 0;
+    padding: 1.3rem 1.6rem;
+    text-indent: -9999px;
+
+    @include large {
+      background-position: 153px 14px;
+      background-size: 30px 30px;
+      border-radius: 0;
+      color: clr(text-inverse);
+      font: normal 2.8rem/1 $font-body;
+      padding: $space 6rem $space 2.4rem;
+      text-indent: 0;
+    }
+
+    &:hover {
+      background-color: clr(secondary-deep);
+    }
   }
 }
