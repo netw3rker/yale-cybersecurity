@@ -9,7 +9,7 @@ dependencies:
     - node.type.news
     - taxonomy.vocabulary.news_category
   content:
-    - 'taxonomy_term:news_category:ff3c3420-a003-4aab-9618-7282708656e9'
+    - 'taxonomy_term:news_category:38c03b7c-92b5-4763-bb91-e9ded77af91e'
   module:
     - datetime
     - node
@@ -365,7 +365,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            1: 1
+            2: 2
           group: 1
           exposed: false
           expose:
