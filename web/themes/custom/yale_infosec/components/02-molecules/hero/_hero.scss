@@ -37,6 +37,10 @@
       width: 100%;
     }
   }
+
+  &--home {
+    margin-bottom: 0;
+  }
 }
 
 .hero__image {
@@ -104,6 +108,7 @@
 
     @include medium {
       position: relative;
+      bottom: auto;
     }
 
     @include large {
