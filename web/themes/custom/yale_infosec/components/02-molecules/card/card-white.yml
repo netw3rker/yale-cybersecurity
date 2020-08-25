@@ -1,0 +1,4 @@
+card__modifiers:
+  - 'white'
+card_link: '#'
+card_link_content: 'Click here'
