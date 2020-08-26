@@ -28,6 +28,14 @@
   margin: 0;
 }
 
+.teaser__subheading {
+  color: color(gray-4a);
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.49;
+  margin: 0 0 $space;
+}
+
 .teaser__heading-link--light {
   color: clr(text-inverse);
 }

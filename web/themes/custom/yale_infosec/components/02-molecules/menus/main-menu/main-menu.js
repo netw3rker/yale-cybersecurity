@@ -59,9 +59,13 @@ Drupal.behaviors.mainMenu = {
 
       // Search button
       searchBtn.addEventListener('click', e => {
-        const searchForm = e.currentTarget.previousElementSibling.previousElementSibling;
+        const searchForm = e.currentTarget.nextElementSibling;
+        const search = searchForm.querySelectorAll('.form-text');
 
         searchForm.classList.add('main-nav-search--open');
+        for (let i = 0; i < search.length; i += 1) {
+          search[i].focus();
+        }
       });
     }
   },

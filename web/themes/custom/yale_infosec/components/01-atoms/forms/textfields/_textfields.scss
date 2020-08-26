@@ -23,7 +23,7 @@
   border-radius: 3px;
   line-height: 1.56;
   padding: $space-one-half;
-  max-width: 100%;
+  width: 100%;
 
   &:focus {
     border-color: clr(accent-high);
@@ -51,5 +51,10 @@
 }
 
 .form-submit {
+  @include buttonClr;
+
+  border: none;
+  margin-left: 1rem;
+  padding: 1.1rem 2rem;
   text-transform: uppercase;
 }

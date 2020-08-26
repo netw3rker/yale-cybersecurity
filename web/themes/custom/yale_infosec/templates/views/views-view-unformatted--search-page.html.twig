@@ -16,15 +16,13 @@
  */
 #}
 
-{% embed "@organisms/lists/teaser-list.twig" with {
-  teaser_list__modifiers: ['light'],
-  teaser_list__heading: "Announcements",
-  teaser_list__link_content: "More Announcements",
-  teaser_list__link_url: "/news-events"
-} %}
-  {% block items %}
-    {% for row in rows %}
-      {{ row.content }}
-    {% endfor %}
+{% extends "@molecules/text-section/text-section.twig" %}
+  {% block text_section_content %}
+    {% embed "@organisms/lists/teaser-list.twig" %}
+      {% block items %}
+        {% for row in rows %}
+          {{ row.content }}
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
   {% endblock %}
-{% endembed %}

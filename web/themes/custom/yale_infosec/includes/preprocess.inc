@@ -38,6 +38,7 @@ function yale_infosec_preprocess_paragraph(array &$vars) {
   $paragraph = $vars['paragraph'];
   // Parent information.
   $parent = $paragraph->getParentEntity();
+  // Home.
   if ($parent->bundle() === 'frontpage') {
     $vars['title'] = $parent->label();
     // Title.
@@ -48,6 +49,10 @@ function yale_infosec_preprocess_paragraph(array &$vars) {
     if (!empty($parent->get('field_header_subtitle'))) {
       $vars['subTitle'] = $parent->get('field_header_subtitle')->getString();
     }
+  }
+  // Guide.
+  if ($parent->bundle() === 'guide') {
+    $vars['title'] = $parent->label();
   }
 
   // Custom Card Grid Specific.
@@ -105,7 +110,7 @@ function yale_infosec_preprocess_field(array &$vars) {
  */
 function yale_infosec_preprocess_menu(array &$vars) {
   if ($vars['menu_name'] === 'main') {
-    $block = Block::load('exposedformsearchsearch_page');
+    $block = Block::load('exposedformsearchsearch_page_2');
     $vars['search_form'] = \Drupal::entityTypeManager()
       ->getViewBuilder('block')
       ->view($block);
