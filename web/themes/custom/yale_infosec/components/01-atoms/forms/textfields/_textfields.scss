@@ -51,5 +51,10 @@
 }
 
 .form-submit {
+  @include buttonClr;
+
+  border: none;
+  margin-left: 1rem;
+  padding: 1.1rem 2rem;
   text-transform: uppercase;
 }

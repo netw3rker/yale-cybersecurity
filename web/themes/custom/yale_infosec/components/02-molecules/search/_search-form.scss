@@ -1,0 +1,13 @@
+#block-exposedformsearchsearch-page {
+  #views-exposed-form-search-search-page {
+    display: flex;
+
+    .form-submit {
+      background-image: url(../images/icons/search-white.svg);
+      background-position: 16px 13px;
+      background-repeat: no-repeat;
+      background-size: 17px 17px;
+      padding: 1.1rem 2rem 1.1rem 4rem;
+    }
+  }
+}

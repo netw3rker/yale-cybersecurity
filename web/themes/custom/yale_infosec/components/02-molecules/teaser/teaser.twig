@@ -34,6 +34,15 @@
     } %}
     {{ title_suffix }}
   {% endif %}
+  {% if teaser__sub_heading %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: teaser__heading__base_class|default('subheading'),
+      heading_modifiers: teaser__modifiers,
+      heading_blockname: teaser__base_class,
+      heading_level: 3,
+      heading: teaser__sub_heading,
+    } %}
+  {% endif %}
   {# Body #}
   {% if teaser__body %}
     {% include "@atoms/text/text/01-paragraph.twig" with {
