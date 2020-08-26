@@ -73,6 +73,7 @@
 
 {% include "@molecules/teaser/teaser.twig" with {
   teaser__heading: label,
+  teaser__sub_heading: url('<front>')['#markup'] ~ url|trim('/', side="left"),
   teaser__body: content.field_teaser_text,
   teaser__link__url: url,
 } %}
