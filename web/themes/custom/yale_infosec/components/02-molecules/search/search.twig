@@ -17,12 +17,6 @@
 
 <div {{ bem(search_form__base_class) }}>
   <button {{ add_attributes(search_close_attributes) }}>Close Search</button>
-  <button {{ add_attributes(search_clear_attributes) }}>
-    {% include "@atoms/images/icons/_icon.twig" with {
-      icon_blockname: search_form__base_class,
-      icon_name: "close-circle",
-    } %}
-  </button>
   {% block search_form %}
     <form id="views-exposed-form-search-search-page">
       <div class="form-item">
@@ -34,4 +28,10 @@
       </div>
     </form>
   {% endblock %}
+  <button {{ add_attributes(search_clear_attributes) }}>
+    {% include "@atoms/images/icons/_icon.twig" with {
+      icon_blockname: search_form__base_class,
+      icon_name: "close-circle",
+    } %}
+  </button>
  </div>

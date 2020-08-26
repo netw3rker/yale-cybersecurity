@@ -2,6 +2,7 @@ Drupal.behaviors.searchForm = {
   attach(context) {
     const clearSearch = context.getElementById('search-clear');
     const closeSearch = context.getElementById('search-close');
+    const openSearch = context.getElementById('search-btn');
     
     // Clear search text.
     clearSearch.addEventListener('click', e => {
@@ -19,6 +20,8 @@ Drupal.behaviors.searchForm = {
       for (let i = 0; i < mainNav.length; i += 1) {
         mainNav[i].classList.remove('main-nav-search--open')
       }
+
+      openSearch.focus();
     });
   },
 };
