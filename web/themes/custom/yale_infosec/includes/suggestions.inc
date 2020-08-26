@@ -35,3 +35,10 @@ function yale_infosec_theme_suggestions_time_alter(array &$suggestions, array $v
     $suggestions[] = 'time__' . $node->bundle();
   }
 }
+
+/**
+ * Implements theme_suggestions_form_alter().
+ */
+function yale_infosec_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#id']);
+}

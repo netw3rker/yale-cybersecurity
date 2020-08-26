@@ -17,6 +17,10 @@
   &:hover {
     text-decoration: none;
   }
+
+  &[type="submit"] {
+    margin: 0;
+  }
 }
 
 // Button color variations

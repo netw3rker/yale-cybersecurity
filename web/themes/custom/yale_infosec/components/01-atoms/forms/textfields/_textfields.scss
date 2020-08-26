@@ -18,10 +18,9 @@
 }
 
 .form-item__textfield {
-  border: 1px solid clr(highlight-high);
-  color: clr('gray-4a');
-  font-size: 1.8rem;
-  font-style: italic;
+  background-color: clr(accentsubtle);
+  border: 1px solid color(gray-4a);
+  border-radius: 3px;
   line-height: 1.56;
   padding: $space-one-half;
   max-width: 100%;
@@ -49,4 +48,8 @@
     margin-left: 1em;
     max-width: 31em;
   }
+}
+
+.form-submit {
+  text-transform: uppercase;
 }

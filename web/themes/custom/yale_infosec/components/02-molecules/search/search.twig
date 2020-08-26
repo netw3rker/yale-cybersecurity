@@ -1,0 +1,37 @@
+{#
+ # Available variables:
+ # - search_form__base_class - base classname of the wrapper.
+ #}
+
+{% set search_form__base_class = 'search-form' %}
+
+{% set search_close_attributes = {
+  class: bem('close', [], search_form__base_class),
+  id: 'search-close'
+} %}
+
+{% set search_clear_attributes = {
+  class: bem('clear', [], search_form__base_class),
+  id: 'search-clear'
+} %}
+
+<div {{ bem(search_form__base_class) }}>
+  <button {{ add_attributes(search_close_attributes) }}>Close Search</button>
+  <button {{ add_attributes(search_clear_attributes) }}>
+    {% include "@atoms/images/icons/_icon.twig" with {
+      icon_blockname: search_form__base_class,
+      icon_name: "close-circle",
+    } %}
+  </button>
+  {% block search_form %}
+    <form id="views-exposed-form-search-search-page">
+      <div class="form-item">
+        <input id="edit-search" type="text" class="form-text form-item__textfield" placeholder="Search terms">
+      </div>
+
+      <div class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+        <input type="submit" id="edit-submit-search" value="Search" class="button js-form-submit form-submit form-item__textfield">
+      </div>
+    </form>
+  {% endblock %}
+ </div>
