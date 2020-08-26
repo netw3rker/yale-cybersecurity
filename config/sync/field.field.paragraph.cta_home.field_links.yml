@@ -13,7 +13,7 @@ entity_type: paragraph
 bundle: cta_home
 label: Links
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
