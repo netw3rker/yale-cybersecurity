@@ -1,18 +1,17 @@
-uuid: 1cfd1bfd-7d9b-41e5-ba22-dc6f3bc07b29
+uuid: e2a55066-b06b-4248-8d19-bbd5e04ad36f
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.search
   module:
-    - system
     - views
   theme:
     - yale_infosec
-id: exposedformsearchsearch_page
+id: exposedformsearchsearch_page_2
 theme: yale_infosec
-region: content_top
-weight: -3
+region: header
+weight: 0
 provider: null
 plugin: 'views_exposed_filter_block:search-search_page'
 settings:
@@ -21,9 +20,4 @@ settings:
   provider: views
   label_display: '0'
   views_label: ''
-visibility:
-  request_path:
-    id: request_path
-    pages: "/search\r\n/search/*"
-    negate: false
-    context_mapping: {  }
+visibility: {  }

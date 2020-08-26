@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - block.block.exposedformsearchsearch_page
     - search_api.index.global_index
   module:
     - search_api
@@ -208,20 +207,7 @@ display:
             label: ''
           plugin_id: search_api
       title: Search
-      header:
-        entity_block:
-          id: entity_block
-          table: views
-          field: entity_block
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: true
-          target: exposedformsearchsearch_page
-          view_mode: default
-          bypass_access: false
-          plugin_id: entity
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
