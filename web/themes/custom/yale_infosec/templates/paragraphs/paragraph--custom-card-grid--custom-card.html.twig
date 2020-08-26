@@ -39,7 +39,7 @@
 
 {% embed "@molecules/card/card.twig" with {
   card__modifiers: (card_size == 'large') ? ['blue'] : ['white'],
-  card__extra_classes: ['grid__item-three'],
+  card__extra_classes: (card_size == 'large') ? ['grid__item'] : ['grid__item-three'],
   card__heading: content.field_heading,
   card__link__url: content.field_link.0['#url'],
   card_link: (card_size == 'small') ? content.field_link.0['#url'],
