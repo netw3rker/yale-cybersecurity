@@ -9,7 +9,7 @@ dependencies:
 id: entityviewcontent_2
 theme: yale_infosec
 region: content_top
-weight: -3
+weight: -2
 provider: null
 plugin: 'entity_view:node'
 settings:

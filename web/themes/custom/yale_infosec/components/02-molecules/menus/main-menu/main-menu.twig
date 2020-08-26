@@ -26,12 +26,6 @@
   </a>
   {# Main Nav #}
   <div id="main-nav" class="main-nav">
-    {# Search #}
-    <div class="main-nav-search">
-      {% block nav_search %}
-        {% include "@molecules/search/search.twig" %}
-      {% endblock %}
-    </div>
     {% include "@molecules/menus/_menu.twig" with {
       menu_class: "main-menu",
       items: menu_items,
@@ -43,5 +37,11 @@
         icon_name: "search",
       } %}
     </button>
+    {# Search #}
+    <div class="main-nav-search">
+      {% block nav_search %}
+        {% include "@molecules/search/search.twig" %}
+      {% endblock %}
+    </div>
   </div>
 </nav>

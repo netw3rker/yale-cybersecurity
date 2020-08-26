@@ -1,6 +1,7 @@
 .main-nav-search {
   margin-bottom: 2rem;
   margin-top: 1rem;
+  order: 0;
 
   @include large {
     display: none;
@@ -19,6 +20,7 @@
 .main-nav__search_btn {
   @include btn-reset;
 
+  order: 2;
   padding: 0;
 
   &:hover {
