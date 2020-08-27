@@ -55,6 +55,9 @@ class MSSCalculatorController extends ControllerBase {
     if ($spec->field_required->getValue()[0]['value']) {
       $out['required'] = 'Required';
     }
+    else {
+      $out['not-required'] = 'Not Required';
+    }
 
     // Upcoming.
     if ($spec->field_upcoming->getValue()[0]['value']) {
@@ -284,8 +287,10 @@ class MSSCalculatorController extends ControllerBase {
     // phpcs:ignore
     $nodes = Node::loadMultiple($items);
     foreach ($nodes as $node) {
+
       $primary = [
         'title' => $node->getTitle(),
+        'description' => $node->get('field_standard_description')->isEmpty() ? '' : $node->get('field_standard_description')->getValue()[0]['value'],
         'secondaries' => [],
       ];
 
