@@ -118,7 +118,7 @@ function yi_mss_import_get_nid($data, $header, $terms) {
   // Build out all 12 specs for every node.
   $specs = [];
   foreach ($types as $col => $val) {
-    $info = array_map('trim', explode("\n", strtolower($data->$col)));
+    $info = array_filter(array_map('trim', explode("\n", strtolower($data->$col))));
 
     $obligations = [];
     if (in_array('hipaa', $info)) {
@@ -129,11 +129,23 @@ function yi_mss_import_get_nid($data, $header, $terms) {
       $obligations[] = ['target_id' => $terms['pci']];
     }
 
+    // Required: True if "x", or anything other than "o".
+    $required = FALSE;
+
+    // If there's only one item... it's required if it's not upcoming.
+    if (count($info) == 1) {
+      $required = !in_array('o', $info);
+    }
+    elseif (count($info) > 1) {
+      // If there's more than one item, it's guaranteed to be required.
+      $required = TRUE;
+    }
+
     $specs[] = Paragraph::create([
       'type' => 'specification',
       'field_internet_access' => in_array('ia', $info),
       'field_obligation' => $obligations,
-      'field_required' => in_array('x', $info),
+      'field_required' => $required,
       'field_upcoming' => in_array('o', $info),
       'field_risk_level' => ['target_id' => $terms[$val[0]]],
       'field_device_type' => ['target_id' => $terms[$val[1]]],
