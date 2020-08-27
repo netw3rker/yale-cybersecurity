@@ -114,13 +114,27 @@ class MSSCalculatorController extends ControllerBase {
     $specs = \Drupal::entityQuery('paragraph')
       ->condition('type', 'specification')
       ->condition('field_device_type', $args->type)
-      ->condition('field_internet_access', $args->access)
-      ->condition('field_risk_level', $args->risk);
+      ->condition('field_risk_level', $args->risk)
+      ->condition('field_required', 1);
 
-    // The only optional one.
-    if ($args->obligations) {
-      $specs->condition('field_obligation', explode(',', $args->obligations), 'IN');
+    // Filter down "access = true" if access arg = false.
+    if (!$args->access) {
+      $specs->condition('field_internet_access', 0);
     }
+
+    // Don't select anything with an obligation if none are selected.
+    if (!$args->obligations) {
+      $specs->notExists('field_obligation');
+    }
+    else {
+      // Add obligation filters if there are some.
+      // phpcs:ignore
+      $group = \Drupal::entityQuery('paragraph')->orConditionGroup()
+        ->notExists('field_obligation')
+        ->condition('field_obligation', explode(',', $args->obligations), 'IN');
+      $specs->condition($group);
+    }
+
     $specs = $specs->execute();
 
     // No results?
