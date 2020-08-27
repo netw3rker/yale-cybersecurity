@@ -1,0 +1,5 @@
+mss-styles:
+  version: 1.x
+  css:
+    theme:
+      yi-mss-calculator.css: {}

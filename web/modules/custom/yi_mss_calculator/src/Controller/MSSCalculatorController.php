@@ -316,6 +316,7 @@ class MSSCalculatorController extends ControllerBase {
       '#theme' => 'yi_mss_calculator_listing_page',
       '#standards' => $standards,
       '#header_text' => $config->get('listing_header'),
+      '#attached' => ['library' => ['yi_mss_calculator/mss-styles']],
     ];
 
     return $build;

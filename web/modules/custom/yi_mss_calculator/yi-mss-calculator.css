@@ -1,0 +1,111 @@
+/* Cheap hack to mimic page layout grids */
+.standard-primary,
+.standard-listing-header {
+  margin-left: 5em;
+  margin-right: 16em;
+}
+
+.standard-primary h2 {
+  font-weight: normal;
+  color: var(--c-text-heavy);
+  font-family: "YaleNew",serif;
+  font-size: 4.8rem;
+  margin-bottom: 0;
+  line-height: 5rem;
+}
+
+.standard-primary h3 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 3.5rem;
+}
+
+.standard-primary h3 p {
+  margin: 0;
+}
+
+.standard-primary .standard-secondary {
+  margin-bottom: 1.3em;
+}
+
+.standard-primary .standard-secondary:last-child {
+  margin-bottom: 3.5em;
+}
+
+.standard-primary .standard-secondary h4 {
+  background-color: var(--c-background-inverse);
+  color: var(--c-text-inverse);
+  padding: 0.6em 0.9em 0.3em;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.standard-primary .standard-secondary h4 a {
+  text-decoration: underline;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b2c2d2;
+}
+
+.standard-secondary-grid a:link,
+.standard-secondary-grid a:hover,
+.standard-secondary-grid a:visited {
+  color: var(--c-background-deep);
+  text-decoration: none;
+}
+
+.standard-secondary-grid a {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px 1px;
+  grid-template-areas: ". . ." ". . ." ". . ." ". . .";
+  background-color: #cfcbc7;
+  padding-bottom: 1px;
+}
+
+.standard-secondary-grid a span:nth-child(n + 4),
+.standard-secondary-grid a span.standard-secondary-spec-item:nth-child(n + 10) {
+  background: var(--c-accentsubtle);
+}
+
+.standard-secondary-grid a > span,
+.standard-secondary-grid a > span:nth-child(n + 7) {
+  background: white;
+  padding: 0.5em;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+}
+
+.standard-secondary-grid .standard-spec-labels {
+  margin-left: 1rem;
+}
+
+.standard-spec-labels p {
+  display: inline;
+  font-size: 1rem;
+  padding: 0.1em 0.6em;
+  background-color: #dddddd;
+  border-radius: 0.7em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.standard-spec-labels p.label-required {
+  background-color: #bd1919;
+  color: var(--c-text-inverse);
+}
+
+.standard-spec-labels p.label-upcoming {
+  background-color: var(--c-text-deep);
+  color: var(--c-text-inverse);
+}
+
+.standard-spec-labels p.label-hipaa,
+.standard-spec-labels p.label-pci {
+  background-color: var(--c-secondary);
+  color: var(--c-text-inverse);
+}
