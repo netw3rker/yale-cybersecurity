@@ -14,7 +14,7 @@
       <span class="standard-child-spec-item">
         {{ spec.title }}
         {% if spec.labels|length > 0 %}
-        <span class="labels">
+        <span class="standard-spec-labels">
             {% for class, label in spec.labels %}
             <p class="label-{{class}}">{{ label }}</p>
             {% endfor %}

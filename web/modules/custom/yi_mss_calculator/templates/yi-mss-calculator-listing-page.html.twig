@@ -1,25 +1,24 @@
-<p>{{ header_text }}</p>
+<p class="standard-listing-header">{{ header_text }}</p>
 
 {% for primary in standards %}
 <div class="standard-primary">
-  <h2>
-    {{ primary.title }}
-  </h2>
+  <h2> {{ primary.title }} </h2>
+  <h3> {{ primary.description|raw }} </h3>
 
   {% for secondary in primary.secondaries %}
   <div class="standard-secondary">
-    <h3>
+    <h4>
       {{ secondary.title }}
       <br>
       {{ link('Read the Full Spec', secondary.uri) }}
-    </h3>
+    </h4>
     <div class="standard-secondary-grid">
       <a href="{{ secondary.uri }}" title="To get more details, see the spec.">
         {% for spec in secondary.specifications %}
         <span class="standard-secondary-spec-item">
           {{ spec.title }}
           {% if spec.labels|length > 0 %}
-          <span class="labels">
+          <span class="standard-spec-labels">
               {% for class, label in spec.labels %}
               <p class="label-{{class}}">{{ label }}</p>
               {% endfor %}
