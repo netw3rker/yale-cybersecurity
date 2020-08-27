@@ -17,7 +17,7 @@
     {{ title_prefix }}
     {% include "@atoms/text/headings/_heading.twig" with {
       heading_base_class: teaser_list__heading__base_class|default('heading'),
-      heading_modifiers: teaser_list__heading__modifiers,
+      heading_modifiers: teaser_list__modifiers,
       heading_blockname: teaser_list__base_class,
       heading_level: 2,
       heading: teaser_list__heading,
@@ -28,6 +28,7 @@
     {% block items %}
       {% for item in teaser_list__items %}
         {% include "@molecules/teaser/teaser.twig" with {
+          teaser__modifiers: item.teaser__modifiers,
           teaser__heading: item.teaser__heading,
           teaser__body: item.teaser__body,
           teaser__link__url: item.teaser__link__url,
@@ -35,4 +36,13 @@
       {% endfor %}
     {% endblock %}
   </div>
+  {% if teaser_list__link_content %}
+    {% include "@atoms/links/link/link.twig" with {
+      link_blockname: teaser_list__base_class,
+      link_modifiers: teaser_list__modifiers,
+      link_content: teaser_list__link_content,
+      link_url: teaser_list__link_url,
+      link_icon: 'arrow-right',
+    } %}
+  {% endif %}
 </div>

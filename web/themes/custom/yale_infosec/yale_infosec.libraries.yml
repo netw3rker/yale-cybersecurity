@@ -27,3 +27,9 @@ alert:
     https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js: { type: external, minified: true }
   dependencies:
     - core/drupal
+
+search:
+  js:
+    dist/js/02-molecules/search/search.js: {}
+  dependencies:
+    - core/drupal

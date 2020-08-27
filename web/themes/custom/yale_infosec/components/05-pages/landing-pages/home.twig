@@ -1,6 +1,6 @@
 {% set hero_img = true %}
 
-{% extends "@templates/primary.twig" %}
+{% extends "@templates/_default.twig" %}
   {% block page_hero %}
     {% include "@molecules/hero/hero.twig" with {
       hero__modifiers: ['home'],
@@ -8,15 +8,22 @@
       hero_heading: 'Empowered Users, Safer Yale.',
       hero_subheading: 'We are here to empower you to stay safe online.',
     } %}
+    {% include "@organisms/grid/grid-container.twig" with {
+      grid_container_modifiers: ['pattern', 'pulled'],
+      item_type: 'cta',
+      grid_type: 'cta',
+      grid_label: '',
+      items: grid_cta_items,
+    } %}
   {% endblock %}
   {% block page_content %}
-    {% include "@atoms/text/headings/_heading.twig" with {
-      heading_level: '2',
-      heading: 'Page Intro',
+    {% embed "@organisms/bg/bg.twig" with {
+      bg__modifiers: ['blue', 'top-shadow', 'white-content'],
     } %}
-    {% include "@atoms/text/text/01-paragraph.twig" with {
-      paragraph_content: 'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.',
-    } %}
+      {% block bg_contents %}
+        {% include "@pages/landing-pages/home-split-section.twig" %}
+      {% endblock %}
+    {% endembed %}
     {% include "@molecules/cta/cta.twig" %}
     {% include "@organisms/grid/grid-container.twig" with {
       grid_container_modifiers: ['pattern']

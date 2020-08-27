@@ -87,7 +87,6 @@
       font-size: 6.4rem;
       line-height: 1.15;
       margin-bottom: $space-double;
-      max-width: 93%;
 
       .cta__inner--right & {
         max-width: none;
@@ -103,10 +102,6 @@
   line-height: 1.21;
   margin: 0 0 $space;
 
-  &--featured {
-    font-size: 1.9rem;
-  }
-
   p {
     margin: 0 0 $space;
   }
@@ -118,6 +113,10 @@
   @include medium {
     font-size: 2.7rem;
     line-height: 1.21;
+  }
+
+  &--featured {
+    font-size: 1.9rem;
   }
 }
 

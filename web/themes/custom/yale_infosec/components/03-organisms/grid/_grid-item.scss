@@ -28,6 +28,33 @@
   }
 }
 
+@mixin grid-item-4 {
+  margin-bottom: $space-double;
+
+  @include medium {
+    margin: 0 4% 4% 0;
+    width: 48%;
+
+    &:nth-child(2n),
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include large {
+    margin: 0 2% 2% 0;
+    width: 23.5%;
+
+    &:nth-child(2n) {
+      margin-right: 2%;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
 .grid__item {
   @include grid-item;
 
@@ -40,4 +67,8 @@
 
 .grid__item-three {
   @include grid-item-3;
+}
+
+.grid__item-four {
+  @include grid-item-4;
 }

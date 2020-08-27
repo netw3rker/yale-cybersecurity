@@ -18,6 +18,12 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-{% include "@molecules/menus/main-menu/main-menu.twig" with {
+{{ attach_library('yale_infosec/search') }}
+
+{% embed "@molecules/menus/main-menu/main-menu.twig" with {
   menu_items: items,
 } %}
+  {% block nav_search %}
+    {{ search_form }}
+  {% endblock %}
+{% endembed %}

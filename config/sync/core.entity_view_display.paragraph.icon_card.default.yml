@@ -1,0 +1,73 @@
+uuid: ed2cb62c-b53d-41ab-b979-031ed104bf0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icon_card.field_color_scheme
+    - field.field.paragraph.icon_card.field_cta_link
+    - field.field.paragraph.icon_card.field_heading
+    - field.field.paragraph.icon_card.field_svg_icon
+    - field.field.paragraph.icon_card.field_text
+    - paragraphs.paragraphs_type.icon_card
+  module:
+    - link
+    - options
+    - svg_formatter
+    - text
+id: paragraph.icon_card.default
+targetEntityType: paragraph
+bundle: icon_card
+mode: default
+content:
+  field_color_scheme:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_cta_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  field_heading:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_svg_icon:
+    weight: 1
+    label: hidden
+    settings:
+      inline: true
+      sanitize: true
+      apply_dimensions: true
+      width: 100
+      height: 100
+      enable_alt: true
+      alt_string: ''
+      enable_title: true
+      title_string: ''
+    third_party_settings: {  }
+    type: svg_formatter
+    region: content
+  field_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true

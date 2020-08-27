@@ -22,8 +22,8 @@ third_party_settings:
   field_group:
     group_intro:
       children:
-        - field_intro_text
         - field_intro_aside
+        - field_intro_text
       parent_name: ''
       weight: 2
       format_type: html_element
@@ -50,7 +50,7 @@ content:
     type: basic_string
     weight: 0
     region: content
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
 hidden:

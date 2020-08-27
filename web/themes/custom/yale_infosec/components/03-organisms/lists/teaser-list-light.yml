@@ -1,0 +1,17 @@
+teaser_list__modifiers:
+  - 'light'
+teaser_list__heading: 'Lorem Ipsum Dolor'
+teaser_list__items:
+  - teaser__modifiers:
+      - 'light'
+    teaser__heading: "Consetetur Sadipscing Elitr"
+    teaser__link__url: "#"
+  - teaser__modifiers:
+      - 'light'
+    teaser__heading: "Sed Diam Nonumy Eirmod"
+    teaser__link__url: "#"
+  - teaser__modifiers:
+      - 'light'
+    teaser__heading: "Ut Labore Et Dolore"
+    teaser__link__url: "#"
+teaser_list__link_content: 'More of this'

@@ -3,6 +3,7 @@ Drupal.behaviors.mainMenu = {
     const toggleExpand = context.getElementById('toggle-expand');
     const menu = context.getElementById('main-nav');
     const header = context.getElementById('site-header');
+    const searchBtn = context.getElementById("search-btn");
     
     if (menu) {
       const expandMenu = menu.getElementsByClassName('expand-sub');
@@ -55,6 +56,17 @@ Drupal.behaviors.mainMenu = {
           prevParentMenu.classList.add('main-menu__child-menu--sub-current');
         });
       }
+
+      // Search button
+      searchBtn.addEventListener('click', e => {
+        const searchForm = e.currentTarget.nextElementSibling;
+        const search = searchForm.querySelectorAll('.form-text');
+
+        searchForm.classList.add('main-nav-search--open');
+        for (let i = 0; i < search.length; i += 1) {
+          search[i].focus();
+        }
+      });
     }
   },
 };

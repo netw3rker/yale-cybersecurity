@@ -7,7 +7,7 @@ dependencies:
 id: tabs
 theme: yale_infosec
 region: content_top
-weight: -2
+weight: -1
 provider: null
 plugin: local_tasks_block
 settings:

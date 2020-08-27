@@ -1,0 +1,27 @@
+uuid: 102ae564-55db-46c0-adcc-1ec09f3a7c71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_svg_icon
+    - paragraphs.paragraphs_type.icon_card
+  module:
+    - file
+id: paragraph.icon_card.field_svg_icon
+field_name: field_svg_icon
+entity_type: paragraph
+bundle: icon_card
+label: 'SVG Icon'
+description: 'Be sure to not have a fill color on your SVG, as the system will fill it with the color scheme color.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: svg
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

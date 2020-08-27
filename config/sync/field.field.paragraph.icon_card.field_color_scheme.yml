@@ -1,0 +1,21 @@
+uuid: 1373180b-2637-4a3c-9701-dd050b97fb97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color_scheme
+    - paragraphs.paragraphs_type.icon_card
+  module:
+    - options
+id: paragraph.icon_card.field_color_scheme
+field_name: field_color_scheme
+entity_type: paragraph
+bundle: icon_card
+label: 'Color Scheme'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
