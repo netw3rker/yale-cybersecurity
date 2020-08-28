@@ -78,7 +78,7 @@
 
 {% embed "@molecules/card/card.twig" with {
   card__modifiers: node.isSticky() ? 'sbs',
-  card__extra_classes: threeAcross ? ["grid__item-three"] : ["grid__item"],
+  card__extra_classes: ["grid__item"],
   card__heading: label,
   card__body: content.field_teaser_text,
   card__host: content.field_event_host.0,

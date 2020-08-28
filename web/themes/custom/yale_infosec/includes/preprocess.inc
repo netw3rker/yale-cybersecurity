@@ -74,23 +74,6 @@ function yale_infosec_preprocess_time(array &$vars) {
 }
 
 /**
- * Implements theme_preprocess_node.
- *
- * @param array $vars
- *   Array of variables containing field content.
- */
-function yale_infosec_preprocess_node(array &$vars) {
-  if ($vars['view_mode'] === 'card') {
-    // If News and Events view.
-    if (isset($vars['view'])) {
-      if ($vars['view']->id() === 'news_events') {
-        $vars['threeAcross'] = TRUE;
-      }
-    }
-  }
-}
-
-/**
  * Implements theme_preprocess_field.
  *
  * @param array $vars
