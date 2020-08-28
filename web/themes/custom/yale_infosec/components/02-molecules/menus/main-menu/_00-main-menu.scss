@@ -93,6 +93,10 @@ $main-menu-medium: $medium;
 
     @include large {
       display: none;
+
+      .main-menu--sub & {
+        display: block;
+      }
     }
   }
 
@@ -126,12 +130,22 @@ $main-menu-medium: $medium;
     height: auto;
     left: -$space;
     overflow: visible;
-    position: absolute;
     transform: none;
     top: 40px;
     width: 315px;
     z-index: 1;
     font-size: 0.9rem;
+
+    .main-menu__child-menu {
+      display: block;
+      transform: translateX(100%);
+
+      &--sub-open {
+        height: 100%;
+        top: 0;
+        transform: translateX(0);
+      }
+    }
   }
 
   &--sub-open {
@@ -150,11 +164,11 @@ $main-menu-medium: $medium;
   }
 }
 
-.main-menu--sub-2 {
-  @include large {
-    display: none; /* Never shown on large screens */
-  }
-}
+// .main-menu--sub-2 {
+//   @include large {
+//     display: none; /* Never shown on large screens */
+//   }
+// }
 
 // Search Icon
 .search__icon {

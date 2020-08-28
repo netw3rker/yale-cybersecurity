@@ -19,11 +19,16 @@
 
       & > .main-menu__child-menu {
         display: block;
+        overflow: hidden;
       }
     }
 
     &--not-hovered {
       opacity: 0.8;
+    }
+
+    .main-menu--sub & {
+      position: static;
     }
   }
 
@@ -31,6 +36,10 @@
     .main-menu__link::after {
       color: clr(text);
     }
+  }
+
+  .main-menu__item {
+    display: flex;
   }
 }
 
@@ -54,6 +63,10 @@
   &--open {
     background-color: clr(accent-high);
     color: clr(muted);
+  }
+
+  .main-menu__child-menu & {
+    display: flex;
   }
 }
 
