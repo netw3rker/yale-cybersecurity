@@ -44,6 +44,8 @@ class MSSCalculatorFilterForm extends FormBase {
       '#markup' => $config->get('filter_header'),
     ];
 
+    $form['#prefix'] = '<div class="yi-mss-calculator-form-wrapper">';
+
     // Device types.
     $form['type'] = [
       '#title' => $this->t('Choose Device Type'),
@@ -86,6 +88,9 @@ class MSSCalculatorFilterForm extends FormBase {
       '#value' => $this->t('Find Your MSS Requirements'),
       '#button_type' => 'primary',
     ];
+
+    $form['#suffix'] = '</div>';
+
     return $form;
   }
 

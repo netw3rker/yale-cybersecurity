@@ -243,10 +243,14 @@ class MSSCalculatorController extends ControllerBase {
       '#results' => $results,
     ];
 
+    $build['overview']['#attached']['library'][] = 'yi_mss_calculator/mss-library';
+
     $build['download'] = [
       '#type' => 'link',
       '#url' => Url::fromRoute('yi_mss_calculator.download', [], ['query' => (array) $filters]),
       '#title' => $this->t('View Full Report'),
+      '#prefix' => '<div class="mss-view-report">',
+      '#suffix' => '</div>',
     ];
 
     $build['primary'] = [
@@ -330,7 +334,7 @@ class MSSCalculatorController extends ControllerBase {
       '#theme' => 'yi_mss_calculator_listing_page',
       '#standards' => $standards,
       '#header_text' => $config->get('listing_header'),
-      '#attached' => ['library' => ['yi_mss_calculator/mss-styles']],
+      '#attached' => ['library' => ['yi_mss_calculator/mss-library']],
     ];
 
     return $build;

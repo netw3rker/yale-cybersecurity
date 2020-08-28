@@ -1,0 +1,77 @@
+.yi-mss-calculator-form-wrapper {
+  @include wrapper;
+
+  margin-bottom: $space-triple;
+
+  @include large {
+    @include grid;
+  }
+}
+
+.yi-mss-calculator-form {
+  grid-area: content;
+
+  .fieldgroup {
+    legend {
+      margin-bottom: $space-half;
+    }
+
+    .form-item {
+      margin: 0;
+    }
+
+    /* Button rows */
+    .form-item--radio,
+    .form-item--checkboxes {
+      display: flex;
+
+      .form-item__label {
+        margin-right: $space;
+      }
+    }
+
+    .form-item__textfield {
+      display: none;
+    }
+
+    /* Faux buttons */
+    .form-item__label {
+      @include button-base;
+      @include button-bg;
+
+      @extend .button--primary;
+
+      &::before {
+        content: '';
+        transition: all 0.15s;
+      }
+    }
+
+    /* Faux buttons:checked */
+    input[type="radio"]:checked,
+    input[type="checkbox"]:checked {
+      +.form-item__label {
+        @include buttonColors(secondary);
+
+        display: inline-flex;
+
+        &::before {
+          background-image: url('../images/icons/check.svg');
+          width: 17px;
+          height: 17px;
+          margin-right: $space-half;
+        }
+      }
+    }
+
+  }
+
+  .button.form-submit {
+    font-size: 2.4rem;
+    display: block;
+    width: auto;
+    margin-left: 0;
+    margin-top: 10rem;
+    padding: 1.1rem 10rem;
+  }
+}
