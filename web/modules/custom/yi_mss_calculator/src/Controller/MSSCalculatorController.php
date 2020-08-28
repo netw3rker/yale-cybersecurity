@@ -241,9 +241,8 @@ class MSSCalculatorController extends ControllerBase {
       '#theme' => 'yi_mss_calculator_overview',
       '#filters' => $this->getFilterStrings($filters),
       '#results' => $results,
+      '#attached' => ['library' => ['yi_mss_calculator/mss-library']],
     ];
-
-    $build['overview']['#attached']['library'][] = 'yi_mss_calculator/mss-library';
 
     $build['download'] = [
       '#type' => 'link',
