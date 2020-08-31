@@ -1,3 +1,5 @@
+$overviewWhite: #F9F9F9;
+
 .mss-overview-wrapper {
   @include wrapper;
 
@@ -13,7 +15,7 @@
 }
 
 .mss-overview {
-  background: #F9F9F9;
+  background: $overviewWhite;
   margin-top: $space;
   padding: $space * 2;
   position: relative;
@@ -28,7 +30,7 @@
 
   &-expand-button {
     display: none;
-    background: darken(#F9F9F9, 7%);
+    background: darken($overviewWhite, 7%);
     cursor: pointer;
     position: absolute;
     right: 0;
@@ -43,7 +45,7 @@
     transition: all 0.15s;
 
     &:hover {
-      background: darken(#F9F9F9, 13%);
+      background: darken($overviewWhite, 13%);
     }
 
     &--visible {

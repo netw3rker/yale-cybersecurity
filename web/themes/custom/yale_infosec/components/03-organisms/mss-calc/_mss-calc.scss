@@ -37,9 +37,7 @@
     /* Faux buttons */
     .form-item__label {
       @include button-base;
-      @include button-bg;
-
-      @extend .button--primary;
+      @include buttonClr(primary);
 
       &::before {
         content: '';
@@ -51,7 +49,7 @@
     input[type="radio"]:checked,
     input[type="checkbox"]:checked {
       +.form-item__label {
-        @include buttonColors(secondary);
+        @include buttonClr(secondary);
 
         display: inline-flex;
 
