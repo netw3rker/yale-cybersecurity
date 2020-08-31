@@ -1,0 +1,18 @@
+.lozenge {
+  margin-right: $space-half;
+  background: $color_required;
+  color: clr(text-inverse);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.5;
+  padding: 0 0.7rem;
+  display: block;
+  width: fit-content;
+  border-radius: 70px;
+
+  &--upcoming,
+  &--internet-access {
+    background: #4A4A4A;
+  }
+}

@@ -1,0 +1,57 @@
+.standard-wrapper {
+  @include wrapper;
+
+  margin-bottom: $space-triple;
+
+  @include large {
+    @include grid;
+  }
+
+  &-inner {
+    grid-area: content;
+  }
+}
+
+.mss-sub-policy {
+  background: #F9F9F9;
+  margin-top: $space;
+  padding: $space * 2;
+  position: relative;
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: $space * 0.25;
+    color: clr(text-heavy);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__ul {
+    @include list-reset;
+  }
+
+  &__li {
+    border-bottom: 1px solid rgba(151, 141, 133, 0.35);
+    font-size: 1.7rem;
+    font-weight: normal;
+    line-height: 1.2;
+    padding-bottom: $space-half;
+    margin: $space-half 0;
+  }
+}
+
+.specification {
+  border-bottom: 1px solid rgba(151, 141, 133, 0.35);
+  padding: $space-half 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  >span {
+    margin-right: $space-half;
+  }
+}
+
+.specification-row:nth-child(even) {
+  background: #F9F9F9;
+}
