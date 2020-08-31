@@ -298,7 +298,8 @@ class MSSCalculatorController extends ControllerBase {
     // phpcs:ignore
     $items = \Drupal::entityQuery('node')
       ->condition('type', 'standard')
-      ->condition('field_policy_number', '^[1-9]$|^[1-9][1-9]$', 'REGEXP')
+      ->condition('status', 1)
+      ->condition('field_policy_number', '%.%', 'NOT LIKE')
       ->execute();
 
     // phpcs:ignore
