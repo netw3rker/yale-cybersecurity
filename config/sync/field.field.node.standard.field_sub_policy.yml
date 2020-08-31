@@ -9,7 +9,7 @@ id: node.standard.field_sub_policy
 field_name: field_sub_policy
 entity_type: node
 bundle: standard
-label: 'Sub policy'
+label: 'Sub policies'
 description: ''
 required: false
 translatable: false

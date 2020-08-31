@@ -53,7 +53,7 @@ content:
     third_party_settings: {  }
   field_policy_number:
     weight: 10
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -70,7 +70,7 @@ content:
     region: content
   field_standard_description:
     weight: 5
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
