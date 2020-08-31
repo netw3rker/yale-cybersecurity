@@ -19,7 +19,6 @@
 
       & > .main-menu__child-menu {
         display: block;
-        overflow: hidden;
       }
     }
 
@@ -56,6 +55,7 @@
   width: 20%;
 
   @include large {
+    border-radius: 0;
     display: none;
   }
 

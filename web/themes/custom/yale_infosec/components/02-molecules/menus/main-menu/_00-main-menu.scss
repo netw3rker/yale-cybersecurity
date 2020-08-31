@@ -95,7 +95,13 @@ $main-menu-medium: $medium;
       display: none;
 
       .main-menu--sub & {
-        display: block;
+        background-color: #1d5fae;
+        display: flex;
+        font-size: 1.9rem;
+        font-weight: bold;
+        line-height: 1.47;
+        padding: 1rem 2.4rem;
+        text-transform: uppercase;
       }
     }
   }
@@ -109,6 +115,14 @@ $main-menu-medium: $medium;
   fill: clr(text-inverse);
   height: 14px;
   width: 17px;
+
+  @include large {
+    height: 18px;
+    left: -8px;
+    position: relative;
+    top: 4px;
+    width: 18px;
+  }
 }
 
 .main-menu__child-menu {
@@ -138,6 +152,7 @@ $main-menu-medium: $medium;
 
     .main-menu__child-menu {
       display: block;
+      left: 0;
       transform: translateX(100%);
 
       &--sub-open {
@@ -145,6 +160,10 @@ $main-menu-medium: $medium;
         top: 0;
         transform: translateX(0);
       }
+    }
+
+    &--sub-current {
+      overflow: hidden;
     }
   }
 

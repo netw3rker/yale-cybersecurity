@@ -19,6 +19,7 @@
 
   @include large {
     border-bottom: none;
+    border-radius: 4px;
     display: inline-block;
     font-size: 1.9rem;
     line-height: 1.47;
@@ -33,8 +34,12 @@
       color: clr(highlight-high);
     }
 
-    &--sub::after {
-      display: none;
+    &--with-sub {
+      width: 80%;
+
+      &::after {
+        display: none;
+      }
     }
 
     &:hover {
@@ -65,10 +70,4 @@
 
 .main-menu--sub-2 {
   background-color: clr(highlight-high);
-}
-
-.main-menu__link--sub-2 {
-  @include large {
-    padding-left: $space-quadruple;
-  }
 }
