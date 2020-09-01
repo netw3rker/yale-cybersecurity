@@ -1,27 +1,45 @@
 .text-with-quote {
   @include wrapper;
 
-  @include large {
-    @include centered-grid;
+  &--primary {
+    @include large {
+      @include grid;
+    }
+  }
+
+  &--centered {
+    @include large {
+      @include centered-grid;
+    }
   }
 }
 
 .text-with-quote__quote {
   @include blockquote;
 
-  grid-area: aside-left-c;
-  grid-row-start: 1;
+  &--primary {
+    grid-area: sidebar;
+  }
 
-  p {
-    margin: 0;
+  &--centered {
+    grid-area: aside-left-c;
   }
 
   &--quote-right {
     grid-area: aside-right-c;
   }
+
+  p {
+    margin: 0;
+  }
 }
 
 .text-with-quote__text {
-  grid-area: content-c;
-  grid-row-start: 1;
+  &--primary {
+    grid-area: content;
+  }
+
+  &--centered {
+    grid-area: content-c;
+  }
 }

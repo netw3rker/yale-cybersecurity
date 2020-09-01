@@ -36,9 +36,11 @@
  * @ingroup themeable
  */
 #}
-{% if content.field_aside_alignment.0['#markup'] == 'right' %}
-  {% set text_with_quote__modifiers = ['quote-right'] %}
-{% endif %}
+{% set text_with_quote__modifiers = [
+  grid_style,
+  grid_style == 'centered' ? 'quote-' ~ content.field_aside_alignment.0['#markup']
+  ]
+%}
 
 {% extends "@molecules/text-with-quote/text-with-quote.twig" %}
   {% block text_with_quote_quote %}

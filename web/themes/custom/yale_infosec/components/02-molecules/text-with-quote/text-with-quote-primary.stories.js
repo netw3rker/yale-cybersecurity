@@ -7,7 +7,7 @@ import textWithQuoteData from './text-with-quote.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules/Text with Quote' };
+export default { title: 'Molecules|Text with Quote/Primary' };
 
 export const Left = () => (
   <div dangerouslySetInnerHTML={{ __html: textWithQuote(textWithQuoteData) }} />
@@ -16,16 +16,6 @@ export const Left = () => (
 export const Right = () => (
   <div dangerouslySetInnerHTML={{ __html: textWithQuote({
     ...textWithQuoteData,
-    text_with_quote__modifiers: ['quote-right']
+    text_with_quote__modifiers: ['primary']
     }) }} />
-);
-
-export const Both = () => (
-  <div>
-    <div dangerouslySetInnerHTML={{ __html: textWithQuote(textWithQuoteData) }} />
-    <div dangerouslySetInnerHTML={{ __html: textWithQuote({
-      ...textWithQuoteData,
-      text_with_quote__modifiers: ['quote-right']
-      }) }} />
-  </div>
 );

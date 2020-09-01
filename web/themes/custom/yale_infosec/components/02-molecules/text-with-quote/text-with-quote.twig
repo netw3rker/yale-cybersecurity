@@ -8,7 +8,6 @@
   <div {{ bem('quote', text_with_quote__modifiers, text_with_quote__base_class) }}>
     {% block text_with_quote_quote %}
       {% include "@atoms/text/text/01-paragraph.twig" with {
-        paragraph_modifiers: ['quote-left'],
         paragraph_content: text_with_quote_quote_content
       } %}
     {% endblock %}
