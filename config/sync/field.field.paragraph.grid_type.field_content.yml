@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_content
     - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.embed
     - paragraphs.paragraphs_type.grid_type
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.image_with_aside
@@ -35,19 +36,35 @@ settings:
       call_to_action: call_to_action
       image: image
       text: text
-      large_image: large_image
-      quote: quote
       text_with_media: text_with_media
+      quote: quote
+      large_image: large_image
       video: video
       reference_cards: reference_cards
       reference_list: reference_list
       image_with_aside: image_with_aside
+      embed: embed
     target_bundles_drag_drop:
       call_to_action:
         enabled: true
         weight: 7
+      cta_home:
+        weight: 20
+        enabled: false
+      custom_card:
+        weight: 21
+        enabled: false
+      custom_card_grid:
+        weight: 22
+        enabled: false
+      embed:
+        enabled: true
+        weight: 23
       grid_type:
         weight: 6
+        enabled: false
+      icon_card:
+        weight: 25
         enabled: false
       image:
         enabled: true
@@ -67,6 +84,12 @@ settings:
       reference_list:
         enabled: true
         weight: 13
+      specification:
+        weight: 32
+        enabled: false
+      specification_details:
+        weight: 33
+        enabled: false
       text:
         enabled: true
         weight: 8
