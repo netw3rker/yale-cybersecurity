@@ -6,14 +6,14 @@
       <ul class="mss-sub-policies">
         {% for subitem in item.children %}
           <li class="mss-sub-policies__li">
+            {{ link(subitem.title, subitem.uri) }}
             {% if subitem.labels|length > 0 %}
             <span class="mss-sub-policies-labels">
               {% for class, label in subitem.labels %}
-                <span class="mss-sub-policies-label mss-sub-policies-label-{{class}}">{{ label }}</span>
+                <span class="mss-sub-policies-label mss-sub-policies-label-{{class}} mss-sub-policies-label--large">{{ label }}</span>
               {% endfor %}
             </span>
             {% endif %}
-            {{ link(subitem.title, subitem.uri) }}
           </li>
         {% endfor %}
       </ul>

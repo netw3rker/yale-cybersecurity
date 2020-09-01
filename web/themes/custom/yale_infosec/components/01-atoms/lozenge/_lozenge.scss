@@ -1,4 +1,4 @@
-.lozenge {
+@mixin lozenge {
   margin-right: $space-half;
   background: $color_required;
   color: clr(text-inverse);
@@ -15,4 +15,14 @@
   &--internet-access {
     background: #4A4A4A;
   }
+
+  &--large {
+    font-size: 1.59rem;
+    line-height: 1;
+    padding: 0.5rem 1.4rem 0.3rem;
+  }
+}
+
+.lozenge {
+  @include lozenge;
 }

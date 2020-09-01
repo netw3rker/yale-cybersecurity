@@ -22,3 +22,10 @@ export const Upcoming = () => (
 export const InternetAccess = () => (
   <div dangerouslySetInnerHTML={{ __html: twig(dataInternetAccess) }} />
 );
+
+export const Large = () => (
+  <div dangerouslySetInnerHTML={{ __html: twig({
+    ...dataRequired,
+    lozenge_modifiers: ['large']
+    }) }} />
+);
