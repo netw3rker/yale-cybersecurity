@@ -65,7 +65,8 @@
   }
 }
 
-.grid__item-three {
+.grid__item-three,
+.grid-container--three-across .grid__item {
   @include grid-item-3;
 }
 
