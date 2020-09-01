@@ -6,12 +6,7 @@
   margin: $margin;
 }
 
-p,
-.paragraph {
-  @include paragraph;
-}
-
-.blockquote {
+@mixin blockquote {
   color: clr(text-heavy);
   font-size: 2.7rem;
   font-style: normal;
@@ -25,6 +20,22 @@ p,
   .bg--dark-blue & {
     color: clr(text-inverse);
   }
+
+  &--quote-left {
+    border-left: none;
+    border-right: solid 1px clr(accent);
+    padding-left: 0;
+    padding-right: 1.5rem;
+  }
+}
+
+p,
+.paragraph {
+  @include paragraph;
+}
+
+.blockquote {
+  @include blockquote;
 }
 
 .hr {
