@@ -1,0 +1,23 @@
+uuid: 5b5c61a2-b5b3-49b2-92b1-1cff97821c50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.embed.field_embed_code
+    - field.field.paragraph.embed.field_embed_height
+    - paragraphs.paragraphs_type.embed
+id: paragraph.embed.default
+targetEntityType: paragraph
+bundle: embed
+mode: default
+content:
+  field_embed_code:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  field_embed_height: true
+  search_api_excerpt: true
