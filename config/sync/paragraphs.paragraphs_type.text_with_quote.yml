@@ -1,0 +1,10 @@
+uuid: 200e67a8-2443-4787-9711-8d0bf964a71b
+langcode: en
+status: true
+dependencies: {  }
+id: text_with_quote
+label: 'Text with Quote'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
