@@ -14,7 +14,7 @@
 
 .mss-sub-policy {
   background: #F9F9F9;
-  margin-top: $space;
+  margin: $space 0;
   padding: $space * 2;
   position: relative;
 
@@ -47,11 +47,30 @@
   flex-flow: row nowrap;
   align-items: center;
 
+  &--column {
+    border-bottom: 0;
+    flex-flow: column nowrap;
+  }
+
   >span {
     margin-right: $space-half;
+  }
+
+  &-row--wide {
+    border-bottom: 1px solid rgba(151, 141, 133, 0.35);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: $space-half 0 $space-half $space-half;
+    width: 100%;
   }
 }
 
 .specification-row:nth-child(even) {
   background: #F9F9F9;
+}
+
+.standard-spec-labels {
+  display: flex;
+  flex-flow: row wrap;
 }

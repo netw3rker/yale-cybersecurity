@@ -4,6 +4,7 @@ global:
       dist/style.css: {}
   js:
     dist/js/03-organisms/mss/mss.js: {}
+    dist/js/01-atoms/text/headings/page-title.js: {}
   dependencies:
     - core/drupal
 

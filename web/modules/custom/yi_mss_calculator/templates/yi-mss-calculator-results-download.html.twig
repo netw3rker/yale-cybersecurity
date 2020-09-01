@@ -1,29 +1,34 @@
+<div class="mss-results-wrapper">
+  <div class="mss-results-inner">
+    <h3>Based on the following selections: <em>{{ filters|join(', ') }}</em></h3>
 
+    {% for primary in results %}
+    <div class="standard-primary">
+      <h2 class="h2">{{ primary.title }}</h2>
 
-<h3>Based on the following selections: <em>{{ filters|join(', ') }}</em></h3>
+      {% for child in primary.children %}
+      <div class="standard-child">
+        <h3 class="h3" style="margin-bottom: 0;">{{ child.title }}</h3>
 
-{% for primary in results %}
-<div class="standard-primary">
-  <h2>{{ primary.title }}</h2>
-
-  {% for child in primary.children %}
-  <div class="standard-child">
-    <h3>{{ child.title }}</h3>
-    <div class="standard-child-grid">
-      {% for spec in child.specifications %}
-      <span class="standard-child-spec-item">
-        {{ spec.title }}
-        {% if spec.labels|length > 0 %}
-        <span class="standard-spec-labels">
-            {% for class, label in spec.labels %}
-            <p class="label-{{class}}">{{ label }}</p>
-            {% endfor %}
-        </span>
-        {% endif %}
-      </span>
+        <div class="specification specification--column">
+          {% for spec in child.specifications %}
+          <div class="specification-row specification-row--wide">
+            {% if spec.labels|length > 0 %}
+            <span class="standard-spec-labels">
+              {% for class, label in spec.labels %}
+                <span class="lozenge lozenge--{{ class }}" }}>
+                  {{ label }}
+                </span>
+              {% endfor %}
+            </span>
+            {% endif %}
+            {{ spec.title }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
       {% endfor %}
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
-{% endfor %}
