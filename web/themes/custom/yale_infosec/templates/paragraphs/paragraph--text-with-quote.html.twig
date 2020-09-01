@@ -36,11 +36,14 @@
  * @ingroup themeable
  */
 #}
+{% if content.field_aside_alignment.0['#markup'] == 'right' %}
+  {% set text_with_quote__modifiers = ['quote-right'] %}
+{% endif %}
 
-{% extends "@molecules/text-with-image/text-with-image.twig" %}
-  {% block text_with_image_img %}
+{% extends "@molecules/text-with-quote/text-with-quote.twig" %}
+  {% block text_with_quote_quote %}
     {{ content.field_aside_quote }}
   {% endblock %}
-  {% block text_with_image_text %}
+  {% block text_with_quote_text %}
     {{ content.field_text }}
   {% endblock %}

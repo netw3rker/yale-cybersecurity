@@ -22,10 +22,12 @@
   }
 
   &--quote-left {
-    border-left: none;
-    border-right: solid 1px clr(accent);
-    padding-left: 0;
-    padding-right: 1.5rem;
+    @include large {
+      border-left: none;
+      border-right: solid 1px clr(accent);
+      padding-left: 0;
+      padding-right: 1.5rem;
+    }
   }
 }
 
