@@ -21,16 +21,6 @@ targetEntityType: node
 bundle: alert
 mode: default
 content:
-  field_alert_active:
-    weight: 1
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
   field_content_body:
     weight: 0
     label: hidden
@@ -42,6 +32,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_alert_active: true
   field_alert_level: true
   field_metadata: true
   field_seo_title: true

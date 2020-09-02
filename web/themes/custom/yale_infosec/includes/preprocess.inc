@@ -61,6 +61,13 @@ function yale_infosec_preprocess_paragraph(array &$vars) {
       $vars['card_size'] = $parent->get('field_size')->getString();
     }
   }
+
+  // Grid related.
+  if ($parent->bundle() === 'grid_type') {
+    if (!empty($parent->get('field_grid_style'))) {
+      $vars['grid_style'] = $parent->get('field_grid_style')->getString();
+    }
+  }
 }
 
 /**
@@ -71,23 +78,6 @@ function yale_infosec_preprocess_paragraph(array &$vars) {
  */
 function yale_infosec_preprocess_time(array &$vars) {
   $vars['timeStamp'] = $vars['attributes']['datetime'];
-}
-
-/**
- * Implements theme_preprocess_node.
- *
- * @param array $vars
- *   Array of variables containing field content.
- */
-function yale_infosec_preprocess_node(array &$vars) {
-  if ($vars['view_mode'] === 'card') {
-    // If News and Events view.
-    if (isset($vars['view'])) {
-      if ($vars['view']->id() === 'news_events') {
-        $vars['threeAcross'] = TRUE;
-      }
-    }
-  }
 }
 
 /**
