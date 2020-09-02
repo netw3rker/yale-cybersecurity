@@ -4,8 +4,8 @@
  #}
 {% set text_section__base_class = 'text-section' %}
 
-<div {{ bem(text_section__base_class) }}>
-  <div {{ bem('content', [], text_section__base_class) }}>
+<div {{ bem(text_section__base_class, text_section__modifiers) }}>
+  <div {{ bem('content', text_section__modifiers, text_section__base_class) }}>
     {% block text_section_content %}
       {% include "@atoms/text/text/01-paragraph.twig" %}
     {% endblock %}

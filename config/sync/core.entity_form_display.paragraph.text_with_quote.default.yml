@@ -1,0 +1,41 @@
+uuid: e11f4601-f714-4830-95d7-ed237f1b978b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_with_quote.field_aside_alignment
+    - field.field.paragraph.text_with_quote.field_aside_quote
+    - field.field.paragraph.text_with_quote.field_text
+    - paragraphs.paragraphs_type.text_with_quote
+  module:
+    - text
+id: paragraph.text_with_quote.default
+targetEntityType: paragraph
+bundle: text_with_quote
+mode: default
+content:
+  field_aside_alignment:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_aside_quote:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_text:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true
