@@ -6,20 +6,23 @@ Drupal.behaviors.mainMenu = {
     const searchBtn = context.getElementById("search-btn");
     
     if (menu) {
-      const expandMenu = menu.getElementsByClassName('expand-sub');
-      const backLinks = menu.getElementsByClassName('main-menu__parent-item');
+      const expandBtns = menu.getElementsByClassName('expand-sub');
+      const backLBtns = menu.getElementsByClassName('main-menu__parent-item');
+
+      const currentSubClass = 'main-menu__child-menu--sub-current';
+      const openSubClass = 'main-menu__child-menu--sub-open';
 
       // Mobile Menu Show/Hide.
       toggleExpand.addEventListener('click', e => {
-        const currentMenus = document.getElementsByClassName('main-menu__child-menu--sub-current');
-        const openMenus = document.getElementsByClassName('main-menu__child-menu--sub-open');
+        const currentMenus = document.getElementsByClassName(currentSubClass);
+        const openMenus = document.getElementsByClassName(openSubClass);
 
         for (let i = 0; i < currentMenus.length; i += 1) {
-          currentMenus[i].classList.remove('main-menu__child-menu--sub-current');
+          currentMenus[i].classList.remove(currentSubClass);
         };
 
         for (let i = 0; i < openMenus.length; i += 1) {
-          openMenus[i].classList.remove('main-menu__child-menu--sub-open');
+          openMenus[i].classList.remove(openSubClass);
         };
 
         toggleExpand.classList.toggle('toggle-expand--open');
@@ -29,31 +32,31 @@ Drupal.behaviors.mainMenu = {
       });
 
       // Expose mobile sub menu on click.
-      for (let i = 0; i < expandMenu.length; i += 1) {
-        expandMenu[i].addEventListener('click', e => {
+      for (let i = 0; i < expandBtns.length; i += 1) {
+        expandBtns[i].addEventListener('click', e => {
           const menuItem = e.currentTarget;
           const subMenu = menuItem.nextElementSibling;
-          const currentMenu = document.getElementsByClassName('main-menu__child-menu--sub-current');
+          const currentMenu = document.getElementsByClassName(currentSubClass);
 
           for (let i = 0; i < currentMenu.length; i += 1) {
-            currentMenu[i].classList.remove('main-menu__child-menu--sub-current');
+            currentMenu[i].classList.remove(currentSubClass);
           }
 
-          subMenu.classList.toggle('main-menu__child-menu--sub-open');
-          subMenu.classList.add('main-menu__child-menu--sub-current');
+          subMenu.classList.add(openSubClass);
+          subMenu.classList.add(currentSubClass);
         });
       }
 
       // Back to parent links.
-      for (let i = 0; i < backLinks.length; i += 1) {
-        backLinks[i].addEventListener('click', e => {
+      for (let i = 0; i < backLBtns.length; i += 1) {
+        backLBtns[i].addEventListener('click', e => {
           const backLink = e.currentTarget;
           const parentMenu = backLink.parentNode;
           const prevParentMenu = parentMenu.parentNode.parentNode.parentNode;
 
-          parentMenu.classList.remove('main-menu__child-menu--sub-open');
-          parentMenu.classList.remove('main-menu__child-menu--sub-current');
-          prevParentMenu.classList.add('main-menu__child-menu--sub-current');
+          parentMenu.classList.remove(openSubClass);
+          parentMenu.classList.remove(currentSubClass);
+          prevParentMenu.classList.add(currentSubClass);
         });
       }
 
