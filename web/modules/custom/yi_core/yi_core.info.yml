@@ -1,0 +1,5 @@
+name: 'Yale Infosec Core'
+type: module
+description: 'Yale Infosec Core styles'
+core: 8.x
+package: 'Yale'
