@@ -3,11 +3,25 @@
 
   margin-bottom: $space-triple;
 
-  @include large {
-    @include grid;
+  &--primary {
+    @include large {
+      @include grid;
+    }
+  }
+
+  &--centered {
+    @include large {
+      @include centered-grid;
+    }
   }
 }
 
 .text-section__content {
-  grid-area: content;
+  &--primary {
+    grid-area: content;
+  }
+
+  &--centered {
+    grid-area: content-c;
+  }
 }
