@@ -39,14 +39,18 @@
       } %}
     {% endif %}
     {% if item.below %}
-      <button class="expand-sub">
-        {% include "@atoms/images/icons/_icon.twig" with {
-          icon_blockname: menu_class,
-          icon_base_class: "expand-sub-icon",
-          icon_name: "chevron-right",
-          icon_title: "expand subnav",
-        } %}
-      </button>
+      {% embed "@atoms/buttons/button.twig" with {
+        button_base_class: 'expand-sub'
+      } %}
+        {% block button_content %}
+          {% include "@atoms/images/icons/_icon.twig" with {
+            icon_blockname: menu_class,
+            icon_base_class: "expand-sub-icon",
+            icon_name: "chevron-right",
+            icon_title: "expand subnav",
+          } %}
+        {% endblock %}
+      {% endembed %}
       <div {{ bem('child-menu', [], menu_class) }}>
         {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname, directory, parent_item_title) }}
       </div>
