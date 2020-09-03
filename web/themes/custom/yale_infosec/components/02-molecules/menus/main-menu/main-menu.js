@@ -42,7 +42,7 @@ Drupal.behaviors.mainMenu = {
             currentMenu[i].classList.remove(currentSubClass);
           }
 
-          subMenu.classList.add(openSubClass);
+          subMenu.classList.toggle(openSubClass);
           subMenu.classList.add(currentSubClass);
         });
       }

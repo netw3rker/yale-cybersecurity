@@ -84,9 +84,20 @@ $main-menu-medium: $medium;
 */
 
 .main-menu__parent-item {
+  background: none;   
+  border: none;
+  color: clr(text-inverse);
   cursor: pointer;
   display: none;
+  left: 4px;
   margin-bottom: $space;
+  position: relative;
+  text-align: left;
+  width: 100%;
+
+  @include large {
+    left: 0;
+  }
 
   .main-menu__child-menu--sub-current & {
     display: block;

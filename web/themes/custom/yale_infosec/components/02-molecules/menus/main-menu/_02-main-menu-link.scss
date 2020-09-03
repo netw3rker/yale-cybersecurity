@@ -44,6 +44,10 @@
   }
 }
 
+.main-menu__link--with-sub:focus + .expand-sub {
+  display: block;
+}
+
 /*
  * Sub Navigation Links
  */
