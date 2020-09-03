@@ -4,7 +4,13 @@
  #}
 {% set image_section__base_class = 'image-section' %}
 
-<div {{ bem(image_section__base_class) }}>
+{% if not image_section_content_modifiers %}
+  {% set image_section_content_modifiers = [] %}
+{% endif %}
+
+{% set image_section_content_modifiers = image_section_content_modifiers|merge(image_section__modifiers) %}
+
+<div {{ bem(image_section__base_class, image_section__modifiers) }}>
   <div {{ bem('image', image_section_content_modifiers, image_section__base_class) }}>
     {% block image_section_img %}
       {% include "@atoms/images/image/figure.twig" %}
