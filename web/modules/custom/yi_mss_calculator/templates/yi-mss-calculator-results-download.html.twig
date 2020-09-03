@@ -9,22 +9,8 @@
       {% for child in primary.children %}
       <div class="standard-child">
         <h3 class="h3" style="margin-bottom: 0;">{{ child.title }}</h3>
-
         <div class="specification specification--column">
-          {% for spec in child.specifications %}
-          <div class="specification-row specification-row--wide">
-            {% if spec.labels|length > 0 %}
-            <span class="standard-spec-labels">
-              {% for class, label in spec.labels %}
-                <span class="lozenge lozenge--{{ class }}" }}>
-                  {{ label }}
-                </span>
-              {% endfor %}
-            </span>
-            {% endif %}
-            {{ spec.title }}
-          </div>
-          {% endfor %}
+          {{ child.specifications }}
         </div>
       </div>
       {% endfor %}

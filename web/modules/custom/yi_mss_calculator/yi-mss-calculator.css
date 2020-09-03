@@ -25,15 +25,15 @@
   margin: 0;
 }
 
-.standard-primary .standard-secondary {
+.standard-specifications {
   margin-bottom: 1.3em;
 }
 
-.standard-primary .standard-secondary:last-child {
+.standard-specifications:last-child {
   margin-bottom: 3.5em;
 }
 
-.standard-primary .standard-secondary h4 {
+.standard-specifications h4 {
   background-color: var(--c-background-inverse);
   color: var(--c-text-inverse);
   padding: 0.6em 0.9em 0.3em;
@@ -43,36 +43,37 @@
   margin-bottom: 0;
 }
 
-.standard-primary .standard-secondary h4 a {
+.standard-specifications h4 a {
   text-decoration: underline;
   font-size: 1.5rem;
   font-weight: bold;
   color: #b2c2d2;
 }
 
-.standard-secondary-grid a:link,
-.standard-secondary-grid a:hover,
-.standard-secondary-grid a:visited {
+.standard-specifications-grid a:link,
+.standard-specifications-grid a:hover,
+.standard-specifications-grid a:visited {
   color: var(--c-background-deep);
   text-decoration: none;
 }
 
-.standard-secondary-grid a {
+.standard-specifications-grid a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px 1px;
   grid-template-areas: ". . ." ". . ." ". . ." ". . .";
   background-color: #cfcbc7;
   padding-bottom: 1px;
+  padding-top: 1px;
 }
 
-.standard-secondary-grid a span:nth-child(n + 4),
-.standard-secondary-grid a span.standard-secondary-spec-item:nth-child(n + 10) {
+.standard-specifications-grid a span:nth-child(n + 4),
+.standard-specifications-grid a span.standard-specifications-spec-item:nth-child(n + 10) {
   background: var(--c-accentsubtle);
 }
 
-.standard-secondary-grid a > span,
-.standard-secondary-grid a > span:nth-child(n + 7) {
+.standard-specifications-grid a > span,
+.standard-specifications-grid a > span:nth-child(n + 7) {
   background: white;
   padding: 0.5em;
   font-size: 1.7rem;
@@ -80,32 +81,6 @@
   align-items: center;
 }
 
-.standard-secondary-grid .standard-spec-labels {
+.standard-specifications-grid .standard-spec-labels {
   margin-left: 1rem;
-}
-
-.standard-spec-labels p {
-  display: inline;
-  font-size: 1rem;
-  padding: 0.1em 0.6em;
-  background-color: #dddddd;
-  border-radius: 0.7em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.standard-spec-labels p.label-required {
-  background-color: #bd1919;
-  color: var(--c-text-inverse);
-}
-
-.standard-spec-labels p.label-upcoming {
-  background-color: var(--c-text-deep);
-  color: var(--c-text-inverse);
-}
-
-.standard-spec-labels p.label-hipaa,
-.standard-spec-labels p.label-pci {
-  background-color: var(--c-secondary);
-  color: var(--c-text-inverse);
 }

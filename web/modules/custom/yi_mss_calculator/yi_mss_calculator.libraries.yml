@@ -1,4 +1,7 @@
 mss-library:
   version: 1.x
+  css:
+    theme:
+      yi-mss-calculator.css: {}
   js:
     yi-mss-calculator.js: {}

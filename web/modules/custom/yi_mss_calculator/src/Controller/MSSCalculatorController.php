@@ -48,7 +48,7 @@ class MSSCalculatorController extends ControllerBase {
   /**
    * Return a template expected array of "labels" to display near the content.
    */
-  private function getLabels($spec) {
+  public static function getLabels($spec) {
     $out = [];
 
     // Required.
@@ -187,7 +187,7 @@ class MSSCalculatorController extends ControllerBase {
         ];
 
         if ($attach_specs) {
-          $results[$primary]['children'][$policy]['specifications'] = $this->getAllSpecs($node);
+          $results[$primary]['children'][$policy]['specifications'] = MSSCalculatorController::getSpecificationsGrid($node);
         }
       }
     }
@@ -198,19 +198,27 @@ class MSSCalculatorController extends ControllerBase {
   /**
    * Get a formatted flat array of specifications for a single standard node.
    */
-  private function getAllSpecs($node) {
-    $specs = [];
+  public static function getSpecificationsGrid($node, $hide_title = FALSE) {
+    $uri = Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString();
+    $element = [
+      '#theme' => 'yi_mss_calculator_specifications_grid',
+      '#title' => $node->getTitle(),
+      '#uri' => $hide_title ? '' : $uri,
+      '#specifications' => [],
+      '#attached' => ['library' => ['yi_mss_calculator/mss-library']],
+    ];
+
     foreach ($node->get('field_standard_specifications')->referencedEntities() as $spec) {
       $risk = $spec->field_risk_level->entity->getName();
       $device = $spec->field_device_type->entity->getName();
       $title = "$risk $device";
-      $specs[] = [
+      $element['#specifications'][] = [
         'title' => $title,
-        'labels' => $this->getLabels($spec),
+        'labels' => MSSCalculatorController::getLabels($spec),
       ];
     }
 
-    return $specs;
+    return $element;
   }
 
   /**
@@ -314,16 +322,7 @@ class MSSCalculatorController extends ControllerBase {
 
       // Compile list of secondary items.
       foreach ($node->get('field_sub_policy')->referencedEntities() as $sub) {
-        $secondary = [
-          'title' => $sub->getTitle(),
-          'uri' => Url::fromRoute('entity.node.canonical', ['node' => $sub->id()], ['absolute' => TRUE])->toString(),
-          'specifications' => [],
-        ];
-
-        // Add specifications for each.
-        $secondary['specifications'] = $this->getAllSpecs($sub);
-
-        $primary['secondaries'][] = $secondary;
+        $primary['secondaries'][] = MSSCalculatorController::getSpecificationsGrid($sub);
       }
 
       $standards[] = $primary;

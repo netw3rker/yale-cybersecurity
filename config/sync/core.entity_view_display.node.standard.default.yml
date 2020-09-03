@@ -20,6 +20,7 @@ dependencies:
     - field_group
     - text
     - user
+    - yi_mss_calculator
 third_party_settings:
   field_group:
     group_intro:
@@ -47,21 +48,13 @@ bundle: standard
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_policy_number:
-    weight: 10
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_specification_details:
     type: entity_reference_revisions_entity_view
-    weight: 9
+    weight: 4
     label: above
     settings:
       view_mode: default
@@ -69,23 +62,22 @@ content:
     third_party_settings: {  }
     region: content
   field_standard_description:
-    weight: 5
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_standard_specifications:
-    type: entity_reference_revisions_entity_view
-    weight: 8
+    type: yi_mss_calculator_specifications_grid
+    weight: 3
     label: above
     settings:
-      view_mode: default
-      link: ''
+      hide_title: true
     third_party_settings: {  }
     region: content
   field_sub_policy:
-    weight: 7
+    weight: 5
     label: above
     settings:
       link: true
@@ -94,6 +86,7 @@ content:
     region: content
 hidden:
   field_metadata: true
+  field_policy_number: true
   field_seo_title: true
   field_subtitle: true
   field_tags: true
