@@ -44,6 +44,7 @@ Drupal.behaviors.mainMenu = {
 
           subMenu.classList.toggle(openSubClass);
           subMenu.classList.add(currentSubClass);
+          subMenu.firstElementChild.focus();
         });
       }
 
@@ -69,6 +70,7 @@ Drupal.behaviors.mainMenu = {
         for (let i = 0; i < search.length; i += 1) {
           search[i].focus();
         }
+        searchForm.tabIndex = 0;
       });
     }
   },
