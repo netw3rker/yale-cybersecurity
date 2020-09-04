@@ -9,5 +9,10 @@
 }
 
 .mss-results-inner {
-  grid-area: content;
+  grid-column-start: 3;
+  grid-column-end: 7;
+
+  .standard-primary {
+    margin-left: 0;
+  }
 }

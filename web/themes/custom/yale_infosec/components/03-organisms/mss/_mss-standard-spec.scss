@@ -1,0 +1,91 @@
+.standard-primary-wrapper {
+  @include wrapper;
+
+  margin-bottom: $space-triple;
+
+  @include large {
+    @include grid;
+  }
+}
+
+.standard-primary-inner {
+  grid-area: content;    
+}
+
+.standard-primary h2 {
+  @include heading-large;
+}
+
+.standard-primary h3 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 3.5rem;
+}
+
+.standard-primary h3 p {
+  margin: 0;
+}
+
+.standard-specifications {
+  margin-bottom: 1.3em;
+}
+
+.standard-specifications:last-child {
+  margin-bottom: 3.5em;
+}
+
+.standard-specifications h4 {
+  background-color: clr(background-inverse);
+  color: clr(text-inverse);
+  padding: 0.6em 0.9em 0.3em;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.standard-specifications h4 a {
+  text-decoration: underline;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b2c2d2;
+}
+
+.standard-specifications-grid a {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px 1px;
+  grid-template-areas: ". . ." ". . ." ". . ." ". . .";
+  background-color: #cfcbc7;
+  padding-bottom: 1px;
+  padding-top: 1px;
+
+  &:link,
+  &:hover,
+  &:visited {
+  color: clr(background-deep);
+  text-decoration: none;
+}
+
+  @include large {
+    display: grid;
+  }
+
+  span:nth-child(n + 4),
+  span.standard-specifications-spec-item:nth-child(n + 10) {
+    background: clr(accentsubtle);
+  }
+
+  > span,
+  > span:nth-child(n + 7) {
+    background: clr(background);
+    padding: 0.5em;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.standard-specifications-grid .standard-spec-labels {
+  margin-left: 1rem;
+}

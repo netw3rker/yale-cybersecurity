@@ -191,7 +191,6 @@ class MSSCalculatorController extends ControllerBase {
         }
       }
     }
-
     return $results;
   }
 

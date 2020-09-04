@@ -1,12 +1,16 @@
-<p class="standard-listing-header">{{ header_text }}</p>
+<div class="standard-primary-wrapper">
+  <div class="standard-primary-inner">
+    <p class="standard-listing-header">{{ header_text }}</p>
 
-{% for primary in standards %}
-<div class="standard-primary">
-  <h2> {{ primary.title }} </h2>
-  <h3> {{ primary.description|raw }} </h3>
+    {% for primary in standards %}
+    <div class="standard-primary">
+      <h2> {{ primary.title }} </h2>
+      <h3> {{ primary.description|raw }} </h3>
 
-  {% for secondary in primary.secondaries %}
-    {{ secondary }}
-  {% endfor %}
+      {% for secondary in primary.secondaries %}
+        {{ secondary }}
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
 </div>
-{% endfor %}
