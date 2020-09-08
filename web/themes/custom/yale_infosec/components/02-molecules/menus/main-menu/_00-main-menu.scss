@@ -123,6 +123,10 @@ $main-menu-medium: $medium;
   }
 }
 
+.main-menu__child-menu-inner {
+  height: 100%;
+}
+
 .main-menu__parent-item-back {
   fill: clr(text-inverse);
   height: 14px;

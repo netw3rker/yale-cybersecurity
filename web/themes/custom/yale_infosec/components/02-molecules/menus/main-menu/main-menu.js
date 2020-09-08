@@ -7,7 +7,7 @@ Drupal.behaviors.mainMenu = {
     
     if (menu) {
       const expandBtns = menu.getElementsByClassName('expand-sub');
-      const backLBtns = menu.getElementsByClassName('main-menu__parent-item');
+      const backBtns = menu.getElementsByClassName('main-menu__parent-item');
 
       const currentSubClass = 'main-menu__child-menu--sub-current';
       const openSubClass = 'main-menu__child-menu--sub-open';
@@ -42,19 +42,21 @@ Drupal.behaviors.mainMenu = {
             currentMenu[i].classList.remove(currentSubClass);
           }
 
-          subMenu.classList.toggle(openSubClass);
+          subMenu.classList.add(openSubClass);
           subMenu.classList.add(currentSubClass);
           subMenu.firstElementChild.focus();
         });
       }
 
       // Back to parent links.
-      for (let i = 0; i < backLBtns.length; i += 1) {
-        backLBtns[i].addEventListener('click', e => {
+      for (let i = 0; i < backBtns.length; i += 1) {
+        backBtns[i].addEventListener('click', e => {
           const backLink = e.currentTarget;
-          const parentMenu = backLink.parentNode;
+          const parent = backLink.parentNode;
+          const parentMenu = parent.parentNode;
           const prevParentMenu = parentMenu.parentNode.parentNode.parentNode;
 
+          parent.classList.remove(currentSubClass);
           parentMenu.classList.remove(openSubClass);
           parentMenu.classList.remove(currentSubClass);
           prevParentMenu.classList.add(currentSubClass);

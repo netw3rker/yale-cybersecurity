@@ -53,7 +53,9 @@
         {% endblock %}
       {% endembed %}
       <div {{ bem('child-menu', [], menu_class) }}>
-        {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname, directory, parent_item_title) }}
+        <div {{ bem('child-menu-inner', [], menu_class) }}>
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname, directory, parent_item_title) }}
+        </div>
       </div>
     {% endif %}
   {% endblock %}
