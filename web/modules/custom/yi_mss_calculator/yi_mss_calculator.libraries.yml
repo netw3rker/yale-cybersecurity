@@ -1,0 +1,4 @@
+mss-library:
+  version: 1.x
+  js:
+    yi-mss-calculator.js: {}

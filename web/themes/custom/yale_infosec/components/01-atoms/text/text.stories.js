@@ -8,6 +8,8 @@ import paragraph from './text/03-inline-elements.twig';
 import blockquoteData from './text/blockquote.yml';
 import headingData from './headings/headings.yml';
 
+import './headings/page-title';
+
 /**
  * Storybook Definition.
  */
@@ -22,7 +24,9 @@ export const headingsExamples = () => (
 export const blockquoteExample = () => (
   <div
     className="cl-wrap"
-    dangerouslySetInnerHTML={{ __html: blockquote({ ...blockquoteData, blockquote_modifiers: ['sb'] }) }}
+    dangerouslySetInnerHTML={{
+      __html: blockquote({ ...blockquoteData, blockquote_modifiers: ['sb'] }),
+    }}
   />
 );
 export const preformatted = () => (
@@ -30,4 +34,31 @@ export const preformatted = () => (
 );
 export const random = () => (
   <div dangerouslySetInnerHTML={{ __html: paragraph({}) }} />
+);
+
+export const pageTitle = () => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: heading({
+        heading_level: '1',
+        heading_base_class: 'page-title',
+        heading:
+          'YALE-MSS-1.1.1: Classify the IT System as high, moderate, or low risk.',
+      }),
+    }}
+  />
+);
+
+export const pageTitleLong = () => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: heading({
+        heading_level: '1',
+        heading_base_class: 'page-title',
+        heading_modifiers: ['long'],
+        heading:
+          'YALE-MSS-1.1.1: Classify the IT System as high, moderate, or low risk based on data classification, availability requirements, and external obligations.',
+      }),
+    }}
+  />
 );
