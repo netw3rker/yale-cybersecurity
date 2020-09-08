@@ -1,9 +1,11 @@
 grid_modifiers:
   - 'full'
+grid_container_modifiers:
+  - 'with-sbs'
 grid_label: 'Card Grid 3 Across with Sticky Item'
 item_type: 'card'
 grid_top_items:
-  - card__modifiers: ['sbs']
+  - card__modifiers: ['sbs', 'sticky']
     card__image__src: 'https://placeimg.com/480/300/people'
     card__image__alt: 'People'
     card__image__output_image_tag: true

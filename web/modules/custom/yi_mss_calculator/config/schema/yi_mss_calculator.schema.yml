@@ -1,0 +1,7 @@
+field.formatter.settings.yi_mss_calculator_specifications_grid:
+  type: mapping
+  label: 'Specification Grid hide title'
+  mapping:
+    hide_title:
+      type: boolean
+      label: 'Hide title and links'

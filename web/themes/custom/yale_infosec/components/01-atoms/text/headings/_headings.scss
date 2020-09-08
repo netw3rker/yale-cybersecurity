@@ -175,6 +175,7 @@ $color-heading: clr(text-heavy);
 .h4,
 .h5,
 .h6 {
+
   .bg--dark-gray &,
   .bg--blue &,
   .bg--dark-blue & {
@@ -183,22 +184,35 @@ $color-heading: clr(text-heavy);
 }
 
 .page-title {
-  @include heading-large(
-    $line-height: 1,
+  @include heading-large($line-height: 1,
     $margin: 0 0 $space,
   );
 
   @include medium {
-    @include heading-xl(
-      $line-height: 1,
+    @include heading-xl($line-height: 1,
       $margin: 0 0 $space,
     );
+  }
+
+  &--long {
+    font-size: 3.4rem;
+
+    &::first-line {
+      font-size: 5rem;
+    }
+
+    @include medium {
+      font-size: 4.4rem;
+
+      &::first-line {
+        font-size: 5.4rem;
+      }
+    }
   }
 }
 
 .page-subtitle {
-  @include heading-large(
-    $color: color('gray-4a'),
+  @include heading-large($color: color('gray-4a'),
     $font-family: $font-body,
     $font-size: 2.4rem,
     $font-weight: normal,

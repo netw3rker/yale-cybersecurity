@@ -16,7 +16,9 @@
  */
 #}
 
-{% embed "@molecules/text-section/text-section.twig" %}
+{% embed "@molecules/text-section/text-section.twig" with {
+  text_section__modifiers: ['primary'],
+} %}
   {% block text_section_content %}
     {{children}}
   {% endblock %}
