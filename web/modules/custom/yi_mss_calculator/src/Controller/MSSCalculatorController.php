@@ -150,6 +150,7 @@ class MSSCalculatorController extends ControllerBase {
       $node = $this->getSpecParentNode($spec->id());
       $policy = $node->field_policy_number->getString();
       $policyParts = explode('.', $policy);
+      $secondary = NULL;
 
       // Tertiary or secondary?
       if (count($policyParts) == 2) {
@@ -171,7 +172,7 @@ class MSSCalculatorController extends ControllerBase {
           $n = Node::load($primary);
           $results[$primary] = [
             'title' => $n->getTitle(),
-            'description' => $n->field_standard_description->getString(),
+            'description' => $n->field_standard_description->getValue()[0]['value'],
             'uri' => Url::fromRoute('entity.node.canonical', ['node' => $primary], ['absolute' => TRUE])->toString(),
             'policy_links' => [],
             'children' => [],
@@ -182,6 +183,8 @@ class MSSCalculatorController extends ControllerBase {
         $results[$primary]['children'][$policy] = [
           'policy_number' => $policy,
           'title' => $node->getTitle(),
+          'tertiary' => $secondary ? 'mss-sub-policies-tertiary' : '',
+          'description' => $node->field_standard_description->getValue()[0]['value'],
           'uri' => Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
           'labels' => $this->getLabels($spec),
         ];

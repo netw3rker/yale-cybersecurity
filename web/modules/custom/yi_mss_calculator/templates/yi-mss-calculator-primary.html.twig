@@ -2,18 +2,21 @@
   <div class="mss-primary-inner">
     {% for item in results %}
       <h2 class="mss-primary-title">{{ link(item.title, item.uri) }}</h2>
-      <p class="mss-primary-desc">{{ item.description }}</p>
+      <div class="mss-primary-desc">{{ item.description|raw }}</div>
       <ul class="mss-sub-policies">
         {% for subitem in item.children %}
-          <li class="mss-sub-policies__li">
+          <li class="mss-sub-policies__li {{ subitem.tertiary }}">
             {{ link(subitem.title, subitem.uri) }}
             {% if subitem.labels|length > 0 %}
-            <span class="mss-sub-policies-labels">
-              {% for class, label in subitem.labels %}
-                <span class="mss-sub-policies-label mss-sub-policies-label-{{class}} mss-sub-policies-label--large">{{ label }}</span>
-              {% endfor %}
+            <span class="standard-spec-labels">
+                {% for class, label in subitem.labels %}
+                <span class="lozenge lozenge--{{class}}">{{ label }}</span>
+                {% endfor %}
             </span>
             {% endif %}
+            <div class="mss-sub-policies-description">
+              {{ subitem.description|raw }}
+            </div>
           </li>
         {% endfor %}
       </ul>

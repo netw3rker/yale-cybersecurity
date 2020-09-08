@@ -13,7 +13,7 @@
             <h4 class="mss-overview-result">
               {{item.title}}:
               {% for child in item.children %}
-                {{ link(child.policy_number, child.uri) }}
+                {{ link(child.policy_number, child.uri) }}{% if not loop.last %},{% endif %}
               {% endfor %}
             </h4>
           {% endfor %}

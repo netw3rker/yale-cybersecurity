@@ -22,37 +22,3 @@
     margin-bottom: $space;
   }
 }
-
-.mss-sub-policies {
-  @include list-reset;
-
-  &__li {
-    border-bottom: 1px solid rgba(151, 141, 133, 0.35);
-    margin: 0.8rem 0 .8rem;
-    padding: .8rem 0 1rem;
-    line-height: 1.2;
-  }
-
-  &-labels {
-    display: flex;
-    margin-bottom: $space * .25;
-  }
-
-  &-label {
-    margin-right: $space-half;
-    background: $color_required;
-    color: clr(text-inverse);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 1.5;
-    padding: 0 0.7rem;
-    display: block;
-    width: fit-content;
-    border-radius: 70px;
-
-    &-upcoming {
-      background: #4A4A4A;
-    }
-  }
-}
