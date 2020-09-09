@@ -9,6 +9,10 @@
   grid-area: content;
 
   .fieldgroup {
+    .description {
+      margin-top: $space-double;
+    }
+
     legend {
       @include heading-small;
 

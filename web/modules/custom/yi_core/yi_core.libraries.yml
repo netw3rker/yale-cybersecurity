@@ -1,0 +1,4 @@
+admin-css:
+  css:
+    theme:
+      css/yi_core.admin.css: {}
