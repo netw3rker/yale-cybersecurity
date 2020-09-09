@@ -54,9 +54,7 @@ $dot-space: 7px;
   position: relative;
   z-index: 1;
 
-  @include medium {
-    @include grid;
-  }
+  @include grid($bp: $medium);
 
   &--padded {
     padding-bottom: $space-triple;
