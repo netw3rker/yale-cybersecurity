@@ -1,11 +1,8 @@
 .mss-results-wrapper {
   @include wrapper;
+  @include grid;
 
   margin-bottom: $space-triple;
-
-  @include large {
-    @include grid;
-  }
 }
 
 .mss-results-inner {
