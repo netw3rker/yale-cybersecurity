@@ -1,7 +1,7 @@
 .alert {
-  @include large {
-    @include grid;
+  @include grid;
 
+  @include large {
     margin-top: $space-double;
   }
 

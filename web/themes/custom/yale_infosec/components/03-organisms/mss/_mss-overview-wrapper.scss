@@ -1,11 +1,8 @@
 .mss-overview-wrapper {
   @include wrapper;
+  @include grid;
 
   margin-bottom: $space-triple;
-
-  @include large {
-    @include grid;
-  }
 
   &-inner {
     grid-area: content;
@@ -80,12 +77,9 @@
 
 .mss-view-report {
   @include wrapper;
+  @include grid;
 
   margin-bottom: $space-triple;
-
-  @include large {
-    @include grid;
-  }
 
   a {
     @include button-base;

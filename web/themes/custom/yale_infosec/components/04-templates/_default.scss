@@ -3,6 +3,7 @@
 */
 .main-content__top {
   @include wrapper;
+  @include grid;
 
   margin-top: $space-double;
 
@@ -11,8 +12,6 @@
   }
 
   @include large {
-    @include grid;
-
     margin-top: $space-quadruple;
   }
 

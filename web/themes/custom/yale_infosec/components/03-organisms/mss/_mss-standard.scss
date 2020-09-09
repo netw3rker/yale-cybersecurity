@@ -1,11 +1,8 @@
 .standard-wrapper {
   @include wrapper;
+  @include grid;
 
   margin-bottom: $space-triple;
-
-  @include large {
-    @include grid;
-  }
 
   &-inner {
     grid-area: content;
