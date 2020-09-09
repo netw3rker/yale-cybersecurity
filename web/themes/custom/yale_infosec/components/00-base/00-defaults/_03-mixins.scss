@@ -64,7 +64,7 @@ $outer-container-break: $small;
 
 @mixin centered-grid(
     $areas: "left-side-c aside-left-c gutter-left-c content-c gutter-right-c aside-right-c right-side-c",
-    $columns: 3.5% 17.5% 3.5% 51% 3.5% 17.5% 3.5%
+    $columns: 3.5% 14.5% 3.5% 57% 3.5% 14.5% 3.5%
   ) {
   display: grid;
   grid-template-areas: $areas;

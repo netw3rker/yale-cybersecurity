@@ -14,7 +14,7 @@
     @include large {
       @include grid(
         $areas: "left-side-c aside-left-c gutter-left-c content-left-c content-gutter-c content-right-c aside-right-c right-side-c",
-        $columns: 3.5% 17.5% 3.5% 23.75% 3.5% 23.75% 3.5% 17.5% 3.5%
+        $columns: 3.5% 14.5% 3.5% 26.75% 3.5% 26.75% 3.5% 14.5% 3.5%
       );
     }
   }
@@ -54,11 +54,11 @@
 
   &--centered {
     grid-column-end: 5;
-    grid-column-start: 3;
+    grid-column-start: 4;
     grid-row-start: 1;
 
     &.text-with-image__text--left {
-      grid-column-end: 8;
+      grid-column-end: 7;
       grid-column-start: 6;
     }
   }
