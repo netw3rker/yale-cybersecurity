@@ -1,0 +1,33 @@
+<div class="standard-specifications">
+  {% if uri %}
+  <h4>
+    {{ title }}
+    <br>
+    {{ link('Read the Full Spec', uri) }}
+  </h4>
+  {% endif %}
+  <div class="standard-specifications-grid">
+    {% if uri %}
+    <a class="standard-specifications-grid__inner" href="{{ uri }}" title="To get more details, see the spec.">
+    {% else %}
+    <span class="standard-specifications-grid__inner">
+    {% endif %}
+      {% for spec in specifications %}
+      <span class="standard-specifications-spec-item">
+        {{ spec.title }}
+        {% if spec.labels|length > 0 %}
+        <span class="standard-spec-labels">
+            {% for class, label in spec.labels %}
+            <span class="lozenge lozenge--{{class}}">{{ label }}</span>
+            {% endfor %}
+        </span>
+        {% endif %}
+      </span>
+      {% endfor %}
+    {% if uri %}
+    </a>
+    {% else %}
+    </span>
+    {% endif %}
+  </div>
+</div>

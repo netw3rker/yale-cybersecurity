@@ -1,17 +1,37 @@
 .cta-section {
   @include wrapper;
 
-  @include large {
-    @include grid;
+  &--primary {
+    @include large {
+      @include grid;
+    }
+  }
+
+  &--centered {
+    @include large {
+      @include centered-grid;
+    }
   }
 }
 
 .cta-section__content {
-  grid-column-end: content;
-  grid-column-start: left-side;
-
-  &--large {
-    grid-column-end: right-gutter;
+  &--primary {
+    grid-column-end: content;
     grid-column-start: left-side;
+
+    &.cta-section__content--large {
+      grid-column-end: right-gutter;
+      grid-column-start: left-side;
+    }
+  }
+
+  &--centered {
+    grid-column-end: 6;
+    grid-column-start: 3;
+
+    &.cta-section__content--large {
+      grid-column-end: 7;
+      grid-column-start: 2;
+    }
   }
 }

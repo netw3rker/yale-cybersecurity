@@ -2,6 +2,11 @@ global:
   css:
     theme:
       dist/style.css: {}
+  js:
+    dist/js/03-organisms/mss/mss.js: {}
+    dist/js/01-atoms/text/headings/page-title.js: {}
+  dependencies:
+    - core/drupal
 
 main-menu:
   js:
@@ -13,7 +18,8 @@ main-menu:
 # See also components/01-atoms/images/icons/_icon.twig to remove attach_library.
 sprite:
   js:
-    components/01-atoms/images/icons/svgxuse.min.js: { attributes: { defer: true } }
+    components/01-atoms/images/icons/svgxuse.min.js:
+      { attributes: { defer: true } }
 
 tabs:
   js:
@@ -24,7 +30,8 @@ tabs:
 alert:
   js:
     dist/js/02-molecules/alert/alert.js: {}
-    https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js: { type: external, minified: true }
+    https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js:
+      { type: external, minified: true }
   dependencies:
     - core/drupal
 

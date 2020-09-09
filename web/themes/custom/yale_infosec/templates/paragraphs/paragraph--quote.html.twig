@@ -36,6 +36,8 @@
  * @ingroup themeable
  */
 #}
+{% set text_section__modifiers = [grid_style] %}
+
 {% extends "@molecules/text-section/text-section.twig" %}
   {% block text_section_content %}
     {% include "@atoms/text/text/02-blockquote.twig" with {

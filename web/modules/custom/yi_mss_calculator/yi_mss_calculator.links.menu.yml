@@ -1,0 +1,6 @@
+yi_mss_calculator.admin_settings_form:
+  route_name: yi_mss_calculator.admin_settings_form
+  title: 'Minimum Security Standard Settings'
+  description: 'Configuration for display of Yale Minimum Security Standards'
+  parent: system.admin_config_system
+  weight: 99
