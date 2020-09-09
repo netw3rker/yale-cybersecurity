@@ -50,20 +50,13 @@
   color: #b2c2d2;
 }
 
-.standard-specifications-grid a {
+.standard-specifications-grid__inner {
   grid-template-columns: repeat(3, 1fr);
   gap: 1px 1px;
   grid-template-areas: ". . ." ". . ." ". . ." ". . .";
   background-color: #cfcbc7;
   padding-bottom: 1px;
   padding-top: 1px;
-
-  &:link,
-  &:hover,
-  &:visited {
-  color: clr(background-deep);
-  text-decoration: none;
-}
 
   @include large {
     display: grid;
@@ -81,6 +74,15 @@
     font-size: 1.7rem;
     display: flex;
     align-items: center;
+  }
+}
+
+a.standard-specifications-grid__inner {
+  &:link,
+  &:hover,
+  &:visited {
+    color: clr(background-deep);
+    text-decoration: none;
   }
 }
 
