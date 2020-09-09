@@ -2,7 +2,8 @@
 
 {% set search_btn_attributes = {
   class: bem('search_btn', [], "main-nav"),
-  id: 'search-btn'
+  id: 'search-btn',
+  'aria-label': 'Open Search'
 } %}
 
 <nav {{ bem('main-nav-nav', main_nav_modifiers) }}>
@@ -35,6 +36,7 @@
         icon_base_class: "icon",
         icon_blockname: "search",
         icon_name: "search",
+        icon_decorative: true
       } %}
     </button>
     {# Search #}
