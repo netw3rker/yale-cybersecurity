@@ -197,16 +197,8 @@ $color-heading: clr(text-heavy);
   &--long {
     font-size: 3.4rem;
 
-    &::first-line {
-      font-size: 5rem;
-    }
-
     @include medium {
       font-size: 4.4rem;
-
-      &::first-line {
-        font-size: 5.4rem;
-      }
     }
   }
 }
