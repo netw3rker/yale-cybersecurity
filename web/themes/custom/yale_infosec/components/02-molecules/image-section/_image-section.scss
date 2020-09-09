@@ -3,15 +3,11 @@
 
   &--primary,
   &--large {
-    @include large {
-      @include grid;
-    }
+    @include grid;
   }
 
   &--centered {
-    @include large {
-      @include centered-grid;
-    }
+    @include centered-grid;
   }
 
   figure,

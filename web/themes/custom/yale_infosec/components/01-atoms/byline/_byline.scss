@@ -1,12 +1,9 @@
 .byline {
   @include wrapper;
+  @include grid;
 
   margin-top: -30px;
   margin-bottom: 1rem;
-
-  @include large {
-    @include grid;
-  }
 
   &__details {
     grid-area: content;

@@ -1,13 +1,9 @@
 .tags {
   @include wrapper;
-
-  margin-bottom: 4.7rem;
-
-  @include large {
-    @include grid;
-  }
+  @include grid;
 
   font-size: 1.4rem;
+  margin-bottom: 4.7rem;
 
   &__content {
     grid-area: content;
