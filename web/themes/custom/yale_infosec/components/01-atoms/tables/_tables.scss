@@ -20,49 +20,22 @@
 
 .table__heading-cell {
   background-color: clr(background-inverse);
-  border-bottom: none;
+  border-bottom: 1px solid color(gray-4a);
   border-right: 1px solid color(gray-4a);
   color: clr(text-inverse);
   font-weight: 700;
   text-align: left;
   text-transform: uppercase;
+
+  thead & {
+    border-bottom: 1px solid clr(border-light);
+  }
 }
 
 tbody {
   .table__row {
     &:nth-child(even) {
       background-color: clr(accentsubtle);
-    }
-
-    /* Top Row - Non-BEM but always contained */
-    &:first-child {
-      th:first-child,
-      td:first-child {
-        border-radius: 5px 0 0;
-      }
-
-      th:last-child,
-      td:last-child {
-        border-radius: 0 5px 0 0;
-      }
-    }
-
-    /* Bottom Row - Non-BEM but always contained */
-    &:last-child {
-      tbody & {
-        th,
-        td {
-          border-bottom: none;
-        }
-      }
-
-      td:first-child {
-        border-radius: 0 0 0 5px;
-      }
-
-      td:last-child {
-        border-radius: 0 0 5px;
-      }
     }
   }
 }
