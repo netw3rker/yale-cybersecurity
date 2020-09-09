@@ -21,6 +21,10 @@
     color: clr(text-inverse);
   }
 
+  .text-section & {
+    margin-right: 0;
+  }
+
   &--quote-left {
     @include large {
       border-left: none;

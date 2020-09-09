@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.text_with_media.field_text
     - paragraphs.paragraphs_type.text_with_media
   module:
+    - options
     - text
 _core:
   default_config_hash: 5HA2-4-z_A1th7eXYefWrksM7ud6uyMWBu7HL87X4B0
@@ -25,6 +26,13 @@ content:
       link: false
     third_party_settings: {  }
     region: content
+  field_media_alignment:
+    type: list_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_text:
     weight: 0
     label: hidden
@@ -33,4 +41,4 @@ content:
     type: text_default
     region: content
 hidden:
-  field_media_alignment: true
+  search_api_excerpt: true

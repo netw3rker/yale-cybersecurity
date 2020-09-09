@@ -1,0 +1,20 @@
+<div class="mss-results-wrapper">
+  <div class="mss-results-inner">
+    <h3>Based on the following selections: <em>{{ filters|join(', ') }}</em></h3>
+
+    {% for primary in results %}
+    <div class="standard-primary">
+      <h2 class="h2">{{ primary.title }}</h2>
+
+      {% for child in primary.children %}
+      <div class="standard-child">
+        <h3 class="h3" style="margin-bottom: 0;">{{ child.title }}</h3>
+        <div class="specification specification--column">
+          {{ child.specifications }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</div>

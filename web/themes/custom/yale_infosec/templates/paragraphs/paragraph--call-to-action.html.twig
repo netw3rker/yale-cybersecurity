@@ -39,7 +39,8 @@
 {% set cta_size = content.field_size.0['#markup'] %}
 
 {% embed "@organisms/cta-section/cta-section.twig" with {
-  cta_section_content__modifiers: cta_size
+  cta_section__modifiers: [grid_style],
+  cta_section_content__modifiers: [cta_size, grid_style]
 } %}
   {% block cta_section_content %}
     {{ content|without('field_size') }}
