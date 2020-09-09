@@ -4,6 +4,10 @@
  #}
 {% set image_section__base_class = 'image-section' %}
 
+{% if not image_section__modifiers %}
+  {% set image_section__modifiers = [] %}
+{% endif %}
+
 {% if not image_section_content_modifiers %}
   {% set image_section_content_modifiers = [] %}
 {% endif %}
