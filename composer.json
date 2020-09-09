@@ -176,6 +176,18 @@
                 "sites/example.sites.php": "sites/example.sites.php"
             },
             "omit-defaults": false
+        },
+        "patches": {
+            "drupal/content_browser": {
+                "admin theme fix": "https://www.drupal.org/files/issues/2020-08-26/frontend_theme-2903529-13.patch"
+            }
+        },
+        "patches-ignore": {
+            "fourkitchens/sous-drupal-distro": {
+                "drupal/file_browser": {
+                    "3089470": "https://www.drupal.org/files/issues/2019-10-22/profile-library-support-3089470-9.patch"
+                }
+            }
         }
     },
     "config": {
