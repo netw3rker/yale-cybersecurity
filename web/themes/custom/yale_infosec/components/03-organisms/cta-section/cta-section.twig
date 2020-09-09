@@ -4,7 +4,7 @@
  #}
 {% set cta_section__base_class = 'cta-section' %}
 
-<div {{ bem(cta_section__base_class) }}>
+<div {{ bem(cta_section__base_class, cta_section__modifiers) }}>
   <div {{ bem('content', cta_section_content__modifiers, cta_section__base_class) }}>
     {% block cta_section_content %}
       {% include "@molecules/cta/cta.twig" %}

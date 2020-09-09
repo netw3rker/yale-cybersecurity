@@ -36,6 +36,10 @@
  * @ingroup themeable
  */
 #}
+{% set image_section__modifiers = [
+  grid_style,
+  ]
+%}
 
 {% extends "@molecules/image-section/image-section.twig" %}
   {% block image_section_img %}

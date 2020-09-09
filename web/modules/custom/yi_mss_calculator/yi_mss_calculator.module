@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Contains yi_mss_calculator.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function yi_mss_calculator_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the yi_mss_calculator module.
+    case 'help.page.yi_mss_calculator':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Minimum Security Standard Calculator') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function yi_mss_calculator_theme() {
+  return [
+    'yi_mss_calculator_overview' => [
+      'variables' => [
+        'filters' => [],
+        'results' => [],
+      ],
+    ],
+    'yi_mss_calculator_primary' => [
+      'variables' => [
+        'results' => [],
+      ],
+    ],
+    'yi_mss_calculator_listing_page' => [
+      'variables' => [
+        'standards' => [],
+        'header_text' => NULL,
+      ],
+    ],
+    'yi_mss_calculator_results_download' => [
+      'variables' => [
+        'results' => [],
+        'filters' => [],
+      ],
+    ],
+    'yi_mss_calculator_specifications_grid' => [
+      'variables' => [
+        'title' => NULL,
+        'uri' => NULL,
+        'specifications' => [],
+      ],
+    ],
+  ];
+}

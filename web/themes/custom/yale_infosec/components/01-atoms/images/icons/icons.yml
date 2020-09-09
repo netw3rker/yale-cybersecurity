@@ -23,3 +23,5 @@ items:
     value: 'arrow-right'
   - name: 'tag'
     value: 'tag'
+  - name: 'Report'
+    value: 'report'

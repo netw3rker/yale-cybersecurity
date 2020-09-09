@@ -41,14 +41,21 @@
     {% endif %}
 
     {% if parent_item_title %}
-      <span {{ bem('parent-item', [], menu_class) }}>
-        {% include "@atoms/images/icons/_icon.twig" with {
-          icon_base_class: 'parent-item-back',
-          icon_blockname: menu_class,
-          icon_name: "chevron-left",
-        } %}
-        {{ parent_item_title }}
-      </span>
+      {% embed "@atoms/buttons/button.twig" with {
+        button_base_class: 'parent-item',
+        button_blockname: menu_class,
+        button_label: 'Back to ' ~ parent_item_title
+      } %}
+        {% block button_content %}
+          {% include "@atoms/images/icons/_icon.twig" with {
+            icon_base_class: 'parent-item-back',
+            icon_blockname: menu_class,
+            icon_name: "chevron-left",
+            icon_decorative: true,
+          } %}
+          {{ parent_item_title }}
+        {% endblock %}
+      {% endembed %}
     {% endif %}
 
     {# List #}
