@@ -1,7 +1,8 @@
 .image-section {
   @include wrapper;
 
-  &--primary {
+  &--primary,
+  &--large {
     @include large {
       @include grid;
     }
