@@ -19,22 +19,19 @@
 
   @include large {
     border-bottom: none;
+    border-radius: 0;
     display: inline-block;
     font-size: 1.9rem;
     line-height: 1.47;
     padding: 0 2rem $space 0;
     position: relative;
     text-transform: uppercase;
-    width: auto;
+    width: 100%;
 
     &.active,
     &:active,
     &:hover {
       color: clr(highlight-high);
-    }
-
-    &--sub::after {
-      display: none;
     }
 
     &:hover {
@@ -47,6 +44,10 @@
   }
 }
 
+.main-menu__link--with-sub:focus + .expand-sub {
+  display: block;
+}
+
 /*
  * Sub Navigation Links
  */
@@ -57,6 +58,14 @@
     display: block;
     padding: 1rem 2.4rem;
 
+    &.main-menu__link--with-sub {
+      width: 80%;
+
+      &::after {
+        display: none;
+      }
+    }
+
     &:hover {
       background: clr(primary-deep);
     }
@@ -65,10 +74,4 @@
 
 .main-menu--sub-2 {
   background-color: clr(highlight-high);
-}
-
-.main-menu__link--sub-2 {
-  @include large {
-    padding-left: $space-quadruple;
-  }
 }
