@@ -62,6 +62,12 @@
     {{ messages }}
   {% endblock %}
 
+  {% block page_alert %}
+    {% if page.alert %}
+      {{ page.alert }}
+    {% endif %}
+  {% endblock %}
+
   {% block page_sidebar %}
     {{ page.sidebar }}
   {% endblock %}
