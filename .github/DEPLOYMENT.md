@@ -9,7 +9,7 @@ CircleCI takes care of automated deployment for the `master` branch.
 
 An automated deployment process is kicked off for the branches mentioned
 above any time you push. You can monitor the progress of the build and deployment 
-here: https://app.circleci.com/pipelines/github/yalesites-org/schwarzman.yale.edu
+here: https://app.circleci.com/pipelines/github/yalesites-org/cybersecurity.yale.edu
 
 Code is automatically deployed to Pantheon once the build process is
 complete.
@@ -22,14 +22,23 @@ This is the only valid method of commiting code to the project. Once a pull requ
 
 #### Dev
 
-- master
+The 'Dev' environment is updated with any new code that is merged into master. Base configuration is automatically imported.
 
-Dev is the name of the environment on the Pantheon server and should always be set to use the **develop** branch.
+If you wish to enable development tools on this environment you can run the command below:
+`terminus drush cybersecurity-yale-edu.test csim -dev -y`
 
 #### Test
 
-The test deployment workflow should be handled through the Pantheon Dashboard OR using teminus commands.
+- Commit changes to test via the Pantheon dashboard.
+- Clear the environment cache: `terminus drush cybersecurity-yale-edu.test cr`
+- Import base configurations: `terminus drush cybersecurity-yale-edu.test cim`
+
+If you want to test SSO logins on the test environment:
+- Import 'live' configurations: `terminus drush cybersecurity-yale-edu.test csim live -y`
 
 #### Live
 
-The Live deployment workflow should be handled through the Pantheon Dashboard OR using teminus commands.
+- Commit changes to live via the Pantheon dashboard.
+- Import configurations: `terminus drush cybersecurity-yale-edu.live cim`
+- Clear the environment cache: `terminus drush cybersecurity-yale-edu.live cr`
+- Import configurations: `terminus drush cybersecurity-yale-edu.live csim live -y`
