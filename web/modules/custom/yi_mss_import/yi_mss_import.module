@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains yi_mss_import.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function yi_mss_import_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the yi_mss_import module.
+    case 'help.page.yi_mss_import':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Importer for minimum security standards') . '</p>';
+      return $output;
+
+    default:
+  }
+}

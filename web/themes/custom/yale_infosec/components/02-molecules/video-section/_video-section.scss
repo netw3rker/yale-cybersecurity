@@ -3,11 +3,21 @@
 
   margin-bottom: $space-triple;
 
-  @include large {
+  &--primary {
     @include grid;
+  }
+
+  &--centered {
+    @include centered-grid;
   }
 }
 
 .video-section__content {
-  grid-area: content;
+  &--primary {
+    grid-area: content;
+  }
+
+  &--centered {
+    grid-area: content-c;
+  }
 }

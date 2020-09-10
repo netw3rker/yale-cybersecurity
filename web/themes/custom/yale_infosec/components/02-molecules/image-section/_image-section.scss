@@ -1,8 +1,13 @@
 .image-section {
   @include wrapper;
 
-  @include large {
+  &--primary,
+  &--large {
     @include grid;
+  }
+
+  &--centered {
+    @include centered-grid;
   }
 
   figure,
@@ -12,7 +17,13 @@
 }
 
 .image-section__image {
-  grid-area: content;
+  &--primary {
+    grid-area: content;
+  }
+
+  &--centered {
+    grid-area: content-c;
+  }
 
   &--large {
     grid-column-end: right-gutter;

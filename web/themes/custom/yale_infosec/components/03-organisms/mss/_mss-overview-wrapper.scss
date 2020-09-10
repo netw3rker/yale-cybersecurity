@@ -1,0 +1,105 @@
+.mss-overview-wrapper {
+  @include wrapper;
+  @include grid;
+
+  margin-bottom: $space-triple;
+
+  &-inner {
+    grid-area: content;
+  }
+}
+
+.mss-overview {
+  background: #F9F9F9;
+  margin-top: $space;
+  padding: $space * 2;
+  position: relative;
+
+  &-content {
+    &.mss-overview-content--truncated {
+      max-height: 400px;
+      overflow-y: scroll;
+      position: relative;
+    }
+  }
+
+  &-expand-button {
+    display: none;
+    background: darken(#F9F9F9, 7%);
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+    padding: $space-half 0;
+    color: clr(highlight);
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.15s;
+
+    &:hover {
+      background: darken(#F9F9F9, 13%);
+    }
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: $space * 0.25;
+    color: clr(text-heavy);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &-selections {
+    margin-top: 0;
+    font-size: 1.4rem;
+
+    em {
+      font-weight: normal;
+    }
+  }
+
+  &-result {
+    border-bottom: 1px solid rgba(151, 141, 133, 0.35);
+    font-size: 1.7rem;
+    font-weight: normal;
+    line-height: 1.2;
+    padding-bottom: $space-half;
+    margin: $space-half 0;
+  }
+}
+
+.mss-view-report {
+  @include wrapper;
+  @include grid;
+
+  margin-bottom: $space-triple;
+
+  a {
+    @include button-base;
+    @include button-bg;
+
+    @extend .button--primary;
+
+    margin-top: 0;
+    grid-area: content;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    &::before {
+      content: '';
+      display: block;
+      background-image: url('../images/icons/report.svg');
+      width: 12px;
+      height: 16px;
+      margin-right: $space-half;
+    }
+  }
+}

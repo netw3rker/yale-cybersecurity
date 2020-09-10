@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.reference_list
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_with_media
+    - paragraphs.paragraphs_type.text_with_quote
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -37,13 +38,14 @@ settings:
       image: image
       text: text
       text_with_media: text_with_media
-      quote: quote
       large_image: large_image
+      quote: quote
       video: video
       reference_cards: reference_cards
       reference_list: reference_list
       image_with_aside: image_with_aside
       embed: embed
+      text_with_quote: text_with_quote
     target_bundles_drag_drop:
       call_to_action:
         enabled: true
@@ -64,7 +66,7 @@ settings:
         weight: 6
         enabled: false
       icon_card:
-        weight: 25
+        weight: 24
         enabled: false
       image:
         enabled: true
@@ -96,6 +98,9 @@ settings:
       text_with_media:
         enabled: true
         weight: 9
+      text_with_quote:
+        enabled: true
+        weight: 35
       video:
         enabled: true
         weight: 10

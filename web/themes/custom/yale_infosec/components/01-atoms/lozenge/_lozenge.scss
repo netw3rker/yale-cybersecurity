@@ -1,0 +1,33 @@
+@mixin lozenge {
+  margin-right: $space-half;
+  background: $color_required;
+  color: clr(text-inverse);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+  padding: 0 0.7rem;
+  display: block;
+  width: fit-content;
+  border-radius: 70px;
+  white-space: nowrap;
+
+  &--upcoming,
+  &--internet-access,
+  &--not-required {
+    background: #4A4A4A;
+  }
+
+  &--large {
+    @include medium {
+      font-size: 1.59rem;
+      line-height: 1;
+      padding: 0.5rem 1.4rem 0.3rem;
+    }
+  }
+}
+
+.lozenge {
+  @include lozenge;
+}

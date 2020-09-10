@@ -1,0 +1,41 @@
+.text-with-quote {
+  @include wrapper;
+
+  &--primary {
+    @include grid;
+  }
+
+  &--centered {
+    @include centered-grid;
+  }
+}
+
+.text-with-quote__quote {
+  @include blockquote;
+
+  &--primary {
+    grid-area: sidebar;
+  }
+
+  &--centered {
+    grid-area: aside-left-c;
+  }
+
+  &--quote-right {
+    grid-area: aside-right-c;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.text-with-quote__text {
+  &--primary {
+    grid-area: content;
+  }
+
+  &--centered {
+    grid-area: content-c;
+  }
+}

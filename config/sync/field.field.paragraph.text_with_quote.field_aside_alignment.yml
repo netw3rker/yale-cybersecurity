@@ -1,0 +1,23 @@
+uuid: c3c31bf2-840f-4647-b702-396ff13627c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_aside_alignment
+    - paragraphs.paragraphs_type.text_with_quote
+  module:
+    - options
+id: paragraph.text_with_quote.field_aside_alignment
+field_name: field_aside_alignment
+entity_type: paragraph
+bundle: text_with_quote
+label: 'Aside alignment'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: right
+default_value_callback: ''
+settings: {  }
+field_type: list_string

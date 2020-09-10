@@ -1,0 +1,20 @@
+{#
+/**
+ * Available variables:
+ * - lozenge_base_class - the base classname
+ * - lozenge_modifiers - array of modifiers to add to the base classname
+ * - lozenge_blockname - blockname prepended to the base classname
+ * - lozenge_content - the content of the paragraph (typically text)
+ *
+ * Available blocks:
+ * - lozenge_content - used to replace the content of the paragraph with something other than plain text
+ *   for example: A formatted text field in Drupal
+ */
+#}
+{% set lozenge_base_class = lozenge_base_class|default('lozenge') %}
+
+<span {{ bem(lozenge_base_class, lozenge_modifiers, lozenge_blockname) }}>
+  {% block lozenge_content %}
+    {{ lozenge_content }}
+  {% endblock %}
+</span>

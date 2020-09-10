@@ -1,0 +1,13 @@
+/**
+ * Entity browser fixes:
+ */
+
+/* Entity browser selection page nav innaccessible because of content overlap */
+form.entity-browser-form nav.pager {
+  position: relative;
+}
+
+/* Entity browser selection content has no height, messes with scrolling */
+form.entity-browser-form div.view-content {
+  height: auto !important;
+}

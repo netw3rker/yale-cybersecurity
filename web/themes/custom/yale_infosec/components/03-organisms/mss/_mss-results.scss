@@ -1,0 +1,15 @@
+.mss-results-wrapper {
+  @include wrapper;
+  @include grid;
+
+  margin-bottom: $space-triple;
+}
+
+.mss-results-inner {
+  grid-column-start: 3;
+  grid-column-end: 7;
+
+  .standard-primary {
+    margin-left: 0;
+  }
+}

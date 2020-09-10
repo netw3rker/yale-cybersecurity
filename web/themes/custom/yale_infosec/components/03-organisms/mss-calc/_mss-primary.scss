@@ -1,0 +1,21 @@
+.mss-primary {
+  @include wrapper;
+  @include grid;
+
+  margin-bottom: $space-triple;
+
+  &-inner {
+    grid-area: content;
+  }
+
+  &-title {
+    margin-top: $space * 2;
+    margin-bottom: $space;
+    font-size: 3.6rem;
+    line-height: 1.1;
+  }
+
+  &-desc {
+    margin-bottom: $space;
+  }
+}

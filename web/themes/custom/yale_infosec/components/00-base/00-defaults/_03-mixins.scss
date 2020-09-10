@@ -55,11 +55,32 @@ $outer-container-break: $small;
 
 @mixin grid(
     $areas: "left-side left-gutter content gutter sidebar right-gutter right-side",
-    $columns: 3.5% 3.5% 61% 3.5% 21.5% 3.5% 3.5%
+    $columns: 3.5% 3.5% 61% 3.5% 21.5% 3.5% 3.5%,
+    $bp: $large
   ) {
-  display: grid;
   grid-template-areas: $areas;
   grid-template-columns: $columns;
+
+  @include breakpoint($bp) {
+    display: grid;
+  }
+}
+
+@mixin centered-grid(
+    $areas: "left-side-c aside-left-c gutter-left-c content-c gutter-right-c aside-right-c right-side-c",
+    $columns: 3.5% 17.5% 3.5% 51% 3.5% 17.5% 3.5%,
+    $xl-columns: 3.5% 14.5% 3.5% 57% 3.5% 14.5% 3.5%
+  ) {
+  grid-template-areas: $areas;
+  grid-template-columns: $columns;
+
+  @include large {
+    display: grid;
+  }
+
+  @include xl {
+    grid-template-columns: $xl-columns;
+  }
 }
 
 // Mixin - Standard Margin
