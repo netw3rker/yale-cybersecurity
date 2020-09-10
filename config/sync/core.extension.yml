@@ -42,6 +42,7 @@ module:
   filter: 0
   focal_point: 0
   google_analytics: 0
+  iframe: 0
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0

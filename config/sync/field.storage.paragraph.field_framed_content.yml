@@ -1,17 +1,16 @@
-uuid: f52081af-8903-4fe5-9605-27e11880a189
+uuid: a6a85198-d1f2-4550-9548-80a1f97f6f95
 langcode: en
 status: true
 dependencies:
   module:
+    - iframe
     - paragraphs
-id: paragraph.field_embed_height
-field_name: field_embed_height
+id: paragraph.field_framed_content
+field_name: field_framed_content
 entity_type: paragraph
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: iframe
+settings: {  }
+module: iframe
 locked: false
 cardinality: 1
 translatable: true

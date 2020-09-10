@@ -3,28 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.embed.field_embed_code
-    - field.field.paragraph.embed.field_embed_height
+    - field.field.paragraph.embed.field_framed_content
     - paragraphs.paragraphs_type.embed
+  module:
+    - iframe
 id: paragraph.embed.default
 targetEntityType: paragraph
 bundle: embed
 mode: default
 content:
-  field_embed_code:
-    weight: 1
-    settings:
-      rows: 5
-      placeholder: ''
+  field_framed_content:
+    weight: 2
+    settings: {  }
     third_party_settings: {  }
-    type: string_textarea
-    region: content
-  field_embed_height:
-    weight: 0
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
+    type: iframe_urlheight
     region: content
 hidden:
   created: true
