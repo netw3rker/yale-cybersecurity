@@ -25,6 +25,11 @@
         & > .main-menu__child-menu {
           display: block;
         }
+
+        &:last-child > .main-menu__child-menu {
+          left: auto;
+          right: $space;
+        }
       }
 
       > .expand-sub {
