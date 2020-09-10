@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_content
     - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.embed
     - paragraphs.paragraphs_type.grid_type
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.image_with_aside
@@ -43,6 +44,7 @@ settings:
       reference_cards: reference_cards
       reference_list: reference_list
       image_with_aside: image_with_aside
+      embed: embed
       text_with_quote: text_with_quote
     target_bundles_drag_drop:
       call_to_action:
@@ -57,6 +59,9 @@ settings:
       custom_card_grid:
         weight: 22
         enabled: false
+      embed:
+        enabled: true
+        weight: 23
       grid_type:
         weight: 6
         enabled: false
@@ -82,10 +87,10 @@ settings:
         enabled: true
         weight: 13
       specification:
-        weight: 31
+        weight: 32
         enabled: false
       specification_details:
-        weight: 32
+        weight: 33
         enabled: false
       text:
         enabled: true
