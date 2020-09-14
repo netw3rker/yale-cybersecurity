@@ -1,0 +1,10 @@
+uuid: 05d14ac0-4301-496e-82a9-d111bde75219
+langcode: en
+status: true
+dependencies: {  }
+id: embed
+label: Embed
+icon_uuid: null
+icon_default: null
+description: 'For embed content to be framed within a body content.'
+behavior_plugins: {  }
