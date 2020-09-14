@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { hrefTo } from '@storybook/addon-links';
 
 import '../../02-molecules/menus/main-menu/main-menu';
 
@@ -17,28 +15,22 @@ import ctaFeaturedData from '../../02-molecules/cta/cta-image-featured.yml';
 
 import homeData from './home.yml';
 
-/**
- * Storybook Definition.
- */
-hrefTo('Pages/Content Types', 'Article').then(url => {
-  // TODO: Can't figure out how to link pages with hrefTo and storiesOf.
-  storiesOf('Pages/Landing Pages', module).add('Home', () => {
-    return (
-      <div
-        dangerouslySetInnerHTML={{
-          __html: home({
-            page_layout_modifier: 'contained',
-            ...menuData,
-            ...breadcrumbData,
-            ...socialMenuData,
-            ...footerMenuData,
-            ...ctaData,
-            ...ctaImageData,
-            ...ctaFeaturedData,
-            ...homeData
-          }),
-        }}
-      />
-    );
-  });
-});
+export default { title: 'Pages/Landing Pages' };
+
+export const homePage = () => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: home({
+        page_layout_modifier: 'contained',
+        ...menuData,
+        ...breadcrumbData,
+        ...socialMenuData,
+        ...footerMenuData,
+        ...ctaData,
+        ...ctaImageData,
+        ...ctaFeaturedData,
+        ...homeData
+      }),
+    }}
+  />
+);
