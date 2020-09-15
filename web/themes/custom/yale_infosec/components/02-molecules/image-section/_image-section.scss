@@ -1,6 +1,8 @@
 .image-section {
   @include wrapper;
 
+  margin-bottom: $space-triple;
+
   &--primary,
   &--large {
     @include grid;
