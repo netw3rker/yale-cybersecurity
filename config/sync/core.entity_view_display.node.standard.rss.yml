@@ -1,0 +1,93 @@
+uuid: 3a333c55-6a0c-41ea-8ffb-fa2c2923cd2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - field.field.node.standard.field_metadata
+    - field.field.node.standard.field_policy_number
+    - field.field.node.standard.field_seo_title
+    - field.field.node.standard.field_specification_details
+    - field.field.node.standard.field_standard_description
+    - field.field.node.standard.field_standard_specifications
+    - field.field.node.standard.field_sub_policy
+    - field.field.node.standard.field_subtitle
+    - field.field.node.standard.field_tags
+    - field.field.node.standard.field_teaser_media
+    - field.field.node.standard.field_teaser_text
+    - node.type.standard
+  module:
+    - entity_reference_revisions
+    - field_group
+    - text
+    - user
+    - yi_mss_calculator
+third_party_settings:
+  field_group:
+    group_intro:
+      children: {  }
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      region: hidden
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Intro
+_core:
+  default_config_hash: r1tD2d3xfgugcFCakPpaMsHLgkoF0C5up8qu-Ku9v1w
+id: node.standard.rss
+targetEntityType: node
+bundle: standard
+mode: rss
+content:
+  field_specification_details:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_standard_description:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_standard_specifications:
+    type: yi_mss_calculator_specifications_grid
+    weight: 1
+    label: above
+    settings:
+      hide_title: true
+    third_party_settings: {  }
+    region: content
+  field_sub_policy:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  content_moderation_control: true
+  field_metadata: true
+  field_policy_number: true
+  field_seo_title: true
+  field_subtitle: true
+  field_tags: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true
+  search_api_excerpt: true
