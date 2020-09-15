@@ -38,6 +38,10 @@
           text_with_image__modifiers: ['centered'],
           paragraph_content: basic_page_small_text
         } %}
+        {% include "@molecules/text-with-quote/text-with-quote.twig" with {
+          text_with_quote_quote_content: 'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.',
+          text_with_quote__modifiers: ['centered'],
+        } %}
         {% include "@organisms/cta-section/cta-section.twig" with {
           cta_section__modifiers: ['centered'],
           cta_section_content__modifiers: ['centered'],
