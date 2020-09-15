@@ -3,7 +3,9 @@
 
   margin-bottom: $space-triple;
 
-  &--primary {
+  &--primary,
+  &--anchored_aside_left,
+  &--anchored_aside_right {
     @include grid;
   }
 
@@ -13,7 +15,9 @@
 }
 
 .text-section__content {
-  &--primary {
+  &--primary,
+  &--anchored_aside_left,
+  &--anchored_aside_right {
     grid-area: content;
   }
 
