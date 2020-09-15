@@ -9,7 +9,7 @@ import './alert';
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules|Alert' };
+export default { title: 'Molecules/Alert' };
 
 export const Persistent = () => (
   <div dangerouslySetInnerHTML={{ __html: alert(alertData) }} />
