@@ -7,7 +7,7 @@ import ctaData from './cta.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules|CTA/Color' };
+export default { title: 'Molecules/CTA/Color' };
 
 export const darkBlue = () => (
   <div dangerouslySetInnerHTML={{ __html: cta(ctaData) }} />

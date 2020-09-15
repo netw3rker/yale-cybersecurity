@@ -14,7 +14,7 @@ import contentTypeData from '../content-types.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Pages|Content Types/Events' };
+export default { title: 'Pages/Content Types/Events' };
 
 export const event = () => (
   <div
