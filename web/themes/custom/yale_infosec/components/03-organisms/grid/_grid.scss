@@ -90,7 +90,7 @@ $dot-space: 7px;
   }
 
   @include medium {
-    grid-column-start: content;
-    grid-column-end: sidebar;
+    grid-column-start: 3;
+    grid-column-end: 6;
   }
 }
