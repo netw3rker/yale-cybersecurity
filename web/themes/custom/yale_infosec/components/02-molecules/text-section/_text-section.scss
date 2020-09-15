@@ -3,8 +3,13 @@
 
   margin-bottom: $space-triple;
 
-  &--primary {
+  &--primary,
+  &--anchored_aside_left {
     @include grid;
+  }
+
+  &--anchored_aside_right {
+    @include aside-grid;
   }
 
   &--centered {
@@ -13,8 +18,14 @@
 }
 
 .text-section__content {
-  &--primary {
+  &--primary,
+  &--anchored_aside_left {
     grid-area: content;
+  }
+
+  &--anchored_aside_right {
+    grid-column-end: 6;
+    grid-column-start: 4;
   }
 
   &--centered {
