@@ -5,6 +5,7 @@ import '../../../02-molecules/menus/main-menu/main-menu';
 import noImageTwig from './no-image.twig';
 import withImageTwig from './with-image.twig';
 import bgTwig from './bg-examples.twig';
+import gridTwig from './grid-examples.twig';
 import withAlertTwig from './with-alert.twig';
 
 import menuData from '../../../data/menus.yml';
@@ -56,6 +57,22 @@ export const backgroundExamples = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: bgTwig({
+        page_layout_modifier: 'contained',
+        ...menuData,
+        ...breadcrumbData,
+        ...socialMenuData,
+        ...footerMenuData,
+        ...contentTypeData,
+        card__link__text: 'Click here',
+      }),
+    }}
+  />
+);
+
+export const gridExamples = () => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: gridTwig({
         page_layout_modifier: 'contained',
         ...menuData,
         ...breadcrumbData,
