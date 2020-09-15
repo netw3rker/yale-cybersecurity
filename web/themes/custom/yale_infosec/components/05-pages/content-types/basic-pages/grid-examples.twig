@@ -1,0 +1,47 @@
+{% extends "@templates/_default.twig" %}
+  {% block page_content_top %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: 'page-title',
+      heading_level: '1',
+      heading: 'Basic Page showing different grid types',
+    } %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_base_class: 'page-subtitle',
+      heading_level: '2',
+      heading: 'This is a Basic Page Subtitle',
+    } %}
+  {% endblock %}
+  {% block page_content %}
+    {% include "@molecules/text-with-image/text-with-image.twig" with {
+      text_with_image__base_class: 'intro-text',
+      image_src: 'https://placeimg.com/350/400/tech'
+    } %}
+    {# Centered Content #}
+    {% embed "@organisms/bg/bg.twig" with {
+      bg__modifiers: ['light-gray']
+    } %}
+      {% block bg_contents %}
+        {% include "@pages/content-types/basic-pages/grid-examples-text-section.twig" %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          image_section__modifiers: ['centered'],
+          blockquote_content: ''
+        } %}
+        {% include "@molecules/text-section/text-section.twig" with {
+          text_section__modifiers: ['centered'],
+        } %}
+        {% include "@molecules/image-section/image-section.twig" with {
+          image_section_content_modifiers: ['large', 'centered'],
+          image_src: 'https://placeimg.com/1200/400/tech',
+          image_caption: 'This is a large image caption.'
+        } %}
+        {% include "@molecules/text-with-image/text-with-image.twig" with {
+          text_with_image__modifiers: ['centered'],
+          paragraph_content: basic_page_small_text
+        } %}
+        {% include "@organisms/cta-section/cta-section.twig" with {
+          cta_section__modifiers: ['centered'],
+          cta_section_content__modifiers: ['centered'],
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
