@@ -8,6 +8,11 @@
     @include grid;
   }
 
+  &--anchored_aside_left,
+  &--anchored_aside_right {
+    @include aside-grid;
+  }
+
   &--centered {
     @include centered-grid;
   }
@@ -30,6 +35,25 @@
   &--large {
     grid-column-end: 7;
     grid-column-start: 2;
+  }
+
+  &--anchored_aside_left {
+    grid-column-end: 5;
+    grid-column-start: 2;
+
+    &.image-section__image--large {
+      grid-column-end: 8;
+    }
+  }
+
+  &--anchored_aside_right {
+    grid-column-end: 6;
+    grid-column-start: 4;
+
+    &.image-section__image--large {
+      grid-column-end: 6;
+      grid-column-start: 1;
+    }
   }
 }
 
