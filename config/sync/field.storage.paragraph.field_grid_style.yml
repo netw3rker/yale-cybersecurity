@@ -18,8 +18,11 @@ settings:
       value: centered
       label: Centered
     -
-      value: anchored_aside
-      label: 'Anchored Aside'
+      value: anchored_aside_left
+      label: 'Anchored Aside Left'
+    -
+      value: anchored_aside_right
+      label: 'Anchored Aside Right'
   allowed_values_function: ''
 module: options
 locked: false

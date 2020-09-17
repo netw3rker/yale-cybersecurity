@@ -8,6 +8,12 @@
   &--centered {
     @include centered-grid;
   }
+
+  &--anchored_aside_left,
+  &--anchored_aside_right {
+    @include aside-grid;
+  }
+
 }
 
 .cta-section__content {
@@ -28,6 +34,25 @@
     &.cta-section__content--large {
       grid-column-end: 7;
       grid-column-start: 2;
+    }
+  }
+
+  &--anchored_aside_left {
+    grid-column-end: 5;
+    grid-column-start: 2;
+
+    &.cta-section__content--large {
+      grid-column-end: 8;
+    }
+  }
+
+  &--anchored_aside_right {
+    grid-column-end: 6;
+    grid-column-start: 4;
+
+    &.cta-section__content--large {
+      grid-column-end: 6;
+      grid-column-start: 1;
     }
   }
 }

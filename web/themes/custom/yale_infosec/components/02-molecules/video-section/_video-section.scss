@@ -10,6 +10,11 @@
   &--centered {
     @include centered-grid;
   }
+
+  &--anchored_aside_left,
+  &--anchored_aside_right {
+    @include aside-grid;
+  }
 }
 
 .video-section__content {
@@ -19,6 +24,16 @@
 
   &--centered {
     grid-area: content-c;
+  }
+
+  &--anchored_aside_left {
+    grid-column-end: 5;
+    grid-column-start: 2;
+  }
+
+  &--anchored_aside_right {
+    grid-column-end: 6;
+    grid-column-start: 4;
   }
 }
 

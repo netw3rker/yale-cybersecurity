@@ -8,6 +8,11 @@
   &--centered {
     @include centered-grid;
   }
+
+  &--anchored_aside_left,
+  &--anchored_aside_right {
+    @include aside-grid;
+  }
 }
 
 .text-with-quote__quote {
@@ -25,6 +30,17 @@
     grid-area: aside-right-c;
   }
 
+  &--anchored_aside_left {
+    grid-column-end: 6;
+    grid-column-start: 5;
+    grid-row-start: 1;
+  }
+
+  &--anchored_aside_right {
+    grid-column-end: 3;
+    grid-column-start: 2;
+  }
+
   p {
     margin: 0;
   }
@@ -37,5 +53,16 @@
 
   &--centered {
     grid-area: content-c;
+  }
+
+  &--anchored_aside_left {
+    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  &--anchored_aside_right {
+    grid-column-end: 6;
+    grid-column-start: 4;
   }
 }
