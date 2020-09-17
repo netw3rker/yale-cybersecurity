@@ -5,25 +5,35 @@ Drupal.behaviors.mainMenu = {
     const header = context.getElementById('site-header');
     const searchBtn = context.getElementById("search-btn");
     
+    // If menu exists.
     if (menu) {
       const expandBtns = menu.getElementsByClassName('expand-sub');
       const backBtns = menu.getElementsByClassName('main-menu__parent-item');
+      const topLevelLinks = menu.getElementsByClassName('main-menu__link--top');
 
       const currentSubClass = 'main-menu__child-menu--sub-current';
       const openSubClass = 'main-menu__child-menu--sub-open';
 
-      // Mobile Menu Show/Hide.
-      toggleExpand.addEventListener('click', e => {
+      closeCurrentMenus = () => {
         const currentMenus = document.getElementsByClassName(currentSubClass);
-        const openMenus = document.getElementsByClassName(openSubClass);
 
         for (let i = 0; i < currentMenus.length; i += 1) {
           currentMenus[i].classList.remove(currentSubClass);
         };
+      }
+
+      closeOpenMenus = () => {
+        const openMenus = document.getElementsByClassName(openSubClass);
 
         for (let i = 0; i < openMenus.length; i += 1) {
           openMenus[i].classList.remove(openSubClass);
         };
+      }
+
+      // Mobile Menu Show/Hide.
+      toggleExpand.addEventListener('click', e => {
+        closeCurrentMenus();
+        closeOpenMenus();
 
         toggleExpand.classList.toggle('toggle-expand--open');
         menu.classList.toggle('main-nav--open');
@@ -36,14 +46,11 @@ Drupal.behaviors.mainMenu = {
         expandBtns[i].addEventListener('click', e => {
           const menuItem = e.currentTarget;
           const subMenu = menuItem.nextElementSibling;
-          const currentMenu = document.getElementsByClassName(currentSubClass);
+          
+          closeCurrentMenus();
 
-          for (let i = 0; i < currentMenu.length; i += 1) {
-            currentMenu[i].classList.remove(currentSubClass);
-          }
-
-          subMenu.classList.add(openSubClass);
-          subMenu.classList.add(currentSubClass);
+          subMenu.classList.toggle(openSubClass);
+          subMenu.classList.toggle(currentSubClass);
           subMenu.firstElementChild.focus();
         });
       }
@@ -74,6 +81,19 @@ Drupal.behaviors.mainMenu = {
         }
         searchForm.tabIndex = 0;
       });
+
+      // Top Level Menu focus - close submenus.
+      for (let i = 0; i < topLevelLinks.length; i += 1) {
+        topLevelLinks[i].addEventListener('focus', e => {
+          const activeLink = e.currentTarget;
+          const activeMenu = activeLink.nextElementSibling.nextElementSibling;
+          // If not current submenu, close submenu.
+          if (!activeMenu.classList.contains(openSubClass)) {
+            closeCurrentMenus();
+            closeOpenMenus();
+          }
+        });
+      }
     }
   },
 };
