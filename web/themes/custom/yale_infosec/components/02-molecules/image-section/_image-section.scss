@@ -28,14 +28,14 @@
   }
 
   &--large {
-    grid-column-end: right-gutter;
-    grid-column-start: left-gutter;
+    grid-column-end: 7;
+    grid-column-start: 2;
   }
 }
 
 .image-section__aside {
-  grid-column-end: right-gutter;
-  grid-column-start: sidebar;
+  grid-column-end: 7;
+  grid-column-start: 5;
 
   .blockquote {
     margin-bottom: 0;

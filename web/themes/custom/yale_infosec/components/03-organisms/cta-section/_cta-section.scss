@@ -12,12 +12,12 @@
 
 .cta-section__content {
   &--primary {
-    grid-column-end: content;
-    grid-column-start: left-side;
+    grid-column-end: 4;
+    grid-column-start: 1;
 
     &.cta-section__content--large {
-      grid-column-end: right-gutter;
-      grid-column-start: left-side;
+      grid-column-end: 7;
+      grid-column-start: 1;
     }
   }
 

@@ -71,8 +71,6 @@
 // Intro Text
 .intro-text {
   @include wrapper;
-
-  margin-bottom: $space-triple;
   
   .node--event & {
     margin-bottom: 0;
@@ -88,8 +86,8 @@
 }
 
 .intro-text__image {
-  grid-column-end: right-gutter;
-  grid-column-start: sidebar;
+  grid-column-end: 7;
+  grid-column-start: 5;
   margin-bottom: $space-triple;
 
   @include large {
