@@ -6,7 +6,7 @@
 Website project for YALE Cybersecurity. Build on Drupal with the Emulsify Design System.
 
 ## Documentation
-
+- [Local Setup](https://github.com/yalesites-org/scybersecurity.yale.edu/blob/master/.github/SETUP.md)
 - [Contribution Guidlines](https://github.com/yalesites-org/cybersecurity.yale.edu/blob/master/.github/CONTRIBUTING.md)
 - [Build Tools](https://github.com/yalesites-org/cybersecurity.yale.edu/blob/master/.github/BUILD_TOOLS.md)
 - [Deployment](https://github.com/yalesites-org/cybersecurity.yale.edu/blob/master/.github/DEPLOYMENT.md)
