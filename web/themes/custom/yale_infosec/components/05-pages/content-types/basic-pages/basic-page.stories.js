@@ -19,7 +19,7 @@ import contentTypeData from '../content-types.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Pages|Content Types/Basic Pages' };
+export default { title: 'Pages/Content Types/Basic Pages' };
 
 export const noImage = () => (
   <div

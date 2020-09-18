@@ -16,7 +16,7 @@ import contentTypeData from '../content-types.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Pages|Content Types/Guides' };
+export default { title: 'Pages/Content Types/Guides' };
 
 export const guide = () => (
   <div

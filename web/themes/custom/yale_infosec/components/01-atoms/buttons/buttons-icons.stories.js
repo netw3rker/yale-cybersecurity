@@ -7,7 +7,7 @@ import buttonData from './button.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Atoms|Buttons/Icons' };
+export default { title: 'Atoms/Buttons/Icons' };
 
 export const before = () => (
   <div dangerouslySetInnerHTML={{ __html: button({

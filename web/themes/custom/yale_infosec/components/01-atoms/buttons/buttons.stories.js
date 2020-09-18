@@ -7,7 +7,7 @@ import buttonData from './button.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Atoms|Buttons/Plain' };
+export default { title: 'Atoms/Buttons/Plain' };
 
 export const primary = () => (
   <div dangerouslySetInnerHTML={{ __html: button({
