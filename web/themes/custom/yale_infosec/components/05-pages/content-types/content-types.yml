@@ -13,7 +13,17 @@ blockquote_content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, se
 
 cta_section_content__modifiers:
   - 'large'
+  - 'primary'
 cta__heading: 'This is a reason to act'
 cta__body: 'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
 cta__link_url: '#'
 cta__link_text: 'Diam Nonumy Eirmod Tempor Invidunt'
+
+image_section__modifiers:
+  - 'primary'
+
+text_with_image__modifiers:
+  - 'primary'
+
+cta_section__modifiers:
+  - 'primary'

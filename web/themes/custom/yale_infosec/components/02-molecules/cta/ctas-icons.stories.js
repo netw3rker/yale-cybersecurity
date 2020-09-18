@@ -7,7 +7,7 @@ import ctaIconData from './cta-icon.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules|CTA/Icon' };
+export default { title: 'Molecules/CTA/Icon' };
 
 export const orange = () => (
   <div dangerouslySetInnerHTML={{ __html: ctaIcon({
