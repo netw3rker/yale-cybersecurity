@@ -14,7 +14,7 @@ Drupal.behaviors.mainMenu = {
       const currentSubClass = 'main-menu__child-menu--sub-current';
       const openSubClass = 'main-menu__child-menu--sub-open';
 
-      closeCurrentMenus = () => {
+      const closeCurrentMenus = () => {
         const currentMenus = document.getElementsByClassName(currentSubClass);
 
         for (let i = 0; i < currentMenus.length; i += 1) {
@@ -22,7 +22,7 @@ Drupal.behaviors.mainMenu = {
         };
       }
 
-      closeOpenMenus = () => {
+      const closeOpenMenus = () => {
         const openMenus = document.getElementsByClassName(openSubClass);
 
         for (let i = 0; i < openMenus.length; i += 1) {
