@@ -5,7 +5,7 @@
     padding: $space-triple 0;
   }
 
-  &--white {
+  &--white + .bg--white {
     padding: 0;
   }
 

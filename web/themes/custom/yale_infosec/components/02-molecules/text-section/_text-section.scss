@@ -7,6 +7,11 @@
     @include grid;
   }
 
+  &--anchored_aside_left,
+  &--anchored_aside_right {
+    @include aside-grid;
+  }
+
   &--centered {
     @include centered-grid;
   }
@@ -15,6 +20,16 @@
 .text-section__content {
   &--primary {
     grid-area: content;
+  }
+
+  &--anchored_aside_left {
+    grid-column-end: 5;
+    grid-column-start: 2;
+  }
+
+  &--anchored_aside_right {
+    grid-column-end: 6;
+    grid-column-start: 4;
   }
 
   &--centered {

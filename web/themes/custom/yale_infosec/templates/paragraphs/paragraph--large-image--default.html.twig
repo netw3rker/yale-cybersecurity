@@ -36,11 +36,14 @@
  * @ingroup themeable
  */
 #}
+{% set image_section__modifiers =
+  [
+    'large',
+    grid_style
+  ]
+%}
 
-{% embed "@molecules/image-section/image-section.twig" with {
-  image_section__modifiers: ['large'],
-} %}
+{% extends "@molecules/image-section/image-section.twig" %}
   {% block image_section_img %}
     {{ content.field_image }}
   {% endblock %}
-{% endembed %}

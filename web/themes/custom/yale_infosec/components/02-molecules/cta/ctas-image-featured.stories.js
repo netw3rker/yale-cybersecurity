@@ -10,7 +10,7 @@ import ctaImageFeaturedLeftData from './cta-image-featured-left.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules|CTA/Image/Featured' };
+export default { title: 'Molecules/CTA/Image/Featured' };
 
 export const imageRight = () => (
   <div dangerouslySetInnerHTML={{ __html: cta({

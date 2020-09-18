@@ -25,7 +25,8 @@
     margin-right: 0;
   }
 
-  &--quote-left {
+  &--quote-left,
+  &.text-with-quote__quote--anchored_aside_right {
     @include large {
       border-left: none;
       border-right: solid 1px clr(accent);

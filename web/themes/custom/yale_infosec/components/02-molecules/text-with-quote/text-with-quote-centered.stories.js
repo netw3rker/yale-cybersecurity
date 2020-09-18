@@ -7,7 +7,7 @@ import textWithQuoteData from './text-with-quote.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules|Text with Quote/Centered' };
+export default { title: 'Molecules/Text with Quote/Centered' };
 
 export const Left = () => (
   <div dangerouslySetInnerHTML={{ __html: textWithQuote({
