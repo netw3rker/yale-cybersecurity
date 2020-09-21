@@ -4,12 +4,27 @@ Drupal.behaviors.mainMenu = {
     const menu = context.getElementById('main-nav');
     const header = context.getElementById('site-header');
     const searchBtn = context.getElementById("search-btn");
+
+    // .closest() polyfill (IE11 requirement).
+    if (window.Element && !Element.prototype.closest) {
+      Element.prototype.closest =
+      function(s) {
+          var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+              i,
+              el = this;
+          do {
+              i = matches.length;
+              while (--i >= 0 && matches.item(i) !== el) {};
+          } while ((i < 0) && (el = el.parentElement));
+          return el;
+      };
+    }
     
     // If menu exists.
     if (menu) {
       const expandBtns = menu.getElementsByClassName('expand-sub');
       const backBtns = menu.getElementsByClassName('main-menu__parent-item');
-      const topLevelLinks = menu.getElementsByClassName('main-menu__link--top');
+      const menuLinks = menu.getElementsByClassName('main-menu__link');
 
       const currentSubClass = 'main-menu__child-menu--sub-current';
       const openSubClass = 'main-menu__child-menu--sub-open';
@@ -28,6 +43,16 @@ Drupal.behaviors.mainMenu = {
         for (let i = 0; i < openMenus.length; i += 1) {
           openMenus[i].classList.remove(openSubClass);
         };
+      }
+
+      // If no parent menu exists, close all submenus (e.g., tab focus).
+      const closeParentMenu = (e) => {
+        const activeLink = e.currentTarget;
+        const activeParentMenu = activeLink.closest('.main-menu__child-menu--sub-open');
+        if (!activeParentMenu) {
+          closeCurrentMenus();
+          closeOpenMenus();
+        }
       }
 
       // Mobile Menu Show/Hide.
@@ -82,18 +107,25 @@ Drupal.behaviors.mainMenu = {
         searchForm.tabIndex = 0;
       });
 
-      // Top Level Menu focus - close submenus.
-      for (let i = 0; i < topLevelLinks.length; i += 1) {
-        topLevelLinks[i].addEventListener('focus', e => {
-          const activeLink = e.currentTarget;
-          const activeMenu = activeLink.nextElementSibling.nextElementSibling;
-          // If not current submenu, close submenu.
-          if (!activeMenu.classList.contains(openSubClass)) {
-            closeCurrentMenus();
-            closeOpenMenus();
-          }
+      // On focus of menu links, close any unrelated submenus.
+      for (let i = 0; i < menuLinks.length; i += 1) {
+        menuLinks[i].addEventListener('focus', e => {
+          closeParentMenu(e);
         });
       }
+
+      // On focus of submenu expand links, close any unrelated submenus.
+      for (let i = 0; i < expandBtns.length; i += 1) {
+        expandBtns[i].addEventListener('focus', e => {
+          closeParentMenu(e);
+        });
+      }
+
+      // On focus of search (right after menu), close all submenus.
+      searchBtn.addEventListener('focus', () => {
+        closeCurrentMenus();
+        closeOpenMenus();
+      });
     }
   },
 };
