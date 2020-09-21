@@ -1,0 +1,17 @@
+uuid: ccc38282-bcaa-4b30-8ec8-24d3daf14333
+langcode: en
+status: false
+dependencies: {  }
+id: live
+label: Live
+description: 'Configuration for production environments.'
+folder: ../config/live
+module:
+  simplesamlphp_auth: 0
+  yale_sso: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

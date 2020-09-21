@@ -1,0 +1,56 @@
+uuid: 525163a8-5d68-49fc-a50c-0b11ae198c29
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - field.field.node.frontpage.field_cards
+    - field.field.node.frontpage.field_content_block
+    - field.field.node.frontpage.field_content_body
+    - field.field.node.frontpage.field_header_image
+    - field.field.node.frontpage.field_header_subtitle
+    - field.field.node.frontpage.field_header_title
+    - field.field.node.frontpage.field_metadata
+    - field.field.node.frontpage.field_seo_title
+    - field.field.node.frontpage.field_teaser_media
+    - field.field.node.frontpage.field_teaser_text
+    - node.type.frontpage
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+_core:
+  default_config_hash: '-dTbOfljyuYfgcn7hK8miRbYRNWhQdHKcDEMdnYNjEg'
+id: node.frontpage.rss
+targetEntityType: node
+bundle: frontpage
+mode: rss
+content:
+  field_content_block:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_content_body:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  content_moderation_control: true
+  field_cards: true
+  field_header_image: true
+  field_header_subtitle: true
+  field_header_title: true
+  field_metadata: true
+  field_seo_title: true
+  field_teaser_media: true
+  field_teaser_text: true
+  links: true
+  search_api_excerpt: true

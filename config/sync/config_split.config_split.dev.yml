@@ -1,10 +1,10 @@
 uuid: 8baaad8f-a8e0-493c-8a62-f0d0256eb3e8
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: dev
 label: Dev
-description: ''
+description: 'Configuration for local development environments.'
 folder: ../config/dev
 module:
   devel: 0
