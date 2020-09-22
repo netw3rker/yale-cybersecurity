@@ -8,6 +8,10 @@
 .yi-mss-calculator-form {
   grid-area: content;
 
+  .form-fieldset:first-child {
+    margin-top: $space;
+  }
+
   .fieldgroup {
     legend {
       margin-bottom: $space-half;
