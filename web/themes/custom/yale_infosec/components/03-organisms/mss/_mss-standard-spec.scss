@@ -74,6 +74,10 @@
     font-size: 1.7rem;
     display: flex;
     align-items: center;
+
+    @include large {
+      justify-content: space-between;
+    }
   }
 }
 
@@ -87,5 +91,12 @@ a.standard-specifications-grid__inner {
 }
 
 .standard-specifications-grid .standard-spec-labels {
+  display: block;
   margin-left: 1rem;
+
+  @include large {
+    .lozenge {
+      margin-right: 0;
+    }
+  }
 }
