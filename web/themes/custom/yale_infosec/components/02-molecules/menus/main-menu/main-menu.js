@@ -4,26 +4,61 @@ Drupal.behaviors.mainMenu = {
     const menu = context.getElementById('main-nav');
     const header = context.getElementById('site-header');
     const searchBtn = context.getElementById("search-btn");
+
+    // .closest() polyfill (IE11 requirement).
+    if (window.Element && !Element.prototype.closest) {
+      Element.prototype.closest =
+      function(s) {
+          var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+              i,
+              el = this;
+          do {
+              i = matches.length;
+              while (--i >= 0 && matches.item(i) !== el) {};
+          } while ((i < 0) && (el = el.parentElement));
+          return el;
+      };
+    }
     
+    // If menu exists.
     if (menu) {
       const expandBtns = menu.getElementsByClassName('expand-sub');
       const backBtns = menu.getElementsByClassName('main-menu__parent-item');
+      const menuLinks = menu.getElementsByClassName('main-menu__link');
 
       const currentSubClass = 'main-menu__child-menu--sub-current';
       const openSubClass = 'main-menu__child-menu--sub-open';
 
-      // Mobile Menu Show/Hide.
-      toggleExpand.addEventListener('click', e => {
+      const closeCurrentMenus = () => {
         const currentMenus = document.getElementsByClassName(currentSubClass);
-        const openMenus = document.getElementsByClassName(openSubClass);
 
         for (let i = 0; i < currentMenus.length; i += 1) {
           currentMenus[i].classList.remove(currentSubClass);
         };
+      }
+
+      const closeOpenMenus = () => {
+        const openMenus = document.getElementsByClassName(openSubClass);
 
         for (let i = 0; i < openMenus.length; i += 1) {
           openMenus[i].classList.remove(openSubClass);
         };
+      }
+
+      // If no parent menu exists, close all submenus (e.g., tab focus).
+      const closeParentMenu = (e) => {
+        const activeLink = e.currentTarget;
+        const activeParentMenu = activeLink.closest('.main-menu__child-menu--sub-open');
+        if (!activeParentMenu) {
+          closeCurrentMenus();
+          closeOpenMenus();
+        }
+      }
+
+      // Mobile Menu Show/Hide.
+      toggleExpand.addEventListener('click', e => {
+        closeCurrentMenus();
+        closeOpenMenus();
 
         toggleExpand.classList.toggle('toggle-expand--open');
         menu.classList.toggle('main-nav--open');
@@ -36,14 +71,11 @@ Drupal.behaviors.mainMenu = {
         expandBtns[i].addEventListener('click', e => {
           const menuItem = e.currentTarget;
           const subMenu = menuItem.nextElementSibling;
-          const currentMenu = document.getElementsByClassName(currentSubClass);
+          
+          closeCurrentMenus();
 
-          for (let i = 0; i < currentMenu.length; i += 1) {
-            currentMenu[i].classList.remove(currentSubClass);
-          }
-
-          subMenu.classList.add(openSubClass);
-          subMenu.classList.add(currentSubClass);
+          subMenu.classList.toggle(openSubClass);
+          subMenu.classList.toggle(currentSubClass);
           subMenu.firstElementChild.focus();
         });
       }
@@ -73,6 +105,26 @@ Drupal.behaviors.mainMenu = {
           search[i].focus();
         }
         searchForm.tabIndex = 0;
+      });
+
+      // On focus of menu links, close any unrelated submenus.
+      for (let i = 0; i < menuLinks.length; i += 1) {
+        menuLinks[i].addEventListener('focus', e => {
+          closeParentMenu(e);
+        });
+      }
+
+      // On focus of submenu expand links, close any unrelated submenus.
+      for (let i = 0; i < expandBtns.length; i += 1) {
+        expandBtns[i].addEventListener('focus', e => {
+          closeParentMenu(e);
+        });
+      }
+
+      // On focus of search (right after menu), close all submenus.
+      searchBtn.addEventListener('focus', () => {
+        closeCurrentMenus();
+        closeOpenMenus();
       });
     }
   },
