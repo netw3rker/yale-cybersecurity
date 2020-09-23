@@ -19,6 +19,11 @@
     background: #4A4A4A;
   }
 
+  &--hipaa,
+  &--pci {
+    background: clr(secondary);
+  }
+
   &--large {
     @include medium {
       font-size: 1.59rem;
