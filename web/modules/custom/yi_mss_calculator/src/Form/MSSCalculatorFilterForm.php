@@ -56,11 +56,11 @@ class MSSCalculatorFilterForm extends FormBase {
 
     // Internet Access.
     $form['access'] = [
-      '#title' => $this->t('Can the Device Access the Internet?'),
+      '#title' => $this->t('Is the IT system Internet Accessible?'),
       '#type' => 'radios',
       '#options' => [
-        0 => $this->t('No, it cannot access the Internet'),
-        1 => $this->t('Yes, it can access the Internet'),
+        0 => $this->t('No, it is not Internet Accessible'),
+        1 => $this->t('Yes, it is Internet Accessible'),
       ],
       '#description' => $config->get('message_access'),
     ];
@@ -104,7 +104,9 @@ class MSSCalculatorFilterForm extends FormBase {
     }
 
     if ($form_state->getValue('access') !== '0' && $form_state->getValue('access') !== '1') {
-      $form_state->setErrorByName('access', $this->t('Please select whether the device can access the internet.'));
+      $form_state->setErrorByName('access', $this->t('Please select whether the device is accessible via the internet.'));
+    }
+
     // If any obligations are given, risk level MUST be "High Risk".
     if (!empty(array_filter($form_state->getValue('obligations')))) {
       // phpcs:ignore

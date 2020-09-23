@@ -85,7 +85,7 @@ class MSSCalculatorController extends ControllerBase {
     $out[] = $type->getName();
 
     // Internet Access.
-    $out[] = $args->access ? 'Can Access Internet' : 'Cannot Access Internet';
+    $out[] = $args->access ? 'Internet Accessible' : 'Not Internet Accessible';
 
     // Risk.
     // phpcs:ignore
