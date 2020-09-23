@@ -1,8 +1,30 @@
+.table-outer-wrapper {
+  margin: 1em 0;
+  position: relative;
+}
+
+.table-overflow {
+  background: linear-gradient(90deg, transparent 55%, rgba(166, 167, 167, 0.4) 100%);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+
+  @include breakpoint(600px) {
+    display: none;
+  }
+}
+
+.table-wrapper {
+  overflow: scroll;
+}
+
 .table {
   border: none;
   border-spacing: 0;
   font-size: 1.6rem;
-  margin: 1em 0;
+  min-width: 600px;
   width: 100%;
 }
 
