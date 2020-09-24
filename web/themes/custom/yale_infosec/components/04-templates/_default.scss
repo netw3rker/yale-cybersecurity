@@ -20,6 +20,10 @@
   &--small {
     margin-bottom: $space;
   }
+
+  &--front {
+    margin: 0;
+  }
 }
 
 .main-content__top-inner {
