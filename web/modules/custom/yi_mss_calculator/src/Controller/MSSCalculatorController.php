@@ -53,28 +53,43 @@ class MSSCalculatorController extends ControllerBase {
 
     // Required.
     if ($spec->field_required->getValue()[0]['value']) {
-      $out['required'] = 'Required';
+      $out['required'] = [
+        'title' => 'Required',
+        'description' => 'Standard required for specified devices at this risk classification.',
+      ];
     }
 
     // Upcoming.
     if ($spec->field_upcoming->getValue()[0]['value']) {
-      $out['upcoming'] = 'Upcoming';
+      $out['upcoming'] = [
+        'title' => 'Upcoming',
+        'description' => 'Standard will eventually be required for devices at this risk classification.',
+      ];
     }
 
     // Internet Accessible.
     if ($spec->field_internet_access->getValue()[0]['value']) {
-      $out['access'] = 'Required for IA';
+      $out['access'] = [
+        'title' => 'Required for IA',
+        'description' => 'Standard is required if the device can be accessed through the internet.',
+      ];
     }
 
     // Obligations.
     foreach ($spec->field_obligation as $item) {
       $name = $item->get('entity')->getTarget()->getValue()->getName();
-      $out[strtolower($name)] = "Required for $name";
+      $out[strtolower($name)] = [
+        'title' => "Required for $name",
+        'description' => "Standard required if the device contains sensitive high risk $name data.",
+      ];
     }
 
     // Only add "Not Required" if we have no other requirements.
     if (empty($out)) {
-      $out['not-required'] = 'Not Required';
+      $out['not-required'] = [
+        'title' => 'Not Required',
+        'description' => 'Standard not required for specified devices at this risk classification.',
+      ];
     }
 
     return $out;
