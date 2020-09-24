@@ -93,6 +93,31 @@ function yi_mss_import_get_tid($name, $vid) {
 }
 
 /**
+ * Clean a big messy title into something reasonable.
+ */
+function yi_mss_import_clean_title($title, $number = 0) {
+  // Remove all content in parens.
+  $title = preg_replace("/\([^)]+\)/", "", $title);
+
+  // Clean out double/extra spaces.
+  $title = str_replace(['  ', ' ,'], [' ', ','], $title);
+
+  // Use only the first sentence.
+  $title = trim(explode('.', $title)[0] . '.');
+
+  // Append number policy number at the front.
+  if ($number) {
+    $title = "YALE-MSS-$number: $title";
+  }
+
+  // Remove end period.
+  $title = trim(rtrim($title, '.'));
+
+  // Limit it to 255 chars.
+  return substr($title, 0, 255);
+}
+
+/**
  * Create a node based on a data row, header, and list of terms->tids.
  */
 function yi_mss_import_get_nid($data, $header, $terms) {
@@ -159,7 +184,7 @@ function yi_mss_import_get_nid($data, $header, $terms) {
   }
 
   // Build the final node.
-  $title = substr("YALE-MSS-$data->b: $data->c", 0, 255);
+  $title = yi_mss_import_clean_title($data->c, $data->b);
   $node = Node::create([
     'status' => 1,
     'type' => 'standard',
