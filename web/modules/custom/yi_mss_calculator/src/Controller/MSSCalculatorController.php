@@ -140,29 +140,22 @@ class MSSCalculatorController extends ControllerBase {
 
     // Required, OR upcoming.
     // phpcs:ignore
-    $required = \Drupal::entityQuery('paragraph')->orConditionGroup()
+    $include = \Drupal::entityQuery('paragraph')->orConditionGroup()
       ->condition('field_required', 1)
       ->condition('field_upcoming', 1);
-    $specs->condition($required);
 
-    // Filter down "access = true" if access arg = false.
-    if (!$args->access) {
-      $specs->condition('field_internet_access', 0);
+    // If IA required, include via OR.
+    if ($args->access) {
+      $include->condition('field_internet_access', 1);
     }
 
-    // Don't select anything with an obligation if none are selected.
-    if (!$args->obligations) {
-      $specs->notExists('field_obligation');
-    }
-    else {
-      // Add obligation filters if there are some.
-      // phpcs:ignore
-      $group = \Drupal::entityQuery('paragraph')->orConditionGroup()
-        ->notExists('field_obligation')
-        ->condition('field_obligation', explode(',', $args->obligations), 'IN');
-      $specs->condition($group);
+    // Add obligation filters to OR selection.
+    if (!empty($args->obligations)) {
+      $include->condition('field_obligation', explode(',', $args->obligations), 'IN');
     }
 
+    // Add include OR selection to spec query and execute.
+    $specs->condition($include);
     $specs = $specs->execute();
 
     // No results?
