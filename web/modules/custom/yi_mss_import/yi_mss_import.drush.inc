@@ -8,6 +8,7 @@
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\path_alias\Entity\PathAlias;
 
 /**
  * Implements hook_drush_command().
@@ -200,6 +201,13 @@ function yi_mss_import_get_nid($data, $header, $terms) {
 
   $node->set('moderation_state', 'published');
   $node->save();
+
+  $path_alias = PathAlias::create([
+    'path' => '/node/' . $node->id(),
+    'alias' => '/mss/' . str_replace('.', '/', $data->b),
+  ]);
+
+  $path_alias->save();
   return $node->id();
 }
 
@@ -306,6 +314,13 @@ function drush_yi_mss_import_import_mss() {
 
     $node->set('moderation_state', 'published');
     $node->save();
+
+    $path_alias = PathAlias::create([
+      'path' => '/node/' . $node->id(),
+      'alias' => '/mss/' . $policy,
+    ]);
+
+    $path_alias->save();
   }
 
   // Edit secondary level nodes and add their sub-policies.
