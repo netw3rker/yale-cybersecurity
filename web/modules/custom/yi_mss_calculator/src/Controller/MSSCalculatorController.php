@@ -33,7 +33,7 @@ class MSSCalculatorController extends ControllerBase {
   /**
    * Get the first parent node on sub-policy.
    */
-  private function getParentNid($nid) {
+  public static function getParentNid($nid) {
     // phpcs:ignore
     $q = \Drupal::entityQuery('node')
       ->condition('type', 'standard')

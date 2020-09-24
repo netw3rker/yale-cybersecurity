@@ -5,7 +5,10 @@
  * Contains yi_mss_calculator.module.
  */
 
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\yi_mss_calculator\Controller\MSSCalculatorController;
 
 /**
  * Implements hook_help().
@@ -59,4 +62,21 @@ function yi_mss_calculator_theme() {
       ],
     ],
   ];
+}
+
+/**
+ * Implements template_preprocess_node().
+ *
+ * Injects title and URI for parent standard, if any.
+ */
+function yi_mss_calculator_preprocess_node(&$variables) {
+  if ($variables['view_mode'] === 'full' && $variables['node']->bundle() == 'standard') {
+    $parent_nid = MSSCalculatorController::getParentNid($variables['node']->id());
+    if ($parent_nid) {
+      $parent = Node::load($parent_nid);
+      $uri = Url::fromRoute('entity.node.canonical', ['node' => $parent_nid], ['absolute' => TRUE])->toString();
+      $variables['parent_standard'] = $uri;
+      $variables['parent_standard_title'] = $parent->getTitle();
+    }
+  }
 }

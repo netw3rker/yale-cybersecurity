@@ -72,7 +72,6 @@
 #}
 
 <article {{ bem("node") }}>
-
   {{ title_prefix }}
   {% if not page %}
     {% include "@atoms/text/headings/_heading.twig" with {
@@ -88,6 +87,11 @@
 
   <div{{ attributes.addClass('standard-wrapper') }}>
     <div class="standard-wrapper-inner">
+      {% if parent_standard %}
+      <h3>
+        Parent Standard:<br>{{ link(parent_standard_title, parent_standard) }}
+      </h3>
+      {% endif %}
       {{ content }}
     </div>
   </div>
