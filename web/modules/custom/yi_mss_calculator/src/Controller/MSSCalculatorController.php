@@ -114,8 +114,14 @@ class MSSCalculatorController extends ControllerBase {
     $specs = \Drupal::entityQuery('paragraph')
       ->condition('type', 'specification')
       ->condition('field_device_type', $args->type)
-      ->condition('field_risk_level', $args->risk)
-      ->condition('field_required', 1);
+      ->condition('field_risk_level', $args->risk);
+
+    // Required, OR upcoming.
+    // phpcs:ignore
+    $required = \Drupal::entityQuery('paragraph')->orConditionGroup()
+      ->condition('field_required', 1)
+      ->condition('field_upcoming', 1);
+    $specs->condition($required);
 
     // Filter down "access = true" if access arg = false.
     if (!$args->access) {
