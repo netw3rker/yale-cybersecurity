@@ -89,27 +89,33 @@ Drupal.behaviors.mainMenu = {
         expandBtns[i].addEventListener('click', e => {
           const menuItem = e.currentTarget;
           const subMenu = menuItem.nextElementSibling;
+          const backLink = subMenu.firstElementChild.firstElementChild;
           
           closeCurrentMenus();
 
           subMenu.classList.toggle(openSubClass);
           subMenu.classList.toggle(currentSubClass);
-          subMenu.firstElementChild.focus();
-        });
-      }
 
-      // Back to parent links.
-      for (let i = 0; i < backBtns.length; i += 1) {
-        backBtns[i].addEventListener('click', e => {
-          const backLink = e.currentTarget;
-          const parent = backLink.parentNode;
-          const parentMenu = parent.parentNode;
-          const prevParentMenu = parentMenu.parentNode.parentNode.parentNode;
+          if (!e.currentTarget.classList.contains('expand-sub--top')) {
+            backLink.focus();
+            const focusTrap = trapFocus(subMenu);
+            backLink.addEventListener('click', e => {
+              focusTrap.release();
+            });
+          }
 
-          parent.classList.remove(currentSubClass);
-          parentMenu.classList.remove(openSubClass);
-          parentMenu.classList.remove(currentSubClass);
-          prevParentMenu.classList.add(currentSubClass);
+          backLink.addEventListener('click', e => {
+            const backLink = e.currentTarget;
+            const parent = backLink.parentNode;
+            const parentMenu = parent.parentNode;
+            const prevParentMenu = parentMenu.parentNode.parentNode.parentNode;
+  
+            parent.classList.remove(currentSubClass);
+            parentMenu.classList.remove(openSubClass);
+            parentMenu.classList.remove(currentSubClass);
+            prevParentMenu.classList.add(currentSubClass);
+            parentMenu.previousElementSibling.focus();
+          });
         });
       }
 
