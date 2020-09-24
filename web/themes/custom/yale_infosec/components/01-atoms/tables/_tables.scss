@@ -73,6 +73,11 @@ tbody {
 .text-long {
   table {
     @extend .table;
+
+    .lozenge {
+      display: inline-block;
+      margin-left: $space;
+    }
   }
 
   th {
