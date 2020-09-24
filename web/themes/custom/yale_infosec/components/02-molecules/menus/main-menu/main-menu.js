@@ -4,6 +4,24 @@ Drupal.behaviors.mainMenu = {
     const menu = context.getElementById('main-nav');
     const header = context.getElementById('site-header');
     const searchBtn = context.getElementById("search-btn");
+    const closeSearch = context.getElementById('search-close');
+
+    const tabbable = `
+      a, button, input, select, textarea, svg, area, details, summary,
+      iframe, object, embed, 
+      [tabindex], [contenteditable]
+    `;
+
+    const trapFocus = (focusNode, rootNode = document) => {
+      const nodes = [...rootNode.querySelectorAll(tabbable)]
+        .filter(node => !focusNode.contains(node) && node.getAttribute('tabindex') !== '-1');
+      nodes.forEach(node => node.setAttribute('tabindex', '-1'));
+      return {
+        release() {
+          nodes.forEach(node => node.removeAttribute('tabindex'));
+        },
+      };
+    };
 
     // .closest() polyfill (IE11 requirement).
     if (window.Element && !Element.prototype.closest) {
@@ -105,6 +123,20 @@ Drupal.behaviors.mainMenu = {
           search[i].focus();
         }
         searchForm.tabIndex = 0;
+        searchForm.setAttribute('aria-modal', true);
+        const focusTrap = trapFocus(searchForm);
+
+        // Close Search.
+        closeSearch.addEventListener('click', () => {
+          const mainNav = context.getElementsByClassName('main-nav-search--open');
+
+          for (let i = 0; i < mainNav.length; i += 1) {
+            mainNav[i].classList.remove('main-nav-search--open')
+          }
+
+          focusTrap.release();
+          searchBtn.focus();
+        });
       });
 
       // On focus of menu links, close any unrelated submenus.
