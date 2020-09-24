@@ -24,6 +24,10 @@
     background: clr(secondary);
   }
 
+  &--access {
+    background: clr(background-inverse);
+  }
+
   &--large {
     @include medium {
       font-size: 1.59rem;

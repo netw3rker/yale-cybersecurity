@@ -55,19 +55,26 @@ class MSSCalculatorController extends ControllerBase {
     if ($spec->field_required->getValue()[0]['value']) {
       $out['required'] = 'Required';
     }
-    else {
-      $out['not-required'] = 'Not Required';
-    }
 
     // Upcoming.
     if ($spec->field_upcoming->getValue()[0]['value']) {
       $out['upcoming'] = 'Upcoming';
     }
 
+    // Internet Accessible.
+    if ($spec->field_internet_access->getValue()[0]['value']) {
+      $out['access'] = 'Required for IA';
+    }
+
     // Obligations.
     foreach ($spec->field_obligation as $item) {
       $name = $item->get('entity')->getTarget()->getValue()->getName();
-      $out[strtolower($name)] = $name;
+      $out[strtolower($name)] = "Required for $name";
+    }
+
+    // Only add "Not Required" if we have no other requirements.
+    if (empty($out)) {
+      $out['not-required'] = 'Not Required';
     }
 
     return $out;
