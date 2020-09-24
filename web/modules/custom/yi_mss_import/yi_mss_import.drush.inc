@@ -129,17 +129,8 @@ function yi_mss_import_get_nid($data, $header, $terms) {
       $obligations[] = ['target_id' => $terms['pci']];
     }
 
-    // Required: True if "x", or anything other than "o".
-    $required = FALSE;
-
-    // If there's only one item... it's required if it's not upcoming.
-    if (count($info) == 1) {
-      $required = !in_array('o', $info);
-    }
-    elseif (count($info) > 1) {
-      // If there's more than one item, it's guaranteed to be required.
-      $required = TRUE;
-    }
+    // Required: True if "x".
+    $required = in_array('x', $info);
 
     $specs[] = Paragraph::create([
       'type' => 'specification',
