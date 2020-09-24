@@ -187,6 +187,7 @@ function yi_mss_import_get_nid($data, $header, $terms) {
   $title = yi_mss_import_clean_title($data->c, $data->b);
   $node = Node::create([
     'status' => 1,
+    'uid' => 1,
     'type' => 'standard',
     'field_policy_number' => $data->b,
     'title' => $title,
@@ -291,6 +292,7 @@ function drush_yi_mss_import_import_mss() {
     drush_print('Creating top level policy number ' . $policy . '...');
     $node = Node::create([
       'status' => 1,
+      'uid' => 1,
       'type' => 'standard',
       'field_policy_number' => $policy,
       'title' => $d['title'],
