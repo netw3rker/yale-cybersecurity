@@ -23,7 +23,7 @@
     "@storybook/addons": "6.0.21",
     "@storybook/react": "6.0.21",
     "@storybook/storybook-deployer": "^2.8.6",
-    "@yalesites-org/yale-scss": "^2.9.0",
+    "@yalesites-org/yale-scss": "^2.11.0",
     "@yalesites-org/yale-twig": "^1.5.0",
     "add-attributes-twig-extension": "^0.1.0",
     "autoprefixer": "^9.7.4",
