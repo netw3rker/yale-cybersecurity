@@ -8,6 +8,7 @@
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\path_alias\Entity\PathAlias;
 
 /**
  * Implements hook_drush_command().
@@ -93,6 +94,31 @@ function yi_mss_import_get_tid($name, $vid) {
 }
 
 /**
+ * Clean a big messy title into something reasonable.
+ */
+function yi_mss_import_clean_title($title, $number = 0) {
+  // Remove all content in parens.
+  $title = preg_replace("/\([^)]+\)/", "", $title);
+
+  // Clean out double/extra spaces.
+  $title = str_replace(['  ', ' ,'], [' ', ','], $title);
+
+  // Use only the first sentence.
+  $title = trim(explode('.', $title)[0] . '.');
+
+  // Append number policy number at the front.
+  if ($number) {
+    $title = "YALE-MSS-$number: $title";
+  }
+
+  // Remove end period.
+  $title = trim(rtrim($title, '.'));
+
+  // Limit it to 255 chars.
+  return substr($title, 0, 255);
+}
+
+/**
  * Create a node based on a data row, header, and list of terms->tids.
  */
 function yi_mss_import_get_nid($data, $header, $terms) {
@@ -129,17 +155,8 @@ function yi_mss_import_get_nid($data, $header, $terms) {
       $obligations[] = ['target_id' => $terms['pci']];
     }
 
-    // Required: True if "x", or anything other than "o".
-    $required = FALSE;
-
-    // If there's only one item... it's required if it's not upcoming.
-    if (count($info) == 1) {
-      $required = !in_array('o', $info);
-    }
-    elseif (count($info) > 1) {
-      // If there's more than one item, it's guaranteed to be required.
-      $required = TRUE;
-    }
+    // Required: True if "x".
+    $required = in_array('x', $info);
 
     $specs[] = Paragraph::create([
       'type' => 'specification',
@@ -168,9 +185,10 @@ function yi_mss_import_get_nid($data, $header, $terms) {
   }
 
   // Build the final node.
-  $title = substr("YALE-MSS-$data->b: $data->c", 0, 255);
+  $title = yi_mss_import_clean_title($data->c, $data->b);
   $node = Node::create([
     'status' => 1,
+    'uid' => 1,
     'type' => 'standard',
     'field_policy_number' => $data->b,
     'title' => $title,
@@ -183,6 +201,13 @@ function yi_mss_import_get_nid($data, $header, $terms) {
 
   $node->set('moderation_state', 'published');
   $node->save();
+
+  $path_alias = PathAlias::create([
+    'path' => '/node/' . $node->id(),
+    'alias' => '/mss/' . str_replace('.', '/', $data->b),
+  ]);
+
+  $path_alias->save();
   return $node->id();
 }
 
@@ -275,6 +300,7 @@ function drush_yi_mss_import_import_mss() {
     drush_print('Creating top level policy number ' . $policy . '...');
     $node = Node::create([
       'status' => 1,
+      'uid' => 1,
       'type' => 'standard',
       'field_policy_number' => $policy,
       'title' => $d['title'],
@@ -288,6 +314,13 @@ function drush_yi_mss_import_import_mss() {
 
     $node->set('moderation_state', 'published');
     $node->save();
+
+    $path_alias = PathAlias::create([
+      'path' => '/node/' . $node->id(),
+      'alias' => '/mss/' . $policy,
+    ]);
+
+    $path_alias->save();
   }
 
   // Edit secondary level nodes and add their sub-policies.
