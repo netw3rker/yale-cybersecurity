@@ -18,7 +18,9 @@
         {% if spec.labels|length > 0 %}
         <span class="standard-spec-labels">
             {% for class, label in spec.labels %}
-            <span class="lozenge lozenge--{{class}}">{{ label }}</span>
+            <span class="lozenge lozenge--{{class}}" title="{{ label.description }}">
+              {{ label.title }}
+            </span>
             {% endfor %}
         </span>
         {% endif %}

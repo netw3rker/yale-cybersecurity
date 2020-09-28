@@ -46,6 +46,11 @@
       }
     }
 
+    // Faux button:disabled.
+    input[type="radio"]:disabled + .form-item__label {
+      background-color: gray;
+    }
+
     /* Faux buttons:checked */
     input[type="radio"]:checked,
     input[type="checkbox"]:checked {

@@ -1,0 +1,23 @@
+uuid: 726e8905-d7f5-4cb6-ad21-2037db5ff195
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_display
+    - taxonomy.vocabulary.specification_detail_type
+id: taxonomy_term.specification_detail_type.field_hide_display
+field_name: field_hide_display
+entity_type: taxonomy_term
+bundle: specification_detail_type
+label: 'Hide from display'
+description: 'If checked, this detail type''s content will be hidden from display on standard pages (though it will still be embedded within exported data).'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'True'
+  off_label: 'False'
+field_type: boolean
