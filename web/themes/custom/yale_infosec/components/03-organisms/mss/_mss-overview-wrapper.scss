@@ -72,6 +72,12 @@
     line-height: 1.2;
     padding-bottom: $space-half;
     margin: $space-half 0;
+
+    & a:first-child {
+      &:link, &:visited {
+        color: clr(highlight);
+      }
+    }
   }
 }
 

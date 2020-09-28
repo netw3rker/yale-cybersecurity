@@ -72,7 +72,6 @@
 #}
 
 <article {{ bem("node") }}>
-
   {{ title_prefix }}
   {% if not page %}
     {% include "@atoms/text/headings/_heading.twig" with {
@@ -88,6 +87,13 @@
 
   <div{{ attributes.addClass('standard-wrapper') }}>
     <div class="standard-wrapper-inner">
+      <h3>
+      {% if parent_standard %}
+        Parent Standard:<br>{{ link(parent_standard_title, parent_standard) }}
+      {% else %}
+        <a href="/mss">See all Minimum Security Standards &gt;&gt;</a>
+      {% endif %}
+      </h3>
       {{ content }}
     </div>
   </div>
