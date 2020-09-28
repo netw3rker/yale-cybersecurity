@@ -17,7 +17,11 @@
 }
 
 .table-wrapper {
-  overflow: scroll;
+  overflow-x: auto;
+
+  @include breakpoint(600px) {
+    overflow: visible;
+  }
 }
 
 .table {
@@ -27,6 +31,10 @@
   font-size: 1.6rem;
   min-width: 600px;
   width: 100%;
+
+  @include breakpoint(600px) {
+    min-width: auto;
+  }
 }
 
 .table__heading-cell,
@@ -71,11 +79,23 @@
   .table__row {
     background-color: clr(background);
 
+    &:first-child td {
+      border-top: 1px solid clr(border-light);
+    }
+
     &:nth-child(even) {
       background-color: clr(accentsubtle);
 
       .bg--light-gray & {
         background-color: clr(border-light);
+      }
+    }
+  }
+
+  thead + & {
+    .table__row {  
+      &:first-child td {
+        border-top: none;
       }
     }
   }
