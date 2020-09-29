@@ -50,15 +50,15 @@ content:
     weight: 1
     label: hidden
     settings:
-      inline: true
-      sanitize: true
       apply_dimensions: true
       width: 100
       height: 100
       enable_alt: true
       alt_string: ''
-      enable_title: true
       title_string: ''
+      inline: false
+      sanitize: false
+      enable_title: false
     third_party_settings: {  }
     type: svg_formatter
     region: content
