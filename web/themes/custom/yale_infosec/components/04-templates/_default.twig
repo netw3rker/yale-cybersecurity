@@ -7,6 +7,10 @@
   {% set main_content_top_modifiers = ['small'] %}
 {% endif %}
 
+{% if is_front %}
+  {% set main_content_top_modifiers = ['front'] %}
+{% endif %}
+
 <div {{ bem('layout-container', layout_modifiers) }}>
   {% block page_header %}
     {% if hero_img %}<div {{ bem('header-hero') }}>{% endif %}

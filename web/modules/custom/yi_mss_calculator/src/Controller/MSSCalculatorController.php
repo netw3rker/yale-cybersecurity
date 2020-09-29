@@ -33,7 +33,7 @@ class MSSCalculatorController extends ControllerBase {
   /**
    * Get the first parent node on sub-policy.
    */
-  private function getParentNid($nid) {
+  public static function getParentNid($nid) {
     // phpcs:ignore
     $q = \Drupal::entityQuery('node')
       ->condition('type', 'standard')
@@ -53,21 +53,43 @@ class MSSCalculatorController extends ControllerBase {
 
     // Required.
     if ($spec->field_required->getValue()[0]['value']) {
-      $out['required'] = 'Required';
-    }
-    else {
-      $out['not-required'] = 'Not Required';
+      $out['required'] = [
+        'title' => 'Required',
+        'description' => 'Standard required for specified devices at this risk classification.',
+      ];
     }
 
     // Upcoming.
     if ($spec->field_upcoming->getValue()[0]['value']) {
-      $out['upcoming'] = 'Upcoming';
+      $out['upcoming'] = [
+        'title' => 'Upcoming',
+        'description' => 'Standard will eventually be required for devices at this risk classification.',
+      ];
+    }
+
+    // Internet Accessible.
+    if ($spec->field_internet_access->getValue()[0]['value']) {
+      $out['access'] = [
+        'title' => 'Required for IA',
+        'description' => 'Standard is required if the device can be accessed through the internet.',
+      ];
     }
 
     // Obligations.
     foreach ($spec->field_obligation as $item) {
       $name = $item->get('entity')->getTarget()->getValue()->getName();
-      $out[strtolower($name)] = $name;
+      $out[strtolower($name)] = [
+        'title' => "Required for $name",
+        'description' => "Standard required if the device contains sensitive high risk $name data.",
+      ];
+    }
+
+    // Only add "Not Required" if we have no other requirements.
+    if (empty($out)) {
+      $out['not-required'] = [
+        'title' => 'Not Required',
+        'description' => 'Standard not required for specified devices at this risk classification.',
+      ];
     }
 
     return $out;
@@ -85,7 +107,7 @@ class MSSCalculatorController extends ControllerBase {
     $out[] = $type->getName();
 
     // Internet Access.
-    $out[] = $args->access ? 'Can Access Internet' : 'Cannot Access Internet';
+    $out[] = $args->access ? 'Internet Accessible' : 'Not Internet Accessible';
 
     // Risk.
     // phpcs:ignore
@@ -114,27 +136,26 @@ class MSSCalculatorController extends ControllerBase {
     $specs = \Drupal::entityQuery('paragraph')
       ->condition('type', 'specification')
       ->condition('field_device_type', $args->type)
-      ->condition('field_risk_level', $args->risk)
-      ->condition('field_required', 1);
+      ->condition('field_risk_level', $args->risk);
 
-    // Filter down "access = true" if access arg = false.
-    if (!$args->access) {
-      $specs->condition('field_internet_access', 0);
+    // Required, OR upcoming.
+    // phpcs:ignore
+    $include = \Drupal::entityQuery('paragraph')->orConditionGroup()
+      ->condition('field_required', 1)
+      ->condition('field_upcoming', 1);
+
+    // If IA required, include via OR.
+    if ($args->access) {
+      $include->condition('field_internet_access', 1);
     }
 
-    // Don't select anything with an obligation if none are selected.
-    if (!$args->obligations) {
-      $specs->notExists('field_obligation');
-    }
-    else {
-      // Add obligation filters if there are some.
-      // phpcs:ignore
-      $group = \Drupal::entityQuery('paragraph')->orConditionGroup()
-        ->notExists('field_obligation')
-        ->condition('field_obligation', explode(',', $args->obligations), 'IN');
-      $specs->condition($group);
+    // Add obligation filters to OR selection.
+    if (!empty($args->obligations)) {
+      $include->condition('field_obligation', explode(',', $args->obligations), 'IN');
     }
 
+    // Add include OR selection to spec query and execute.
+    $specs->condition($include);
     $specs = $specs->execute();
 
     // No results?

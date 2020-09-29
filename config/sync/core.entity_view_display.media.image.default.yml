@@ -9,8 +9,9 @@ dependencies:
     - field.field.media.image.field_media_image
     - field.field.media.image.field_tags
     - media.type.image
+    - responsive_image.styles.full_width_hero
   module:
-    - image
+    - blazy
 _core:
   default_config_hash: zUZ0p6qf3Z-l_0wsWeFwdqX9zDVg5wq32EVDYpguZq4
 id: media.image.default
@@ -37,15 +38,42 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_link: ''
       image_style: ''
+      responsive_image_style: full_width_hero
+      media_switch: ''
+      thumbnail_style: ''
+      ratio: ''
+      current_view_mode: default
+      background: false
+      caption:
+        title: '0'
+        alt: '0'
+      icon: ''
+      layout: ''
+      view_mode: ''
+      cache: 0
+      skin: ''
+      fx: ''
+      style: ''
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      box_style: ''
+      _uri: ''
+      breakpoints: {  }
+      sizes: ''
+      grid_header: ''
+      grid: 0
+      grid_medium: 0
+      grid_small: 0
     third_party_settings: {  }
-    type: image
+    type: blazy
     region: content
 hidden:
   created: true
   field_description: true
   field_tags: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

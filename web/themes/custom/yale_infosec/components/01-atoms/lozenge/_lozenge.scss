@@ -12,6 +12,7 @@
   width: fit-content;
   border-radius: 70px;
   white-space: nowrap;
+  cursor: default;
 
   &--upcoming,
   &--internet-access,
@@ -22,6 +23,10 @@
   &--hipaa,
   &--pci {
     background: clr(secondary);
+  }
+
+  &--access {
+    background: clr(background-inverse);
   }
 
   &--large {
