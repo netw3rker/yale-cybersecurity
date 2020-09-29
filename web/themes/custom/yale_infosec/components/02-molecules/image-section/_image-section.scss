@@ -3,6 +3,10 @@
 
   margin-bottom: $space-triple;
 
+  .bg:last-child & {
+    margin-bottom: 0;
+  }
+
   &--primary,
   &--large {
     @include grid;
@@ -19,6 +23,7 @@
 
   figure,
   img {
+    margin-bottom: 0;
     width: 100%;
   }
 }
