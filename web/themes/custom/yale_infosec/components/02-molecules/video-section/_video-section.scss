@@ -3,6 +3,10 @@
 
   margin-bottom: $space-triple;
 
+  .bg:last-child & {
+    margin-bottom: 0;
+  }
+
   &--primary {
     @include grid;
   }
