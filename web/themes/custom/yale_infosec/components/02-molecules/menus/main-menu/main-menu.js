@@ -4,6 +4,24 @@ Drupal.behaviors.mainMenu = {
     const menu = context.getElementById('main-nav');
     const header = context.getElementById('site-header');
     const searchBtn = context.getElementById("search-btn");
+    const closeSearch = context.getElementById('search-close');
+
+    const tabbable = `
+      a, button, input, select, textarea, svg, area, details, summary,
+      iframe, object, embed, 
+      [tabindex], [contenteditable]
+    `;
+
+    const trapFocus = (focusNode, rootNode = document) => {
+      const nodes = [...rootNode.querySelectorAll(tabbable)]
+        .filter(node => !focusNode.contains(node) && node.getAttribute('tabindex') !== '-1');
+      nodes.forEach(node => node.setAttribute('tabindex', '-1'));
+      return {
+        release() {
+          nodes.forEach(node => node.removeAttribute('tabindex'));
+        },
+      };
+    };
 
     // .closest() polyfill (IE11 requirement).
     if (window.Element && !Element.prototype.closest) {
@@ -23,7 +41,6 @@ Drupal.behaviors.mainMenu = {
     // If menu exists.
     if (menu) {
       const expandBtns = menu.getElementsByClassName('expand-sub');
-      const backBtns = menu.getElementsByClassName('main-menu__parent-item');
       const menuLinks = menu.getElementsByClassName('main-menu__link');
 
       const currentSubClass = 'main-menu__child-menu--sub-current';
@@ -32,17 +49,17 @@ Drupal.behaviors.mainMenu = {
       const closeCurrentMenus = () => {
         const currentMenus = document.getElementsByClassName(currentSubClass);
 
-        for (let i = 0; i < currentMenus.length; i += 1) {
-          currentMenus[i].classList.remove(currentSubClass);
-        };
+        currentMenus.forEach(menu => {
+          menu.classList.remove(currentSubClass);
+        });
       }
 
       const closeOpenMenus = () => {
         const openMenus = document.getElementsByClassName(openSubClass);
 
-        for (let i = 0; i < openMenus.length; i += 1) {
-          openMenus[i].classList.remove(openSubClass);
-        };
+        openMenus.forEach(menu => {
+          menu.classList.remove(openSubClass);
+        })
       }
 
       // If no parent menu exists, close all submenus (e.g., tab focus).
@@ -67,33 +84,39 @@ Drupal.behaviors.mainMenu = {
       });
 
       // Expose mobile sub menu on click.
-      for (let i = 0; i < expandBtns.length; i += 1) {
-        expandBtns[i].addEventListener('click', e => {
+      expandBtns.forEach(btn => {
+        btn.addEventListener('click', e => {
           const menuItem = e.currentTarget;
           const subMenu = menuItem.nextElementSibling;
+          const backLink = subMenu.firstElementChild.firstElementChild;
           
           closeCurrentMenus();
 
           subMenu.classList.toggle(openSubClass);
           subMenu.classList.toggle(currentSubClass);
-          subMenu.firstElementChild.focus();
-        });
-      }
 
-      // Back to parent links.
-      for (let i = 0; i < backBtns.length; i += 1) {
-        backBtns[i].addEventListener('click', e => {
-          const backLink = e.currentTarget;
-          const parent = backLink.parentNode;
-          const parentMenu = parent.parentNode;
-          const prevParentMenu = parentMenu.parentNode.parentNode.parentNode;
+          if (!e.currentTarget.classList.contains('expand-sub--top')) {
+            backLink.focus();
+            const focusTrap = trapFocus(subMenu);
+            backLink.addEventListener('click', e => {
+              focusTrap.release();
+            });
+          }
 
-          parent.classList.remove(currentSubClass);
-          parentMenu.classList.remove(openSubClass);
-          parentMenu.classList.remove(currentSubClass);
-          prevParentMenu.classList.add(currentSubClass);
+          backLink.addEventListener('click', e => {
+            const backLink = e.currentTarget;
+            const parent = backLink.parentNode;
+            const parentMenu = parent.parentNode;
+            const prevParentMenu = parentMenu.parentNode.parentNode.parentNode;
+  
+            parent.classList.remove(currentSubClass);
+            parentMenu.classList.remove(openSubClass);
+            parentMenu.classList.remove(currentSubClass);
+            prevParentMenu.classList.add(currentSubClass);
+            parentMenu.previousElementSibling.focus();
+          });
         });
-      }
+      });
 
       // Search button
       searchBtn.addEventListener('click', e => {
@@ -101,25 +124,39 @@ Drupal.behaviors.mainMenu = {
         const search = searchForm.querySelectorAll('.form-text');
 
         searchForm.classList.add('main-nav-search--open');
-        for (let i = 0; i < search.length; i += 1) {
-          search[i].focus();
-        }
+        search.forEach(item => {
+          item.focus();
+        });
         searchForm.tabIndex = 0;
+        searchForm.setAttribute('aria-modal', true);
+        const focusTrap = trapFocus(searchForm);
+
+        // Close Search.
+        closeSearch.addEventListener('click', () => {
+          const mainNav = context.getElementsByClassName('main-nav-search--open');
+
+          mainNav.forEach(nav => {
+            nav.classList.remove('main-nav-search--open')
+          });
+
+          focusTrap.release();
+          searchBtn.focus();
+        });
       });
 
       // On focus of menu links, close any unrelated submenus.
-      for (let i = 0; i < menuLinks.length; i += 1) {
-        menuLinks[i].addEventListener('focus', e => {
+      menuLinks.forEach(link => {
+        link.addEventListener('focus', e => {
           closeParentMenu(e);
         });
-      }
+      });
 
       // On focus of submenu expand links, close any unrelated submenus.
-      for (let i = 0; i < expandBtns.length; i += 1) {
-        expandBtns[i].addEventListener('focus', e => {
+      expandBtns.forEach(btn => {
+        btn.addEventListener('focus', e => {
           closeParentMenu(e);
         });
-      }
+      });
 
       // On focus of search (right after menu), close all submenus.
       searchBtn.addEventListener('focus', () => {

@@ -10,6 +10,7 @@
   {% set item_modifiers = item_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
 {% else %}
   {% set item_modifiers = item_modifiers|merge(['top']) %}
+  {% set button_modifiers = ['top'] %}
 {% endif %}
 {% if item.below %}
   {% set item_modifiers = item_modifiers|merge(['with-sub']) %}

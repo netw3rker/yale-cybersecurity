@@ -3,6 +3,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const globImporter = require('node-sass-glob-importer');
 const postcssCustomProperties = require('postcss-custom-properties');
 
+const JSLoader = {
+  test: /^(?!.*\.(stories|component)\.js$).*\.js$/,
+  exclude: /node_modules/,
+  loader: 'babel-loader',
+};
+
 const ImageLoader = {
   test: /\.(png|svg|jpg|gif)$/i,
   exclude: /icons\/.*\.svg$/,
@@ -17,6 +23,7 @@ const CSSLoader = {
     {
       loader: 'css-loader',
       options: {
+        sourceMap: true,
         url: (url) => {
           // Don't handle `img.png` urls
           if (url.includes('.png') || url.includes('.svg') || url.includes('.jpg')) {
@@ -38,11 +45,13 @@ const CSSLoader = {
           postcssCustomProperties(),
           require('autoprefixer')({ grid: 'autoplace' })
         ],
+        sourceMap: true,
       },
     },
     {
       loader: 'sass-loader',
       options: {
+        sourceMap: true,
         sassOptions: {
           importer: globImporter(),
           outputStyle: 'compressed',
@@ -68,6 +77,7 @@ const FontLoader = {
 };
 
 module.exports = {
+  JSLoader,
   CSSLoader,
   SVGSpriteLoader,
   ImageLoader,
