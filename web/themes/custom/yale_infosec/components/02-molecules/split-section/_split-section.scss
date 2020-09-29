@@ -3,6 +3,10 @@
   @include grid;
 
   margin-bottom: $space-triple;
+
+  .bg:last-child & {
+    margin-bottom: 0;
+  }
 }
 
 .split-section__inner {
