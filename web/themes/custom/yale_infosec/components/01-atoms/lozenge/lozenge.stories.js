@@ -5,6 +5,7 @@ import twig from './lozenge.twig';
 import dataRequired from './lozenge.yml';
 import dataUpcoming from './lozenge~upcoming.yml';
 import dataInternetAccess from './lozenge~internetaccess.yml';
+import dataCheck from './lozenge~check.yml';
 
 /**
  * Storybook Definition.
@@ -28,4 +29,8 @@ export const Large = () => (
     ...dataRequired,
     lozenge_modifiers: ['large']
     }) }} />
+);
+
+export const check = () => (
+  <div dangerouslySetInnerHTML={{ __html: twig(dataCheck) }} />
 );
