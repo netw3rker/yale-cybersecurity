@@ -116,6 +116,10 @@
     .lozenge {
       display: inline-block;
       margin-left: $space;
+
+      &--check {
+        margin-left: 0;
+      }
     }
   }
 
