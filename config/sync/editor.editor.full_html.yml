@@ -53,7 +53,7 @@ settings:
             - Source
   plugins:
     stylescombo:
-      styles: "a.button.button--yale|Button\r\nspan.lozenge|Lozenge Red\r\nspan.lozenge.lozenge--upcoming|Lozenge Gray\r\nspan.lozenge.lozenge--pci|Lozenge Orange"
+      styles: "a.button.button--yale|Button\r\nspan.lozenge|Lozenge Red\r\nspan.lozenge.lozenge--upcoming|Lozenge Gray\r\nspan.lozenge.lozenge--pci|Lozenge Orange\r\nspan.lozenge.lozenge--check|Checkmark (replaces text)"
     language:
       language_list: un
     linkit:
