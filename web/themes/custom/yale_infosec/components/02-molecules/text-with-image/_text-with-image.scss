@@ -1,6 +1,8 @@
 .text-with-image {
   @include wrapper;
 
+  margin-bottom: $space-triple;
+
   &--primary {
     @include grid(
       $areas: "left-side-a left-gutter-a content-left-a content-right-a sidebar-a right-side-a",
