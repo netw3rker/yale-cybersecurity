@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.text_with_quote.field_aside_alignment
     - field.field.paragraph.text_with_quote.field_aside_quote
+    - field.field.paragraph.text_with_quote.field_remove_spacing_below
     - field.field.paragraph.text_with_quote.field_text
     - paragraphs.paragraphs_type.text_with_quote
   module:
@@ -27,6 +28,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_remove_spacing_below:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_text:
     weight: 1

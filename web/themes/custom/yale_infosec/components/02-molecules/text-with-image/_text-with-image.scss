@@ -5,20 +5,23 @@
 
   &--primary {
     @include grid(
-      $areas: "left-side-a left-gutter-a content-left-a content-right-a sidebar-a right-side-a",
+      $areas:
+        'left-side-a left-gutter-a content-left-a content-right-a sidebar-a right-side-a',
       $columns: 3.5% 3.5% 32.25% 32.25% 25% 3.5%
     );
   }
 
   &--centered {
     @include grid(
-      $areas: "left-side-c aside-left-c gutter-left-c content-left-c content-gutter-c content-right-c aside-right-c right-side-c",
+      $areas:
+        'left-side-c aside-left-c gutter-left-c content-left-c content-gutter-c content-right-c aside-right-c right-side-c',
       $columns: 3.5% 17.5% 3.5% 23.75% 3.5% 23.75% 3.5% 17.5% 3.5%
     );
 
     @include xl {
       @include grid(
-        $areas: "left-side-c aside-left-c gutter-left-c content-left-c content-gutter-c content-right-c aside-right-c right-side-c",
+        $areas:
+          'left-side-c aside-left-c gutter-left-c content-left-c content-gutter-c content-right-c aside-right-c right-side-c',
         $columns: 3.5% 14.5% 3.5% 26.75% 3.5% 26.75% 3.5% 14.5% 3.5%,
         $bp: $xl
       );
@@ -29,6 +32,8 @@
   &--anchored_aside_right {
     @include aside-grid;
   }
+
+  @include paragraph-remove-spacing;
 }
 
 .text-with-image__image {

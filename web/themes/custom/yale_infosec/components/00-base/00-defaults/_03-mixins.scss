@@ -150,3 +150,9 @@ $outer-container-break: $small;
   color: inherit;
   cursor: pointer;
 }
+
+@mixin paragraph-remove-spacing {
+  &--remove_spacing {
+    margin-bottom: 0;
+  }
+}
