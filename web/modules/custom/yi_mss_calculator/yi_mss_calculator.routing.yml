@@ -2,7 +2,7 @@ yi_mss_calculator.calculator:
   path: '/mss/calculator'
   defaults:
     _controller: '\Drupal\yi_mss_calculator\Controller\MSSCalculatorController::calculatorPage'
-    _title: 'Minimum Security Standards Filter'
+    _title: 'Minimum Security Standards Calculator'
   requirements:
     _permission: 'access content'
   options:
@@ -11,7 +11,7 @@ yi_mss_calculator.download:
   path: '/mss/calculator/download'
   defaults:
     _controller: '\Drupal\yi_mss_calculator\Controller\MSSCalculatorController::resultsDownloadPage'
-    _title: 'Minimum Security Standards | Filtered Results Download'
+    _title: 'Minimum Security Standards | Calculator Results Download'
   requirements:
     _permission: 'access content'
   options:
