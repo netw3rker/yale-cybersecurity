@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.text_with_media.field_media
     - field.field.paragraph.text_with_media.field_media_alignment
+    - field.field.paragraph.text_with_media.field_remove_spacing_below
     - field.field.paragraph.text_with_media.field_text
     - paragraphs.paragraphs_type.text_with_media
   module:
@@ -33,6 +34,16 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_remove_spacing_below:
+    weight: 3
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_text:
     weight: 0
     label: hidden
@@ -41,5 +52,4 @@ content:
     type: text_default
     region: content
 hidden:
-  field_media_alignment: true
   search_api_excerpt: true

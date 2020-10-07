@@ -38,10 +38,11 @@
 #}
 {% set text_section__modifiers = [
   grid_style,
+  content.field_remove_spacing_below.0['#markup']
   ]
 %}
 
 {% extends "@molecules/text-section/text-section.twig" %}
-  {% block text_section_content %}
-    {{ content.field_text }}
-  {% endblock %}
+{% block text_section_content %}
+	{{ content.field_text }}
+{% endblock %}

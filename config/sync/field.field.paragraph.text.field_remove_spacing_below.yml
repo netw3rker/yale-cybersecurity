@@ -1,0 +1,23 @@
+uuid: 0ac6f5e2-2c09-477a-94e1-bbe31ee9736d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_remove_spacing_below
+    - paragraphs.paragraphs_type.text
+id: paragraph.text.field_remove_spacing_below
+field_name: field_remove_spacing_below
+entity_type: paragraph
+bundle: text
+label: 'Remove Spacing Below'
+description: 'Check this box to remove the spacing below this field.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: remove_spacing
+  off_label: standard_spacing
+field_type: boolean
