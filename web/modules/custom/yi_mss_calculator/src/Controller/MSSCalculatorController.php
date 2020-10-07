@@ -212,6 +212,7 @@ class MSSCalculatorController extends ControllerBase {
 
         if ($attach_specs) {
           $results[$primary]['children'][$policy]['specifications'] = MSSCalculatorController::getSpecificationsGrid($node);
+          $results[$primary]['children'][$policy]['details'] = $node->field_specification_details->view('full');
         }
       }
     }
