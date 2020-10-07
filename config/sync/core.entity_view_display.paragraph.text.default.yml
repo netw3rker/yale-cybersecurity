@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text.field_remove_spacing_below
     - field.field.paragraph.text.field_text
     - paragraphs.paragraphs_type.text
   module:
@@ -14,6 +15,16 @@ targetEntityType: paragraph
 bundle: text
 mode: default
 content:
+  field_remove_spacing_below:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_text:
     weight: 0
     label: hidden
@@ -21,4 +32,5 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

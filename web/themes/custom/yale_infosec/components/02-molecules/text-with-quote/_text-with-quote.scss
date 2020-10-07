@@ -13,6 +13,8 @@
   &--anchored_aside_right {
     @include aside-grid;
   }
+
+  @include paragraph-remove-spacing;
 }
 
 .text-with-quote__quote {
