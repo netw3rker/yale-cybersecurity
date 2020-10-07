@@ -37,12 +37,12 @@
  */
 #}
 {% set text_with_image__alignment = content.field_media_alignment.0['#markup']|lower %}
-{% set text_with_image__modifiers = [grid_style, text_with_image__alignment] %}
+{% set text_with_image__modifiers = [grid_style, text_with_image__alignment, content.field_remove_spacing_below.0['#markup']] %}
 
 {% extends "@molecules/text-with-image/text-with-image.twig" %}
-  {% block text_with_image_img %}
-    {{ content.field_media }}
-  {% endblock %}
-  {% block text_with_image_text %}
-    {{ content.field_text }}
-  {% endblock %}
+{% block text_with_image_img %}
+	{{ content.field_media }}
+{% endblock %}
+{% block text_with_image_text %}
+	{{ content.field_text }}
+{% endblock %}

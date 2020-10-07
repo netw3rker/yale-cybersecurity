@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.media_entity_browser_modal
     - field.field.paragraph.text_with_media.field_media
     - field.field.paragraph.text_with_media.field_media_alignment
+    - field.field.paragraph.text_with_media.field_remove_spacing_below
     - field.field.paragraph.text_with_media.field_text
     - paragraphs.paragraphs_type.text_with_media
   module:
@@ -37,6 +38,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_remove_spacing_below:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_text:
     weight: 0
