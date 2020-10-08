@@ -7,6 +7,8 @@
 
   &--centered {
     @include centered-grid;
+
+    hyphens: auto;
   }
 
   &--anchored_aside_left,
