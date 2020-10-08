@@ -19,6 +19,8 @@
   &--centered {
     @include centered-grid;
   }
+
+  @include paragraph-remove-spacing;
 }
 
 .text-section__content {

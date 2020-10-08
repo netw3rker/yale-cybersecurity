@@ -212,6 +212,7 @@ class MSSCalculatorController extends ControllerBase {
 
         if ($attach_specs) {
           $results[$primary]['children'][$policy]['specifications'] = MSSCalculatorController::getSpecificationsGrid($node);
+          $results[$primary]['children'][$policy]['details'] = $node->field_specification_details->view('full');
         }
       }
     }
@@ -267,7 +268,7 @@ class MSSCalculatorController extends ControllerBase {
     // Get filtered results array.
     $results = $this->getFilterResults($filters);
 
-    $build['#title'] = 'Minimum Security Standards Filter Results';
+    $build['#title'] = 'Minimum Security Standards Calculator Results';
     $build['overview'] = [
       '#theme' => 'yi_mss_calculator_overview',
       '#filters' => $this->getFilterStrings($filters),

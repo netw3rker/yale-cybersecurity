@@ -78,13 +78,16 @@ function yi_mss_import_csv_data($filename) {
 /**
  * Get (or create) term based on name and vocab.
  */
-function yi_mss_import_get_tid($name, $vid) {
+function yi_mss_import_get_tid($name, $vid, $hide = FALSE) {
   $term = \Drupal::entityTypeManager()
     ->getStorage('taxonomy_term')
     ->loadByProperties(['name' => $name, 'vid' => $vid]);
 
   if (empty($term)) {
     $new_term = Term::create(['vid' => $vid, 'name' => $name]);
+    if ($hide) {
+      $new_term->field_hide_display = TRUE;
+    }
     $new_term->save();
     return $new_term->id();
   }
@@ -175,7 +178,8 @@ function yi_mss_import_get_nid($data, $header, $terms) {
   $bonus_range[] = 'aa';
   foreach ($bonus_range as $col) {
     if (trim($data->$col)) {
-      $tid = yi_mss_import_get_tid($header->$col, 'specification_detail_type');
+      $term_name = explode('|', $header->$col);
+      $tid = yi_mss_import_get_tid($term_name[0], 'specification_detail_type', isset($term_name[1]));
       $details[] = Paragraph::create([
         'type' => 'specification_details',
         'field_specification_detail_data' => ['value' => nl2br($data->$col), 'format' => 'basic_html'],

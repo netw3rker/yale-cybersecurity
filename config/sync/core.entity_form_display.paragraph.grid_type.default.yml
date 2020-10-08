@@ -17,6 +17,7 @@ third_party_settings:
       children:
         - field_color_style
         - field_grid_style
+        - field_remove_spacing_below_grid
       parent_name: ''
       weight: 0
       format_type: fieldset
@@ -40,7 +41,7 @@ content:
     region: content
   field_content:
     type: paragraphs
-    weight: 3
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
