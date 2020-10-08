@@ -28,11 +28,18 @@ Drupal.behaviors.mssOverviewOfRequirements = {
     const $riskInputs = jQuery('#edit-risk label:not(:contains(High Risk))').prevAll('input');
     $obligations.find('input').on('change', () => {
       if ($obligations.find('input:checked').length) {
-        $riskInputs.prop('disabled', true);
-        $riskInputs.prop('checked', false);
+        $riskInputs
+          .prop('disabled', true)
+          .prop('checked', false)
+          .nextAll('label')
+          .attr('title', 'If HIPAA or PCI obligations are selected, risk level is always high.')
       }
       else {
-        $riskInputs.prop('disabled', false);
+        $riskInputs
+          .prop('disabled', false)
+          .nextAll('label')
+          .attr('title', '');
+
       }
     }).change();
   },
