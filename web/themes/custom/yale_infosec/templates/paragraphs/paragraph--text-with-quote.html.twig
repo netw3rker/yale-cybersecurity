@@ -38,14 +38,15 @@
 #}
 {% set text_with_quote__modifiers = [
   grid_style,
-  grid_style == 'centered' ? 'quote-' ~ content.field_aside_alignment.0['#markup']
+  grid_style == 'centered' ? 'quote-' ~ content.field_aside_alignment.0['#markup'],
+  content.field_remove_spacing_below.0['#markup']
   ]
 %}
 
 {% extends "@molecules/text-with-quote/text-with-quote.twig" %}
-  {% block text_with_quote_quote %}
-    {{ content.field_aside_quote }}
-  {% endblock %}
-  {% block text_with_quote_text %}
-    {{ content.field_text }}
-  {% endblock %}
+{% block text_with_quote_quote %}
+	{{ content.field_aside_quote }}
+{% endblock %}
+{% block text_with_quote_text %}
+	{{ content.field_text }}
+{% endblock %}

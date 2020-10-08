@@ -13,10 +13,14 @@
   &--anchored_aside_right {
     @include aside-grid;
   }
+
+  @include paragraph-remove-spacing;
 }
 
 .text-with-quote__quote {
   @include blockquote;
+
+  align-self: start;
 
   &--primary {
     grid-area: sidebar;

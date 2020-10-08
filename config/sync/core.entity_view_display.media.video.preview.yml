@@ -13,7 +13,7 @@ dependencies:
     - image.style.medium
     - media.type.video
   module:
-    - image
+    - blazy
 _core:
   default_config_hash: 8kGiSv-w-VdC6D3mpKa31uppG9AJJjRZopgAVKrepPE
 id: media.video.preview
@@ -22,12 +22,36 @@ bundle: video
 mode: preview
 content:
   thumbnail:
-    type: image
+    type: blazy
     weight: 0
     label: hidden
     settings:
       image_style: medium
-      image_link: ''
+      icon: ''
+      layout: ''
+      view_mode: ''
+      cache: 0
+      current_view_mode: ''
+      skin: ''
+      fx: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      caption: {  }
+      responsive_image_style: ''
+      box_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      _uri: ''
+      breakpoints: {  }
+      sizes: ''
+      grid_header: ''
+      grid: 0
+      grid_medium: 0
+      grid_small: 0
     region: content
     third_party_settings: {  }
 hidden:
@@ -39,4 +63,5 @@ hidden:
   field_tags: true
   field_transcript: true
   name: true
+  search_api_excerpt: true
   uid: true

@@ -10,8 +10,10 @@
  */
 function yale_infosec_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    $content_type = $node->bundle();
-    $suggestions[] = 'page__' . $content_type;
+    if (gettype($node) === 'object') {
+      $content_type = $node->bundle();
+      $suggestions[] = 'page__' . $content_type;
+    }
   }
 }
 

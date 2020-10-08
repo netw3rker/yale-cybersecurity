@@ -20,12 +20,12 @@
   &--small {
     margin-bottom: $space;
   }
+
+  &--front {
+    margin: 0;
+  }
 }
 
 .main-content__top-inner {
   grid-area: content;
-}
-
-.main-content__bottom {
-  margin-bottom: 4em;
 }

@@ -3,6 +3,10 @@
 
   margin-bottom: $space-triple;
 
+  .bg:last-child & {
+    margin-bottom: 0;
+  }
+
   &--primary {
     @include grid;
   }
@@ -15,6 +19,8 @@
   &--centered {
     @include centered-grid;
   }
+
+  @include paragraph-remove-spacing;
 }
 
 .text-section__content {

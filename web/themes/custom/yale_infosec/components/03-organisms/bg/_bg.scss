@@ -5,8 +5,18 @@
     padding: $space-triple 0;
   }
 
-  &--white + .bg--white {
-    padding: 0;
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &--white {
+    &:first-child {
+      padding-top: 0;
+    }
+
+    & + .bg--white {
+      padding: 0;
+    }
   }
 
   &--light-gray {

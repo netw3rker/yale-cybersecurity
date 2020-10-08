@@ -12,7 +12,7 @@ dependencies:
     - image.style.medium
     - media.type.image
   module:
-    - image
+    - blazy
 _core:
   default_config_hash: h3p4Kw_rkSCVL-r2PdnzVkqV6tj7ZtzgCqlE0D-Vebs
 id: media.image.preview
@@ -25,9 +25,33 @@ content:
     label: hidden
     settings:
       image_style: medium
-      image_link: ''
+      icon: ''
+      layout: ''
+      view_mode: ''
+      cache: 0
+      current_view_mode: ''
+      skin: ''
+      fx: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      caption: {  }
+      responsive_image_style: ''
+      box_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      _uri: ''
+      breakpoints: {  }
+      sizes: ''
+      grid_header: ''
+      grid: 0
+      grid_medium: 0
+      grid_small: 0
     third_party_settings: {  }
-    type: image
+    type: blazy
     region: content
 hidden:
   created: true
@@ -36,5 +60,6 @@ hidden:
   field_description: true
   field_tags: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true
