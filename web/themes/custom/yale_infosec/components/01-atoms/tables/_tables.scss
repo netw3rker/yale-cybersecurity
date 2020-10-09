@@ -35,6 +35,10 @@
   @include breakpoint(600px) {
     min-width: auto;
   }
+
+  a {
+    color: clr(primary);
+  }
 }
 
 .table__heading-cell,
