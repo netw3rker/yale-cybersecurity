@@ -38,22 +38,23 @@
 #}
 {% set custom_grid_modifiers = [
   'padded',
-  content.field_background_style.0['#markup']
+  content.field_background_style.0['#markup'],
 ] %}
 
 {% embed "@organisms/grid/grid-container.twig" with {
   grid_container_modifiers: custom_grid_modifiers,
 } %}
-  {% block grid_container_content %}
-    {% embed "@organisms/grid/grid.twig" with {
+	{% block grid_container_content %}
+		{% embed "@organisms/grid/grid.twig" with {
       grid_heading_modifiers: ['featured'],
       grid_type: 'card',
       item_type: 'card',
       grid_label: content.field_heading,
+      grid_modifiers: [content.field_size.0['#markup']]
     } %}
-      {% block grid_content %}
-        {{ content.field_cards }}
-      {% endblock %}
-    {% endembed %}
-  {% endblock %}
+			{% block grid_content %}
+				{{ content.field_cards }}
+			{% endblock %}
+		{% endembed %}
+	{% endblock %}
 {% endembed %}

@@ -6,10 +6,6 @@
 .grid {
   @include flex;
 
-  @supports (gap: 5%) {
-    gap: 5%;
-  }
-
   &--card {
     @include space-stack-page;
 
@@ -18,6 +14,10 @@
 
   &--top {
     margin-bottom: 0;
+  }
+
+  &--large {
+    max-width: 1000px;
   }
 }
 
