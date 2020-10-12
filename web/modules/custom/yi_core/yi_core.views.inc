@@ -19,6 +19,10 @@ function yi_core_views_data_alter(array &$data) {
       'help' => t('Unified sort of news (days-since) and events (days-until).'),
       'id' => 'news_events_sort',
     ],
+    'sort' => [
+      'help' => t('Unified sort of news (days-since) and events (days-until).'),
+      'id' => 'news_events_sort',
+    ],
   ];
 
 }
