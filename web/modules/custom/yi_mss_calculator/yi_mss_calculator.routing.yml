@@ -17,7 +17,7 @@ yi_mss_calculator.download:
   options:
     no_cache: 'TRUE'
 yi_mss_calculator.listing:
-  path: '/mss'
+  path: '/mss/list'
   defaults:
     _controller: '\Drupal\yi_mss_calculator\Controller\MSSCalculatorController::listingPage'
     _title: 'Minimum Security Standards'
