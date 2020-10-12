@@ -19,7 +19,7 @@ use Drupal\views\Plugin\views\sort\SortPluginBase;
  * SELECT
  *   IF(
  *     event_join.field_event_date_value IS NOT NULL,
- *     (FLOOR(UNIX_TIMESTAMP(event_join.field_event_date_value)) - UNIX_TIMESTAMP(NOW())),
+ *     (FLOOR(UNIX_TIMESTAMP(field_event_date_value)) - UNIX_TIMESTAMP(NOW())),
  *     (UNIX_TIMESTAMP(NOW()) - node_field_data.created)
  *   ) AS news_events_sort
  * ...
@@ -71,7 +71,8 @@ class NewsEventsSort extends SortPluginBase {
     )";
 
     $this->query->addOrderBy(
-      null, $formula,
+      NULL,
+      $formula,
       $this->options['order'],
       'news_events_sort'
     );

@@ -50,4 +50,5 @@ class NewsEventsSort extends FieldPluginBase {
     // the entity was created in seconds.
     return time() - $entity->getCreatedTime();
   }
+
 }
