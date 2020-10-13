@@ -122,7 +122,8 @@
       margin-left: $space;
 
       &--check {
-        margin-left: 0;
+        display: block;
+        margin-left: auto;
       }
     }
   }
