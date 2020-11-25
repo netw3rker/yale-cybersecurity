@@ -24,6 +24,7 @@
     "require": {
         "php": ">=7.2",
         "cweagans/composer-patches": "^1.0",
+        "drupal/anchor_link": "^2.4",
         "drupal/config_direct_save": "^1.0",
         "drupal/config_ignore": "^2.2",
         "drupal/config_installer": "^1.0",
