@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca6172156c0e2cb0a57559f4e61da4b8",
+    "content-hash": "57385d09040ec0321ee867c664666d38",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2885,7 +2885,7 @@
             "version": "2.1.0",
             "require": {
                 "drupal/core": "^8.8 || ^9",
-                "drupal/dropzonejs": "self.version",
+                "drupal/dropzonejs": "*",
                 "drupal/entity_browser": "*"
             },
             "type": "metapackage",
@@ -4181,7 +4181,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.0-rc7",
-                    "datestamp": "1595545223",
+                    "datestamp": "1596396104",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -5107,6 +5107,10 @@
                     "homepage": "https://www.drupal.org/u/gbyte.co",
                     "email": "contact@gbyte.co",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "gbyte",
+                    "homepage": "https://www.drupal.org/user/2381352"
                 }
             ],
             "description": "Creates a standard conform hreflang XML sitemap of the site content and provides a framework for developing other sitemap types.",
