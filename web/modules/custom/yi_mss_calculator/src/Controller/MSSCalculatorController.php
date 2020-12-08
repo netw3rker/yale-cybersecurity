@@ -193,6 +193,7 @@ class MSSCalculatorController extends ControllerBase {
           $n = Node::load($primary);
           $results[$primary] = [
             'title' => $n->getTitle(),
+            'nid' => $node->id(),
             'description' => $n->field_standard_description->getValue()[0]['value'],
             'uri' => Url::fromRoute('entity.node.canonical', ['node' => $primary], ['absolute' => TRUE])->toString(),
             'policy_links' => [],
@@ -204,6 +205,7 @@ class MSSCalculatorController extends ControllerBase {
         $results[$primary]['children'][$policy] = [
           'policy_number' => $policy,
           'title' => $node->getTitle(),
+          'nid' => $node->id(),
           'tertiary' => $secondary ? 'mss-sub-policies-tertiary' : '',
           'description' => $node->field_standard_description->getValue()[0]['value'],
           'uri' => Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
@@ -280,6 +282,14 @@ class MSSCalculatorController extends ControllerBase {
       '#type' => 'link',
       '#url' => Url::fromRoute('yi_mss_calculator.download', [], ['query' => (array) $filters]),
       '#title' => $this->t('View Full Report'),
+      '#prefix' => '<div class="mss-view-report">',
+      '#suffix' => '</div>',
+    ];
+
+    $build['download_csv'] = [
+      '#type' => 'link',
+      '#url' => Url::fromRoute('yi_mss_calculator.csv', [], ['query' => (array) $filters]),
+      '#title' => $this->t('Download CSV'),
       '#prefix' => '<div class="mss-view-report">',
       '#suffix' => '</div>',
     ];
@@ -443,12 +453,34 @@ class MSSCalculatorController extends ControllerBase {
       $detail_headers[] = $term->getName();
     }
 
-    // Get all secondary and tertiary level standards.
+    // Check if we have filtered results for standards.
     // phpcs:ignore
-    $nids = \Drupal::entityQuery('node')
-      ->condition('type', 'standard')
-      ->condition('field_policy_number', '%.%', 'LIKE')
-      ->execute();
+    $filters = (object) \Drupal::request()->query->all();
+    $tmp = (array) $filters;
+
+    if (!empty($tmp)) {
+      $results = $this->getFilterResults($filters);
+      $iterator  = new \RecursiveArrayIterator($results);
+      $recursive = new \RecursiveIteratorIterator(
+        $iterator,
+        \RecursiveIteratorIterator::SELF_FIRST
+      );
+      foreach ($recursive as $key => $value) {
+        if ($key === 'nid') {
+          $nids[] = $value;
+        }
+      }
+
+    }
+
+    // Get all standards.
+    if (empty($nids)) {
+      // phpcs:ignore
+      $nids = \Drupal::entityQuery('node')
+        ->condition('type', 'standard')
+        ->condition('field_policy_number', '%.%', 'LIKE')
+        ->execute();
+    }
 
     // phpcs:ignore
     $nodes = Node::loadMultiple($nids);

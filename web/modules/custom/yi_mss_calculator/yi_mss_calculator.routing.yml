@@ -41,3 +41,11 @@ yi_mss_calculator.export:
   options:
     _admin_route: TRUE
     no_cache: 'TRUE'
+yi_mss_calculator.csv:
+  path: '/mss/calculator/export.csv'
+  defaults:
+    _controller: '\Drupal\yi_mss_calculator\Controller\MSSCalculatorController::dataExport'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
