@@ -87,25 +87,38 @@
 
   margin-bottom: $space-triple;
 
-  a {
-    @include button-base;
-    @include button-bg;
-
-    @extend .button--primary;
-
-    margin-top: 0;
+  div.actions {
+    max-width: 31em;
+    margin-right: $space;
     grid-area: content;
     display: flex;
-    align-items: center;
-    width: fit-content;
+  }
 
-    &::before {
-      content: '';
-      display: block;
-      background-image: url('../images/icons/report.svg');
-      width: 12px;
-      height: 16px;
-      margin-right: $space-half;
+  div.download {
+    max-width: 31em;
+    margin-right: $space;
+    grid-area: content;
+
+    a {
+      @include button-base;
+      @include button-bg;
+      @include buttonClr(primary);
+
+      @extend .button--primary;
+
+      margin-top: 0;
+      display: inline-block;
+      margin-right: .8rem;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        background-image: url('../images/icons/report.svg');
+        width: 12px;
+        height: 16px;
+        margin-right: $space-half;
+        transition: all 0.15s;
+      }
     }
   }
 }
