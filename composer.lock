@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d7e97392523624af16bcdee13cb7a78",
+    "content-hash": "68244ef42ee303ef9b60b021bec116ec",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -241,6 +241,24 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "ckeditor-plugin/fakeobjects",
+            "version": "4.15.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.15.1.zip"
+            },
+            "type": "drupal-library"
+        },
+        {
+            "name": "ckeditor-plugin/link",
+            "version": "4.15.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/link/releases/link_4.15.1.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "composer/installers",
@@ -1408,6 +1426,60 @@
             "homepage": "https://www.drupal.org/project/allowed_formats",
             "support": {
                 "source": "https://git.drupalcode.org/project/allowed_formats"
+            }
+        },
+        {
+            "name": "drupal/anchor_link",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/anchor_link.git",
+                "reference": "8.x-2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/anchor_link-8.x-2.4.zip",
+                "reference": "8.x-2.4",
+                "shasum": "d37becfde799c5e03faf9ba16fd0848a1a487d41"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/fakeobjects": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.4",
+                    "datestamp": "1582628297",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-8.x-2.x": "8.2.x-dev"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Vardot",
+                    "homepage": "https://www.drupal.org/vardot",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "RajabNatshah",
+                    "homepage": "https://www.drupal.org/user/1414312"
+                }
+            ],
+            "description": "This plugin module adds the better link dialog and anchor related features to CKEditor in Drupal 8.",
+            "homepage": "https://www.drupal.org/project/anchor_link",
+            "support": {
+                "source": "http://cgit.drupalcode.org/anchor_link",
+                "issues": "https://www.drupal.org/project/issues/anchor_link"
             }
         },
         {
@@ -3389,7 +3461,7 @@
             "version": "2.5.0",
             "require": {
                 "drupal/core": "^8.7.7 || ^9",
-                "drupal/entity_browser": "*",
+                "drupal/entity_browser": "self.version",
                 "drupal/inline_entity_form": "*"
             },
             "type": "metapackage",
@@ -3638,6 +3710,59 @@
             "homepage": "https://www.drupal.org/project/externalauth",
             "support": {
                 "source": "https://git.drupalcode.org/project/externalauth"
+            }
+        },
+        {
+            "name": "drupal/fakeobjects",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/fakeobjects.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/fakeobjects-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "0a7a3ead609d1efd62f4f4803a41317970d8292d"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1592829875",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Quillen (kevinquillen)",
+                    "homepage": "https://www.drupal.org/u/kevinquillen",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "kevinquillen",
+                    "homepage": "https://www.drupal.org/user/317279"
+                }
+            ],
+            "description": "Adds the FakeObjects plugin to CKEditor. This plugin is a utility plugin that is required by certain user-facing CKEditor plugins.",
+            "homepage": "http://drupal.org/project/fakeobjects",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/fakeobjects",
+                "issues": "http://drupal.org/project/issues/fakeobjects"
             }
         },
         {
@@ -3983,7 +4108,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1593179846",
+                    "datestamp": "1591383264",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5000,6 +5125,10 @@
                     "homepage": "https://www.drupal.org/u/gbyte.co",
                     "email": "contact@gbyte.co",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "gbyte",
+                    "homepage": "https://www.drupal.org/user/2381352"
                 }
             ],
             "description": "Creates a standard conform hreflang XML sitemap of the site content and provides a framework for developing other sitemap types.",
@@ -5389,7 +5518,7 @@
                 "shasum": "c7e3a3757282e4c94e3c1fff08d01e22155cb853"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9"
+                "drupal/core": "^8.8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
