@@ -19,11 +19,39 @@
         {
             "type": "vcs",
             "url": "git@github.com:yalesites-org/yale_sso.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/link",
+                "version": "4.15.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/link/releases/link_4.15.1.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/fakeobjects",
+                "version": "4.15.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.15.1.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
         "php": ">=7.2",
+        "ckeditor-plugin/fakeobjects": "^4.15",
+        "ckeditor-plugin/link": "^4.15",
+        "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.0",
+        "drupal/anchor_link": "^2.4",
         "drupal/config_direct_save": "^1.0",
         "drupal/config_ignore": "^2.2",
         "drupal/config_installer": "^1.0",
@@ -127,6 +155,7 @@
                 "bower-asset/masonry-layout"
             ],
             "web/libraries/{$name}": [
+                "vendor:ckeditor-plugin",
                 "type:drupal-library",
                 "type:bower-asset",
                 "type:npm-asset"
