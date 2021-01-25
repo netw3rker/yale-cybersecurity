@@ -65,6 +65,11 @@ p,
   hr {
     @extend .hr;
   }
+
+  .button--yale {
+    @include buttonClr(secondary);
+  }
+
 }
 
 // Storybook
