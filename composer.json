@@ -61,6 +61,7 @@
         "drupal/core-recommended": "^8.8",
         "drupal/devel": "^2.1",
         "drupal/eck": "^1.0@beta",
+        "drupal/evercurrent": "^2.2",
         "drupal/google_analytics": "^3.1",
         "drupal/iframe": "^2.6",
         "drupal/length_indicator": "^1.1",
