@@ -813,3 +813,18 @@ $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+
+/**
+ * Evercurrent settings.
+ *
+ * Turned off on all but prod.
+ */
+$config['evercurrent.admin_config']['send'] = FALSE;
+
+if (isset($_ENV['PANTHEON_ENVIRONMENT']) && $_ENV['PANTHEON_ENVIRONMENT'] == 'live') {
+  // Setup evercurrent on production.
+  $config['evercurrent.admin_config']['send'] = TRUE;
+  $config['evercurrent.admin_config']['target_address'] = 'https://live-evercurrent-clone.pantheonsite.io';
+  $settings['evercurrent_environment_url'] = 'https://cybersecurity.yale.edu';
+  $settings['evercurrent_environment_token'] = '1684b9fa844c2b251a58ed429cd1d378';
+}
