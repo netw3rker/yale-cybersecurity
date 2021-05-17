@@ -1,12 +1,13 @@
 <?php
+
 /**
  * @file
  * Installation hooks for custom YI Core module.
  */
 
 /**
-* Add super admin permissions to three users.
-*/
+ * Add super admin permissions to three users.
+ */
 function yi_core_update_8001() {
 
   $users_changed = 0;
