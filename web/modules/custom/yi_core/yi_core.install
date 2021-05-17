@@ -30,6 +30,6 @@ function yi_core_update_8001() {
 
   \Drupal::logger('yi_core')->info(
     'Assigned the super admin role to @count users.',
-    array('@count' => $users_changed,)
+    ['@count' => $users_changed]
   );
 }
