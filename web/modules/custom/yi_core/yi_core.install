@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Installation hooks for custom YI Core module.
+ */
+
+/**
+* Add super admin permissions to three users.
+*/
+function yi_core_update_8001() {
+
+  $users_changed = 0;
+
+  // List of users who should be made super administrators.
+  $users_to_make_super_admin = [
+    'bpc35',
+    'wb4',
+    'jtz4',
+  ];
+
+  foreach ($users_to_make_super_admin as $name) {
+    $user = user_load_by_name($name);
+    if ($user) {
+      $user->addRole('super_admin');
+      $user->save();
+      $users_changed++;
+    }
+  }
+
+  drush_log(dt('Assigned the super admin role to !count users.', ['!count' => $users_changed]), 'ok');
+}
