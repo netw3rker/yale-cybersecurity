@@ -28,5 +28,8 @@ function yi_core_update_8001() {
     }
   }
 
-  drush_log(dt('Assigned the super admin role to !count users.', ['!count' => $users_changed]), 'ok');
+  \Drupal::logger('yi_core')->info(
+    'Assigned the super admin role to @count users.',
+    array('@count' => $users_changed,)
+  );
 }
