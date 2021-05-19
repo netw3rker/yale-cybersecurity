@@ -1,0 +1,10 @@
+uuid: f485ef78-a3fb-4916-a825-a89e6b1f1bd9
+langcode: en
+status: true
+dependencies: {  }
+id: super_admin
+label: 'Super admin'
+weight: 4
+is_admin: null
+permissions:
+  - 'administer site configuration'
