@@ -6,6 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use \Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements theme_preprocess_page.
@@ -89,6 +90,32 @@ function yale_infosec_preprocess_time(array &$vars) {
 function yale_infosec_preprocess_field(array &$vars) {
   if ($vars['field_name'] === 'field_content_block') {
     $vars['home_news'] = views_embed_view('news_events', 'block_1');
+  }
+
+  // Exclude "Version," "Current Policy, Practice, Procedure Alignment," and
+  // "Current Policy, Practice, Procedure Alignment Details" from displaying on
+  // the specification details of Standard node types.
+  if ($vars['field_name'] === 'field_specification_details') {
+
+    // - 36 = "Current Policy, Practice, Procedure Alignment,"
+    // - 37 = "Current Policy, Practice, Procedure Alignment Details"
+    // - 38 = "Version"
+    $term_ids = [36, 37, 38];
+
+    // Loops through the multiple values of the field_specification_details.
+    foreach($vars['element']['#items']->getValue() as $key => $item) {
+
+      // Load the paragraph to find out the tax term specified in the
+      // paragraph__field_specification_detail_type field.
+      $paragraph = Paragraph::load($item['target_id']);
+      $term_id = $paragraph->field_specification_detail_type->getValue()[0]['target_id'];
+
+      // Remove the paragraph from display if its tax term is one of the
+      // three above.
+      if (in_array($term_id, $term_ids)) {
+        unset($vars['items'][$key]);
+      }
+    }
   }
 }
 
