@@ -6,7 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
-use \Drupal\paragraphs\Entity\Paragraph;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements theme_preprocess_page.
@@ -103,7 +103,7 @@ function yale_infosec_preprocess_field(array &$vars) {
     $term_ids = [36, 37, 38];
 
     // Loops through the multiple values of the field_specification_details.
-    foreach($vars['element']['#items']->getValue() as $key => $item) {
+    foreach ($vars['element']['#items']->getValue() as $key => $item) {
 
       // Load the paragraph to find out the tax term specified in the
       // paragraph__field_specification_detail_type field.
