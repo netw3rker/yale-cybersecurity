@@ -100,7 +100,7 @@ function yale_infosec_preprocess_field(array &$vars) {
     // - 36 = "Current Policy, Practice, Procedure Alignment,"
     // - 37 = "Current Policy, Practice, Procedure Alignment Details"
     // - 38 = "Version"
-    $term_ids = [36, 37, 38];
+    $exclude_tids = [36, 37, 38];
 
     // Loops through the multiple values of the field_specification_details.
     foreach ($vars['element']['#items']->getValue() as $key => $item) {
@@ -112,7 +112,7 @@ function yale_infosec_preprocess_field(array &$vars) {
 
       // Remove the paragraph from display if its tax term is one of the
       // three above.
-      if (in_array($term_id, $term_ids)) {
+      if (in_array($term_id, $exclude_tids)) {
         unset($vars['items'][$key]);
       }
     }

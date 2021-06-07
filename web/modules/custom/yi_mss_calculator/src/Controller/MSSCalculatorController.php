@@ -457,7 +457,11 @@ class MSSCalculatorController extends ControllerBase {
     $detail_headers = [];
     // phpcs:ignore
     $deets = Term::loadMultiple($tids);
-    foreach ($deets as $term) {
+    $exclude_tids = [36, 37, 38];
+    foreach ($deets as $tid => $term) {
+      if (in_array($tid, $exclude_tids)) {
+        continue;
+      }
       $detail_headers[] = $term->getName();
     }
 
@@ -539,6 +543,10 @@ class MSSCalculatorController extends ControllerBase {
       }
 
       foreach ($node->get('field_specification_details')->referencedEntities() as $deet) {
+        $tid = $deet->field_specification_detail_type->getValue()[0]['target_id'];
+        if (in_array($tid, $exclude_tids)) {
+          continue;
+        }
         $type = $deet->field_specification_detail_type->entity->getName();
         if (isset($row[$type])) {
           $row[$type] = $deet->field_specification_detail_data->getString();
