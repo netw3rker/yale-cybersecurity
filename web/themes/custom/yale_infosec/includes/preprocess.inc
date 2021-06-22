@@ -103,7 +103,7 @@ function yale_infosec_preprocess_field(array &$vars) {
     // Loops through the multiple values of the field_specification_details.
     foreach ($vars['element']['#items']->getValue() as $key => $item) {
 
-      if (!isset($item['target_id'])) {
+      if (isset($item['target_id'])) {
         // Load the paragraph to find out the tax term specified in the
         // paragraph__field_specification_detail_type field.
         $paragraph = Paragraph::load($item['target_id']);

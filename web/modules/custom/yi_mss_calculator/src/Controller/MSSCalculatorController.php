@@ -543,7 +543,7 @@ class MSSCalculatorController extends ControllerBase {
       }
 
       foreach ($node->get('field_specification_details')->referencedEntities() as $deet) {
-        if (!empty( $deet->field_specification_detail_type->getValue()[0]['target_id'])) {
+        if (!empty($deet->field_specification_detail_type->getValue()[0]['target_id'])) {
           $tid = $deet->field_specification_detail_type->getValue()[0]['target_id'];
           if (in_array($tid, $exclude_tids)) {
             continue;
@@ -578,10 +578,11 @@ class MSSCalculatorController extends ControllerBase {
   }
 
   /**
-   * Certain MSS fields need to be excluded from display in public pages and reports.
-   * // - 36 = "Current Policy, Practice, Procedure Alignment,"
-   * // - 37 = "Current Policy, Practice, Procedure Alignment Details"
-   * // - 38 = "Version"
+   * MSS fields to be excluded from display in public pages and reports.
+   *
+   * 36 = "Current Policy, Practice, Procedure Alignment".
+   * 37 = "Current Policy, Practice, Procedure Alignment Details".
+   * 38 = "Version".
    */
   public static function getExcludedTids() {
     return [36, 37, 38];
