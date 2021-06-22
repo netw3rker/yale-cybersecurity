@@ -583,6 +583,9 @@ class MSSCalculatorController extends ControllerBase {
    * 36 = "Current Policy, Practice, Procedure Alignment".
    * 37 = "Current Policy, Practice, Procedure Alignment Details".
    * 38 = "Version".
+   *
+   * @return array
+   *   Tids to exclude.
    */
   public static function getExcludedTids() {
     return [36, 37, 38];
