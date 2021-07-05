@@ -7,6 +7,8 @@
   .bg--blue &,
   .bg--dark-blue & {
     border: none;
+
+
   }
 
   &--blue {
@@ -59,7 +61,7 @@
   .bg--dark-gray &,
   .bg--blue &,
   .bg--dark-blue & {
-    color: clr(text-heavy);
+    color: clr(text-inverse);
   }
 
   &--light {
@@ -73,7 +75,7 @@
   .bg--dark-gray &,
   .bg--blue &,
   .bg--dark-blue & {
-    color: clr(text);
+    color: clr(text-reverse);
   }
 
   p {

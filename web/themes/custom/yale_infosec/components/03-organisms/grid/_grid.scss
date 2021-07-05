@@ -47,6 +47,14 @@
   }
 }
 
+.grid__subtitle {
+  @include large {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 80%;
+  }
+}
+
 $patternBg: #eae9e8;
 $patternDot: #d3d2d0;
 $dot-size: 1.5px;

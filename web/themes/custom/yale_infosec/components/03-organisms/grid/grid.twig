@@ -24,12 +24,19 @@
     heading_modifiers: grid_heading_modifiers
   } %}
 {% endif %}
+
+{% if grid_subtitle %}
+  <div class="grid__subtitle">
+    {{ grid_subtitle }}
+  </div>
+{% endif %}
+
 <div {{ bem(grid_base_class, grid_top_modifiers, grid_blockname) }}>
-{% block grid_top_content %}
-  {% for item in grid_top_items %}
-    {% include "@organisms/grid/_grid-top-examples.twig" %}
-  {% endfor %}
-{% endblock %}
+  {% block grid_top_content %}
+    {% for item in grid_top_items %}
+      {% include "@organisms/grid/_grid-top-examples.twig" %}
+    {% endfor %}
+  {% endblock %}
 </div>
 <div {{ bem(grid_base_class, grid_modifiers, grid_blockname) }}>
   {% block grid_content %}
