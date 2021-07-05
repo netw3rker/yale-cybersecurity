@@ -7,24 +7,27 @@ dependencies:
     - field.field.paragraph.custom_card_grid.field_cards
     - field.field.paragraph.custom_card_grid.field_heading
     - field.field.paragraph.custom_card_grid.field_size
+    - field.field.paragraph.custom_card_grid.field_text
     - paragraphs.paragraphs_type.custom_card_grid
   module:
+    - allowed_formats
     - paragraphs
     - paragraphs_features
+    - text
 id: paragraph.custom_card_grid.default
 targetEntityType: paragraph
 bundle: custom_card_grid
 mode: default
 content:
   field_background_style:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_cards:
     type: paragraphs
-    weight: 1
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -55,10 +58,21 @@ content:
     type: string_textfield
     region: content
   field_size:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_text:
+    weight: 1
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
+    type: text_textarea
     region: content
 hidden:
   created: true
