@@ -53,6 +53,12 @@
       font-size: 5.3rem;
     }
   }
+
+  .bg--dark-gray &,
+  .bg--blue &,
+  .bg--dark-blue & {
+    color: clr(text-inverse);
+  }
 }
 
 .card__heading-link {
