@@ -1,0 +1,8 @@
+name: 'Yale SSO'
+type: module
+description: 'Drupal module containing SSO/Saml configuration for Yale sites.'
+core: 8.x
+package: 'Yale'
+dependencies:
+  - features
+  - simplesamlphp_auth

@@ -1,0 +1,5 @@
+content_browser.settings:
+  title: 'Content browser'
+  parent: system.admin_config_content
+  description: 'Manage content browser settings.'
+  route_name: content_browser.settings

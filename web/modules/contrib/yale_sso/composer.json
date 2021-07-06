@@ -1,0 +1,29 @@
+{
+  "name": "yalesites-org/yale_sso",
+  "description": "Drupal module containing SSO/Saml configuration for Yale sites.",
+  "type": "drupal-module",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:fourkitchens/sous-drupal-distro.git"
+    },
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "authors": [
+    {
+      "name": "techninja",
+      "email": "james@tn42.com"
+    }
+  ],
+  "require": {
+    "drupal/simplesamlphp_auth": "^3.2",
+    "drupal/features": "^3.11"
+  }
+}

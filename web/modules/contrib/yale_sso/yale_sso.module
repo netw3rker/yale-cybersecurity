@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains yale_sso.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function yale_sso_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the yale_sso module.
+    case 'help.page.yale_sso':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Drupal module containing SSO/Saml configuration for Yale sites.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
